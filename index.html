@@ -19,6 +19,11 @@
       padding: 0;
     }
 
+    /* ← Smooth scrolling added */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, sans-serif;
@@ -27,7 +32,6 @@
       line-height: 1.6;
     }
 
-    /* HEADER & NAV */
     header {
       background: var(--black);
       color: #ffffff;
@@ -38,21 +42,9 @@
       justify-content: space-between;
     }
 
-    .brand {
-      font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 0.05em;
-    }
-
-    .brand span {
-      color: var(--gold);
-      font-weight: 800;
-    }
-
-    .subtitle {
-      font-size: 0.85rem;
-      color: #e0e0e0;
-    }
+    .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; }
+    .brand span { color: var(--gold); font-weight: 800; }
+    .subtitle { font-size: 0.85rem; color: #e0e0e0; }
 
     nav a {
       color: #ffffff;
@@ -62,196 +54,138 @@
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    /* MAIN LAYOUT */
-    .page {
-      max-width: 1100px;
-      margin: 32px auto 60px auto;
-      padding: 0 20px;
-    }
+    nav a:hover { color: var(--gold); }
 
     .hero {
+      max-width: 1100px;
+      margin: 40px auto 20px auto;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: 1.1fr 1.4fr;
-      grid-gap: 28px;
-      margin-bottom: 32px;
-      align-items: start;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
     }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      header {
-        padding: 16px 16px;
-      }
-      nav {
-        margin-top: 8px;
-        width: 100%;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 14px;
-      }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
     }
 
-    .hero-main h1 {
-      font-size: 1.9rem;
-      margin-bottom: 10px;
-      color: var(--gold);
-    }
-
-    .hero-main p.lead {
-      font-size: 1rem;
-      margin-bottom: 16px;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: var(--dark-gold);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 14px;
-    }
-
-    .hero-side {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 18px 18px 16px 18px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-      border-left: 4px solid var(--gold);
-    }
-
-    .hero-side h2 {
-      font-size: 1rem;
-      color: var(--dark-gold);
-      margin-bottom: 10px;
-    }
-
-    .hero-side p {
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
-
-    .hero-side strong {
-      color: var(--black);
-    }
-
-    .btn-row {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-primary,
-    .btn-outline {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid var(--gold);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #111111;
-      font-weight: 600;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--dark-gold);
-    }
-
-    .btn-primary:hover {
-      background: #d4ac0d;
-    }
-
-    .btn-outline:hover {
-      background: #fff8d6;
-    }
-
-    /* PROFILE PHOTO */
-    .hero-left {
+    .profile-wrapper {
       text-align: center;
     }
 
     .profile-photo {
-      width: 190px;
-      height: 190px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--gold);
+      border: 5px solid var(--gold);
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .profile-name {
+    .name {
+      font-size: 1.3rem;
       font-weight: 700;
-      font-size: 1.05rem;
+      color: var(--black);
       margin-bottom: 4px;
     }
 
-    .profile-role {
+    .role {
       font-size: 0.9rem;
-      color: #555;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--gold);
       margin-bottom: 10px;
     }
 
-    /* FEATURE CARDS */
-    .section-title {
-      font-size: 1.2rem;
-      color: var(--dark-gold);
-      margin-bottom: 14px;
-      margin-top: 10px;
+    .pill {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: #444;
+      margin-bottom: 8px;
     }
 
-    .cards {
+    .hero-text p {
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .btn-gold:hover {
+      background: var(--dark-gold);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      padding: 9px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 28px auto 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: var(--dark-gold);
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    .card-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-gap: 18px;
-      margin-top: 8px;
-      margin-bottom: 26px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     @media (max-width: 900px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    @media (max-width: 600px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
+      .card-grid { grid-template-columns: 1fr; }
     }
 
     .card {
       background: #ffffff;
       border-radius: 10px;
-      padding: 14px 14px 12px 14px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 16px 18px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
       border-top: 3px solid var(--gold);
     }
 
     .card h3 {
-      font-size: 0.95rem;
+      font-size: 1rem;
       margin-bottom: 6px;
       color: var(--black);
     }
 
-    .card p {
-      font-size: 0.85rem;
-      color: #555555;
-    }
+    .card p { font-size: 0.9rem; color: #555; }
 
-    /* FOOTER */
     footer {
       background: var(--black);
       color: #ffffff;
@@ -261,121 +195,93 @@
       text-align: center;
     }
 
-    footer span {
-      color: var(--gold);
-      font-weight: 600;
-    }
+    footer span { color: var(--gold); font-weight: 600; }
   </style>
 </head>
 <body>
-  <header>
-    <div>
-      <div class="brand"><span>KASEM SAID</span></div>
-      <div class="subtitle">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <div class="page">
-    <section class="hero">
-      <div class="hero-left">
-        <img src="profile.jpg" alt="Kasem Said" class="profile-photo">
-        <div class="profile-name">Kasem Said</div>
-        <div class="profile-role">Senior Executive Assistant</div>
-      </div>
+<header>
+  <div>
+    <div class="brand"><span>KASEM SAID</span></div>
+    <div class="subtitle">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-      <div class="hero-main">
-        <div class="tagline">Executive Support · Reliability · Discretion</div>
-        <h1>Executive Assistant for CEOs and Senior Leaders</h1>
-        <p class="lead">
-          Senior Executive Assistant with 24+ years of experience supporting CEOs, SVPs
-          and business leaders across telecommunications, multinational companies and major
-          business groups in Saudi Arabia.
-        </p>
-        <p>
-          I specialize in C-level support, executive communication, calendar and email
-          management, international travel coordination and building efficient office systems
-          that allow leaders to focus on strategy and results.
-        </p>
-
-        <div class="btn-row">
-          <a class="btn-primary"
-             href="https://github.com/kasemsaied/kasem-portfolio/blob/main/Kasem%20Saied%20Resume%202025.pdf"
-             target="_blank" rel="noopener">
-            Download CV
-          </a>
-          <a class="btn-outline" href="contact.html">
-            Contact Me
-          </a>
-        </div>
-      </div>
-
-      <aside class="hero-side">
-        <h2>Quick Facts</h2>
-        <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
-        <p><strong>Experience:</strong> 24+ years in executive support</p>
-        <p><strong>Industries:</strong> Telecom, multinational, holding groups</p>
-        <p><strong>Languages:</strong> Arabic (native), English (fluent)</p>
-        <p><strong>Availability:</strong> Remote · US time zones</p>
-      </aside>
-    </section>
-
-    <section>
-      <h2 class="section-title">How I Support Executives</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Calendar & Email Control</h3>
-          <p>
-            Complex calendar management, priorities, and inbox control to make sure
-            the executive’s time is always focused on the most important work.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Communication & Follow-Up</h3>
-          <p>
-            Drafting, reviewing and organizing executive communication with
-            internal teams and external partners, plus structured follow-up.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Travel & Meetings</h3>
-          <p>
-            End-to-end planning for local and international trips, board meetings,
-            workshops and strategic reviews.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Office Systems & Procedures</h3>
-          <p>
-            Building clear processes for documents, approvals and information
-            flow across the executive office.
-          </p>
-        </div>
-        <div class="card">
-          <h3>People & Stakeholder Coordination</h3>
-          <p>
-            Liaising with leadership teams, departments and external stakeholders
-            to keep everyone aligned and informed.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Tools & Technology</h3>
-          <p>
-            Proficient in Microsoft Office, Google Workspace, and quickly adapting
-            to tools like Notion, Slack and Asana.
-          </p>
-        </div>
-      </div>
-    </section>
+<div class="hero">
+  <div class="profile-wrapper">
+    <img src="profile.jpg" class="profile-photo" alt="Kasem Said">
+    <div class="name">Kasem Said</div>
+    <div class="role">Senior Executive Assistant</div>
   </div>
 
-  <footer>
-    © 2025 <span>Kasem Said</span> — Senior Executive Assistant
-  </footer>
+  <div class="hero-text">
+    <div class="pill">EXECUTIVE SUPPORT · RELIABILITY · DISCRETION</div>
+    <h1>Executive Assistant for CEOs and Senior Leaders</h1>
+    <p>
+      Senior Executive Assistant with 24+ years of experience supporting CEOs, SVPs  
+      and business leaders across telecommunications, multinational companies and  
+      major business groups in Saudi Arabia.
+    </p>
+    <p>
+      I specialize in C-level support, executive communication, calendar and email  
+      management, international travel coordination and building efficient office  
+      systems that allow leaders to focus on strategy and results.
+    </p>
+
+    <a href="Kasem Saied Resume 2025.pdf" class="btn-gold" download>Download CV</a>
+    <a href="contact.html" class="btn-outline">Contact Me</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Quick Facts</h2>
+  <div class="card">
+    <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
+    <p><strong>Experience:</strong> 24+ years in executive support</p>
+    <p><strong>Industries:</strong> Telecom, multinational, holding groups</p>
+    <p><strong>Languages:</strong> Arabic (native), English (fluent)</p>
+    <p><strong>Availability:</strong> Remote · US time zones</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>How I Support Executives</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Calendar & Email Control</h3>
+      <p>
+        Complex calendar management, priorities, and inbox control to ensure  
+        the executive’s time is always focused on the most important work.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Communication & Follow-Up</h3>
+      <p>
+        Drafting, reviewing and organizing executive communication with  
+        internal teams and partners, plus structured follow-up.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Travel & Meetings</h3>
+      <p>
+        End-to-end planning for local and international travel, workshops,  
+        board meetings and strategic reviews.
+      </p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 <span>Kasem Said</span> — Senior Executive Assistant
+</footer>
+
 </body>
 </html>
