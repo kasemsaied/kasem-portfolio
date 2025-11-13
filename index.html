@@ -1,317 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kasem Said – Senior Executive Assistant</title>
+  <meta charset="UTF-8" />
+  <title>Home – Kasem Said</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gold: #B7950B;
+      --dark-gold: #7D6608;
+      --black: #111111;
+      --bg: #f4f4f4;
+      --text: #222222;
+    }
 
-<style>
-/* GENERAL ---------------------------------------------------- */
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background-color: #f7f7f7;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* GOLD THEME ------------------------------------------------ */
-:root {
-  --gold: #b89232;
-  --gold-dark: #8a6f22;
-  --black: #111;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* STICKY NAVBAR --------------------------------------------- */
-nav {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: var(--black);
-  border-bottom: 1px solid var(--gold);
-  padding: 15px 0;
-  transition: 0.3s;
-}
-body.scrolled nav {
-  background: #000000e8;
-  backdrop-filter: blur(5px);
-}
-nav .container {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-nav a {
-  color: white;
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
-}
-nav a:hover { color: var(--gold); }
-nav a.active {
-  color: var(--gold);
-  border-bottom: 2px solid var(--gold);
-}
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-/* HEADER TITLE */
-.logo-title {
-  font-size: 22px;
-  color: var(--gold);
-  font-weight: bold;
-}
+    /* HEADER & NAV */
+    header {
+      background: var(--black);
+      color: #ffffff;
+      padding: 18px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
 
-/* HERO SECTION ---------------------------------------------- */
-.hero {
-  margin-top: 120px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
+    .brand {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+    }
 
-.profile-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 4px solid var(--gold);
-  object-fit: cover;
-  animation: fadeIn 1.8s ease-out forwards;
-}
+    .brand span {
+      color: var(--gold);
+      font-weight: 800;
+    }
 
-/* BUTTONS ----------------------------------------------------- */
-.btn-gold {
-  background: var(--gold);
-  padding: 10px 25px;
-  border-radius: 30px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  margin-right: 10px;
-  transition: 0.2s;
-}
-.btn-gold:hover {
-  background: var(--gold-dark);
-  transform: scale(1.05);
-}
+    .subtitle {
+      font-size: 0.85rem;
+      color: #e0e0e0;
+    }
 
-.btn-outline {
-  padding: 10px 25px;
-  border-radius: 30px;
-  border: 2px solid var(--gold);
-  background: transparent;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.btn-outline:hover {
-  background: var(--gold);
-  color: white;
-  transform: scale(1.05);
-}
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
 
-/* INFO BOX ---------------------------------------------------- */
-.info-box {
-  background: white;
-  padding: 20px;
-  border-left: 4px solid var(--gold);
-  border-radius: 6px;
-  width: 400px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  margin-top: 20px;
-}
+    nav a:hover {
+      color: var(--gold);
+    }
 
-/* SECTION TITLES --------------------------------------------- */
-.section-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--gold);
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
+    /* PAGE LAYOUT */
+    .page {
+      max-width: 1100px;
+      margin: 32px auto 60px auto;
+      padding: 0 20px;
+    }
 
-/* SUPPORT CARDS ---------------------------------------------- */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 32px;
+      animation: fadeUp 0.7s ease-out both;
+    }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 6px;
-  width: 300px;
-  border-left: 4px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      header {
+        padding: 16px 16px;
+      }
+      nav {
+        margin-top: 8px;
+        width: 100%;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
 
-/* ANIMATIONS -------------------------------------------------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeMove 1.2s forwards;
-}
+    .profile-wrapper {
+      text-align: center;
+    }
 
-.slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 1.2s forwards;
-}
+    .profile-photo {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      margin-bottom: 10px;
+    }
 
-@keyframes fadeMove {
-  to { opacity: 1; transform: translateY(0); }
-}
+    .name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
 
-@keyframes slideUp {
-  to { opacity: 1; transform: translateY(0); }
-}
+    .role {
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-/* FOOTER ------------------------------------------------------ */
-footer {
-  margin-top: 60px;
-  background: var(--black);
-  padding: 20px;
-  color: white;
-  text-align: center;
-  font-size: 14px;
-  border-top: 1px solid var(--gold);
-}
-</style>
+    .pill {
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hero-main p {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .btn-row {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      font-size: 0.9rem;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111111;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: #d4ac0d;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #111111;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    }
+
+    .quick-facts {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px 18px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid var(--gold);
+      margin-bottom: 26px;
+      animation: fadeUp 0.7s ease-out 0.08s both;
+    }
+
+    .quick-facts h2 {
+      font-size: 1rem;
+      color: var(--dark-gold);
+      margin-bottom: 8px;
+    }
+
+    .quick-facts p {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      color: var(--dark-gold);
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      animation: fadeUp 0.7s ease-out 0.12s both;
+    }
+
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border-top: 3px solid var(--gold);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: #555555;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    footer {
+      background: var(--black);
+      color: #ffffff;
+      font-size: 0.8rem;
+      padding: 12px 40px;
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* SIMPLE FADE-UP ANIMATION */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- NAVBAR -->
-<nav>
-  <div class="container">
-    <div class="logo-title">KASEM SAID</div>
+  <header>
     <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#support">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <div class="brand"><span>KASEM SAID</span></div>
+      <div class="subtitle">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page">
+    <section class="hero">
+      <div class="profile-wrapper">
+        <img src="profile.jpg" alt="Kasem Said" class="profile-photo">
+        <div class="name">Kasem Said</div>
+        <div class="role">Senior Executive Assistant</div>
+      </div>
+
+      <div class="hero-main">
+        <div class="pill">EXECUTIVE SUPPORT · RELIABILITY · DISCRETION</div>
+        <h1>Executive Assistant for CEOs and Senior Leaders</h1>
+        <p>
+          Senior Executive Assistant with 24+ years of experience supporting CEOs,
+          SVPs and business leaders across telecommunications, multinational companies
+          and major business groups in Saudi Arabia.
+        </p>
+        <p>
+          I specialize in C-level support, executive communication, calendar and email
+          management, international travel coordination and building efficient office
+          systems that allow leaders to focus on strategy and results.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn-primary" href="Kasem Saied Resume 2025.pdf" download>
+            Download CV
+          </a>
+          <a class="btn-outline" href="contact.html">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-facts">
+      <h2>Quick Facts</h2>
+      <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
+      <p><strong>Experience:</strong> 24+ years in executive support</p>
+      <p><strong>Industries:</strong> Telecom, multinational, holding groups</p>
+      <p><strong>Languages:</strong> Arabic (native), English (fluent)</p>
+      <p><strong>Availability:</strong> Remote · US time zones</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">How I Support Executives</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Calendar & Email Control</h3>
+          <p>
+            Complex calendar management, priorities and inbox control to keep the
+            executive’s time focused on the most important work.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Communication & Follow-Up</h3>
+          <p>
+            Drafting, reviewing and organizing executive communication with
+            internal teams and external partners, plus structured follow-up.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Travel & Meetings</h3>
+          <p>
+            End-to-end planning for local and international travel, board meetings,
+            workshops and strategic reviews.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Office Systems & Procedures</h3>
+          <p>
+            Building clear processes for documents, approvals and information flow
+            across the executive office.
+          </p>
+        </div>
+        <div class="card">
+          <h3>People & Stakeholder Coordination</h3>
+          <p>
+            Liaising with leadership teams, departments and external stakeholders
+            to keep everyone aligned and informed.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Tools & Technology</h3>
+          <p>
+            Proficient in Microsoft Office, Google Workspace and quickly adapting
+            to tools like Notion, Slack and Asana.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
-</nav>
 
-<!-- HERO ------------------------------------------------------- -->
-<section id="home" class="hero fade-in">
-  <img src="profile.jpg" class="profile-photo">
-
-  <div>
-    <h2 class="slide-up">Executive Assistant for CEOs and Senior Leaders</h2>
-    <p class="slide-up">
-      Senior Executive Assistant with 24+ years of experience supporting CEOs, SVPs, and major business groups 
-      in Saudi Arabia across telecom, multinational, and holding companies.
-    </p>
-
-    <button class="btn-gold" onclick="window.open('Kasem Saied Resume 2025.pdf')">Download CV</button>
-    <button class="btn-outline" onclick="location.href='#contact'">Contact Me</button>
-
-    <div class="info-box fade-in">
-      <b>Quick Facts</b><br><br>
-      <b>Location:</b> Riyadh, Saudi Arabia<br>
-      <b>Experience:</b> 24+ years<br>
-      <b>Industries:</b> Telecom, multinational, holding groups<br>
-      <b>Languages:</b> Arabic, English<br>
-      <b>Availability:</b> Remote · US time zones
-    </div>
-  </div>
-</section>
-
-<!-- SUPPORT SECTION ------------------------------------------- -->
-<section id="support" class="fade-in" style="width:90%; margin:auto;">
-  <div class="section-title">How I Support Executives</div>
-
-  <div class="cards">
-
-    <div class="card slide-up">
-      <b>Calendar & Email Control</b>
-      <p>Managing complex schedules, priorities, and ensuring inbox clarity for critical decisions.</p>
-    </div>
-
-    <div class="card slide-up">
-      <b>Communication & Follow-Up</b>
-      <p>Drafting, coordinating, and executing internal and external communication.</p>
-    </div>
-
-    <div class="card slide-up">
-      <b>Travel & Meetings</b>
-      <p>Organizing national and international travel, meetings, workshops, and board requirements.</p>
-    </div>
-
-    <div class="card slide-up">
-      <b>Office Systems & Procedures</b>
-      <p>Building processes and document systems that strengthen executive workflow efficiency.</p>
-    </div>
-
-    <div class="card slide-up">
-      <b>People & Stakeholder Management</b>
-      <p>Coordinating between leadership teams and external partners for smooth alignment.</p>
-    </div>
-
-    <div class="card slide-up">
-      <b>Tools & Technology</b>
-      <p>Expert in Microsoft Office, Google Workspace, Notion, Slack, and more.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT ----------------------------------------------------- -->
-<section id="contact" class="fade-in" style="width:90%; margin:auto; margin-top:70px;">
-  <div class="section-title">Contact</div>
-  <p><b>Email:</b> kasem.saied@gmail.com</p>
-  <p><b>Location:</b> Riyadh, Saudi Arabia</p>
-  <p><b>LinkedIn:</b> www.linkedin.com/in/kasem-said</p>
-</section>
-
-<!-- FOOTER ------------------------------------------------------ -->
-<footer>
-  © 2025 Kasem Said — Senior Executive Assistant
-</footer>
-
-<!-- SCRIPTS ----------------------------------------------------- -->
-<script>
-/* STICKY HEADER ON SCROLL */
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) document.body.classList.add("scrolled");
-  else document.body.classList.remove("scrolled");
-});
-
-/* ACTIVE MENU HIGHLIGHT */
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(a => {
-    a.classList.remove("active");
-    if (a.getAttribute("href") === "#" + current) {
-      a.classList.add("active");
-    }
-  });
-});
-</script>
-
+  <footer>
+    © 2025 <span>Kasem Said</span> — Senior Executive Assistant
+  </footer>
 </body>
 </html>
