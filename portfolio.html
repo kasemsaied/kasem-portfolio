@@ -7,6 +7,7 @@
   <style>
     :root {
       --gold: #B7950B;
+      --gold-soft: #D4AC0D;
       --dark-gold: #7D6608;
       --black: #111111;
       --bg: #f4f4f4;
@@ -25,9 +26,15 @@
     }
 
     header {
-      background: var(--black);
+      background: linear-gradient(
+        90deg,
+        #000000 0%,
+        #1C1C1C 40%,
+        #4A3A12 70%,
+        #B7950B 100%
+      );
       color: #ffffff;
-      padding: 18px 40px;
+      padding: 16px 40px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -35,12 +42,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     }
 
-    .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; }
-    .brand span { color: var(--gold); font-weight: 800; }
-    .subtitle { font-size: 0.85rem; color: #e0e0e0; }
+    .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.08em; }
+    .brand span { color: var(--gold-soft); font-weight: 800; }
+    .subtitle { font-size: 0.85rem; color: #f0f0f0; }
 
     nav a {
       color: #ffffff;
@@ -48,19 +55,33 @@
       margin-left: 18px;
       font-size: 0.9rem;
       font-weight: 600;
+      position: relative;
     }
-    nav a:hover { color: var(--gold); }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--gold-soft);
+      transition: width 0.18s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--gold-soft); }
 
     .page {
       max-width: 1100px;
-      margin: 32px auto 60px auto;
+      margin: 30px auto 60px auto;
       padding: 0 20px;
       animation: fadeUp 0.7s ease-out both;
     }
 
     h1 {
       font-size: 1.9rem;
-      color: var(--gold);
+      color: var(--dark-gold);
       margin-bottom: 8px;
     }
     .lead { font-size: 1rem; margin-bottom: 18px; }
@@ -79,15 +100,15 @@
     }
 
     @media (max-width: 860px) {
-      header { padding: 16px 16px; }
-      nav { margin-top: 8px; width: 100%; }
+      header { padding: 14px 16px; }
+      nav { margin-top: 6px; width: 100%; }
       nav a { margin-left: 0; margin-right: 14px; }
       .grid { grid-template-columns: 1fr; }
     }
 
     .card {
       background: #ffffff;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 16px 18px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
       border-top: 3px solid var(--gold);
@@ -107,7 +128,7 @@
 
     .card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
     .tag {
@@ -128,14 +149,40 @@
     }
 
     footer {
-      background: var(--black);
+      background: #000000;
       color: #ffffff;
       font-size: 0.8rem;
       padding: 12px 40px;
       margin-top: 24px;
       text-align: center;
+      border-top: 1px solid #333;
     }
-    footer span { color: var(--gold); font-weight: 600; }
+    footer span { color: var(--gold-soft); font-weight: 600; }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .floating-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.4rem;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      z-index: 1200;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .floating-contact:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -243,5 +290,7 @@
   <footer>
     © 2025 <span>Kasem Said</span> — Senior Executive Assistant
   </footer>
+
+  <a class="floating-contact" href="https://wa.me/966553075340" target="_blank" aria-label="Contact on WhatsApp">💬</a>
 </body>
 </html>
