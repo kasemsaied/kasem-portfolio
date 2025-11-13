@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Home – Kasem Said</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     :root {
       --gold: #B7950B;
@@ -19,7 +20,7 @@
       padding: 0;
     }
 
-    /* ← Smooth scrolling added */
+    /* Smooth scrolling enabled */
     html {
       scroll-behavior: smooth;
     }
@@ -42,18 +43,17 @@
       justify-content: space-between;
     }
 
-    .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; }
-    .brand span { color: var(--gold); font-weight: 800; }
+    .brand { font-weight: 700; font-size: 1.4rem; }
+    .brand span { color: var(--gold); }
     .subtitle { font-size: 0.85rem; color: #e0e0e0; }
 
     nav a {
       color: #ffffff;
       text-decoration: none;
       margin-left: 18px;
-      font-size: 0.9rem;
       font-weight: 600;
+      font-size: 0.9rem;
     }
-
     nav a:hover { color: var(--gold); }
 
     .hero {
@@ -70,9 +70,7 @@
       .hero { grid-template-columns: 1fr; text-align: center; }
     }
 
-    .profile-wrapper {
-      text-align: center;
-    }
+    .profile-wrapper { text-align: center; }
 
     .profile-photo {
       width: 180px;
@@ -84,30 +82,20 @@
       margin-bottom: 12px;
     }
 
-    .name {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--black);
-      margin-bottom: 4px;
-    }
-
-    .role {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      font-size: 1.9rem;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
+    .name { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+    .role { font-size: 0.9rem; color: #666; margin-bottom: 14px; }
 
     .pill {
       font-size: 0.75rem;
       letter-spacing: 0.08em;
       color: #444;
       margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
     .hero-text p {
@@ -118,30 +106,25 @@
     .btn-gold {
       background: var(--gold);
       color: #ffffff;
-      padding: 10px 20px;
-      font-size: 0.95rem;
-      font-weight: 600;
+      padding: 10px 22px;
       border-radius: 999px;
-      border: none;
       text-decoration: none;
-      display: inline-block;
+      font-weight: 600;
       margin-right: 6px;
+      display: inline-block;
     }
-
-    .btn-gold:hover {
-      background: var(--dark-gold);
-    }
+    .btn-gold:hover { background: var(--dark-gold); }
 
     .btn-outline {
       border: 2px solid var(--gold);
       background: transparent;
       color: var(--gold);
-      padding: 9px 20px;
+      padding: 9px 22px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
+      display: inline-block;
     }
-
     .btn-outline:hover {
       background: var(--gold);
       color: #ffffff;
@@ -149,15 +132,14 @@
 
     .section {
       max-width: 1100px;
-      margin: 28px auto 50px auto;
+      margin: 40px auto;
       padding: 0 20px;
     }
 
     h2 {
-      font-size: 1.2rem;
       color: var(--dark-gold);
-      margin-bottom: 10px;
-      margin-top: 20px;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
     }
 
     .card-grid {
@@ -174,30 +156,21 @@
       background: #ffffff;
       border-radius: 10px;
       padding: 16px 18px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
       border-top: 3px solid var(--gold);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.07);
     }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-      color: var(--black);
-    }
-
-    .card p { font-size: 0.9rem; color: #555; }
 
     footer {
       background: var(--black);
       color: #ffffff;
-      font-size: 0.8rem;
       padding: 12px 40px;
-      margin-top: 24px;
       text-align: center;
+      margin-top: 40px;
     }
-
-    footer span { color: var(--gold); font-weight: 600; }
+    footer span { color: var(--gold); }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -215,7 +188,7 @@
 
 <div class="hero">
   <div class="profile-wrapper">
-    <img src="profile.jpg" class="profile-photo" alt="Kasem Said">
+    <img src="profile.jpg" class="profile-photo">
     <div class="name">Kasem Said</div>
     <div class="role">Senior Executive Assistant</div>
   </div>
@@ -223,19 +196,20 @@
   <div class="hero-text">
     <div class="pill">EXECUTIVE SUPPORT · RELIABILITY · DISCRETION</div>
     <h1>Executive Assistant for CEOs and Senior Leaders</h1>
+
     <p>
       Senior Executive Assistant with 24+ years of experience supporting CEOs, SVPs  
       and business leaders across telecommunications, multinational companies and  
       major business groups in Saudi Arabia.
     </p>
+
     <p>
-      I specialize in C-level support, executive communication, calendar and email  
-      management, international travel coordination and building efficient office  
-      systems that allow leaders to focus on strategy and results.
+      I specialize in C-level support, executive communication, travel coordination,  
+      and building efficient office systems.
     </p>
 
     <a href="Kasem Saied Resume 2025.pdf" class="btn-gold" download>Download CV</a>
-    <a href="contact.html" class="btn-outline">Contact Me</a>
+    <a href="#support" class="btn-outline">See Support Section ↓</a>
   </div>
 </div>
 
@@ -250,30 +224,32 @@
   </div>
 </div>
 
-<div class="section">
+<!-- SECTION WITH ANCHOR FOR SMOOTH SCROLL -->
+<div class="section" id="support">
   <h2>How I Support Executives</h2>
+
   <div class="card-grid">
     <div class="card">
       <h3>Calendar & Email Control</h3>
       <p>
-        Complex calendar management, priorities, and inbox control to ensure  
-        the executive’s time is always focused on the most important work.
+        Complex calendar management, priorities and inbox control to ensure  
+        the executive’s time stays focused on critical work.
       </p>
     </div>
 
     <div class="card">
       <h3>Communication & Follow-Up</h3>
       <p>
-        Drafting, reviewing and organizing executive communication with  
-        internal teams and partners, plus structured follow-up.
+        Drafting and organizing communication with teams, partners and  
+        external stakeholders, plus structured follow-ups.
       </p>
     </div>
 
     <div class="card">
       <h3>Travel & Meetings</h3>
       <p>
-        End-to-end planning for local and international travel, workshops,  
-        board meetings and strategic reviews.
+        Comprehensive end-to-end planning for international travel,  
+        strategic reviews and board-level meetings.
       </p>
     </div>
   </div>
