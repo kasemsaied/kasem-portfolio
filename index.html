@@ -296,6 +296,50 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
+    /* SERVICES SECTION */
+    .services {
+      margin-top: 28px;
+      animation: fadeUp 0.7s ease-out 0.16s both;
+    }
+
+    .services-intro {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-item {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+      font-size: 0.9rem;
+    }
+
+    .service-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--black);
+    }
+
+    .services-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 10px;
+    }
+
     footer {
       background: #000000;
       color: #ffffff;
@@ -451,6 +495,51 @@
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- NEW EXECUTIVE SERVICES SECTION -->
+    <section class="services">
+      <h2 class="section-title">Executive Support Services</h2>
+      <p class="services-intro">
+        I provide structured, high-level assistance for CEOs, founders and senior
+        leaders who need a reliable partner to manage time, information and follow-up.
+      </p>
+      <div class="services-grid">
+        <div class="service-item">
+          <strong>Calendar & Inbox Management</strong>
+          Managing complex calendars, priorities and inboxes to ensure focus on
+          strategic work, not routine noise.
+        </div>
+        <div class="service-item">
+          <strong>Executive Communication</strong>
+          Drafting, formatting and organizing emails, memos and updates with a
+          professional and discreet tone.
+        </div>
+        <div class="service-item">
+          <strong>Meetings & Board Preparation</strong>
+          Preparing agendas, materials and follow-up notes for leadership meetings,
+          reviews and board sessions.
+        </div>
+        <div class="service-item">
+          <strong>Travel & Logistics</strong>
+          Coordinating local and international travel, visas, hotel bookings and
+          on-the-ground schedules.
+        </div>
+        <div class="service-item">
+          <strong>Office Systems & Procedures</strong>
+          Designing simple, clear processes for documents, approvals and information
+          flow in the executive office.
+        </div>
+        <div class="service-item">
+          <strong>Remote & Multi-time-zone Support</strong>
+          Supporting executives in different time zones, including US working hours,
+          using tools like Microsoft 365, Google Workspace, Zoom and more.
+        </div>
+      </div>
+      <p class="services-note">
+        Available for on-site roles in Riyadh and remote Executive Assistant /
+        C-level support positions aligned with US time zones.
+      </p>
     </section>
   </div>
 
