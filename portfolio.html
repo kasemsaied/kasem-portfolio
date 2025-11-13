@@ -1,45 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Portfolio - Kasem Said</title>
-<style>
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; }
-header { background: #111111; color: #B7950B; padding: 20px 40px; }
-nav a { color: #ffffff; margin-right: 20px; text-decoration: none; font-weight: bold; }
-nav a:hover { text-decoration: underline; }
-main { padding: 40px; }
-h1 { color: #B7950B; }
-h2 { color: #7D6608; }
-.footer { margin-top: 40px; padding: 20px 40px; background: #111111; color: #ffffff; font-size: 12px; }
-</style>
+  <meta charset="UTF-8" />
+  <title>Portfolio – Kasem Said</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gold: #B7950B;
+      --dark-gold: #7D6608;
+      --black: #111111;
+      --bg: #f4f4f4;
+      --text: #222222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--black);
+      color: #ffffff;
+      padding: 18px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; }
+    .brand span { color: var(--gold); font-weight: 800; }
+    .subtitle { font-size: 0.85rem; color: #e0e0e0; }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--gold); }
+
+    .page {
+      max-width: 1100px;
+      margin: 32px auto 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .lead { font-size: 1rem; margin-bottom: 18px; }
+
+    h2 {
+      font-size: 1.15rem;
+      color: var(--dark-gold);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+      header { padding: 16px 16px; }
+      nav { margin-top: 8px; width: 100%; }
+      nav a { margin-left: 0; margin-right: 14px; }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      border-top: 3px solid var(--gold);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #555555;
+    }
+
+    .small {
+      font-size: 0.85rem;
+      color: #666666;
+      margin-top: 6px;
+    }
+
+    footer {
+      background: var(--black);
+      color: #ffffff;
+      font-size: 0.8rem;
+      padding: 12px 40px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    footer span { color: var(--gold); font-weight: 600; }
+  </style>
 </head>
 <body>
-<header>
-  <div style="font-size: 26px; font-weight: bold;">KASEM SAID</div>
-  <div>Senior Executive Assistant</div>
-  <nav style="margin-top:10px;">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-<main>
+  <header>
+    <div>
+      <div class="brand"><span>KASEM SAID</span></div>
+      <div class="subtitle">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<h1>Portfolio</h1>
-<p>This portfolio highlights my professional documents and brand assets.</p>
-<ul>
-<li>Executive CV (corporate and startup styles)</li>
-<li>Executive Assistant portfolio one-pager</li>
-<li>Gold-accent personal brand and business card</li>
-<li>Professional book cover concepts</li>
-</ul>
-<p>You can share this page with recruiters and clients as a central reference.</p>
+  <div class="page">
+    <h1>Portfolio</h1>
+    <p class="lead">
+      This portfolio brings together a selection of documents and assets that
+      represent my work as a Senior Executive Assistant and my professional brand.
+    </p>
 
-</main>
-<div class="footer">
-  &copy; 2025 Kasem Said &mdash; Senior Executive Assistant
-</div>
+    <h2>Executive Assistant Materials</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Executive CV</h3>
+        <p>
+          Multiple CV versions tailored for corporate, startup and C-level
+          supporting roles, emphasizing long-term experience in Saudi Arabia and
+          readiness for remote work.
+        </p>
+        <p class="small">
+          (You can add links here later to specific PDF files hosted in this repository.)
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Executive Assistant Portfolio Page</h3>
+        <p>
+          One-page summary highlighting key strengths, responsibilities and
+          achievements as a Senior Executive Assistant.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Business Card & Digital ID</h3>
+        <p>
+          Professionally designed business card and digital ID card matching the
+          gold brand used on this website.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Branding & Presentations</h3>
+        <p>
+          Gold-accent brand pack, PowerPoint template and LinkedIn banner
+          aligned with a modern executive identity.
+        </p>
+      </div>
+    </div>
+
+    <h2>Writing & Book Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>“Thirty Years in Offices” (Book Project)</h3>
+        <p>
+          A reflective book on three decades of office life, leadership
+          proximity and lessons learned from people, work cultures and
+          executive environments.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>“Coffee, Love & Freedom” & Other Essays</h3>
+        <p>
+          Personal essays and memories that combine nostalgia, family,
+          homeland and reflections on work and life.
+        </p>
+      </div>
+    </div>
+
+    <p class="small">
+      If you are a recruiter or company and would like to see specific samples
+      (documents, templates or writing), feel free to contact me using the
+      contact page.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 <span>Kasem Said</span> — Senior Executive Assistant
+  </footer>
 </body>
 </html>
