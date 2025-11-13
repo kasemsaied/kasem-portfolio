@@ -75,7 +75,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 2.2fr 1.4fr;
+      grid-template-columns: 1.1fr 1.4fr;
       grid-gap: 28px;
       margin-bottom: 32px;
       align-items: start;
@@ -178,6 +178,33 @@
       background: #fff8d6;
     }
 
+    /* PROFILE PHOTO */
+    .hero-left {
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      margin-bottom: 14px;
+    }
+
+    .profile-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .profile-role {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
     /* FEATURE CARDS */
     .section-title {
       font-size: 1.2rem;
@@ -255,20 +282,12 @@
   </header>
 
   <div class="page">
-    .profile-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #B7950B; /* gold border */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  margin-bottom: 14px;
-}
-
-.profile-photo-container {
-  text-align: center;
-  margin-bottom: 18px;
-}
+    <section class="hero">
+      <div class="hero-left">
+        <img src="profile.jpg" alt="Kasem Said" class="profile-photo">
+        <div class="profile-name">Kasem Said</div>
+        <div class="profile-role">Senior Executive Assistant</div>
+      </div>
 
       <div class="hero-main">
         <div class="tagline">Executive Support · Reliability · Discretion</div>
@@ -285,15 +304,11 @@
         </p>
 
         <div class="btn-row">
-          <!-- When you upload your CV PDF, link it here -->
-        <a class="btn-primary"
-   href="https://github.com/kasemsaied/kasem-portfolio/blob/main/Kasem%20Saied%20Resume%202025.pdf"
-   target="_blank" rel="noopener">
-  Download CV
-</a>
-
-
-
+          <a class="btn-primary"
+             href="https://github.com/kasemsaied/kasem-portfolio/blob/main/Kasem%20Saied%20Resume%202025.pdf"
+             target="_blank" rel="noopener">
+            Download CV
+          </a>
           <a class="btn-outline" href="contact.html">
             Contact Me
           </a>
@@ -364,4 +379,3 @@
   </footer>
 </body>
 </html>
-
