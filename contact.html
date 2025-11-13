@@ -14,6 +14,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -31,7 +32,12 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
+
     .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; }
     .brand span { color: var(--gold); font-weight: 800; }
     .subtitle { font-size: 0.85rem; color: #e0e0e0; }
@@ -49,15 +55,19 @@
       max-width: 800px;
       margin: 32px auto 60px auto;
       padding: 0 20px;
+      animation: fadeUp 0.7s ease-out both;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       color: var(--gold);
       margin-bottom: 10px;
     }
 
-    .lead { font-size: 1rem; margin-bottom: 18px; }
+    .lead {
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
 
     .contact-box {
       background: #ffffff;
@@ -65,6 +75,7 @@
       padding: 18px 20px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       border-left: 4px solid var(--gold);
+      margin-bottom: 18px;
     }
 
     .contact-box p { margin-bottom: 8px; }
@@ -77,6 +88,12 @@
 
     a.link:hover { text-decoration: underline; }
 
+    .note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 6px;
+    }
+
     footer {
       background: var(--black);
       color: #ffffff;
@@ -87,10 +104,9 @@
     }
     footer span { color: var(--gold); font-weight: 600; }
 
-    @media (max-width: 800px) {
-      header { padding: 16px 16px; }
-      nav { margin-top: 8px; width: 100%; }
-      nav a { margin-left: 0; margin-right: 14px; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -120,13 +136,18 @@
         <a class="link" href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
       </p>
       <p><strong>Phone (KSA):</strong> +966 55 307 5340</p>
+      <p><strong>WhatsApp:</strong>
+        <a class="link" href="https://wa.me/966553075340" target="_blank">
+          Chat on WhatsApp
+        </a>
+      </p>
       <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
       <p><strong>LinkedIn:</strong>
         <a class="link" href="https://www.linkedin.com/in/kasem-saied/" target="_blank">
           linkedin.com/in/kasem-saied/
         </a>
       </p>
-      <p style="margin-top:12px;">
+      <p class="note">
         I am available for on-site roles in Riyadh and remote Executive Assistant
         positions aligned with US time zones.
       </p>
@@ -134,7 +155,4 @@
   </div>
 
   <footer>
-    © 2025 <span>Kasem Said</span> — Senior Executive Assistant
-  </footer>
-</body>
-</html>
+    © 2025
