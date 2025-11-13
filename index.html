@@ -1,267 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home – Kasem Said</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasem Said – Senior Executive Assistant</title>
 
-  <style>
-    :root {
-      --gold: #B7950B;
-      --dark-gold: #7D6608;
-      --black: #111111;
-      --bg: #f4f4f4;
-      --text: #222222;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Smooth scrolling enabled */
-    html {
-      scroll-behavior: smooth;
-    }
-#support {
-  scroll-margin-top: 120px;
-  padding-top: 40px;
+<style>
+/* GENERAL ---------------------------------------------------- */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
 }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+/* GOLD THEME ------------------------------------------------ */
+:root {
+  --gold: #b89232;
+  --gold-dark: #8a6f22;
+  --black: #111;
+}
 
-    header {
-      background: var(--black);
-      color: #ffffff;
-      padding: 18px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
+/* STICKY NAVBAR --------------------------------------------- */
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--black);
+  border-bottom: 1px solid var(--gold);
+  padding: 15px 0;
+  transition: 0.3s;
+}
+body.scrolled nav {
+  background: #000000e8;
+  backdrop-filter: blur(5px);
+}
+nav .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+nav a:hover { color: var(--gold); }
+nav a.active {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
 
-    .brand { font-weight: 700; font-size: 1.4rem; }
-    .brand span { color: var(--gold); }
-    .subtitle { font-size: 0.85rem; color: #e0e0e0; }
+/* HEADER TITLE */
+.logo-title {
+  font-size: 22px;
+  color: var(--gold);
+  font-weight: bold;
+}
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    nav a:hover { color: var(--gold); }
+/* HERO SECTION ---------------------------------------------- */
+.hero {
+  margin-top: 120px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
 
-    .hero {
-      max-width: 1100px;
-      margin: 40px auto 20px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items: center;
-    }
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  object-fit: cover;
+  animation: fadeIn 1.8s ease-out forwards;
+}
 
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-    }
+/* BUTTONS ----------------------------------------------------- */
+.btn-gold {
+  background: var(--gold);
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: 0.2s;
+}
+.btn-gold:hover {
+  background: var(--gold-dark);
+  transform: scale(1.05);
+}
 
-    .profile-wrapper { text-align: center; }
+.btn-outline {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 2px solid var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-outline:hover {
+  background: var(--gold);
+  color: white;
+  transform: scale(1.05);
+}
 
-    .profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--gold);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      margin-bottom: 12px;
-    }
+/* INFO BOX ---------------------------------------------------- */
+.info-box {
+  background: white;
+  padding: 20px;
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  width: 400px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
 
-    .name { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
-    .role { font-size: 0.9rem; color: #666; margin-bottom: 14px; }
+/* SECTION TITLES --------------------------------------------- */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--gold);
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 
-    .pill {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      color: #444;
-      margin-bottom: 8px;
-    }
+/* SUPPORT CARDS ---------------------------------------------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    h1 {
-      font-size: 1.9rem;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  width: 300px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 
-    .hero-text p {
-      margin-bottom: 14px;
-      font-size: 0.95rem;
-    }
+/* ANIMATIONS -------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeMove 1.2s forwards;
+}
 
-    .btn-gold {
-      background: var(--gold);
-      color: #ffffff;
-      padding: 10px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 6px;
-      display: inline-block;
-    }
-    .btn-gold:hover { background: var(--dark-gold); }
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1.2s forwards;
+}
 
-    .btn-outline {
-      border: 2px solid var(--gold);
-      background: transparent;
-      color: var(--gold);
-      padding: 9px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-    }
-    .btn-outline:hover {
-      background: var(--gold);
-      color: #ffffff;
-    }
+@keyframes fadeMove {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    h2 {
-      color: var(--dark-gold);
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    @media (max-width: 900px) {
-      .card-grid { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 16px 18px;
-      border-top: 3px solid var(--gold);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.07);
-    }
-
-    footer {
-      background: var(--black);
-      color: #ffffff;
-      padding: 12px 40px;
-      text-align: center;
-      margin-top: 40px;
-    }
-    footer span { color: var(--gold); }
-  </style>
+/* FOOTER ------------------------------------------------------ */
+footer {
+  margin-top: 60px;
+  background: var(--black);
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid var(--gold);
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<nav>
+  <div class="container">
+    <div class="logo-title">KASEM SAID</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#support">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO ------------------------------------------------------- -->
+<section id="home" class="hero fade-in">
+  <img src="profile.jpg" class="profile-photo">
+
   <div>
-    <div class="brand"><span>KASEM SAID</span></div>
-    <div class="subtitle">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <div class="profile-wrapper">
-    <img src="profile.jpg" class="profile-photo">
-    <div class="name">Kasem Said</div>
-    <div class="role">Senior Executive Assistant</div>
-  </div>
-
-  <div class="hero-text">
-    <div class="pill">EXECUTIVE SUPPORT · RELIABILITY · DISCRETION</div>
-    <h1>Executive Assistant for CEOs and Senior Leaders</h1>
-
-    <p>
-      Senior Executive Assistant with 24+ years of experience supporting CEOs, SVPs  
-      and business leaders across telecommunications, multinational companies and  
-      major business groups in Saudi Arabia.
+    <h2 class="slide-up">Executive Assistant for CEOs and Senior Leaders</h2>
+    <p class="slide-up">
+      Senior Executive Assistant with 24+ years of experience supporting CEOs, SVPs, and major business groups 
+      in Saudi Arabia across telecom, multinational, and holding companies.
     </p>
 
-    <p>
-      I specialize in C-level support, executive communication, travel coordination,  
-      and building efficient office systems.
-    </p>
+    <button class="btn-gold" onclick="window.open('Kasem Saied Resume 2025.pdf')">Download CV</button>
+    <button class="btn-outline" onclick="location.href='#contact'">Contact Me</button>
 
-    <a href="Kasem Saied Resume 2025.pdf" class="btn-gold" download>Download CV</a>
-    <a href="#support" class="btn-outline">See Support Section ↓</a>
-  </div>
-</div>
-
-<div class="section">
-  <h2>Quick Facts</h2>
-  <div class="card">
-    <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
-    <p><strong>Experience:</strong> 24+ years in executive support</p>
-    <p><strong>Industries:</strong> Telecom, multinational, holding groups</p>
-    <p><strong>Languages:</strong> Arabic (native), English (fluent)</p>
-    <p><strong>Availability:</strong> Remote · US time zones</p>
-  </div>
-</div>
-
-<!-- SECTION WITH ANCHOR FOR SMOOTH SCROLL -->
-<div class="section" id="support">
-  <h2>How I Support Executives</h2>
-
-  <div class="card-grid">
-    <div class="card">
-      <h3>Calendar & Email Control</h3>
-      <p>
-        Complex calendar management, priorities and inbox control to ensure  
-        the executive’s time stays focused on critical work.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Communication & Follow-Up</h3>
-      <p>
-        Drafting and organizing communication with teams, partners and  
-        external stakeholders, plus structured follow-ups.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Travel & Meetings</h3>
-      <p>
-        Comprehensive end-to-end planning for international travel,  
-        strategic reviews and board-level meetings.
-      </p>
+    <div class="info-box fade-in">
+      <b>Quick Facts</b><br><br>
+      <b>Location:</b> Riyadh, Saudi Arabia<br>
+      <b>Experience:</b> 24+ years<br>
+      <b>Industries:</b> Telecom, multinational, holding groups<br>
+      <b>Languages:</b> Arabic, English<br>
+      <b>Availability:</b> Remote · US time zones
     </div>
   </div>
-</div>
+</section>
 
+<!-- SUPPORT SECTION ------------------------------------------- -->
+<section id="support" class="fade-in" style="width:90%; margin:auto;">
+  <div class="section-title">How I Support Executives</div>
+
+  <div class="cards">
+
+    <div class="card slide-up">
+      <b>Calendar & Email Control</b>
+      <p>Managing complex schedules, priorities, and ensuring inbox clarity for critical decisions.</p>
+    </div>
+
+    <div class="card slide-up">
+      <b>Communication & Follow-Up</b>
+      <p>Drafting, coordinating, and executing internal and external communication.</p>
+    </div>
+
+    <div class="card slide-up">
+      <b>Travel & Meetings</b>
+      <p>Organizing national and international travel, meetings, workshops, and board requirements.</p>
+    </div>
+
+    <div class="card slide-up">
+      <b>Office Systems & Procedures</b>
+      <p>Building processes and document systems that strengthen executive workflow efficiency.</p>
+    </div>
+
+    <div class="card slide-up">
+      <b>People & Stakeholder Management</b>
+      <p>Coordinating between leadership teams and external partners for smooth alignment.</p>
+    </div>
+
+    <div class="card slide-up">
+      <b>Tools & Technology</b>
+      <p>Expert in Microsoft Office, Google Workspace, Notion, Slack, and more.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT ----------------------------------------------------- -->
+<section id="contact" class="fade-in" style="width:90%; margin:auto; margin-top:70px;">
+  <div class="section-title">Contact</div>
+  <p><b>Email:</b> kasem.saied@gmail.com</p>
+  <p><b>Location:</b> Riyadh, Saudi Arabia</p>
+  <p><b>LinkedIn:</b> www.linkedin.com/in/kasem-said</p>
+</section>
+
+<!-- FOOTER ------------------------------------------------------ -->
 <footer>
-  © 2025 <span>Kasem Said</span> — Senior Executive Assistant
+  © 2025 Kasem Said — Senior Executive Assistant
 </footer>
+
+<!-- SCRIPTS ----------------------------------------------------- -->
+<script>
+/* STICKY HEADER ON SCROLL */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) document.body.classList.add("scrolled");
+  else document.body.classList.remove("scrolled");
+});
+
+/* ACTIVE MENU HIGHLIGHT */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
