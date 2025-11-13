@@ -14,6 +14,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -31,7 +32,12 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
+
     .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; }
     .brand span { color: var(--gold); font-weight: 800; }
     .subtitle { font-size: 0.85rem; color: #e0e0e0; }
@@ -49,14 +55,14 @@
       max-width: 1100px;
       margin: 32px auto 60px auto;
       padding: 0 20px;
+      animation: fadeUp 0.7s ease-out both;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       color: var(--gold);
       margin-bottom: 8px;
     }
-
     .lead { font-size: 1rem; margin-bottom: 18px; }
 
     h2 {
@@ -72,19 +78,20 @@
       gap: 18px;
     }
 
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width: 860px) {
       header { padding: 16px 16px; }
       nav { margin-top: 8px; width: 100%; }
       nav a { margin-left: 0; margin-right: 14px; }
+      .grid { grid-template-columns: 1fr; }
     }
 
     .card {
       background: #ffffff;
       border-radius: 10px;
-      padding: 14px 16px;
+      padding: 16px 18px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
       border-top: 3px solid var(--gold);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .card h3 {
@@ -98,10 +105,26 @@
       color: #555555;
     }
 
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fff8d6;
+      color: var(--dark-gold);
+      margin-right: 4px;
+      margin-top: 6px;
+    }
+
     .small {
       font-size: 0.85rem;
-      color: #666666;
-      margin-top: 6px;
+      color: #666;
+      margin-top: 8px;
     }
 
     footer {
@@ -113,6 +136,11 @@
       text-align: center;
     }
     footer span { color: var(--gold); font-weight: 600; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -132,72 +160,82 @@
   <div class="page">
     <h1>Portfolio</h1>
     <p class="lead">
-      This portfolio brings together a selection of documents and assets that
-      represent my work as a Senior Executive Assistant and my professional brand.
+      Selected materials that represent my work as a Senior Executive Assistant
+      and my professional brand.
     </p>
 
-    <h2>Executive Assistant Materials</h2>
+    <h2>Executive Support Materials</h2>
     <div class="grid">
       <div class="card">
-        <h3>Executive CV</h3>
+        <h3>Executive CV – Corporate</h3>
         <p>
-          Multiple CV versions tailored for corporate, startup and C-level
-          supporting roles, emphasizing long-term experience in Saudi Arabia and
-          readiness for remote work.
+          Detailed CV for corporate and C-suite environments, highlighting
+          long-term experience in Saudi Arabia, executive office management and
+          strategic support for senior leadership.
         </p>
         <p class="small">
-          (You can add links here later to specific PDF files hosted in this repository.)
+          Main CV used for applications. Linked on the Home page as “Download CV”.
         </p>
       </div>
 
       <div class="card">
-        <h3>Executive Assistant Portfolio Page</h3>
+        <h3>Executive Assistant Profile Summary</h3>
         <p>
-          One-page summary highlighting key strengths, responsibilities and
-          achievements as a Senior Executive Assistant.
+          One-page summary of key responsibilities, tools and achievements as a
+          Senior Executive Assistant supporting CEOs and SVPs.
         </p>
+        <span class="tag">Executive Office</span>
+        <span class="tag">Operations</span>
       </div>
 
       <div class="card">
         <h3>Business Card & Digital ID</h3>
         <p>
-          Professionally designed business card and digital ID card matching the
-          gold brand used on this website.
+          Professionally designed business card and digital ID image, aligned
+          with the gold brand and ready for WhatsApp, email signatures and LinkedIn.
         </p>
+        <span class="tag">Branding</span>
+        <span class="tag">Identity</span>
       </div>
 
       <div class="card">
-        <h3>Branding & Presentations</h3>
+        <h3>Brand Pack & Presentations</h3>
         <p>
-          Gold-accent brand pack, PowerPoint template and LinkedIn banner
-          aligned with a modern executive identity.
+          Gold-accent brand pack, PowerPoint template and LinkedIn banner used to
+          present my profile consistently across platforms.
         </p>
+        <span class="tag">Slides</span>
+        <span class="tag">Visual Identity</span>
       </div>
     </div>
 
     <h2>Writing & Book Projects</h2>
     <div class="grid">
       <div class="card">
-        <h3>“Thirty Years in Offices” (Book Project)</h3>
+        <h3>“Thirty Years in Offices”</h3>
         <p>
-          A reflective book on three decades of office life, leadership
-          proximity and lessons learned from people, work cultures and
-          executive environments.
+          Reflective book project on three decades of office life, leadership
+          proximity and lessons learned from people, work cultures and executive
+          environments.
         </p>
+        <span class="tag">Non-fiction</span>
+        <span class="tag">Work & Life</span>
       </div>
 
       <div class="card">
-        <h3>“Coffee, Love & Freedom” & Other Essays</h3>
+        <h3>“Coffee, Love & Freedom” & Essays</h3>
         <p>
-          Personal essays and memories that combine nostalgia, family,
-          homeland and reflections on work and life.
+          Personal essays combining nostalgia, family, homeland and reflections
+          on work, identity and freedom.
         </p>
+        <span class="tag">Essays</span>
+        <span class="tag">Memoir</span>
       </div>
     </div>
 
     <p class="small">
-      If you are a recruiter or company and would like to see specific samples
-      (documents, templates or writing), feel free to contact me using the
+      If you are a recruiter or company and would like to review specific
+      samples (documents, templates or writing), please contact me using the
       contact page.
     </p>
   </div>
