@@ -2,166 +2,550 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>الأعمال والخدمات – قاسم سعيد سعيد</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأعمال والملف التنفيذي – قاسم سعيد سعيد</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="../favicon.png" />
-  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    :root {
+      --bg-page: #f3eadc;
+      --bg-card: #fdf7ec;
+      --gold: #c79a2b;
+      --gold-soft: #e4c982;
+      --text-main: #2b2113;
+      --text-muted: #756a5a;
+      --border-soft: #e3d6c0;
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.18);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --transition-fast: 0.22s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Tahoma, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      direction: rtl;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      background: linear-gradient(90deg, #111111, #9b7a24, #c79a2b);
+      color: #fff;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .nav-links a.active {
+      background-color: #fff;
+      color: #111;
+      font-weight: 600;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+    }
+
+    .lang-switch {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 4px 11px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .lang-switch span {
+      font-size: 0.78rem;
+      opacity: 0.95;
+    }
+
+    /* LAYOUT */
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 26px auto 40px;
+      padding: 0 18px 40px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      pointer-events: none;
+    }
+
+    .card-header-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c79a2b, #f0dc9b);
+      color: #2b2113;
+      font-weight: 600;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background-color: #fff;
+      color: var(--text-main);
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn-ghost:hover {
+      background-color: #f9f1de;
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .section-title-row small {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .item-card {
+      background-color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .item-card::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 12px;
+      inset-block-start: 10px;
+      width: 26px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #c79a2b, #f5e0a4);
+    }
+
+    .item-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .item-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .item-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background-color: #f7efe0;
+      color: var(--text-muted);
+      border: 1px solid var(--border-soft);
+    }
+
+    .item-link {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: underline;
+      align-self: flex-start;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      background-color: #fff;
+      border-radius: 999px;
+      padding: 5px 11px;
+      border: 1px solid var(--border-soft);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      padding: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 18px 16px;
+      }
+
+      .page-wrapper {
+        padding-inline: 14px;
+      }
+    }
+  </style>
 </head>
-<body class="rtl">
-  <header class="site-header">
-    <div class="top-bar top-bar--gradient">
-      <div class="top-bar__inner container">
-        <div class="brand">
-          <span class="brand__name">قاسم سعيد سعيد</span>
-          <span class="brand__tagline">مساعد تنفيذي أول · دعم C-Suite وجهوزية للعمل عن بُعد</span>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <div class="brand">
+        <div class="brand-title">قاسم سعيد سعيد</div>
+        <div class="brand-subtitle">
+          مساعد تنفيذي أول • دعم قيادات مجالس الإدارة والرؤساء التنفيذيين • C-Suite
         </div>
-        <nav class="main-nav">
-          <a href="index.html">الرئيسية</a>
-          <a href="about.html">نبذة عني</a>
-          <a href="portfolio.html" class="active">الأعمال</a>
-          <a href="certificates.html">الشهادات</a>
-          <a href="contact.html">تواصل معي</a>
-          <a href="../portfolio.html" class="lang-switch">English</a>
-        </nav>
       </div>
+
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">نبذة عني</a>
+        <a href="portfolio.html" class="active">الأعمال</a>
+        <a href="certificates.html">الشهادات</a>
+        <a href="contact.html">تواصل معي</a>
+        <a href="../portfolio.html" class="lang-switch">
+          <span>English</span>
+        </a>
+      </nav>
     </div>
   </header>
 
-  <main class="page-main container">
-    <!-- مقدمة -->
-    <section class="page-section">
-      <div class="card hero-card">
-        <p class="eyebrow">الأعمال والخدمات</p>
-        <h1>كيف أضيف قيمة عملية للرؤساء التنفيذيين والقادة الكبار؟</h1>
-        <p>
-          ما يلي هو مجموعة من الأعمال والخدمات التي قدّمتها خلال السنوات الماضية، إلى جانب مشاريع شخصية
-          أعمل عليها حاليًا، مثل كتابة الكتب وبناء هوية مهنية رقمية. هذه الأعمال تُظهر طريقة عملي، مستوى
-          التنظيم، والعمق في فهم البيئة التنفيذية.
-        </p>
+  <main class="page-wrapper">
+    <!-- HERO / OVERVIEW -->
+    <section class="card">
+      <div class="card-header-label">
+        EXECUTIVE PORTFOLIO • C-SUITE SUPPORT
+      </div>
+      <h1>ملف الأعمال التنفيذي</h1>
+      <p>
+        هذا الملف يجمع عناصر عملي التنفيذية: السيرة الذاتية، المواد التعريفية، الهوية البصرية، ومشاريع الكتابة
+        التي تعكس خبرة أكثر من 24 سنة في دعم القيادات العليا في السعودية. الهدف هو تقديم صورة واضحة عن الطريقة
+        التي أضيف بها قيمة حقيقية لمكاتب الرؤساء التنفيذيين ورؤساء مجالس الإدارة.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="../Kasem Saied-Resume 2025-En.pdf" target="_blank">
+          عرض السيرة الذاتية الكاملة (PDF)
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/kasem-said" target="_blank">
+          زيارة ملف لينكدإن
+        </a>
       </div>
     </section>
 
-    <!-- مواد دعم تنفيذية -->
-    <section class="page-section">
-      <h2 class="section-title">مواد وخدمات دعم تنفيذي</h2>
-      <div class="card-grid card-grid--two">
-        <article class="card">
-          <h3>السيرة الذاتية التنفيذية (2025)</h3>
-          <p>
-            سيرة ذاتية احترافية باللغة الإنجليزية تركز على دعم القيادات العليا، موضّحة فيها محطات العمل
-            الرئيسية، نطاق المسؤوليات، والمهارات التنفيذية. هذه السيرة جاهزة للمشاركة مع الشركات العالمية
-            وفرص العمل عن بُعد.
-          </p>
-          <p class="card-meta">
-            <a href="../Kasem Saied-Resume 2025-En.pdf" target="_blank" class="link-button">عرض السيرة (PDF)</a>
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>ملخص الملف التنفيذي</h3>
-          <p>
-            صفحة واحدة تلخص من أنا، لمن أقدّم خدماتي، ما القيم التي أعمل بها، وما الذي يبحث عنه القادة في
-            المساعد التنفيذي بجانبه. يمكن استخدامها كصفحة تقديم سريعة مع أصحاب القرار أو شركات التوظيف.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>هوية مهنية رقمية</h3>
-          <p>
-            تصميم شخصي متكامل يشمل الشعار البسيط (KS)، الألوان (الذهبي والأسود)، وبطاقة أعمال رقمية
-            متوافقة مع لينكدإن والبريد الإلكتروني وتطبيقات التواصل.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>نظام تنظيم المكتب التنفيذي</h3>
-          <p>
-            مجموعة من القوالب والنماذج (للاجتماعات، المتابعة، القرارات، المهام) مبنية على خبرة عملية طويلة،
-            تساعد القائد على متابعة موحدة وواضحة لجميع الملفات الحيوية.
-          </p>
-        </article>
+    <!-- EXECUTIVE MATERIALS -->
+    <section class="card">
+      <div class="section-title-row">
+        <h2>مواد الدعم التنفيذي</h2>
+        <small>ملفات جاهزة للاستخدام من قبل القيادات وفرق التوظيف</small>
       </div>
-    </section>
 
-    <!-- مشاريع كتابة وكتب -->
-    <section class="page-section">
-      <h2 class="section-title">مشاريع كتابة وكتب قيد التطوير</h2>
-      <div class="card-grid card-grid--two">
-        <article class="card">
-          <h3>كتاب: ثلاثون عامًا في المكاتب – ما تعلمته عن الناس</h3>
-          <p>
-            كتاب تأمّلي يجمع مشاهد وخبرات من ثلاثين عامًا في المكاتب؛ كيف يفكر الناس، كيف يتصرفون تحت الضغط،
-            ما الذي ينجح وما الذي ينهار في بيئات العمل. الكتاب موجّه للموظفين والقادة على حد سواء.
+      <div class="grid-cards">
+        <article class="item-card">
+          <div class="item-title">سيرة ذاتية تنفيذية – للقطاع المؤسسي والشركات الكبرى</div>
+          <div class="item-sub">ملف PDF احترافي باللغة الإنجليزية</div>
+          <p class="item-text">
+            سيرة ذاتية تفصيلية تبرز الخبرة الطويلة في دعم قيادات C-Suite، إدارة المكاتب العليا، تنسيق الاجتماعات
+            واللجان، وإدارة الوقت الحرج للرؤساء التنفيذيين ورؤساء مجالس الإدارة.
           </p>
+          <div class="tag-row">
+            <span class="tag">خبرة +24 سنة</span>
+            <span class="tag">Telecom & Holding</span>
+            <span class="tag">C-Suite EA</span>
+          </div>
+          <a class="item-link" href="../Kasem Saied-Resume 2025-En.pdf" target="_blank">
+            فتح السيرة الذاتية (PDF)
+          </a>
         </article>
 
-        <article class="card">
-          <h3>كتاب: المساعد الذكي – دليل الدعم التنفيذي الحديث</h3>
-          <p>
-            دليل عملي للمساعدين التنفيذيين يتناول المهارات، الأدوات، وأفضل الممارسات المطلوبة اليوم، بما في ذلك
-            العمل مع القادة عن بُعد، استخدام أدوات الإنتاجية الحديثة، والتعامل مع البريد والاجتماعات والقرارات.
+        <article class="item-card">
+          <div class="item-title">ملخص تعريفي للمساعد التنفيذي</div>
+          <div class="item-sub">صفحة واحدة – للمديرين التنفيذيين وجهات التوظيف</div>
+          <p class="item-text">
+            نموذج ملخص قصير يقدّم نبذة مركّزة عن دوري، أسلوبي في دعم القادة، وأهم ركائز القيمة التي أقدمها للمكتب
+            التنفيذي. مناسب للإرسال مع طلبات التوظيف أو لاستخدامه في تعريف القيادات الجديدة.
           </p>
+          <div class="tag-row">
+            <span class="tag">One-Page Profile</span>
+            <span class="tag">Ready to share</span>
+          </div>
+          <span class="item-sub">* النسخة متاحة بصيغة Word / PDF عند الطلب.</span>
         </article>
 
-        <article class="card">
-          <h3>كتاب: قهوة، حب، وحرية – مقالات شخصية</h3>
-          <p>
-            مجموعة مقالات أدبية عن القهوة، دمشق، الغربة، العائلة، والذكريات. مزيج بين الحنين والحرية والتأمل
-            في الحياة. هذه النصوص تُظهر جانبًا إنسانيًا وشاعريًا من شخصيتي.
+        <article class="item-card">
+          <div class="item-title">بطاقة عمل وهوية رقمية</div>
+          <div class="item-sub">تصميم مخصص بخط ذهبي متناسق مع الموقع</div>
+          <p class="item-text">
+            بطاقة عمل رسمية وهوية رقمية جاهزة للاستخدام في التواقيع البريدية، واتساب، ولينكدإن، مع الحفاظ على صورة
+            احترافية موحّدة في جميع قنوات التواصل.
           </p>
+          <div class="tag-row">
+            <span class="tag">Visual Identity</span>
+            <span class="tag">Digital & Print</span>
+          </div>
         </article>
 
-        <article class="card">
-          <h3>رواية عن دمشق في الثمانينات والتسعينات</h3>
-          <p>
-            عمل روائي يتناول قصة حب، أحلام الشباب، وصعوبات الحياة اليومية في دمشق قبل السفر إلى السعودية.
-            الرواية تمزج بين التفاصيل الإنسانية والجو الاجتماعي والاقتصادي لتلك المرحلة.
+        <article class="item-card">
+          <div class="item-title">عرض تقديمي تعريفي للمساعد التنفيذي</div>
+          <div class="item-sub">شرائح PowerPoint مختصرة</div>
+          <p class="item-text">
+            شرائح تعريفية يمكن مشاركتها مع قيادات محتملة أو مستشارين توظيف، تشرح أسلوبي في تنظيم المكتب التنفيذي،
+            إدارة الوقت، وتحويل ضغط الاجتماعات والمراسلات إلى نظام واضح ومنظم.
           </p>
+          <div class="tag-row">
+            <span class="tag">Executive Deck</span>
+            <span class="tag">Short & Focused</span>
+          </div>
+          <span class="item-sub">* قيد التطوير بصيغتين: عربي وإنجليزي.</span>
         </article>
       </div>
     </section>
 
-    <!-- خدمات يمكن تقديمها الآن -->
-    <section class="page-section">
-      <h2 class="section-title">خدمات يمكنني تقديمها اليوم</h2>
-      <div class="card-grid card-grid--three">
-        <article class="card">
-          <h3>إدارة مكتب الرئيس التنفيذي</h3>
-          <ul class="list">
-            <li>تنظيم الأجندة اليومية والأسبوعية والشهرية.</li>
-            <li>تنسيق الاجتماعات الداخلية والخارجية.</li>
-            <li>متابعة القرارات مع الفِرق التنفيذية.</li>
-            <li>إعداد ملخصات وتقارير جاهزة للقائد.</li>
-          </ul>
+    <!-- WRITING PROJECTS -->
+    <section class="card">
+      <div class="section-title-row">
+        <h2>مشاريع الكتابة والكتب</h2>
+        <small>جانب آخر من تجربتي مع المكاتب والناس</small>
+      </div>
+
+      <div class="grid-cards">
+        <article class="item-card">
+          <div class="item-title">«ثلاثون عاماً في المكاتب – ماذا تعلمت عن الناس»</div>
+          <div class="item-sub">كتاب مذكرات وتجربة عملية</div>
+          <p class="item-text">
+            مشروع كتاب بالعربية والإنجليزية يرصد ما رأيته وتعلمته عن البشر في بيئات العمل: تحت الضغط، في النجاح،
+            في الفشل، وفي لحظات القرارات الصعبة. يقدّم للقارئ صورة صادقة عن الحياة داخل المكاتب.
+          </p>
+          <div class="tag-row">
+            <span class="tag">قيد الكتابة</span>
+            <span class="tag">مذكرات مهنية</span>
+          </div>
         </article>
 
-        <article class="card">
-          <h3>دعم عن بُعد لقادة الأعمال</h3>
-          <ul class="list">
-            <li>إدارة البريد الإلكتروني والأولويات.</li>
-            <li>تنظيم الاجتماعات عبر Zoom وTeams.</li>
-            <li>إعداد عروض مختصرة ومذكرات داخلية.</li>
-            <li>متابعة المشاريع والمهام عبر أدوات مثل Notion وAsana.</li>
-          </ul>
+        <article class="item-card">
+          <div class="item-title">«المساعد الذكي – دليل للدعم التنفيذي الحديث»</div>
+          <div class="item-sub">دليل عملي للمساعدين التنفيذيين</div>
+          <p class="item-text">
+            كتاب متخصص يقدّم إرشادات عملية للمساعدين التنفيذيين: كيفية التعامل مع القيادات، تنظيم البريد
+            والاجتماعات، بناء الثقة، والتعامل مع المواقف الحساسة في المكاتب العليا.
+          </p>
+          <div class="tag-row">
+            <span class="tag">دليل مهني</span>
+            <span class="tag">باللغة الإنجليزية</span>
+          </div>
         </article>
 
-        <article class="card">
-          <h3>كتابة وتحرير مهني بالعربية والإنجليزية</h3>
-          <ul class="list">
-            <li>صياغة رسائل رسمية ومذكرات داخلية.</li>
-            <li>تحرير السير الذاتية والملفات التعريفية.</li>
-            <li>مراجعة نصوص وعروض تقديمية.</li>
-            <li>كتابة محتوى احترافي للملفات التنفيذية.</li>
-          </ul>
+        <article class="item-card">
+          <div class="item-title">«قهوة، حب وحرية» – مقالات وتأملات</div>
+          <div class="item-sub">نصوص أدبية بين الذاكرة والعمل والحياة</div>
+          <p class="item-text">
+            مجموعة مقالات أدبية تعبر عن الحنين للوطن، والذكريات العائلية، وتأملات في الحرية والعمل والغربة. يربط
+            الكتاب بين الإنسان في المكتب والإنسان خارج المكتب.
+          </p>
+          <div class="tag-row">
+            <span class="tag">أدب – مقالات</span>
+            <span class="tag">عربي / إنجليزي</span>
+          </div>
         </article>
       </div>
+    </section>
+
+    <!-- HOW PORTFOLIO HELPS -->
+    <section class="card">
+      <h2 class="section-title">كيف يساعد هذا الملف القيادات وجهات التوظيف؟</h2>
+      <p>
+        الهدف من هذا الملف أن يختصر الوقت على كل من يبحث عن مساعد تنفيذي حقيقي؛ ليس مجرد منسق مواعيد، بل شريك
+        يعتمد عليه في تنظيم حياة المكتب التنفيذي.
+      </p>
+      <div class="pill-row">
+        <span class="pill">رؤية واضحة لمسار الخبرة التنفيذية</span>
+        <span class="pill">إمكانية تقييم أسلوب العمل قبل اللقاء</span>
+        <span class="pill">مواد جاهزة للمشاركة داخل فريق التوظيف</span>
+        <span class="pill">صورة متكاملة عن الشخصية المهنية والإنسانية</span>
+      </div>
+      <p style="margin-top:12px;">
+        يمكن دائماً تخصيص بعض هذه المواد أو ترجمتها بما يتناسب مع متطلبات وظيفة أو شركة معينة، مع الحفاظ على
+        المبدأ الأساسي: تنظيم حياة القائد، لا فقط تنظيم ملفاته.
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 قاسم سعيد سعيد – مساعد تنفيذي أول للرؤساء التنفيذيين وقادة الأعمال.</p>
-    </div>
+  <footer>
+    © <span>قاسم سعيد سعيد</span> – ملف الأعمال التنفيذي
   </footer>
 </body>
 </html>
