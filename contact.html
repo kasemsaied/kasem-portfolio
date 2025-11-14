@@ -1,230 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact – Kasem Saied Saied</title>
-    <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <meta charset="UTF-8" />
+  <title>Contact – Kasem Saied Saied</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg-body:#f4efe4;
+      --bg-card:#fbf8f1;
+      --gold:#c79b2b;
+      --gold-dark:#9b7a1b;
+      --text-main:#2f2723;
+      --text-muted:#6e625c;
+      --border-soft:#e0d4c0;
+      --shadow-soft:0 18px 40px rgba(0,0,0,0.08);
+      --radius-lg:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg-body);color:var(--text-main);line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit;}
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            scroll-behavior: smooth;
-        }
+    .top-nav{
+      position:sticky;top:0;z-index:50;
+      background:linear-gradient(90deg,#000,#3b2c15,#b68a1f);
+      color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.35);
+    }
+    .top-nav-inner{
+      max-width:1080px;margin:0 auto;
+      padding:12px 20px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{
+      font-weight:700;letter-spacing:0.08em;font-size:15px;
+      text-transform:uppercase;display:flex;align-items:center;gap:10px;
+    }
+    .brand-badge{
+      width:22px;height:22px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%,#f6e6a6,#c79721);
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;font-weight:700;color:#111;
+    }
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;}
+    .nav-links a{position:relative;padding-bottom:2px;opacity:0.9;}
+    .nav-links a:hover{opacity:1;}
+    .nav-links a.active::after,
+    .nav-links a:hover::after{
+      content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;
+      background:linear-gradient(90deg,#f8e7a8,#f1c65a);border-radius:999px;
+    }
 
-        header {
-            background: linear-gradient(to right, black, #b89b2d);
-            color: white;
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
+    .page-wrap{
+      max-width:720px;margin:32px auto 56px;
+      padding:0 20px;
+    }
 
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
+    .page-title{font-size:24px;margin-bottom:6px;}
+    .page-subtitle{
+      font-size:13px;text-transform:uppercase;
+      letter-spacing:0.16em;color:var(--gold-dark);
+      margin-bottom:20px;
+    }
 
-        nav a {
-            margin-left: 25px;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .card{
+      background:var(--bg-card);
+      border-radius:22px;
+      padding:22px 24px;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--shadow-soft);
+      margin-bottom:18px;
+    }
+    .muted{color:var(--text-muted);font-size:14px;}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr 1.2fr;
+      gap:18px;
+    }
 
-        .page-wrapper {
-            max-width: 900px;
-            margin: 40px auto;
-        }
+    .contact-list{
+      list-style:none;
+      font-size:14px;
+    }
+    .contact-list li+li{margin-top:6px;}
+    .label{font-weight:600;}
 
-        .card {
-            background: white;
-            padding: 32px 36px;
-            border-radius: 14px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-left: 4px solid #b89b2d;
-        }
+    form{
+      display:flex;flex-direction:column;gap:10px;
+      font-size:14px;
+    }
+    input,textarea{
+      font:inherit;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid #d2c5b2;
+      background:#fffdf7;
+    }
+    textarea{min-height:110px;resize:vertical;}
+    button{
+      align-self:flex-start;
+      padding:9px 20px;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(135deg,#cfa12d,#a77b16);
+      color:#1b1205;font-weight:600;font-size:14px;
+      cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,0.28);
+    }
 
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #6b5500;
-            margin-bottom: 12px;
-        }
-
-        .subtitle {
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .contact-row {
-            margin-bottom: 12px;
-        }
-
-        .label {
-            font-weight: bold;
-            color: #333;
-        }
-
-        a.link {
-            color: #6b5500;
-            text-decoration: none;
-        }
-
-        a.link:hover {
-            text-decoration: underline;
-        }
-
-        form {
-            margin-top: 24px;
-            display: grid;
-            gap: 12px;
-        }
-
-        input, textarea {
-            padding: 10px 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        textarea {
-            min-height: 120px;
-        }
-
-        .btn-submit {
-            background: #b89b2d;
-            color: white;
-            border: none;
-            border-radius: 999px;
-            padding: 10px 20px;
-            font-weight: bold;
-            cursor: pointer;
-            width: fit-content;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: black;
-            color: white;
-            margin-top: 50px;
-        }
-
-        .fade-section {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    @media(max-width:720px){
+      .contact-grid{grid-template-columns:1fr;}
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <div class="logo">KASEM SAIED SAIED</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+<header class="top-nav">
+  <div class="top-nav-inner">
+    <div class="brand">
+      <div class="brand-badge">KS</div>
+      KASEM SAIED SAIED
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
+  </div>
 </header>
 
-<div class="page-wrapper">
-    <section class="card fade-section">
-        <div class="title">Contact</div>
-        <p class="subtitle">
-            If you would like to discuss a Senior Executive Assistant or C-suite support role, or you are interested
-            in my portfolio and writing projects, you can reach me using the details below.
+<main class="page-wrap">
+  <h1 class="page-title">Contact</h1>
+  <div class="page-subtitle">Let’s connect about executive support opportunities</div>
+
+  <section class="card">
+    <div class="contact-grid">
+      <div>
+        <p class="muted" style="margin-bottom:10px;">
+          I am based in Riyadh, Saudi Arabia and available for on-site roles in the Kingdom and selected
+          remote Executive Assistant / C-suite support roles aligned with US time zones.
         </p>
+        <ul class="contact-list">
+          <li><span class="label">Email:</span> <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a></li>
+          <li><span class="label">Mobile (KSA):</span> +966 55 307 5340</li>
+          <li><span class="label">LinkedIn:</span> <a href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">linkedin.com/in/kasem-said</a></li>
+          <li><span class="label">Location:</span> Riyadh, Saudi Arabia</li>
+        </ul>
+      </div>
 
-        <div class="contact-row">
-            <span class="label">Name:</span> Kasem Saied Saied
-        </div>
-        <div class="contact-row">
-            <span class="label">Location:</span> Riyadh, Saudi Arabia
-        </div>
-        <div class="contact-row">
-            <span class="label">Email:</span>
-            <a class="link" href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
-        </div>
-        <div class="contact-row">
-            <span class="label">Mobile:</span> +966 55 307 5340
-        </div>
-        <div class="contact-row">
-            <span class="label">LinkedIn:</span>
-            <a class="link" href="https://www.linkedin.com/in/kasem-saied/" target="_blank">
-                linkedin.com/in/kasem-saied/
-            </a>
-        </div>
-
-        <p style="margin-top:20px; font-size:14px; color:#555;">
-            You can also use this form to send a short message. It will open your email application with the
-            information pre-filled.
-        </p>
-
-        <form onsubmit="openMail(event)">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your message"></textarea>
-            <button type="submit" class="btn-submit">Send Message</button>
+      <div>
+        <form action="mailto:kasem.saied@gmail.com" method="post" enctype="text/plain">
+          <label>
+            Your Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Briefly describe the role or how I can support you."></textarea>
+          </label>
+          <button type="submit">Send Message</button>
         </form>
-    </section>
-</div>
-
-<footer>
-    © 2025 Kasem Saied Saied — Senior Executive Assistant
-</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".fade-section");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.2 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-});
-
-function openMail(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    const subject = encodeURIComponent("Contact from website - " + name);
-    const body = encodeURIComponent(
-        "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
-    );
-
-    window.location.href = "mailto:kasem.saied@gmail.com?subject=" + subject + "&body=" + body;
-}
-</script>
-
+      </div>
+    </div>
+  </section>
+</main>
 </body>
 </html>
