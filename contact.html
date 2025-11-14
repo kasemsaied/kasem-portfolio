@@ -1,210 +1,230 @@
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png?v=3">
-<link rel="shortcut icon" type="image/png" href="favicon.png?v=3">
-  <meta charset="UTF-8" />
-  <title>Contact – Kasem Saied Saied</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --gold: #B7950B;
-      --gold-soft: #D4AC0D;
-      --dark-gold: #7D6608;
-      --black: #111111;
-      --bg: #f4f4f4;
-      --text: #222222;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Kasem Saied Saied</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        header {
+            background: linear-gradient(to right, black, #b89b2d);
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
 
-    header {
-      background: linear-gradient(
-        90deg,
-        #000000 0%,
-        #1C1C1C 40%,
-        #4A3A12 70%,
-        #B7950B 100%
-      );
-      color: #ffffff;
-      padding: 16px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
 
-    .brand { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.08em; }
-    .brand span { color: var(--gold-soft); font-weight: 800; }
-    .subtitle { font-size: 0.85rem; color: #f0f0f0; }
+        nav a {
+            margin-left: 25px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      position: relative;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--gold-soft);
-      transition: width 0.18s ease;
-    }
+        .page-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+        }
 
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: var(--gold-soft); }
+        .card {
+            background: white;
+            padding: 32px 36px;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-left: 4px solid #b89b2d;
+        }
 
-    .page {
-      max-width: 800px;
-      margin: 30px auto 60px auto;
-      padding: 0 20px;
-      animation: fadeUp 0.7s ease-out both;
-    }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6b5500;
+            margin-bottom: 12px;
+        }
 
-    h1 {
-      font-size: 1.9rem;
-      color: var(--dark-gold);
-      margin-bottom: 10px;
-    }
+        .subtitle {
+            color: #555;
+            margin-bottom: 20px;
+        }
 
-    .lead {
-      font-size: 1rem;
-      margin-bottom: 18px;
-    }
+        .contact-row {
+            margin-bottom: 12px;
+        }
 
-    .contact-box {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 18px 20px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      border-left: 4px solid var(--gold);
-      margin-bottom: 18px;
-    }
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
 
-    .contact-box p { margin-bottom: 8px; }
+        a.link {
+            color: #6b5500;
+            text-decoration: none;
+        }
 
-    a.link {
-      color: var(--dark-gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
+        a.link:hover {
+            text-decoration: underline;
+        }
 
-    a.link:hover { text-decoration: underline; }
+        form {
+            margin-top: 24px;
+            display: grid;
+            gap: 12px;
+        }
 
-    .note {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 6px;
-    }
+        input, textarea {
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            font-size: 14px;
+        }
 
-    footer {
-      background: #000000;
-      color: #ffffff;
-      font-size: 0.8rem;
-      padding: 12px 40px;
-      margin-top: 24px;
-      text-align: center;
-      border-top: 1px solid #333;
-    }
-    footer span { color: var(--gold-soft); font-weight: 600; }
+        textarea {
+            min-height: 120px;
+        }
 
-    /* FLOATING WHATSAPP BUTTON */
-    .floating-contact {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 1.4rem;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      z-index: 1200;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
+        .btn-submit {
+            background: #b89b2d;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            width: fit-content;
+        }
 
-    .floating-contact:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-    }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            margin-top: 50px;
+        }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        .fade-section {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div>
-      <div class="brand"><span>KASEM SAID</span></div>
-      <div class="subtitle">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
-    </div>
+
+<header>
+    <div class="logo">KASEM SAIED SAIED</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
     </nav>
-  </header>
+</header>
 
-  <div class="page">
-    <h1>Contact</h1>
-    <p class="lead">
-      If you would like to discuss Executive Assistant support, C-level coordination
-      or remote collaboration, you can reach me using the details below.
-    </p>
+<div class="page-wrapper">
+    <section class="card fade-section">
+        <div class="title">Contact</div>
+        <p class="subtitle">
+            If you would like to discuss a Senior Executive Assistant or C-suite support role, or you are interested
+            in my portfolio and writing projects, you can reach me using the details below.
+        </p>
 
-    <div class="contact-box">
-      <p><strong>Email:</strong>
-        <a class="link" href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
-      </p>
-      <p><strong>Phone (KSA):</strong> +966 55 307 5340</p>
-      <p><strong>WhatsApp:</strong>
-        <a class="link" href="https://wa.me/966553075340" target="_blank">
-          Chat on WhatsApp
-        </a>
-      </p>
-      <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
-      <p><strong>LinkedIn:</strong>
-        <a class="link" href="https://www.linkedin.com/in/kasem-saied/" target="_blank">
-          linkedin.com/in/kasem-saied/
-        </a>
-      </p>
-      <p class="note">
-        I am available for on-site roles in Riyadh and remote Executive Assistant
-        positions aligned with US time zones.
-      </p>
-    </div>
-  </div>
+        <div class="contact-row">
+            <span class="label">Name:</span> Kasem Saied Saied
+        </div>
+        <div class="contact-row">
+            <span class="label">Location:</span> Riyadh, Saudi Arabia
+        </div>
+        <div class="contact-row">
+            <span class="label">Email:</span>
+            <a class="link" href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
+        </div>
+        <div class="contact-row">
+            <span class="label">Mobile:</span> +966 55 307 5340
+        </div>
+        <div class="contact-row">
+            <span class="label">LinkedIn:</span>
+            <a class="link" href="https://www.linkedin.com/in/kasem-saied/" target="_blank">
+                linkedin.com/in/kasem-saied/
+            </a>
+        </div>
 
-  <footer>
-    © 2025 <span>Kasem Said</span> — Senior Executive Assistant
-  </footer>
+        <p style="margin-top:20px; font-size:14px; color:#555;">
+            You can also use this form to send a short message. It will open your email application with the
+            information pre-filled.
+        </p>
 
-  <a class="floating-contact" href="https://wa.me/966553075340" target="_blank" aria-label="Contact on WhatsApp">💬</a>
+        <form onsubmit="openMail(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your message"></textarea>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    © 2025 Kasem Saied Saied — Senior Executive Assistant
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".fade-section");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+});
+
+function openMail(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const subject = encodeURIComponent("Contact from website - " + name);
+    const body = encodeURIComponent(
+        "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
+    );
+
+    window.location.href = "mailto:kasem.saied@gmail.com?subject=" + subject + "&body=" + body;
+}
+</script>
+
 </body>
 </html>
