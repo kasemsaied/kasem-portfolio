@@ -1,97 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasem Saied Saied – Senior Executive Assistant</title>
+<link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f1e8;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header */
+    .header {
+        background: linear-gradient(to right, #000, #c8a84e);
+        padding: 18px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .header .logo {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .nav a {
+        margin-left: 25px;
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .nav a:hover {
+        color: #ffe9a6;
+    }
+
+    /* Hero Section */
+    .hero {
+        width: 70%;
+        background: #fff;
+        padding: 35px;
+        margin: 40px auto;
+        border-radius: 12px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    }
+
+    .hero-content {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .hero-image {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 5px solid #c8a84e;
+        object-fit: cover;
+    }
+
+    .buttons a {
+        display: inline-block;
+        padding: 10px 22px;
+        margin-right: 12px;
+        border-radius: 25px;
+        font-size: 14px;
+        text-decoration: none;
+        border: 2px solid #c8a84e;
+    }
+
+    .btn-gold {
+        background: #c8a84e;
+        color: white;
+        border-color: #b99734;
+        font-weight: bold;
+    }
+
+    .btn-outline {
+        color: #c8a84e;
+        font-weight: bold;
+    }
+
+    .btn-gold:hover {
+        background: #b99734;
+    }
+
+    .btn-outline:hover {
+        background: #fff6d2;
+    }
+
+    /* Quick Facts */
+    .quick-facts {
+        width: 70%;
+        background: white;
+        padding: 25px;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+
+    .quick-facts h2 {
+        color: #6d5e28;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    /* Support Section */
+    .support-section {
+        width: 80%;
+        margin: 40px auto;
+    }
+
+    .support-section h2 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #6d5e28;
+        margin-bottom: 25px;
+    }
+
+    .support-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+    }
+
+    .support-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 12px rgba(0,0,0,0.08);
+        border-left: 4px solid #c8a84e;
+        transition: 0.3s ease;
+    }
+
+    .support-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .support-card h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #3e3e3e;
+        font-weight: 700;
+    }
+
+    .support-card p {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.5;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">KASEM SAIED SAIED</div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <img src="profile.jpg" alt="Kasem Saied" class="hero-image">
+
+        <div>
+            <h4 style="color:#6d5e28; letter-spacing:1px;">EXECUTIVE SUPPORT · DISCRETION · RELIABILITY</h4>
+            <h1 style="color:#6d5e28; margin-top:-5px;">Senior Executive Assistant to Chairmans, CEOs & Senior Leaders</h1>
+
+            <p style="line-height:1.6; color:#444;">
+                With 24+ years of experience supporting Chairmans, CEOs, SVPs and senior executives 
+                in Saudi Arabia. I specialize in executive operations, communication and workflow excellence across 
+                telecommunications and multinational environments.
+            </p>
+
+            <div class="buttons">
+                <a href="Kasem Saied-Resume 2025-En.pdf" target="_blank" class="btn-gold">Download CV</a>
+                <a href="contact.html" class="btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Facts -->
+<div class="quick-facts">
+    <h2>Quick Facts</h2>
+
+    <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
+    <p><strong>Experience:</strong> 24+ years in executive support</p>
+    <p><strong>Industries:</strong> Telecom, Multinational Groups, Private Offices</p>
+    <p><strong>Languages:</strong> Arabic (native), English (fluent)</p>
+    <p><strong>Availability:</strong> On-site Riyadh · Remote · US Time Zones</p>
+</div>
+
+<!-- HOW I SUPPORT EXECUTIVES -->
 <section class="support-section" id="support">
     <h2>How I Support Executives</h2>
 
     <div class="support-grid">
 
-        <!-- 1 -->
         <div class="support-card">
             <h3>Calendar & Inbox Mastery</h3>
-            <p>Managing complex calendars, inboxes and shifting priorities so that leaders focus on what truly matters.</p>
+            <p>Managing complex calendars, inboxes and shifting priorities.</p>
         </div>
 
-        <!-- 2 -->
         <div class="support-card">
             <h3>Executive Communication</h3>
-            <p>Drafting and polishing emails, memos, presentations, minutes and summaries in clear, professional language.</p>
+            <p>Drafting emails, memos, reports and presentations.</p>
         </div>
 
-        <!-- 3 -->
         <div class="support-card">
             <h3>Travel & Meetings</h3>
-            <p>Coordinating domestic and international travel, agendas, logistics and VIP visits for high-level stakeholders.</p>
+            <p>Domestic & international travel, logistics, agendas & VIP visits.</p>
         </div>
 
-        <!-- 4 -->
         <div class="support-card">
             <h3>Office Systems & Procedures</h3>
-            <p>Creating and maintaining structured workflows, filing systems and approval paths that keep the office running smoothly.</p>
+            <p>Structured workflows, filing systems, approval paths.</p>
         </div>
 
-        <!-- 5 -->
         <div class="support-card">
             <h3>Stakeholder Coordination</h3>
-            <p>Acting as a reliable point of contact between executives, leadership teams, departments and external partners.</p>
+            <p>Liaison with leadership teams, departments & partners.</p>
         </div>
 
-        <!-- 6 -->
         <div class="support-card">
             <h3>Tools & Technology</h3>
-            <p>Confident with Microsoft Office and Google Workspace; actively exploring Notion, Slack and Asana with a fast learning curve.</p>
+            <p>Microsoft Office, Google Workspace, Notion, Slack, Asana.</p>
         </div>
 
-        <!-- 7 -->
         <div class="support-card">
-            <h3>Strategic Scheduling & Priority Management</h3>
-            <p>Aligning the executive’s time with strategic initiatives, key decisions, board commitments and critical deadlines.</p>
+            <h3>Strategic Scheduling</h3>
+            <p>Aligning time with priorities, meetings & strategic goals.</p>
         </div>
 
-        <!-- 8 -->
         <div class="support-card">
-            <h3>Board & Leadership Document Preparation</h3>
-            <p>Supporting board decks, reviews, leadership briefings and confidential reports with accuracy and discretion.</p>
+            <h3>Board & Leadership Docs</h3>
+            <p>Briefings, minutes, board materials and confidential reports.</p>
         </div>
 
-        <!-- 9 -->
         <div class="support-card">
-            <h3>Process Optimization & Workflow Automation</h3>
-            <p>Identifying bottlenecks, improving processes and helping build efficient approval and communication flows.</p>
+            <h3>Workflow Optimization</h3>
+            <p>Improving processes and communication flows.</p>
         </div>
 
-        <!-- 10 -->
         <div class="support-card">
-            <h3>Confidential & Sensitive Matters Handling</h3>
-            <p>Managing sensitive information, HR topics, contracts and internal communications with professionalism and trust.</p>
+            <h3>Confidential Matter Handling</h3>
+            <p>HR topics, contracts, sensitive documentation.</p>
         </div>
 
-        <!-- 11 -->
         <div class="support-card">
-            <h3>Partnership & Vendor Management</h3>
-            <p>Coordinating with vendors, embassies, travel agencies, legal offices and VIP stakeholders to support executive needs.</p>
+            <h3>Vendor & Partnership Management</h3>
+            <p>Coordinating embassies, travel agencies, vendors & legal offices.</p>
         </div>
 
-        <!-- 12 -->
         <div class="support-card">
-            <h3>Meeting Intelligence & Alignment</h3>
-            <p>Preparing agendas, capturing decisions and action items, and ensuring follow-up so topics do not get lost.</p>
+            <h3>Meeting Intelligence</h3>
+            <p>Agendas, decisions, tracking and structured follow-up.</p>
         </div>
 
-        <!-- 13 -->
         <div class="support-card">
             <h3>Project & Deadline Tracking</h3>
-            <p>Helping track executive OKRs, KPIs and key projects with reminders and structure to keep initiatives moving.</p>
+            <p>OKRs, KPIs, reminders and initiative progress updates.</p>
         </div>
 
-        <!-- 14 -->
         <div class="support-card">
-            <h3>Digital Productivity & AI Tools</h3>
-            <p>Using modern digital tools and AI assistants to improve speed, accuracy and day-to-day executive support.</p>
+            <h3>Digital Productivity & AI</h3>
+            <p>Using AI tools to maximize speed, accuracy and efficiency.</p>
         </div>
 
-        <!-- 15 -->
         <div class="support-card">
-            <h3>Meeting & Request Gatekeeping</h3>
-            <p>Protecting the executive’s time through structured gatekeeping, request evaluation and clear communication routing.</p>
+            <h3>Gatekeeping & Priority Filtering</h3>
+            <p>Protecting executive time through structured filtering.</p>
         </div>
 
     </div>
 </section>
+
+</body>
+</html>
