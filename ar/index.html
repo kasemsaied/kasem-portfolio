@@ -5,19 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>كاسم سعيد سعيد – مساعد تنفيذي أول</title>
   <link rel="icon" type="image/png" href="../favicon.png" />
+
   <style>
-    body {
-      font-family: "Tahoma", system-ui, -apple-system, "Segoe UI", sans-serif;
-      direction: rtl;
-      text-align: right;
-      background: #f5efe3;
-      color: #2b2b2b;
+    :root {
+      --bg: #f5efe3;
+      --card-bg: #fffaf0;
+      --text-main: #2b2b2b;
+      --muted: #6b6b6b;
+      --gold: #c89b1f;
+      --gold-dark: #b8860b;
+      --border-soft: #ead9b4;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.07);
+      --radius-xl: 18px;
+      --radius-lg: 14px;
     }
 
-    /* Example: reverse navbar items for RTL */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Tahoma", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ------- HEADER / NAV ------- */
+
     header {
-      background: linear-gradient(90deg, #000000, #b8860b);
+      background: linear-gradient(90deg, #000000, var(--gold-dark));
       color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .navbar {
@@ -27,20 +57,571 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-direction: row-reverse; /* important for Arabic */
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 24px;
       flex-direction: row-reverse;
     }
 
-    /* …you can keep most of your other CSS the same… */
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 1rem;
+    }
+
+    .logo-sub {
+      font-size: 0.76rem;
+      opacity: 0.9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      flex-direction: row-reverse;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: #f6f6f6;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      border-color: var(--gold);
+      color: #ffffff;
+    }
+
+    nav .lang-switch {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+      margin-right: 10px;
+    }
+
+    /* ------- LAYOUT ------- */
+
+    main {
+      max-width: 1120px;
+      margin: 26px auto 60px;
+      padding: 0 16px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr);
+      gap: 26px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #fffaf4 0, #fff7e7 45%, #fbf0dc 100%);
+      border-radius: 26px;
+      padding: 26px 26px 24px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-photo img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--gold);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+      background: #ffffff;
+    }
+
+    .hero-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .hero-title {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+    }
+
+    .hero-heading {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #4b3b11;
+      line-height: 1.4;
+    }
+
+    .hero-summary {
+      font-size: 0.92rem;
+      color: #433b2c;
+    }
+
+    .hero-points {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .hero-points span {
+      color: #3a2e12;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--gold-dark);
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: #a27405;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #4b3b11;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-primary span.icon,
+    .btn-ghost span.icon {
+      font-size: 1.05rem;
+    }
+
+    /* Quick facts card */
+
+    .facts-card {
+      background: #fffdf7;
+      border-radius: var(--radius-xl);
+      padding: 18px 22px 16px;
+      border: 1px solid rgba(232, 199, 124, 0.7);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #70521a;
+      margin-bottom: 8px;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 40px;
+      font-size: 0.86rem;
+    }
+
+    .facts-grid strong {
+      font-weight: 600;
+      color: #3b2d12;
+    }
+
+    /* Skills highlights */
+
+    .skills-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .skill-card {
+      background: #fffdf7;
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(232, 199, 124, 0.7);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.84rem;
+    }
+
+    .skill-title {
+      font-weight: 700;
+      font-size: 0.86rem;
+      margin-bottom: 6px;
+      color: #3f310f;
+    }
+
+    .skill-text {
+      color: var(--muted);
+    }
+
+    /* How I Support Executives */
+
+    .section-heading {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #3b2d12;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .support-card {
+      background: #fffdf7;
+      border-radius: var(--radius-lg);
+      padding: 12px 12px 11px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      font-size: 0.82rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-height: 110px;
+    }
+
+    .support-title {
+      font-weight: 700;
+      color: #3b2d12;
+      font-size: 0.84rem;
+    }
+
+    .support-text {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .support-icon {
+      font-size: 1rem;
+      margin-left: 4px;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 36px auto 26px;
+      padding: 0 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ------- RESPONSIVE ------- */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .navbar {
+        flex-direction: column-reverse;
+        gap: 6px;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .skills-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .support-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .support-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .facts-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-photo img {
+        width: 150px;
+        height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- here you will put the Arabic version of your content -->
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="navbar">
+      <div>
+        <div class="logo">كاسم سعيد سعيد</div>
+        <div class="logo-sub">مساعد تنفيذي أول · دعم قيادي على مستوى C-Suite</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a class="active" href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">نبذة عني</a></li>
+          <li><a href="portfolio.html">الأعمال</a></li>
+          <li><a href="certificates.html">الشهادات</a></li>
+          <li><a href="contact.html">تواصل معي</a></li>
+          <li><a class="lang-switch" href="../index.html">English</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <!-- Hero -->
+    <section class="hero-grid">
+      <div class="hero-card">
+        <div class="hero-photo">
+          <img src="../profile.jpg" alt="كاسم سعيد سعيد" />
+          <div class="hero-name">كاسم سعيد سعيد</div>
+          <div class="hero-title">مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين والقادة الكبار</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-kicker">EXECUTIVE SUPPORT · DISCRETION · RELIABILITY</div>
+        <h1 class="hero-heading">
+          مساعد تنفيذي أول لرؤساء مجالس الإدارة، الرؤساء التنفيذيين<br />
+          والقادة الكبار في السعودية وخارجها
+        </h1>
+        <p class="hero-summary">
+          أكثر من 24 عاماً في دعم القيادات العليا (C-Level) في شركات الاتصالات، المجموعات القابضة
+          والمنشآت متعددة الجنسيات في المملكة العربية السعودية. أساعد القادة على حماية وقتهم،
+          تنظيم أولوياتهم، وتبسيط الاتصالات والمهام اليومية حتى يركّزوا على القرارات
+          الإستراتيجية والعمل المؤثر.
+        </p>
+        <p class="hero-points">
+          <span>ما أقدمه للقيادات:</span> إدارة متقدمة للتقويم والبريد، تنسيق سفر واجتماعات
+          على مستوى عالٍ، تحضير عروض وتقارير ومذكرات تنفيذية، وبناء أنظمة مكتبية فعّالة
+          تحافظ على السرية والمهنية الكاملة.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="../Kasem Saied-Resume 2025-En.pdf" target="_blank" rel="noopener">
+            <span class="icon">⬇️</span>
+            <span>عرض السيرة الذاتية</span>
+          </a>
+          <a class="btn-ghost" href="../contact.html">
+            <span class="icon">✉️</span>
+            <span>ترتيب مكالمة تعارف</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="facts-card">
+      <div class="section-label">ملخص سريع</div>
+      <div class="facts-grid">
+        <div><strong>الموقع:</strong> الرياض، المملكة العربية السعودية</div>
+        <div><strong>الخبرة:</strong> +24 سنة في الدعم التنفيذي وإدارة المكاتب العليا</div>
+        <div><strong>القطاعات:</strong> الاتصالات، شركات قابضة، شركات متعددة الجنسيات</div>
+        <div><strong>اللغات:</strong> العربية (لغة أم)، الإنجليزية (بطلاقة)</div>
+        <div><strong>التوافر:</strong> عمل حضوري في الرياض · دعم عن بعد وفق مناطق التوقيت الأمريكية</div>
+        <div><strong>نموذج العمل:</strong> مساعد تنفيذي أول، دعم مجلس الإدارة، دعم C-Suite</div>
+      </div>
+    </section>
+
+    <!-- Skills Highlights -->
+    <section style="margin-bottom: 30px;">
+      <div class="section-label">نقاط قوة رئيسية</div>
+      <div class="skills-row">
+        <div class="skill-card">
+          <div class="skill-title">عمليات تنفيذية وقيادة مكتب الإدارة العليا</div>
+          <p class="skill-text">
+            إدارة متقدمة للتقويم، غرف الاجتماعات، البريد الوارد، تدفق المعلومات، مذكرات الاجتماعات
+            ومتابعة القرارات، مع حس قوي بالأولوية وما يهم القائد فعلاً.
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">اتصال تنفيذي وعلاقات أصحاب المصلحة</div>
+          <p class="skill-text">
+            صياغة رسائل رسمية بالعربية والإنجليزية، إعداد عروض وتقارير للرؤساء ومجالس الإدارة،
+            والتعامل مع قيادات داخلية، ضيوف رفيعي المستوى وشركاء خارجيين بثقة ولباقة.
+          </p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">أدوات رقمية وإنتاجية وذكاء اصطناعي</div>
+          <p class="skill-text">
+            استخدام متقدم لـ Microsoft 365، Google Workspace، Zoom، Notion وغير ذلك من الأدوات،
+            مع انفتاح على أدوات الذكاء الاصطناعي لرفع جودة المخرجات وسرعة التنفيذ.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How I Support Executives -->
+    <section>
+      <div class="section-heading">كيف أدعم القيادات التنفيذية</div>
+      <div class="section-sub">
+        أعمل كشريك موثوق بجانب الرئيس التنفيذي أو رئيس مجلس الإدارة، أترجم أولوياته إلى
+        جدول عمل منظم، رسائل واضحة، واجتماعات فعّالة وملفات جاهزة لاتخاذ القرار.
+      </div>
+
+      <div class="support-grid">
+        <!-- Row 1 -->
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">📅</span>إدارة التقويم والبريد باحترافية</div>
+          <div class="support-text">
+            تنظيم المواعيد، الاجتماعات، البريد وتغيير الأولويات حتى يركّز القائد على ما هو أهم.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">✉️</span>اتصال تنفيذي وصياغة مراسلات</div>
+          <div class="support-text">
+            إعداد وصياغة رسائل رسمية، مذكرات، تقارير وعروض تقديمية بلغة مهنية وواضحة.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">✈️</span>تنسيق السفر والاجتماعات</div>
+          <div class="support-text">
+            حجز الرحلات والفنادق، إعداد الجداول، وتجهيز الملفات المسبقة للزيارات والاجتماعات.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">📂</span>أنظمة المكتب والإجراءات</div>
+          <div class="support-text">
+            بناء ومتابعة مسارات واضحة للمعاملات، الأرشفة، التوقيعات والموافقات.
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">🤝</span>تنسيق أصحاب المصلحة</div>
+          <div class="support-text">
+            نقطة اتصال موثوقة بين الرئيس التنفيذي، القيادات، الفرق الداخلية والشركاء الخارجيين.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">💻</span>الأدوات التقنية والإنتاجية</div>
+          <div class="support-text">
+            استخدام أدوات رقمية حديثة لتنظيم العمل، المتابعة، وتوفير رؤية أوضح للقيادة.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">🧭</span>جدولة إستراتيجية وإدارة أولويات</div>
+          <div class="support-text">
+            مواءمة وقت القائد مع الاجتماعات والقرارات والالتزامات ذات الأثر الأعلى.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">📊</span>تحضير ملفات ومذكرات القيادات</div>
+          <div class="support-text">
+            إعداد ملفات مجالس الإدارة، عروض موجزة، ونقاط رئيسية تساعد على اتخاذ القرار بسرعة.
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">⚙️</span>تحسين سير العمل والعمليات</div>
+          <div class="support-text">
+            رصد الاختناقات، تبسيط المسارات، ومساعدة المكتب التنفيذي على العمل بسلاسة أكبر.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">🔐</span>سرية كاملة في الملفات الحساسة</div>
+          <div class="support-text">
+            إدارة مستندات حساسة، عقود ومواضيع موارد بشرية بأعلى درجات السرية والموثوقية.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">🤝</span>إدارة الموردين والشركاء</div>
+          <div class="support-text">
+            تنسيق العلاقة مع السفر، الفنادق، الاستشاريين والموردين بما يخدم مصلحة القيادة.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">📝</span>ذكاء الاجتماعات والمتابعة</div>
+          <div class="support-text">
+            توثيق القرارات، صياغة محاضر الاجتماعات، ومتابعة عناصر العمل حتى الإغلاق.
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">📌</span>متابعة المشاريع والمواعيد النهائية</div>
+          <div class="support-text">
+            تتبع المبادرات الرئيسية، التواريخ الحرجة، وإرسال تذكيرات منظمة للفِرق المعنية.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">🤲</span>دعم شخصي ولوجستي للقائد</div>
+          <div class="support-text">
+            عند الحاجة، دعم متوازن في تفاصيل شخصية بسيطة أو لوجستيات عائلية تحمي وقت وراحة القائد.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">🌍</span>دعم متعدد اللغات والثقافات</div>
+          <div class="support-text">
+            العمل بسلاسة في بيئة عربية/إنجليزية، مع فهم لطبيعة الأعمال في السعودية والمنطقة.
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="support-title"><span class="support-icon">⭐</span>تجربة طويلة مع قيادات عليا</div>
+          <div class="support-text">
+            سجل مستمر مع رؤساء تنفيذيين ونواب رؤساء في مؤسسات كبرى، مع توصيات وشهادات تقدير.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 قاسم سعيد سعيد – مساعد تنفيذي أول. جميع الحقوق محفوظة.
+  </footer>
 </body>
 </html>
