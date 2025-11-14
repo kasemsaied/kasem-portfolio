@@ -3,98 +3,444 @@
 <head>
   <meta charset="UTF-8" />
   <title>تواصل معي – قاسم سعيد سعيد</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="../favicon.png" />
-  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    :root {
+      --bg-page: #f3eadc;
+      --bg-card: #fdf7ec;
+      --gold: #c79a2b;
+      --gold-soft: #e4c982;
+      --text-main: #2b2113;
+      --text-muted: #756a5a;
+      --border-soft: #e3d6c0;
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.18);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --transition-fast: 0.22s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Tahoma, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      direction: rtl;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: linear-gradient(90deg, #111111, #9b7a24, #c79a2b);
+      color: #fff;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .nav-links a.active {
+      background-color: #fff;
+      color: #111;
+      font-weight: 600;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+    }
+
+    .lang-switch {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 4px 11px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .lang-switch span {
+      font-size: 0.78rem;
+      opacity: 0.95;
+    }
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 26px auto 40px;
+      padding: 0 18px 40px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      pointer-events: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 1.16rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .info-item {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .info-value {
+      color: var(--text-muted);
+    }
+
+    .info-link {
+      color: var(--gold);
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      background-color: #fff;
+      border-radius: 999px;
+      padding: 5px 11px;
+      border: 1px solid var(--border-soft);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* FORM */
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      flex: 1;
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    label {
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    input,
+    textarea {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 9px 11px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background-color: #fff;
+      transition: border-color 0.18s ease-out, box-shadow 0.18s ease-out;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(199, 154, 43, 0.18);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c79a2b, #f0dc9b);
+      color: #2b2113;
+      font-weight: 600;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 18px 16px;
+      }
+
+      .page-wrapper {
+        padding-inline: 14px;
+      }
+    }
+  </style>
 </head>
-<body class="rtl">
-  <header class="site-header">
-    <div class="top-bar top-bar--gradient">
-      <div class="top-bar__inner container">
-        <div class="brand">
-          <span class="brand__name">قاسم سعيد سعيد</span>
-          <span class="brand__tagline">مساعد تنفيذي أول للرؤساء التنفيذيين وقادة الأعمال</span>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <div class="brand">
+        <div class="brand-title">قاسم سعيد سعيد</div>
+        <div class="brand-subtitle">
+          مساعد تنفيذي أول • دعم قيادات مجالس الإدارة والرؤساء التنفيذيين • C-Suite
         </div>
-        <nav class="main-nav">
-          <a href="index.html">الرئيسية</a>
-          <a href="about.html">نبذة عني</a>
-          <a href="portfolio.html">الأعمال</a>
-          <a href="certificates.html">الشهادات</a>
-          <a href="contact.html" class="active">تواصل معي</a>
-          <a href="../contact.html" class="lang-switch">English</a>
-        </nav>
       </div>
+
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">نبذة عني</a>
+        <a href="portfolio.html">الأعمال</a>
+        <a href="certificates.html">الشهادات</a>
+        <a href="contact.html" class="active">تواصل معي</a>
+        <a href="../contact.html" class="lang-switch">
+          <span>English</span>
+        </a>
+      </nav>
     </div>
   </header>
 
-  <main class="page-main container">
-    <!-- مقدمة -->
-    <section class="page-section">
-      <div class="card hero-card">
-        <p class="eyebrow">جاهز للحوار</p>
-        <h1>يسعدني التواصل معكم</h1>
+  <main class="page-wrapper">
+    <!-- OVERVIEW + INFO -->
+    <section class="card grid">
+      <div>
+        <h1>تواصل معي</h1>
         <p>
-          سواء كنت رئيس مجلس إدارة، مديرًا تنفيذيًا، أو جهة توظيف تبحث عن مساعد تنفيذي موثوق، يسعدني
-          أن نتحدث حول احتياجاتكم وكيف يمكنني أن أضيف قيمة حقيقية لمكتبكم التنفيذي.
+          إذا كنت تبحث عن مساعد تنفيذي أول يدير مكتبك بهدوء وفعالية، أو ترغب في مناقشة فرصة عمل أو تعاون، يسعدني
+          أن أتواصل معك. أفضل أسلوب للتواصل هو البريد الإلكتروني أو الرسالة المكتوبة أولاً، ثم يمكن ترتيب مكالمة
+          أو اجتماع حسب ما يناسب جدولك.
         </p>
-        <p>
-          يمكن التواصل عبر البريد الإلكتروني، الهاتف، أو لينكدإن. كما يمكنني ترتيب مكالمة عبر
-          <strong>Zoom</strong> أو <strong>Teams</strong> في الوقت الذي يناسبكم.
+        <p class="muted" style="margin-top:6px;">
+          أتعامل مع جميع المراسلات بسرية واحترام، وأحرص على الرد خلال أقرب وقت ممكن قدر المستطاع.
         </p>
+
+        <ul class="info-list">
+          <li class="info-item">
+            <span class="info-label">البريد الإلكتروني:&nbsp;</span>
+            <a class="info-link" href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
+          </li>
+          <li class="info-item">
+            <span class="info-label">الموقع:&nbsp;</span>
+            <span class="info-value">الرياض، المملكة العربية السعودية</span>
+          </li>
+          <li class="info-item">
+            <span class="info-label">الهاتف (واتساب):&nbsp;</span>
+            <span class="info-value">+966 55 307 5340</span>
+          </li>
+          <li class="info-item">
+            <span class="info-label">حساب لينكدإن:&nbsp;</span>
+            <a class="info-link" href="https://www.linkedin.com/in/kasem-said" target="_blank">
+              linkedin.com/in/kasem-said
+            </a>
+          </li>
+        </ul>
+
+        <div class="pill-row">
+          <span class="pill">متاح لدعم قيادات في الرياض</span>
+          <span class="pill">منفتح على فرص عن بُعد مع قيادات دولية</span>
+          <span class="pill">جاهز لمقابلات عبر Zoom / Teams</span>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <h2>نموذج تواصل سريع</h2>
+        <p class="muted">
+          يمكنك استخدام النموذج لإرسال رسالة مختصرة. ستُفتح نافذة البريد الإلكتروني الافتراضي لديك لتأكيد الإرسال.
+        </p>
+
+        <form action="mailto:kasem.saied@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">الاسم الكامل</label>
+              <input id="name" name="الاسم" type="text" placeholder="اكتب اسمك هنا" required />
+            </div>
+            <div class="field">
+              <label for="email">البريد الإلكتروني</label>
+              <input id="email" name="البريد الإلكتروني" type="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="subject">الموضوع</label>
+            <input id="subject" name="الموضوع" type="text" placeholder="مثال: فرصة وظيفة مساعد تنفيذي" />
+          </div>
+
+          <div class="field">
+            <label for="message">الرسالة</label>
+            <textarea id="message" name="الرسالة"
+              placeholder="اكتب بإيجاز ما تود مناقشته أو نوع الفرصة التي ترغب في الحديث عنها."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            إرسال الرسالة
+          </button>
+        </form>
       </div>
     </section>
 
-    <!-- بيانات التواصل -->
-    <section class="page-section">
-      <h2 class="section-title">بيانات التواصل المباشرة</h2>
-      <div class="card-grid card-grid--two">
-        <div class="card">
-          <h3>معلومات أساسية</h3>
-          <ul class="contact-list">
-            <li><strong>الاسم:</strong> قاسم سعيد سعيد</li>
-            <li><strong>الموقع:</strong> الرياض، المملكة العربية السعودية</li>
-            <li><strong>جاهزية:</strong> عمل حضوري في الرياض + عمل عن بُعد مع شركات دولية</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>طرق التواصل</h3>
-          <ul class="contact-list">
-            <li><strong>البريد الإلكتروني:</strong> <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a></li>
-            <li><strong>الجوال (واتساب):</strong> <a href="tel:+966553075340">+966 55 307 5340</a></li>
-            <li><strong>لينكدإن:</strong> <a href="https://www.linkedin.com/in/kasem-said" target="_blank">الملف الشخصي على LinkedIn</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- نموذج بسيط (اختياري – أمامي فقط) -->
-    <section class="page-section">
-      <h2 class="section-title">رسالة سريعة</h2>
-      <div class="card">
-        <p>
-          يمكنكم نسخ النص التالي إلى البريد الإلكتروني أو نموذج التواصل لديكم، وتعديل ما يلزم:
-        </p>
-        <pre class="code-block">
-السلام عليكم أستاذ قاسم،
-
-نود التواصل معك بخصوص فرصة / تعاون محتمل في مجال الدعم التنفيذي لرئيس مجلس الإدارة / الرئيس التنفيذي.
-
-الجهة:
-المنصب:
-طبيعة العمل: (حضوري / عن بُعد / هجين)
-نقاط مختصرة عن الاحتياج:
-
-مع أطيب التحيات،
-        </pre>
-      </div>
+    <!-- EXTRA NOTE -->
+    <section class="card">
+      <h2>كيف أتعامل مع الطلبات الجديدة؟</h2>
+      <p>
+        أحرص دائماً على فهم طبيعة الدور، ثقافة الجهة، وتوقّعات القيادة قبل اتخاذ أي قرار. إذا كانت هناك ملاءمة
+        حقيقية بين احتياجك وبين أسلوبي في العمل، يمكننا الاتفاق على خطوة تجريبية أو فترة تعارف مبدئية قبل أي التزام
+        طويل المدى.
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 قاسم سعيد سعيد – مساعد تنفيذي أول للرؤساء التنفيذيين وقادة الأعمال.</p>
-    </div>
+  <footer>
+    © <span>قاسم سعيد سعيد</span> – تواصل معي
   </footer>
 </body>
 </html>
