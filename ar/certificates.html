@@ -2,180 +2,560 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>الشهادات والخبرات – قاسم سعيد سعيد</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الشهادات والتقدير – قاسم سعيد سعيد</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="../favicon.png" />
-  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    :root {
+      --bg-page: #f3eadc;
+      --bg-card: #fdf7ec;
+      --gold: #c79a2b;
+      --gold-soft: #e4c982;
+      --text-main: #2b2113;
+      --text-muted: #756a5a;
+      --border-soft: #e3d6c0;
+      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.18);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --transition-fast: 0.22s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Tahoma, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      direction: rtl;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: linear-gradient(90deg, #111111, #9b7a24, #c79a2b);
+      color: #fff;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .nav-links a.active {
+      background-color: #fff;
+      color: #111;
+      font-weight: 600;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+    }
+
+    .lang-switch {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 4px 11px;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .lang-switch span {
+      font-size: 0.78rem;
+      opacity: 0.95;
+    }
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 26px auto 40px;
+      padding: 0 18px 40px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      pointer-events: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 1.16rem;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c79a2b, #f0dc9b);
+      color: #2b2113;
+      font-weight: 600;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background-color: #fff;
+      color: var(--text-main);
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn-ghost:hover {
+      background-color: #f9f1de;
+    }
+
+    .section-title {
+      margin-bottom: 6px;
+    }
+
+    .section-note {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .cert-card {
+      background-color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 12px 14px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 12px;
+      inset-block-start: 10px;
+      width: 20px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #c79a2b, #f5e0a4);
+    }
+
+    .cert-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .cert-org {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .cert-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .cert-link {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: underline;
+      display: inline-block;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background-color: #f7efe0;
+      color: var(--text-muted);
+      border: 1px solid var(--border-soft);
+    }
+
+    footer {
+      padding: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 18px 16px;
+      }
+
+      .page-wrapper {
+        padding-inline: 14px;
+      }
+    }
+  </style>
 </head>
-<body class="rtl">
-  <header class="site-header">
-    <div class="top-bar top-bar--gradient">
-      <div class="top-bar__inner container">
-        <div class="brand">
-          <span class="brand__name">قاسم سعيد سعيد</span>
-          <span class="brand__tagline">خبرات موثقة · شهادات رسمية · توصيات قيادية</span>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <div class="brand">
+        <div class="brand-title">قاسم سعيد سعيد</div>
+        <div class="brand-subtitle">
+          مساعد تنفيذي أول • دعم قيادات مجالس الإدارة والرؤساء التنفيذيين • C-Suite
         </div>
-        <nav class="main-nav">
-          <a href="index.html">الرئيسية</a>
-          <a href="about.html">نبذة عني</a>
-          <a href="portfolio.html">الأعمال</a>
-          <a href="certificates.html" class="active">الشهادات</a>
-          <a href="contact.html">تواصل معي</a>
-          <a href="../certificates.html" class="lang-switch">English</a>
-        </nav>
       </div>
+
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">نبذة عني</a>
+        <a href="portfolio.html">الأعمال</a>
+        <a href="certificates.html" class="active">الشهادات</a>
+        <a href="contact.html">تواصل معي</a>
+        <a href="../certificates.html" class="lang-switch">
+          <span>English</span>
+        </a>
+      </nav>
     </div>
   </header>
 
-  <main class="page-main container">
-    <!-- مقدمة -->
-    <section class="page-section">
-      <div class="card hero-card">
-        <p class="eyebrow">Executive Support · Trust · Track Record</p>
-        <h1>الشهادات والخبرات المهنية</h1>
-        <p>
-          هذه الصفحة تضم مجموعة من <strong>شهادات الخبرة الرسمية</strong>، <strong>خطابات التوصية</strong>،
-          والشهادات التعليمية والتدريبية التي حصلتُ عليها خلال مسيرتي في المملكة العربية السعودية وخارجها.
-          جميع الملفات بصيغة PDF ويمكن الاطلاع عليها مباشرة.
-        </p>
+  <main class="page-wrapper">
+    <!-- HERO -->
+    <section class="card">
+      <h1>الشهادات والتقدير</h1>
+      <p>
+        هذه الصفحة تجمع شهادات الخبرة، التقدير، المؤهلات العلمية والدورات المتخصصة التي حصلت عليها خلال مسيرتي
+        المهنية. الهدف أن تعطي صورة موثقة عن سنوات العمل في شركات ومؤسسات مختلفة، وعن الجدية في تطوير الذات
+        مهنياً.
+      </p>
+      <p class="muted" style="margin-top:6px;">
+        معظم الشهادات باللغة الإنجليزية، وبعضها بالعربية؛ ويمكن تقديم ترجمات رسمية عند الحاجة.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="../certificates/Kasem-Saied-Certificates.zip">
+          تحميل جميع الشهادات (ملف مضغوط)
+        </a>
+        <a class="btn btn-ghost" href="portfolio.html">
+          العودة إلى ملف الأعمال
+        </a>
       </div>
+
+      <p class="section-note">
+        * في حال عدم توفر ملف الـZIP بعد، يمكن استخدام الروابط الفردية لكل شهادة أدناه.
+      </p>
     </section>
 
-    <!-- خبرات الشركات -->
-    <section class="page-section">
-      <h2 class="section-title">شهادات خبرة من جهات العمل</h2>
-      <div class="card-grid card-grid--four">
-        <article class="card">
-          <h3>شهادة خبرة – شركة الفنار (2000–2005)</h3>
-          <p>
-            بداية المسار المهني في شركة مقاولات وصناعات كهربائية رائدة، مع مسؤوليات في السكرتارية التنفيذية
-            وتنظيم المكتب.
-          </p>
-          <p class="card-meta">
-            <a href="../Alfanar Experience Certificate-2000-2005.pdf" target="_blank" class="link-button">
-              عرض الشهادة (PDF)
-            </a>
-          </p>
+    <!-- EMPLOYER CERTIFICATES -->
+    <section class="card">
+      <h2 class="section-title">شهادات الخبرة من جهات العمل</h2>
+      <p class="section-note">
+        خط زمني موثّق لسنوات الخدمة في الشركات التي عملت بها في السعودية.
+      </p>
+
+      <div class="grid-cards">
+        <article class="cert-card">
+          <div class="cert-title">شهادة خبرة – شركة الفنار</div>
+          <div class="cert-org">الرياض – 2000 إلى 2005</div>
+          <div class="cert-meta">البداية في بيئة مقاولات وبناء، سكرتير تنفيذي ورحلة تأسيس المهارات المكتبية الأساسية.</div>
+          <div class="tag-row">
+            <span class="tag">خبرة عمل</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/Alfanar Experience Certificate-2000-2005.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
         </article>
 
-        <article class="card">
-          <h3>شهادة خبرة – هنكل (2005–2008)</h3>
-          <p>
-            العمل في شركة عالمية متعددة الجنسيات، في منصب مساعد/مدير مكتب تنفيذي، مع تعرّض مكثف لثقافة الشركات
-            العالمية والنظم الإدارية المتقدمة.
-          </p>
-          <p class="card-meta">
-            <a href="../Henkel Experience Certificate-2005-2008.pdf" target="_blank" class="link-button">
-              عرض الشهادة (PDF)
-            </a>
-          </p>
+        <article class="cert-card">
+          <div class="cert-title">شهادة خبرة – شركة عالمية متعددة الجنسيات</div>
+          <div class="cert-org">Henkel – 2005 إلى 2008</div>
+          <div class="cert-meta">العمل في بيئة دولية ومعايير عالمية للجودة والانضباط المهني.</div>
+          <div class="tag-row">
+            <span class="tag">خبرة عمل</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/Henkel Experience Certificate-2005-2008.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
         </article>
 
-        <article class="card">
-          <h3>شهادة خبرة – مجموعة صمو للتطوير (2008–2014)</h3>
-          <p>
-            دعم رجل أعمال/رئيس مجموعة استثمارية، مع مسؤولية إدارة المكتب، الاجتماعات، والارتباطات مع الشركاء
-            والجهات الخارجية.
-          </p>
-          <p class="card-meta">
-            <a href="../Sumou Experience Certificate 2008-2014.pdf" target="_blank" class="link-button">
-              عرض الشهادة (PDF)
-            </a>
-          </p>
+        <article class="cert-card">
+          <div class="cert-title">شهادة خبرة – مجموعة سمو القابضة</div>
+          <div class="cert-org">Sumou – 2008 إلى 2014</div>
+          <div class="cert-meta">إدارة مكتب رجل أعمال ورئيس مجلس إدارة مجموعة شركات خاصة.</div>
+          <div class="tag-row">
+            <span class="tag">خبرة عمل</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/Sumou Experience Certificate 2008-2014.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
         </article>
 
-        <article class="card">
-          <h3>شهادة خبرة – شركة الاتصالات السعودية STC (2014–2024)</h3>
-          <p>
-            أكثر من عشر سنوات كـ<strong>مساعد تنفيذي أول</strong> لنائب أول للرئيس في شركة الاتصالات السعودية،
-            مع مسئوليات قيادية في تنظيم المكتب التنفيذي ومتابعة الأعمال الاستراتيجية اليومية.
-          </p>
-          <p class="card-meta">
-            <a href="../STC Experience Certificate 2014-2024.pdf" target="_blank" class="link-button">
-              عرض الشهادة (PDF)
-            </a>
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- توصيات -->
-    <section class="page-section">
-      <h2 class="section-title">خطابات توصية وتقدير</h2>
-      <div class="card-grid card-grid--two">
-        <article class="card">
-          <h3>خطاب توصية – نائب أول للرئيس في STC</h3>
-          <p>
-            خطاب توصية من قيادي تنفيذي كبير يوضح أسلوب عملي، مستوى الثقة، والمهارات التي أقدّمها في دعم
-            القيادة التنفيذية.
-          </p>
-          <p class="card-meta">
-            <a href="../Cenk Serdar STC SVP-recommendation letter.pdf" target="_blank" class="link-button">
-              عرض خطاب التوصية (PDF)
-            </a>
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>خطابات وشهادات تقدير أخرى</h3>
-          <p>
-            تتضمن شهادات شكر وتقدير من إدارات وقيادات عملتُ معها، تقديرًا للالتزام، جودة التنظيم، وحسن التعامل
-            مع الزملاء والعملاء الداخليين والخارجيين.
-          </p>
+        <article class="cert-card">
+          <div class="cert-title">شهادة خبرة – شركة الاتصالات السعودية (STC)</div>
+          <div class="cert-org">الرياض – 2014 إلى 2024</div>
+          <div class="cert-meta">أكثر من عشر سنوات في دعم قيادات عليا في قطاع الاتصالات.</div>
+          <div class="tag-row">
+            <span class="tag">خبرة عمل</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/STC Experience Certificate 2014-2024.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
         </article>
       </div>
     </section>
 
-    <!-- تعليم ودبلومات -->
-    <section class="page-section">
-      <h2 class="section-title">التعليم والدبلومات</h2>
-      <div class="card-grid card-grid--three">
-        <article class="card">
-          <h3>بكالوريوس الأدب العربي – جامعة دمشق</h3>
-          <p>
-            دراسة أكاديمية في اللغة والأدب العربي، أسهمت في صقل مهارات الكتابة والتحرير باللغة العربية الفصحى
-            بأسلوب قوي وواضح.
-          </p>
-          <p class="card-meta">
-            <a href="../Arabic Literature Bachelor Damascus University.pdf" target="_blank" class="link-button">
-              عرض الشهادة (PDF)
-            </a>
-          </p>
+    <!-- RECOMMENDATION -->
+    <section class="card">
+      <h2 class="section-title">خطاب توصية وتقدير</h2>
+      <p class="section-note">
+        شهادات تقدير مباشرة من قيادات عملت معهم عن قرب.
+      </p>
+
+      <div class="grid-cards">
+        <article class="cert-card">
+          <div class="cert-title">خطاب توصية – Cenk Serdar (STC SVP)</div>
+          <div class="cert-org">نائب أعلى – شركة الاتصالات السعودية</div>
+          <div class="cert-meta">
+            خطاب توصية يوضح جودة الأداء، الثقة، والاعتمادية في دعم أحد القيادات العليا في STC.
+          </div>
+          <div class="tag-row">
+            <span class="tag">Recommendation Letter</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/Cenk Serdar STC SVP-recommendation letter.pdf" target="_blank">
+            عرض خطاب التوصية (PDF)
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION & DIPLOMAS -->
+    <section class="card">
+      <h2 class="section-title">المؤهلات العلمية والدبلومات</h2>
+      <div class="grid-cards">
+        <article class="cert-card">
+          <div class="cert-title">بكالوريوس في الأدب العربي</div>
+          <div class="cert-org">جامعة دمشق</div>
+          <div class="cert-meta">دراسة متعمقة للغة العربية وأدبها، ساعدت في صقل مهارات الكتابة والتعبير الرسمي.</div>
+          <div class="tag-row">
+            <span class="tag">Degree</span>
+            <span class="tag">AR</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/Arabic Literature Bachelor Damascus University.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
         </article>
 
-        <article class="card">
-          <h3>دبلوم إدارة أعمال / إدارة مكاتب</h3>
-          <p>
-            دبلوم احترافي يركّز على إدارة الأعمال والمكاتب، إعداد التقارير، مبادئ الإدارة الحديثة،
-            وتنظيم الإجراءات داخل الشركات.
-          </p>
-          <p class="card-meta">
-            <a href="../Professional Diploma-Business Administration Office Management.pdf" target="_blank" class="link-button">
-              عرض الدبلوم (PDF)
-            </a>
-          </p>
+        <article class="cert-card">
+          <div class="cert-title">دبلوم احترافي في إدارة الأعمال</div>
+          <div class="cert-org">Business Administration – Professional Diploma</div>
+          <div class="cert-meta">دراسة تطبيقية في مبادئ الإدارة، التخطيط، والعمليات.</div>
+          <div class="tag-row">
+            <span class="tag">Diploma</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/Professional Diploma-Business Administration....pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="card">
+      <h2 class="section-title">دورات وشهادات مهنية</h2>
+      <div class="grid-cards">
+        <article class="cert-card">
+          <div class="cert-title">دورة إدارة علاقات العملاء (CRM)</div>
+          <div class="cert-org">CRM Course Certificate – 2009</div>
+          <div class="cert-meta">تعزيز فهم التعامل مع العملاء والعمليات ذات الصلة.</div>
+          <div class="tag-row">
+            <span class="tag">Course</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/CRM Course Certificate-2009-Kasem Saied.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
         </article>
 
-        <article class="card">
-          <h3>دورات متخصصة في الكمبيوتر والبرامج المكتبية</h3>
-          <p>
-            شهادات قديمة في دورات الـ&nbsp;DOS والـ&nbsp;Windows والبرامج المكتبية، شكّلت الأساس لرحلة طويلة
-            من استخدام التقنية في العمل اليومي.
-          </p>
-          <p class="card-meta">
-            <a href="../P.C (Dos)course 1996.pdf" target="_blank" class="link-button">دورة DOS (PDF)</a>
-            <br />
-            <a href="../P.C (Win)Course 1996.pdf" target="_blank" class="link-button">دورة Windows (PDF)</a>
-          </p>
+        <article class="cert-card">
+          <div class="cert-title">شهادة التخطيط الاستراتيجي</div>
+          <div class="cert-org">International Certificate – Strategic Planning</div>
+          <div class="cert-meta">أساسيات التفكير الاستراتيجي وربط الأهداف بخطط عملية.</div>
+          <div class="tag-row">
+            <span class="tag">Course</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/International Certificate-Strategic Planning.pdf" target="_blank">
+            عرض الشهادة (PDF)
+          </a>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-title">دورات الحاسب بنظام DOS وWindows</div>
+          <div class="cert-org">P.C (DOS) Course 1996 &amp; P.C (Win) Course 1996</div>
+          <div class="cert-meta">
+            من أوائل الخطوات في بناء المهارات التقنية؛ بداية مبكرة لفهم الحاسب والتقنية منذ التسعينات.
+          </div>
+          <div class="tag-row">
+            <span class="tag">Courses</span>
+            <span class="tag">EN</span>
+          </div>
+          <a class="cert-link"
+             href="../certificates/P.C (Dos)course 1996.pdf" target="_blank">
+            عرض شهادة دورة الـDOS (PDF)
+          </a>
+          <br />
+          <a class="cert-link"
+             href="../certificates/P.C (Win)Course 1996.pdf" target="_blank">
+            عرض شهادة دورة Windows (PDF)
+          </a>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 قاسم سعيد سعيد – مساعد تنفيذي أول للرؤساء التنفيذيين وقادة الأعمال.</p>
-    </div>
+  <footer>
+    © <span>قاسم سعيد سعيد</span> – الشهادات والتقدير
   </footer>
 </body>
 </html>
