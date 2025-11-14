@@ -4,693 +4,334 @@
   <meta charset="UTF-8" />
   <title>Certificates & Appreciation – Kasem Saied Saied</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-
   <style>
-    :root {
-      --bg: #f7f4ec;
-      --card-bg: #ffffff;
-      --gold: #c9a043;
-      --gold-soft: #f0e2b8;
-      --text-main: #3b3018;
-      --text-soft: #6b5b35;
-      --border-soft: #e0d5b5;
+    :root{
+      --bg-body:#f4efe4;
+      --bg-card:#fbf8f1;
+      --bg-accent:#f8f1dd;
+      --gold:#c79b2b;
+      --gold-dark:#9b7a1b;
+      --text-main:#2f2723;
+      --text-muted:#6e625c;
+      --border-soft:#e0d4c0;
+      --shadow-soft:0 18px 40px rgba(0,0,0,0.08);
+      --radius-lg:18px;
+      --radius-md:14px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg-body);color:var(--text-main);line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit;}
+
+    .top-nav{
+      position:sticky;top:0;z-index:50;
+      background:linear-gradient(90deg,#000,#3b2c15,#b68a1f);
+      color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.35);
+    }
+    .top-nav-inner{
+      max-width:1080px;margin:0 auto;
+      padding:12px 20px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{
+      font-weight:700;letter-spacing:0.08em;font-size:15px;
+      text-transform:uppercase;display:flex;align-items:center;gap:10px;
+    }
+    .brand-badge{
+      width:22px;height:22px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%,#f6e6a6,#c79721);
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;font-weight:700;color:#111;
+    }
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;}
+    .nav-links a{position:relative;padding-bottom:2px;opacity:0.9;}
+    .nav-links a:hover{opacity:1;}
+    .nav-links a.active::after,
+    .nav-links a:hover::after{
+      content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;
+      background:linear-gradient(90deg,#f8e7a8,#f1c65a);border-radius:999px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    .page-wrap{
+      max-width:1080px;margin:32px auto 56px;
+      padding:0 20px;
     }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.5;
+    .hero{
+      background:radial-gradient(circle at 0% 0%,#fffaf1,#f4ecda);
+      border-radius:22px;
+      padding:20px 22px;
+      border:1px solid rgba(255,255,255,0.9);
+      box-shadow:var(--shadow-soft);
+      margin-bottom:24px;
+    }
+    .hero-title{font-size:22px;margin-bottom:4px;}
+    .hero-subtitle{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.16em;
+      color:var(--gold-dark);margin-bottom:10px;
+    }
+    .hero-text{font-size:14px;color:var(--text-muted);margin-bottom:14px;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;}
+    .btn-primary{
+      padding:9px 18px;border-radius:999px;border:none;cursor:pointer;
+      background:linear-gradient(135deg,#cfa12d,#a77b16);color:#1b1205;
+      font-size:13px;font-weight:600;box-shadow:0 10px 24px rgba(0,0,0,0.28);
+    }
+    .btn-secondary{
+      padding:9px 18px;border-radius:999px;border:1px solid rgba(0,0,0,0.15);
+      background:rgba(255,255,255,0.9);cursor:pointer;font-size:13px;
+    }
+    .hero-note{font-size:11px;color:var(--text-muted);}
+
+    .section-block{margin-bottom:26px;}
+    .section-heading{font-size:18px;font-weight:700;margin-bottom:4px;}
+    .section-caption{font-size:13px;color:var(--text-muted);margin-bottom:10px;}
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .cert-card{
+      background:var(--bg-card);
+      border-radius:var(--radius-lg);
+      padding:12px 12px 11px;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--shadow-soft);
+      font-size:12px;
+      position:relative;
+    }
+    .cert-type{
+      font-size:10px;text-transform:uppercase;
+      letter-spacing:0.16em;color:var(--gold-dark);
+      margin-bottom:4px;
+    }
+    .cert-title{font-weight:700;font-size:13px;margin-bottom:2px;}
+    .cert-org{font-size:11px;color:var(--text-muted);margin-bottom:4px;}
+    .cert-link{
+      display:inline-block;font-size:11px;
+      margin-top:4px;color:var(--gold-dark);
+    }
+    .pdf-badge{
+      position:absolute;left:10px;top:10px;
+      width:26px;height:26px;border-radius:6px;
+      background:var(--bg-accent);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      font-size:9px;border:1px solid rgba(199,155,43,0.6);
     }
 
-    /* Top bar */
-    .site-header {
-      background: linear-gradient(90deg, #000000, #3c2e12, #c9a043);
-      color: #ffffff;
-      padding: 14px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 20;
+    @media(max-width:980px){
+      .card-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
     }
-
-    .site-title {
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      font-size: 1.05rem;
+    @media(max-width:740px){
+      .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
     }
-
-    .site-nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    .site-nav a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 1080px;
-      margin: 32px auto 60px;
-      padding: 0 16px;
-    }
-
-    .page-intro {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 24px 24px 18px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      border-top: 5px solid var(--gold);
-      margin-bottom: 24px;
-    }
-
-    .page-intro h1 {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
-    }
-
-    .page-intro p {
-      color: var(--text-soft);
-      font-size: 0.98rem;
-    }
-
-    .page-intro .tagline {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #8d7a44;
-      margin-bottom: 6px;
-    }
-
-    .actions-row {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 9px 18px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.12s ease, box-shadow 0.12s ease,
-        background 0.12s ease;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #000000;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
-    }
-
-    .btn-secondary {
-      background: #fff9ea;
-      color: #735c19;
-      border: 1px solid #e1cf95;
-    }
-
-    .btn-secondary:hover {
-      background: #fff3d1;
-    }
-
-    .btn-primary span,
-    .btn-secondary span {
-      margin-right: 6px;
-    }
-
-    .hint {
-      font-size: 0.8rem;
-      color: #857755;
-      margin-top: 4px;
-    }
-
-    /* Sections & grid */
-    .cert-section {
-      margin-top: 32px;
-    }
-
-    .cert-section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      color: #4b3c1a;
-    }
-
-    .cert-section p.section-note {
-      font-size: 0.85rem;
-      color: var(--text-soft);
-      margin-bottom: 12px;
-    }
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-
-    .cert-card {
-      display: flex;
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 12px 12px 12px 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-      border: 1px solid var(--border-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cert-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(201, 160, 67, 0.1),
-        rgba(255, 255, 255, 0)
-      );
-      pointer-events: none;
-    }
-
-    .cert-thumb {
-      width: 40px;
-      height: 52px;
-      border-radius: 6px;
-      background: radial-gradient(circle at 20% 0%, #fff, #f1d890);
-      border: 1px solid #c19b42;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.8rem;
-      color: #654714;
-      margin-right: 10px;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cert-thumb small {
-      position: absolute;
-      bottom: 2px;
-      right: 4px;
-      font-size: 0.55rem;
-      font-weight: 700;
-      color: #7b5a17;
-    }
-
-    .cert-icon {
-      position: absolute;
-      top: 7px;
-      right: 10px;
-      font-size: 1.1rem;
-      opacity: 0.55;
-    }
-
-    .cert-body {
-      position: relative;
-      z-index: 1;
-      flex: 1;
-    }
-
-    .cert-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #3d2f0f;
-    }
-
-    .cert-meta {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      margin-bottom: 6px;
-    }
-
-    .cert-body a {
-      font-size: 0.82rem;
-      color: #145aa0;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .cert-body a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #8a7a57;
-      margin: 32px 0 10px;
-    }
-
-    @media (max-width: 640px) {
-      .site-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-
-      .site-nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
-
-      .page-intro {
-        padding: 18px 16px 14px;
-      }
+    @media(max-width:520px){
+      .card-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
-
 <body>
-  <!-- Top bar -->
-  <header class="site-header">
-    <div class="site-title">KASEM SAIED SAIED</div>
-    <nav class="site-nav">
+<header class="top-nav">
+  <div class="top-nav-inner">
+    <div class="brand">
+      <div class="brand-badge">KS</div>
+      KASEM SAIED SAIED
+    </div>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
+      <a href="certificates.html" class="active">Certificates</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <!-- Intro -->
-    <section class="page-intro">
-      <div class="tagline">Executive Support · Trust · Track Record</div>
-      <h1>Certificates & Appreciation</h1>
-      <p>
-        A curated collection of experience certificates, recommendation letters,
-        academic qualifications and professional courses that reflect my
-        long-term work in Saudi Arabia and my commitment to continuous growth.
-      </p>
+<main class="page-wrap">
+  <section class="hero">
+    <div class="hero-subtitle">Executive Support · Trust · Track Record</div>
+    <h1 class="hero-title">Certificates &amp; Appreciation</h1>
+    <p class="hero-text">
+      A curated collection of experience certificates, recommendation letters, academic qualifications and professional
+      courses that reflect my long-term work in Saudi Arabia and my commitment to continuous growth.
+    </p>
+    <div class="hero-actions">
+      <a href="certificates/Kasem-Saied-Certificates.zip" class="btn-primary">
+        Download All Certificates (ZIP)
+      </a>
+      <a href="portfolio.html" class="btn-secondary">
+        Back to Portfolio Overview
+      </a>
+    </div>
+    <p class="hero-note">
+      Note: for the ZIP button to work, upload a file named
+      <strong>Kasem-Saied-Certificates.zip</strong> into the <code>certificates</code> folder.
+    </p>
+  </section>
 
-      <div class="actions-row">
-        <!-- Download all (ZIP) -->
-        <a
-          href="certificates/Kasem-Saied-Certificates.zip"
-          class="btn-primary"
-          target="_blank"
-        >
-          <span>⬇️</span> Download All Certificates (ZIP)
+  <!-- Employer Experience -->
+  <section class="section-block">
+    <h2 class="section-heading">Employer Experience Certificates</h2>
+    <p class="section-caption">
+      Official letters confirming years of service with major organizations in Saudi Arabia.
+    </p>
+
+    <div class="card-grid">
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Experience Certificate</div>
+        <div class="cert-title">Alfanar Experience (2000–2005)</div>
+        <div class="cert-org">Alfanar Construction &amp; Manufacturing</div>
+        <p>Early career experience in a leading construction and industrial company in Saudi Arabia.</p>
+        <a class="cert-link" href="certificates/Alfanar Experience Certificate-2000-2005.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
         </a>
+      </article>
 
-        <!-- Back to portfolio -->
-        <a href="portfolio.html" class="btn-secondary">
-          <span>📁</span> Back to Portfolio Overview
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Experience Certificate</div>
+        <div class="cert-title">Henkel Experience (2005–2008)</div>
+        <div class="cert-org">Henkel – Multinational Company</div>
+        <p>Executive Office Manager supporting the Managing Director in a multicultural environment.</p>
+        <a class="cert-link" href="certificates/Henkel Experience Certificate-2005-2008.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
         </a>
-      </div>
-      <div class="hint">
-        Note: For the ZIP button to work, upload a file named
-        <strong>Kasem-Saied-Certificates.zip</strong> into the
-        <code>certificates</code> folder.
-      </div>
-    </section>
+      </article>
 
-    <!-- Employer Experience Certificates -->
-    <section class="cert-section">
-      <h2>Employer Experience Certificates</h2>
-      <p class="section-note">
-        Official letters confirming years of service with major organizations in
-        Saudi Arabia.
-      </p>
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Experience Certificate</div>
+        <div class="cert-title">Sumou Experience (2008–2014)</div>
+        <div class="cert-org">Sumou / Private Business Office</div>
+        <p>Office Manager to a prominent businessman and holding company in Saudi Arabia.</p>
+        <a class="cert-link" href="certificates/Sumou Experience Certificate 2008-2014.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
 
-      <div class="cert-grid">
-        <!-- Alfanar -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>EN</small>
-          </div>
-          <div class="cert-icon">🏢</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              Alfanar Experience Certificate (2000–2005)
-            </div>
-            <div class="cert-meta">
-              Early career experience in a leading construction & industrial
-              company in Saudi Arabia.
-            </div>
-            <a
-              href="certificates/Alfanar%20Experience%20Certificate-2000-2005.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Experience Certificate</div>
+        <div class="cert-title">STC Experience (2014–2024)</div>
+        <div class="cert-org">Saudi Telecom Company (STC)</div>
+        <p>Senior Executive Assistant supporting STC SVP level for more than 10 years.</p>
+        <a class="cert-link" href="certificates/STC Experience Certificate 2014-2024.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
+    </div>
+  </section>
 
-        <!-- Henkel -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>EN</small>
-          </div>
-          <div class="cert-icon">🏢</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              Henkel Experience Certificate (2005–2008)
-            </div>
-            <div class="cert-meta">
-              Multinational environment – Executive Office Manager supporting
-              the Managing Director.
-            </div>
-            <a
-              href="certificates/Henkel%20Experience%20Certificate-2005-2008.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
+  <!-- Recommendation -->
+  <section class="section-block">
+    <h2 class="section-heading">Recommendation &amp; Appreciation</h2>
+    <p class="section-caption">
+      Direct endorsement from senior leadership confirming performance, reliability and character.
+    </p>
 
-        <!-- Sumou -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>EN</small>
-          </div>
-          <div class="cert-icon">🏢</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              Sumou Experience Certificate (2008–2014)
-            </div>
-            <div class="cert-meta">
-              Office Manager to a prominent businessman / holding company
-              (Sumou) in Saudi Arabia.
-            </div>
-            <a
-              href="certificates/Sumou%20Experience%20Certificate%202008-2014.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
+    <div class="card-grid">
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Recommendation Letter</div>
+        <div class="cert-title">Recommendation – Cenk Serdar (STC SVP)</div>
+        <div class="cert-org">Senior Vice President, STC</div>
+        <p>Personal recommendation letter from STC Senior Vice President for my executive support work.</p>
+        <a class="cert-link" href="certificates/Cenk Serdar STC SVP-recommendation letter.pdf" target="_blank" rel="noopener">
+          View recommendation (PDF)
+        </a>
+      </article>
+    </div>
+  </section>
 
-        <!-- STC -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>EN</small>
-          </div>
-          <div class="cert-icon">📡</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              STC Experience Certificate (2014–2024)
-            </div>
-            <div class="cert-meta">
-              Senior Executive Assistant to SVP level at Saudi Telecom Company
-              (STC) for 10+ years.
-            </div>
-            <a
-              href="certificates/STC%20Experience%20Certificate%202014-2024.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
+  <!-- Education -->
+  <section class="section-block">
+    <h2 class="section-heading">Education &amp; Diplomas</h2>
+    <p class="section-caption">
+      Formal academic background and professional diplomas that support my executive and leadership work.
+    </p>
 
-    <!-- Recommendation Letters -->
-    <section class="cert-section">
-      <h2>Recommendation & Appreciation</h2>
-      <p class="section-note">
-        Direct endorsements from senior leaders highlighting performance,
-        reliability and character.
-      </p>
+    <div class="card-grid">
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>AR</span></div>
+        <div class="cert-type">University Degree</div>
+        <div class="cert-title">Arabic Literature – Damascus University</div>
+        <div class="cert-org">Bachelor’s Degree</div>
+        <p>Bachelor of Arabic Literature from Damascus University.</p>
+        <a class="cert-link" href="certificates/Arabic Literature Bachelor Damascus University.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
 
-      <div class="cert-grid">
-        <!-- Cenk Serdar Letter -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>EN</small>
-          </div>
-          <div class="cert-icon">📝</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              Recommendation Letter – Cenk Serdar (STC SVP)
-            </div>
-            <div class="cert-meta">
-              Personal recommendation from STC Senior Vice President for my
-              executive support work.
-            </div>
-            <a
-              href="certificates/Cenk%20Serdar%20STC%20SVP-recommendation%20letter.pdf"
-              target="_blank"
-            >
-              View recommendation letter (PDF)
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Diploma</div>
+        <div class="cert-title">Professional Diploma – Business Administration</div>
+        <div class="cert-org">Business Administration Diploma</div>
+        <p>Diploma in Business Administration supporting management and organizational skills.</p>
+        <a class="cert-link" href="certificates/Professional Diploma-Business Administration.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
+    </div>
+  </section>
 
-    <!-- Education & Diplomas -->
-    <section class="cert-section">
-      <h2>Education & Diplomas</h2>
-      <p class="section-note">
-        Formal academic background and professional diplomas that support my
-        executive and leadership work.
-      </p>
+  <!-- Courses -->
+  <section class="section-block">
+    <h2 class="section-heading">Professional Courses &amp; Skills</h2>
+    <p class="section-caption">
+      Key training programs that developed my technical and office skills.
+    </p>
 
-      <div class="cert-grid">
-        <!-- Arabic Literature Bachelor -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>UNI</small>
-          </div>
-          <div class="cert-icon">🎓</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              Arabic Literature Bachelor – Damascus University
-            </div>
-            <div class="cert-meta">
-              Bachelor’s degree in Arabic Literature from Damascus University.
-            </div>
-            <a
-              href="certificates/Arabic%20Literature%20Bachelor%20Damascus%20University.pdf"
-              target="_blank"
-            >
-              View degree certificate (PDF)
-            </a>
-          </div>
-        </article>
+    <div class="card-grid">
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Course</div>
+        <div class="cert-title">CRM Course – 2009</div>
+        <div class="cert-org">Customer Relationship Management</div>
+        <p>Specialized CRM course improving customer and stakeholder management.</p>
+        <a class="cert-link" href="certificates/CRM Course Certificate-2009-Kasem Saied.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
 
-        <!-- Business Admin Diploma -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>DIP</small>
-          </div>
-          <div class="cert-icon">📚</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              Professional Diploma – Business Administration
-            </div>
-            <div class="cert-meta">
-              Diploma in Business Administration supporting office management,
-              planning and organization skills.
-            </div>
-            <a
-              href="certificates/Professional%20Diploma-Business%20Administration.pdf"
-              target="_blank"
-            >
-              View diploma (PDF)
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Course</div>
+        <div class="cert-title">International Strategic Planning</div>
+        <div class="cert-org">Strategic Planning Program</div>
+        <p>Certificate in strategic planning and international business concepts.</p>
+        <a class="cert-link" href="certificates/International Certificate-Strategical Planning.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
 
-    <!-- Professional Courses & Skills -->
-    <section class="cert-section">
-      <h2>Professional Courses & Skills</h2>
-      <p class="section-note">
-        Technical and managerial courses that support my productivity, planning
-        and communication.
-      </p>
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Course</div>
+        <div class="cert-title">PC DOS Course – 1996</div>
+        <div class="cert-org">Foundations of Computer Use</div>
+        <p>Early training in DOS systems and computer basics.</p>
+        <a class="cert-link" href="certificates/P.C (Dos)course 1996.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
 
-      <div class="cert-grid">
-        <!-- CRM course -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>CRM</small>
-          </div>
-          <div class="cert-icon">📊</div>
-          <div class="cert-body">
-            <div class="cert-title">CRM Course Certificate – 2009</div>
-            <div class="cert-meta">
-              Customer Relationship Management course, improving client
-              communication and follow-up.
-            </div>
-            <a
-              href="certificates/CRM%20Course%20Certificate-2009-Kasem%20Saied.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
-
-        <!-- Strategic Planning -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>MGMT</small>
-          </div>
-          <div class="cert-icon">📈</div>
-          <div class="cert-body">
-            <div class="cert-title">
-              International Certificate – Strategic Planning
-            </div>
-            <div class="cert-meta">
-              Training on strategic thinking, planning and implementation.
-            </div>
-            <a
-              href="certificates/International%20Certificate-Strategical%20Planning.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
-
-        <!-- PC DOS course -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>IT</small>
-          </div>
-          <div class="cert-icon">💾</div>
-          <div class="cert-body">
-            <div class="cert-title">P.C (DOS) Course – 1996</div>
-            <div class="cert-meta">
-              Early computer skills course (DOS), reflecting a long history with
-              technology.
-            </div>
-            <a
-              href="certificates/P.C%20%28Dos%29course%201996.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
-
-        <!-- PC Windows course -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>IT</small>
-          </div>
-          <div class="cert-icon">🖥️</div>
-          <div class="cert-body">
-            <div class="cert-title">P.C (Windows) Course – 1996</div>
-            <div class="cert-meta">
-              Training in Windows environments, forming the base of my IT and
-              Office tools skills.
-            </div>
-            <a
-              href="certificates/P.C%20%28Win%29Course%201996.pdf"
-              target="_blank"
-            >
-              View certificate (PDF)
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Resumes -->
-    <section class="cert-section">
-      <h2>Executive CVs (Reference Copies)</h2>
-      <p class="section-note">
-        Current versions of my CV in English and Arabic, aligned with the
-        executive support brand on this website.
-      </p>
-
-      <div class="cert-grid">
-        <!-- English CV -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>EN</small>
-          </div>
-          <div class="cert-icon">📄</div>
-          <div class="cert-body">
-            <div class="cert-title">Kasem Saied – Resume 2025 (English)</div>
-            <div class="cert-meta">
-              Detailed executive CV for multinational and remote opportunities.
-            </div>
-            <a
-              href="certificates/Kasem%20Saied-Resume%202025-En.pdf"
-              target="_blank"
-            >
-              View English CV (PDF)
-            </a>
-          </div>
-        </article>
-
-        <!-- Arabic CV -->
-        <article class="cert-card">
-          <div class="cert-thumb">
-            PDF
-            <small>AR</small>
-          </div>
-          <div class="cert-icon">📄</div>
-          <div class="cert-body">
-            <div class="cert-title">Kasem Saied – Resume 2025 (Arabic)</div>
-            <div class="cert-meta">
-              Arabic version of my executive CV for GCC employers and local
-              applications.
-            </div>
-            <a
-              href="certificates/Kasem%20Saied%20Resume%202025.pdf"
-              target="_blank"
-            >
-              View Arabic CV (PDF)
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Kasem Saied Saied — Senior Executive Assistant · Certificates &
-      Appreciation
-    </footer>
-  </main>
+      <article class="cert-card">
+        <div class="pdf-badge"><span>PDF</span><span>EN</span></div>
+        <div class="cert-type">Course</div>
+        <div class="cert-title">PC Windows Course – 1996</div>
+        <div class="cert-org">Windows Systems</div>
+        <p>Course in Microsoft Windows environment and office computer use.</p>
+        <a class="cert-link" href="certificates/P.C (Win)Course 1996.pdf" target="_blank" rel="noopener">
+          View certificate (PDF)
+        </a>
+      </article>
+    </div>
+  </section>
+</main>
 </body>
 </html>
