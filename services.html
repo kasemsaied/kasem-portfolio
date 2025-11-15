@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Kasem Saied" />
 
-  <!-- Shared animations (same file you use on other pages) -->
+  <!-- Shared animations -->
   <link rel="stylesheet" href="animations.css" />
 
   <style>
@@ -23,6 +23,7 @@
       --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
       --radius-card: 18px;
       --radius-pill: 999px;
+
       --transition-fast: 0.2s ease-out;
       --transition-med: 0.35s ease-out;
     }
@@ -65,12 +66,27 @@
       color: var(--gold);
     }
 
+    nav a[style] {
+      color: var(--gold) !important;
+    }
+
+    /* FADE-IN ANIMATION */
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     /* MAIN SECTION */
     .section {
       width: 95%;
       max-width: 1450px;
       margin: auto;
-      padding-top: 90px;
+      padding-top: 130px; /* Increased spacing */
       padding-bottom: 80px;
     }
 
@@ -80,16 +96,28 @@
     }
 
     .section-kicker {
-      color: #d0a13c; /* bright gold */
+      color: var(--gold); /* premium gold */
       font-weight: 600;
-      margin-bottom: 6px;
       letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
 
+    .section-kicker::after {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 3px;
+      background: var(--gold);
+      margin: 10px auto 0;
+      border-radius: var(--radius-pill);
     }
 
     .section-header h1 {
-      font-size: 36px;
-      margin: 0;
+      font-size: 44px; /* larger premium title */
+      font-weight: 700;
+      margin: 10px 0 5px 0;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
     }
 
     .section-header p {
@@ -99,9 +127,9 @@
     }
 
     .section-subtitle {
-      margin-top: 40px;
+      margin-top: 50px;
       margin-bottom: 15px;
-      font-size: 26px;
+      font-size: 28px;
       color: var(--gold-dark);
       text-align: center;
     }
@@ -190,13 +218,14 @@
     }
 
     footer {
-      padding: 30px;
+      padding: 25px;
       background: #ffffff;
       text-align: center;
       border-top: 1px solid var(--border-soft);
       color: var(--text-soft);
       font-size: 14px;
     }
+
   </style>
 </head>
 
@@ -218,13 +247,13 @@
 
 <section id="services" class="section">
 
-  <!-- Page title / intro -->
-  <div class="section-header">
+  <!-- Premium Enhanced Title -->
+  <div class="section-header fade-in">
     <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
     <h1>Executive Support Services</h1>
     <p>
-      Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders, and senior leaders,
-      aligned with US time zones.
+      Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders,
+      and senior leaders aligned with US time zones.
     </p>
   </div>
 
@@ -274,7 +303,7 @@
     </div>
   </div>
 
-  <!-- CHIEF-OF-STAFF SUPPORT -->
+  <!-- CHIEF-OF-STAFF PACKAGES -->
   <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
 
   <div class="cards-grid">
@@ -314,7 +343,7 @@
   </div>
 
   <!-- CALL TO ACTION -->
-  <div class="services-cta">
+  <div class="services-cta fade-in">
     <p><strong>Interested in working together?</strong></p>
     <p>
       Email:
