@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Services | Kasem Saied | Senior Executive Assistant</title>
-  <meta name="description" content="Professional remote Executive Assistant and Chief-of-Staff services by Kasem Saied — supporting CEOs and leaders worldwide with high-level administrative and strategic assistance." />
+  <meta name="description" content="Professional remote Executive Assistant and Chief-of-Staff services by Kasem Saied — supporting CEOs and leaders with high-level administrative and strategic assistance, aligned with US time zones." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Kasem Saied" />
 
-  <!-- Shared animation styles -->
   <link rel="stylesheet" href="animations.css" />
 
   <style>
@@ -36,16 +35,17 @@
       line-height: 1.6;
     }
 
+    /* HEADER */
     header {
       background: white;
       padding: 15px 0;
       box-shadow: var(--shadow-soft);
-      margin-bottom: 40px;
+      margin-bottom: 10px;
     }
 
     nav {
-      width: 90%;
-      max-width: 1100px;
+      width: 95%;
+      max-width: 1300px;
       margin: auto;
       display: flex;
       align-items: center;
@@ -56,7 +56,8 @@
       text-decoration: none;
       color: var(--text-main);
       font-weight: 600;
-      margin-left: 20px;
+      margin-left: 25px;
+      font-size: 15px;
       transition: var(--transition-fast);
     }
 
@@ -64,10 +65,12 @@
       color: var(--gold);
     }
 
+    /* SECTION */
     .section {
-      width: 90%;
-      max-width: 1100px;
+      width: 95%;
+      max-width: 1300px;
       margin: auto;
+      padding-top: 40px;
       padding-bottom: 60px;
     }
 
@@ -83,37 +86,39 @@
     }
 
     .section-header h1 {
-      font-size: 32px;
+      font-size: 36px;
       margin: 0;
     }
 
     .section-subtitle {
-      margin-top: 50px;
+      margin-top: 60px;
       margin-bottom: 20px;
-      font-size: 24px;
+      font-size: 26px;
       color: var(--gold-dark);
       text-align: center;
     }
 
+    /* CARDS */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
     }
 
     .card {
       background: var(--bg-card);
-      padding: 25px;
+      padding: 30px;
       border-radius: var(--radius-card);
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--border-soft);
       transition: var(--transition-med);
+      font-size: 16px;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 15px 55px rgba(0, 0, 0, 0.12);
     }
 
     .card-featured {
@@ -124,7 +129,7 @@
     .badge {
       background: var(--gold);
       color: white;
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: var(--radius-pill);
       display: inline-block;
       font-size: 13px;
@@ -149,33 +154,13 @@
     }
 
     ul li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .tier-label {
-      font-size: 15px;
-      padding: 6px 16px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 10px;
-      display: inline-block;
-      font-weight: 600;
-      color: white;
-    }
-
-    .tier-gold { background: #c9a030; }
-    .tier-platinum { background: #969696; }
-    .tier-elite { background: #353535; }
-
-    .addons {
-      margin-top: 50px;
-    }
-
-    .addons h3 {
-      color: var(--gold-dark);
-    }
-
+    /* CTA */
     .services-cta {
-      margin-top: 50px;
+      max-width: 900px;
+      margin: 60px auto;
       text-align: center;
       padding: 30px;
       background: var(--bg-accent);
@@ -205,11 +190,13 @@
       <a href="portfolio.html">Portfolio</a>
       <a href="certificates.html">Certificates</a>
       <a href="contact.html">Contact</a>
+      <a href="services.html" style="color: var(--gold);">Services</a>
     </div>
   </nav>
 </header>
 
 <section id="services" class="section">
+
   <div class="section-header">
     <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
     <h1>Executive Support Services</h1>
@@ -254,7 +241,7 @@
       <p class="price">USD 4,500 / month — ~70 hours</p>
       <p class="tagline">Full remote Senior EA support at C-level.</p>
       <ul>
-        <li>Calendar and inbox ownership</li>
+        <li>Full calendar & inbox ownership</li>
         <li>Board materials coordination</li>
         <li>Confidential document handling</li>
         <li>Travel itineraries & logistics</li>
@@ -264,7 +251,7 @@
 
   </div>
 
-  <!-- CHIEF-OF-STAFF PACKAGES -->
+  <!-- CHIEF-OF-STAFF SUPPORT -->
   <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
 
   <div class="cards-grid">
