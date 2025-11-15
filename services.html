@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Kasem Saied" />
 
+  <!-- Shared animations (same file you use on other pages) -->
   <link rel="stylesheet" href="animations.css" />
 
   <style>
@@ -35,8 +36,9 @@
       line-height: 1.6;
     }
 
+    /* HEADER */
     header {
-      background: white;
+      background: #ffffff;
       padding: 15px 0;
       box-shadow: var(--shadow-soft);
     }
@@ -68,7 +70,7 @@
       width: 95%;
       max-width: 1450px;
       margin: auto;
-      padding-top: 60px;
+      padding-top: 90px;
       padding-bottom: 80px;
     }
 
@@ -81,6 +83,7 @@
       color: var(--gold-dark);
       font-weight: 600;
       margin-bottom: 6px;
+      letter-spacing: 0.04em;
     }
 
     .section-header h1 {
@@ -88,8 +91,14 @@
       margin: 0;
     }
 
+    .section-header p {
+      max-width: 780px;
+      margin: 10px auto 0;
+      color: var(--text-soft);
+    }
+
     .section-subtitle {
-      margin-top: 60px;
+      margin-top: 40px;
       margin-bottom: 15px;
       font-size: 26px;
       color: var(--gold-dark);
@@ -126,7 +135,7 @@
 
     .badge {
       background: var(--gold);
-      color: white;
+      color: #ffffff;
       padding: 6px 16px;
       border-radius: var(--radius-pill);
       display: inline-block;
@@ -149,6 +158,7 @@
 
     ul {
       padding-left: 20px;
+      margin: 0;
     }
 
     ul li {
@@ -157,23 +167,34 @@
 
     /* CTA */
     .services-cta {
-      max-width: 900px;
-      margin: 70px auto;
+      max-width: 1000px;
+      margin: 80px auto;
       text-align: center;
-      padding: 35px;
+      padding: 40px;
       background: var(--bg-accent);
       border-radius: var(--radius-card);
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
+      font-size: 17px;
+    }
+
+    .services-cta a {
+      color: var(--gold-dark);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .services-cta a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      margin-top: 80px;
       padding: 30px;
       background: #ffffff;
       text-align: center;
       border-top: 1px solid var(--border-soft);
       color: var(--text-soft);
+      font-size: 14px;
     }
   </style>
 </head>
@@ -196,10 +217,14 @@
 
 <section id="services" class="section">
 
+  <!-- Page title / intro -->
   <div class="section-header">
     <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
     <h1>Executive Support Services</h1>
-    <p>Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders, and senior leaders aligned with US time zones.</p>
+    <p>
+      Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders, and senior leaders,
+      aligned with US time zones.
+    </p>
   </div>
 
   <!-- EXECUTIVE ASSISTANT PACKAGES -->
@@ -248,7 +273,7 @@
     </div>
   </div>
 
-  <!-- CHIEF-OF-STAFF -->
+  <!-- CHIEF-OF-STAFF SUPPORT -->
   <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
 
   <div class="cards-grid">
@@ -287,11 +312,15 @@
     </div>
   </div>
 
-  <!-- CTA -->
+  <!-- CALL TO ACTION -->
   <div class="services-cta">
     <p><strong>Interested in working together?</strong></p>
-    <p>Email: <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a><br>
-       Website: <a href="https://kasemsaied.github.io/kasem-portfolio/">kasemsaied.github.io/kasem-portfolio</a></p>
+    <p>
+      Email:
+      <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a><br />
+      Website:
+      <a href="https://kasemsaied.github.io/kasem-portfolio/">kasemsaied.github.io/kasem-portfolio</a>
+    </p>
   </div>
 
 </section>
