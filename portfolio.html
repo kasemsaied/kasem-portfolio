@@ -1,414 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio – Kasem Saied Saied</title>
-    <meta name="description" content="Senior Executive Assistant to Chairmen, CEOs & C-Suite leaders, based in Riyadh. Over 24 years’ experience supporting executive offices, managing calendars, travel, board meetings and confidential communication." />
-<meta name="author" content="Kasem Saied" />
-<meta name="keywords" content="Senior Executive Assistant, Executive Assistant Riyadh, C-Suite EA, Chief of Staff support, Kasem Saied, office manager" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Portfolio – Kasem Saied Saied | Executive Support & Writing</title>
+  <meta name="description" content="Executive support materials and writing projects by Kasem Saied Saied, Senior Executive Assistant in Riyadh, Saudi Arabia." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Kasem Saied Saied" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png?v=2" />
+  <link rel="stylesheet" href="animations.css" />
 
-    <style>
-        :root {
-            --gold: #b88a1b;
-            --gold-soft: #e6d4a5;
-            --dark: #141414;
-            --bg: #f4f2ec;
-            --card-bg: #ffffff;
-            --text-main: #2a2925;
-            --muted: #696661;
-            --radius-lg: 16px;
-            --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.08);
-        }
+  <style>
+    :root {
+      --bg-body: #f4efe4;
+      --bg-card: #fbf8f1;
+      --bg-accent: #ffdf8d;
+      --gold: #d0a13c;
+      --gold-dark: #8b6a1e;
+      --text-main: #2c2a29;
+      --text-soft: #5d5a57;
+      --border-soft: #e0d4b8;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease-out;
+      --transition-med: 0.35s ease-out;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                Roboto, sans-serif;
-            background: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        /* Top Bar / Header */
-        .top-bar {
-            background: linear-gradient(90deg, #000000, #3a2500, #b88a1b);
-            color: #ffffff;
-            padding: 14px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-        }
+    /* Top Nav */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(90deg, #1d1810, #b88a2c);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
 
-        .brand {
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            font-size: 1.1rem;
-        }
+    .top-nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .brand-sub {
-            font-size: 0.72rem;
-            opacity: 0.86;
-            margin-top: 2px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
 
-        .nav {
-            display: flex;
-            gap: 24px;
-            font-size: 0.9rem;
-        }
+    .brand-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      border: 2px solid #f6d37a;
+    }
 
-        .nav a {
-            color: #f7f3e8;
-            position: relative;
-            padding-bottom: 4px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
 
-        .nav a.active,
-        .nav a:hover {
-            color: #ffffff;
-        }
+    .nav-links a {
+      opacity: 0.85;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
 
-        .nav a.active::after,
-        .nav a:hover::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 999px;
-        }
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
 
-        /* Layout */
-        .wrapper {
-            max-width: 1080px;
-            margin: 32px auto 64px;
-            padding: 0 20px 40px;
-        }
+    .nav-links a.active {
+      font-weight: 600;
+      border-color: #ffe09a;
+      opacity: 1;
+    }
 
-        .page-header {
-            margin-bottom: 24px;
-        }
+    .lang-pill {
+      margin-left: 10px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      opacity: 0.9;
+    }
 
-        .page-title {
-            font-size: 1.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
+    .lang-pill:hover {
+      background: rgba(0, 0, 0, 0.12);
+      opacity: 1;
+    }
 
-        .page-subtitle {
-            font-size: 0.95rem;
-            color: var(--muted);
-            margin-top: 6px;
-        }
+    main {
+      max-width: 1120px;
+      margin: 28px auto 60px;
+      padding: 0 20px 40px;
+    }
 
-        /* Section titles */
-        .section-block {
-            margin-top: 32px;
-        }
+    .page-hero {
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(255, 226, 160, 0.5), transparent 55%),
+                  var(--bg-card);
+      box-shadow: var(--shadow-soft);
+      border-radius: 26px;
+      padding: 26px 30px 22px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
 
-        .section-title {
-            font-size: 1.3rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
+    .page-hero-kicker {
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
 
-        .section-sub {
-            font-size: 0.9rem;
-            color: var(--muted);
-            margin-bottom: 18px;
-        }
+    .page-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
 
-        /* Portfolio grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-        }
+    .page-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 700px;
+    }
 
-        @media (max-width: 800px) {
-            .top-bar {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                padding: 14px 18px;
-            }
+    .section {
+      margin-top: 20px;
+    }
 
-            .nav {
-                gap: 16px;
-                font-size: 0.88rem;
-            }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
 
-            .wrapper {
-                margin-top: 22px;
-            }
+    .section-title {
+      font-size: 18px;
+      font-weight: 650;
+    }
 
-            .page-title {
-                font-size: 1.5rem;
-            }
+    .section-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-dark);
+      background: rgba(255, 236, 186, 0.9);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      white-space: nowrap;
+    }
 
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
 
-        .portfolio-card {
-            background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            padding: 18px 18px 16px;
-            box-shadow: var(--shadow-soft);
-            border-top: 4px solid var(--gold);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+    .card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 150px;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
+    }
 
-        .portfolio-card h3 {
-            font-size: 1.02rem;
-            margin-bottom: 2px;
-        }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 42px rgba(0, 0, 0, 0.12);
+      border-color: rgba(208, 161, 60, 0.5);
+      background: #fffaf2;
+    }
 
-        .portfolio-card p {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+    .card-title {
+      font-size: 15px;
+      font-weight: 650;
+      margin-bottom: 4px;
+    }
 
-        .tags {
-            margin-top: 4px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
+    .card-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
 
-        .tags span {
-            font-size: 0.74rem;
-            padding: 4px 9px;
-            border-radius: 999px;
-            background: #f8f3e3;
-            color: #6e5416;
-            border: 1px solid rgba(184, 138, 27, 0.3);
-        }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 4px;
+      font-size: 12px;
+    }
 
-        .portfolio-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 8px;
-            padding: 7px 14px;
-            font-size: 0.86rem;
-            border-radius: 999px;
-            background: var(--gold);
-            color: #ffffff;
-            font-weight: 600;
-            border: none;
-            box-shadow: 0 6px 18px rgba(184, 138, 27, 0.45);
-            cursor: pointer;
-        }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
 
-        .portfolio-btn:hover {
-            background: #d8ab32;
-        }
+    .badge {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border-soft);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
 
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            font-size: 0.8rem;
-            color: var(--muted);
-            text-align: center;
-        }
+    .btn-link {
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--gold-dark);
+      background: #2f2618;
+      color: #ffe9b3;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+    }
 
-        footer span {
-            color: var(--gold);
-            font-weight: 600;
-        }
-    </style>
+    .btn-link span {
+      font-size: 13px;
+    }
+
+    .btn-link:hover {
+      background: #443420;
+      border-color: #f3cd72;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.26);
+    }
+
+    .cards-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .cards-grid-2 .card {
+      min-height: 160px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.45);
+      margin-top: 26px;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid,
+      .cards-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        margin-top: 20px;
+      }
+
+      .page-title {
+        font-size: 23px;
+      }
+
+      .cards-grid,
+      .cards-grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .top-nav-inner {
+        padding-inline: 14px;
+      }
+
+      .nav-links {
+        font-size: 13px;
+        gap: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Top navigation -->
-    <header class="top-bar">
-        <div>
-            <div class="brand">KASEM SAIED SAIED</div>
-            <div class="brand-sub">
-                Senior Executive Assistant · C-Suite Support · Remote Ready
-            </div>
-        </div>
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand">
+        <div class="brand-badge">KS</div>
+        KASEM SAIED SAIED
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+        <a class="lang-pill" href="ar/portfolio.html">العربية</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="wrapper">
-        <header class="page-header">
-            <h1 class="page-title">Portfolio</h1>
-            <p class="page-subtitle">
-                Selected materials that represent my work as a Senior Executive Assistant
-                and my professional brand.
+  <main>
+    <!-- Hero -->
+    <section class="page-hero fade-section fade-slow">
+      <div class="page-hero-kicker">EXECUTIVE SUPPORT · BRAND · WRITING</div>
+      <h1 class="page-title">Portfolio Overview</h1>
+      <p class="page-subtitle">
+        A snapshot of my core executive support materials, professional branding assets and current writing projects.
+        These items are used with CEOs, senior leaders and recruiters to present my profile clearly and consistently.
+      </p>
+    </section>
+
+    <!-- Executive support materials -->
+    <section class="section fade-section fade-delay-1">
+      <div class="section-header">
+        <h2 class="section-title">Executive Support Materials</h2>
+        <div class="section-tag">CORE DOCUMENTS</div>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div>
+            <h3 class="card-title">Executive CV – Corporate</h3>
+            <p class="card-text">
+              Detailed CV for corporate and C-suite environments, highlighting long-term experience in Saudi Arabia,
+              executive office management and strategic support for senior leadership.
             </p>
-        </header>
-
-        <!-- Executive Support Materials -->
-        <section class="section-block">
-            <h2 class="section-title">Executive Support Materials</h2>
-            <p class="section-sub">
-                Core documents used when presenting my experience to CEOs, SVPs and senior
-                leadership in Saudi Arabia and for remote roles.
-            </p>
-
-            <div class="portfolio-grid">
-                <!-- Executive CV with real download link -->
-                <div class="portfolio-card">
-                    <h3>Executive CV – Corporate</h3>
-                    <p>
-                        Detailed CV for corporate and C-suite environments, highlighting
-                        long-term experience in Saudi Arabia, executive office management,
-                        and strategic support for senior leadership.
-                    </p>
-                    <div class="tags">
-                        <span>Executive CV</span>
-                        <span>Corporate</span>
-                    </div>
-                    <a
-                        href="https://raw.githubusercontent.com/kasemsaied/kasem-portfolio/main/Kasem%20Saied-Resume%202025-En.pdf"
-                        class="portfolio-btn"
-                        target="_blank"
-                    >
-                        View / Download
-                    </a>
-                </div>
-
-                <!-- Executive Assistant Profile Summary -->
-                <div class="portfolio-card">
-                    <h3>Executive Assistant Profile Summary</h3>
-                    <p>
-                        One-page summary of key responsibilities, tools and achievements
-                        as a Senior Executive Assistant supporting CEOs and SVPs. Useful
-                        for quick introductions and recruiter use.
-                    </p>
-                    <div class="tags">
-                        <span>Profile</span>
-                        <span>Summary</span>
-                    </div>
-                </div>
-
-                <!-- Business Card & Digital ID -->
-                <div class="portfolio-card">
-                    <h3>Business Card &amp; Digital ID</h3>
-                    <p>
-                        Professionally designed business card and digital ID image,
-                        aligned with my gold brand and ready for WhatsApp, email
-                        signatures and LinkedIn.
-                    </p>
-                    <div class="tags">
-                        <span>Branding</span>
-                        <span>Identity</span>
-                    </div>
-                </div>
-
-                <!-- Brand Pack & Presentations -->
-                <div class="portfolio-card">
-                    <h3>Brand Pack &amp; Presentations</h3>
-                    <p>
-                        Gold-accent brand pack, PowerPoint template and LinkedIn banner
-                        used to present my profile consistently across platforms.
-                    </p>
-                    <div class="tags">
-                        <span>Visual Identity</span>
-                        <span>Slides</span>
-                    </div>
-                </div>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Executive CV</span>
+              <span class="badge">Corporate</span>
             </div>
-        </section>
+            <a class="btn-link" href="Kasem%20Saied-Resume%202025-En.pdf" target="_blank" rel="noopener">
+              <span>View CV (PDF)</span>
+            </a>
+          </div>
+        </article>
 
-        <!-- Writing & Book Projects -->
-        <section class="section-block">
-            <h2 class="section-title">Writing &amp; Book Projects</h2>
-            <p class="section-sub">
-                Current and upcoming projects that combine my office experience with
-                writing, reflection and professional development.
+        <article class="card">
+          <div>
+            <h3 class="card-title">Executive Assistant Profile Summary</h3>
+            <p class="card-text">
+              One-page summary of key responsibilities, tools and achievements as a Senior Executive Assistant supporting CEOs and SVPs.
+              Useful for quick introductions and recruiter use.
             </p>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3>“Thirty Years in Offices”</h3>
-                    <p>
-                        Reflective book project on three decades of office life, leadership
-                        proximity and lessons learned from people, work cultures and
-                        executive environments.
-                    </p>
-                    <div class="tags">
-                        <span>Memoir</span>
-                        <span>Office Life</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <h3>“The Smart Assistant”</h3>
-                    <p>
-                        Practical guidebook concept for modern Executive Assistants,
-                        focused on real office scenarios, communication systems and
-                        how to support C-suite leaders with confidence.
-                    </p>
-                    <div class="tags">
-                        <span>Guidebook</span>
-                        <span>Executive Support</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <h3>“Coffee, Love &amp; Freedom” – Essays</h3>
-                    <p>
-                        Personal essays combining nostalgia, family, homeland and
-                        reflections on work, identity and freedom. A more emotional and
-                        literary side of my writing.
-                    </p>
-                    <div class="tags">
-                        <span>Essays</span>
-                        <span>Personal Writing</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <h3>Future Office &amp; Career Titles</h3>
-                    <p>
-                        Additional planned titles around modern office mindset, inside
-                        the executive office, and how assistants can grow into
-                        strategic partners and Chiefs of Staff.
-                    </p>
-                    <div class="tags">
-                        <span>Planned</span>
-                        <span>Career Development</span>
-                    </div>
-                </div>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Profile</span>
+              <span class="badge">Summary</span>
             </div>
-        </section>
+            <span style="font-size:12px;color:var(--text-soft);">Available on request</span>
+          </div>
+        </article>
 
-        <footer>
-            &copy; 2025 <span>Kasem Saied Saied</span> — Senior Executive Assistant
-        </footer>
-    </main>
+        <article class="card">
+          <div>
+            <h3 class="card-title">Business Card & Digital ID</h3>
+            <p class="card-text">
+              Professionally designed business card and digital ID image, aligned with my gold brand and ready for WhatsApp,
+              email signatures and LinkedIn.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Branding</span>
+              <span class="badge">Identity</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-soft);">Design assets in personal archive</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="cards-grid" style="margin-top:16px;">
+        <article class="card">
+          <div>
+            <h3 class="card-title">Brand Pack & Presentations</h3>
+            <p class="card-text">
+              Gold-accent brand pack, PowerPoint template and LinkedIn banner used to present my profile consistently across platforms.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Visual identity</span>
+              <span class="badge">Slides</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-soft);">Samples available on request</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3 class="card-title">LinkedIn Profile & Online Presence</h3>
+            <p class="card-text">
+              Updated LinkedIn profile focused on senior EA roles, remote support and C-suite operations, aligned with this portfolio.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Online profile</span>
+              <span class="badge">Networking</span>
+            </div>
+            <a class="btn-link" href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">
+              <span>View LinkedIn</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3 class="card-title">Executive Email & Templates</h3>
+            <p class="card-text">
+              Library of formal email templates and mini-briefs in Arabic and English, used for board communication and VIP correspondence.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Arabic &amp; English</span>
+              <span class="badge">Formal tone</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-soft);">Internal working library</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Writing & book projects -->
+    <section class="section fade-section fade-delay-2">
+      <div class="section-header">
+        <h2 class="section-title">Writing & Book Projects</h2>
+        <div class="section-tag">AUTHOR WORK</div>
+      </div>
+
+      <div class="cards-grid-2">
+        <article class="card">
+          <div>
+            <h3 class="card-title">“Thirty Years in Offices”</h3>
+            <p class="card-text">
+              Reflective book project on three decades of office life, leadership proximity and lessons learned from people,
+              work cultures and executive environments.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Memoir</span>
+              <span class="badge">Office life</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-soft);">Manuscript in progress</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3 class="card-title">“The Smart Assistant”</h3>
+            <p class="card-text">
+              Practical guidebook concept for modern Executive Assistants, focused on real office scenarios, communication systems
+              and collaboration with top leadership.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Guidebook</span>
+              <span class="badge">Executive support</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-soft);">Outline & sample chapters ready</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3 class="card-title">“Coffee, Love &amp; Freedom” – Essays</h3>
+            <p class="card-text">
+              Personal essays combining nostalgia, family, homeland and reflections on work, identity and freedom.
+              A more emotional and literary side of my writing.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="badge-row">
+              <span class="badge">Essays</span>
+              <span class="badge">Arabic &amp; English</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-soft);">Selected pieces prepared for KDP</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Kasem Saied Saied. Portfolio generated for professional use.  
+      English · <a href="ar/portfolio.html">العربية</a>
+    </footer>
+  </main>
+
+  <script src="animations.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
