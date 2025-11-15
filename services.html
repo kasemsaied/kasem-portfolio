@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Kasem Saied" />
 
-  <!-- Shared animations -->
+  <!-- shared base styles / animations -->
   <link rel="stylesheet" href="animations.css" />
 
   <style>
@@ -23,7 +23,6 @@
       --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
       --radius-card: 18px;
       --radius-pill: 999px;
-
       --transition-fast: 0.2s ease-out;
       --transition-med: 0.35s ease-out;
     }
@@ -37,56 +36,100 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
+    /* ===== TOP BAR HEADER (like Home) ===== */
+
     header {
-      background: #ffffff;
-      padding: 15px 0;
+      background: linear-gradient(90deg, #1b1307, #c3922f);
+      color: #ffffff;
       box-shadow: var(--shadow-soft);
     }
 
-    nav {
-      width: 95%;
+    .top-bar {
       max-width: 1450px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 10px 3%;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f9f3e3;
+      color: #3b2b11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
+    }
+
+    .brand-text {
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+    }
+
     nav a {
       text-decoration: none;
-      color: var(--text-main);
-      font-weight: 600;
-      margin-left: 25px;
-      font-size: 15px;
-      transition: var(--transition-fast);
+      color: #f7f2e8;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color var(--transition-fast);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #f5d27a;
+      transition: width var(--transition-fast);
     }
 
     nav a:hover {
-      color: var(--gold);
+      color: #ffffff;
     }
 
-    nav a[style] {
-      color: var(--gold) !important;
+    nav a:hover::after {
+      width: 100%;
     }
 
-    /* FADE-IN ANIMATION */
-    .fade-in {
-      opacity: 0;
-      animation: fadeInUp 1s ease-out forwards;
+    nav a.active {
+      color: #ffffff;
+      font-weight: 600;
     }
 
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    nav a.active::after {
+      width: 100%;
     }
 
-    /* MAIN SECTION */
+    /* ===== MAIN SECTION ===== */
+
     .section {
       width: 95%;
       max-width: 1450px;
       margin: auto;
-      padding-top: 130px; /* Increased spacing */
+      padding-top: 90px;
       padding-bottom: 80px;
     }
 
@@ -96,27 +139,16 @@
     }
 
     .section-kicker {
-      color: var(--gold); /* premium gold */
+      color: #d0a13c;
       font-weight: 600;
       letter-spacing: 0.04em;
-      margin-bottom: 10px;
-    }
-
-    .section-kicker::after {
-      content: "";
-      display: block;
-      width: 120px;
-      height: 3px;
-      background: var(--gold);
-      margin: 10px auto 0;
-      border-radius: var(--radius-pill);
+      margin-bottom: 6px;
     }
 
     .section-header h1 {
-      font-size: 44px; /* larger premium title */
+      font-size: 36px;
       font-weight: 700;
-      margin: 10px 0 5px 0;
-      letter-spacing: -0.5px;
+      margin: 5px 0 5px 0;
       color: var(--text-main);
     }
 
@@ -129,12 +161,13 @@
     .section-subtitle {
       margin-top: 50px;
       margin-bottom: 15px;
-      font-size: 28px;
+      font-size: 24px;
       color: var(--gold-dark);
       text-align: center;
     }
 
     /* CARDS */
+
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -153,8 +186,8 @@
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 55px rgba(0,0,0,0.14);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 45px rgba(0,0,0,0.12);
     }
 
     .card-featured {
@@ -195,16 +228,17 @@
     }
 
     /* CTA */
+
     .services-cta {
       max-width: 1000px;
-      margin: 80px auto;
+      margin: 70px auto;
       text-align: center;
-      padding: 40px;
+      padding: 35px;
       background: var(--bg-accent);
       border-radius: var(--radius-card);
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .services-cta a {
@@ -225,39 +259,40 @@
       color: var(--text-soft);
       font-size: 14px;
     }
-
   </style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <div><strong>Kasem Saied</strong></div>
-    <div>
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-badge">KS</div>
+      <div class="brand-text">KASEM SAIED SAIED</div>
+    </div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="certificates.html">Certificates</a>
       <a href="contact.html">Contact</a>
-      <a href="services.html" style="color: var(--gold);">Services</a>
-    </div>
-  </nav>
+      <a href="services.html" class="active">Services</a>
+    </nav>
+  </div>
 </header>
 
 <section id="services" class="section">
 
-  <!-- Premium Enhanced Title -->
-  <div class="section-header fade-in">
+  <div class="section-header">
     <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
     <h1>Executive Support Services</h1>
     <p>
       Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders,
-      and senior leaders aligned with US time zones.
+      and senior leaders, aligned with US time zones.
     </p>
   </div>
 
-  <!-- EXECUTIVE ASSISTANT PACKAGES -->
+  <!-- Executive Assistant Packages -->
   <h2 class="section-subtitle">Executive Assistant Packages</h2>
 
   <div class="cards-grid">
@@ -303,7 +338,7 @@
     </div>
   </div>
 
-  <!-- CHIEF-OF-STAFF PACKAGES -->
+  <!-- Chief-of-Staff Packages -->
   <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
 
   <div class="cards-grid">
@@ -342,8 +377,8 @@
     </div>
   </div>
 
-  <!-- CALL TO ACTION -->
-  <div class="services-cta fade-in">
+  <!-- Call to Action -->
+  <div class="services-cta">
     <p><strong>Interested in working together?</strong></p>
     <p>
       Email:
