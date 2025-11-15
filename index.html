@@ -307,352 +307,223 @@
       font-size: 13px;
     }
 
-    /* ===== HOW I SUPPORT EXECUTIVES ===== */
-    .support-card {
-      background: var(--bg-card);
-      border-radius: 26px;
-      box-shadow: var(--shadow-soft);
-      padding: 24px 26px 26px;
-    }
-    .support-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 16px;
-    }
-    .support-header h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-    .support-header small {
-      color: var(--text-soft);
-      font-size: 12px;
-    }
-    .support-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
-      font-size: 12px;
-    }
-    .support-item {
-      background: #fffdf7;
-      border-radius: 14px;
-      border: 1px solid #f0e2c5;
-      padding: 10px 11px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .support-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-    .support-body {
-      color: var(--text-soft);
-      font-size: 12px;
-    }
-    .support-tag {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--gold-dark);
-      background: var(--bg-accent);
-      border-radius: 999px;
-      padding: 2px 8px;
-      align-self: flex-start;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-card {
-        grid-template-columns: 230px 1fr;
-        grid-template-rows: auto auto;
-      }
-      .hero-right {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 840px) {
-      .hero-card {
-        grid-template-columns: 1fr;
-      }
-      .hero-middle {
-        order: 3;
-      }
-      .hero-right {
-        order: 2;
-      }
-      .info-row {
-        grid-template-columns: 1fr;
-      }
-      .skills-columns {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="top-bar">
-    <div class="brand">
-      <div class="brand-badge">KS</div>
-      <div class="brand-text">KASEM SAIED SAIED</div>
-    </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="contact.html">Contact</a>
-      <a href="services.html">Services</a>
-    </nav>
+   <!-- ===== HOW I SUPPORT EXECUTIVES ===== -->
+<section class="support-card">
+  <div class="support-header">
+    <h2>How I Support Executives</h2>
+    <small>Key areas where I add structure, calm and reliability to a busy office.</small>
   </div>
-</header>
 
-<main class="page">
-
-  <!-- ===== HERO CARD ===== -->
-  <section class="hero-card">
-    <div class="hero-left">
-      <div class="hero-photo-wrap">
-        <img src="profile.jpg" alt="Kasem Saied Saied" />
-      </div>
-      <div class="hero-name">Kasem Saied Saied</div>
-      <div class="hero-title-small">Senior Executive Assistant</div>
-    </div>
-
-    <div class="hero-middle">
-      <div class="kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</div>
-      <h1>Senior Executive Assistant to Chairmans, CEOs &amp; Senior Leaders</h1>
-      <p>
-        With 24+ years of experience directly supporting CEOs, SVPs and senior
-        executives in Saudi Arabia, I specialize in executive operations,
-        communication and workflow excellence across telecommunications,
-        multinational environments and private business groups.
-      </p>
-
-      <div class="hero-actions">
-        <a
-          class="btn-primary"
-          href="Kasem Saied Resume 2025-En.pdf"
-          target="_blank"
-        >
-          Download CV
-        </a>
-        <a class="btn-secondary" href="contact.html">
-          Contact Me
-        </a>
-      </div>
-
-      <div class="hero-note">
-        Based in Riyadh · Open to on-site roles in Saudi Arabia and remote
-        Executive Assistant / C-suite support aligned with US time zones.
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="hero-right-title">Snapshot</div>
-      <div class="hero-right-box">
-        <strong>Location</strong>
-        Riyadh, Saudi Arabia
-      </div>
-      <div class="hero-right-box">
-        <strong>Experience</strong>
-        24+ years in executive support across telecom, private offices and
-        multinational groups.
-      </div>
-      <div class="hero-right-box">
-        <strong>Languages</strong>
-        Arabic (native), English (fluent)
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== QUICK FACTS + SKILLS ===== -->
-  <section class="info-row">
-    <!-- Quick Facts -->
-    <article class="card">
-      <h2>Quick Facts</h2>
-      <div class="facts-grid">
-        <div class="facts-label">Location</div>
-        <div>Riyadh, Saudi Arabia</div>
-
-        <div class="facts-label">Experience</div>
-        <div>24+ years in executive support</div>
-
-        <div class="facts-label">Industries</div>
-        <div>Telecom, multinational groups, private offices</div>
-
-        <div class="facts-label">Languages</div>
-        <div>Arabic (native), English (fluent)</div>
-
-        <div class="facts-label">Availability</div>
-        <div>On-site Riyadh · Remote · US time zones</div>
-      </div>
-
-      <div class="pill-row">
-        <span class="pill">C-level diary &amp; inbox control</span>
-        <span class="pill">Board &amp; committee support</span>
-        <span class="pill">Travel &amp; logistics</span>
-        <span class="pill">Confidential documents</span>
-      </div>
-    </article>
-
-    <!-- Skills Highlights -->
-    <article class="card">
-      <h2>Skills Highlights</h2>
-      <div class="skills-columns">
-        <div class="skill-col">
-          <div class="skill-col-title">EXECUTIVE OPERATIONS</div>
-          <h3>Office &amp; Leadership Support</h3>
-          <p>
-            High-level assistance for daily operations, meetings, follow-ups
-            and cross-department coordination for senior executives.
-          </p>
-        </div>
-
-        <div class="skill-col">
-          <div class="skill-col-title">COMMUNICATION</div>
-          <h3>Arabic &amp; English</h3>
-          <p>
-            Professional correspondence, board materials and presentations in
-            both languages with diplomatic tone and clarity.
-          </p>
-        </div>
-
-        <div class="skill-col">
-          <div class="skill-col-title">TECHNOLOGY</div>
-          <h3>Productivity &amp; AI Tools</h3>
-          <p>
-            Microsoft 365, Google Workspace, Zoom, Notion, Slack and modern AI
-            tools for productivity and research.
-          </p>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- ===== HOW I SUPPORT EXECUTIVES ===== -->
-  <section class="support-card">
-    <div class="support-header">
-      <h2>How I Support Executives</h2>
-      <small>Key areas where I add structure, calm and reliability to a busy office.</small>
-    </div>
-
-    <div class="support-grid">
-      <div class="support-item">
+  <div class="support-grid">
+    <!-- 1 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🗓</div>
         <div class="support-title">Calendar &amp; Inbox Mastery</div>
-        <div class="support-body">
-          Managing complex calendars, inbox triage and scheduling so the
-          executive can focus on real priorities.
-        </div>
-        <span class="support-tag">Diary control</span>
+        <div class="support-label">Time</div>
       </div>
-
-      <div class="support-item">
-        <div class="support-title">Executive Communication</div>
-        <div class="support-body">
-          Drafting, editing and polishing emails, letters and statements
-          in clear Arabic and English.
-        </div>
-        <span class="support-tag">Communication</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Board &amp; Meetings</div>
-        <div class="support-body">
-          Preparing agendas, materials and minutes; tracking actions and
-          deadlines after each meeting.
-        </div>
-        <span class="support-tag">Governance</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Office Systems &amp; Procedures</div>
-        <div class="support-body">
-          Setting up files, processes and guidelines that make the
-          executive office run smoothly.
-        </div>
-        <span class="support-tag">Structure</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Stakeholder Coordination</div>
-        <div class="support-body">
-          Acting as a reliable point of contact between the executive
-          and internal or external stakeholders.
-        </div>
-        <span class="support-tag">Relations</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Tech &amp; Productivity</div>
-        <div class="support-body">
-          Confident with Microsoft Office, Google Workspace, Zoom and
-          modern tools to save time and reduce friction.
-        </div>
-        <span class="support-tag">Technology</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Reports &amp; Briefings</div>
-        <div class="support-body">
-          Summarizing long documents into clear briefings so leaders
-          can make decisions quickly.
-        </div>
-        <span class="support-tag">Insights</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Leadership Documentation</div>
-        <div class="support-body">
-          Preparing speeches, talking points and executive summaries
-          for events and key meetings.
-        </div>
-        <span class="support-tag">Leadership</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Travel &amp; Logistics</div>
-        <div class="support-body">
-          Coordinating local and international trips, visas, hotels and
-          full itineraries with backup options.
-        </div>
-        <span class="support-tag">Travel</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Confidential Matter Handling</div>
-        <div class="support-body">
-          Managing sensitive documents and discussions with full
-          discretion and professionalism.
-        </div>
-        <span class="support-tag">Confidential</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Projects &amp; Deadlines</div>
-        <div class="support-body">
-          Tracking projects, milestones and deliverables to help keep
-          the executive and team on time.
-        </div>
-        <span class="support-tag">Projects</span>
-      </div>
-
-      <div class="support-item">
-        <div class="support-title">Personal &amp; Family Logistics</div>
-        <div class="support-body">
-          Where appropriate, supporting selected personal and family
-          arrangements that protect executive time.
-        </div>
-        <span class="support-tag">Support</span>
+      <div class="support-body">
+        Managing complex calendars, inboxes and shifting priorities so that leaders
+        focus on what truly matters.
       </div>
     </div>
-  </section>
 
+    <!-- 2 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">✉️</div>
+        <div class="support-title">Executive Communication</div>
+        <div class="support-label">Clarity</div>
+      </div>
+      <div class="support-body">
+        Drafting and polishing emails, memos, reports and presentations in clear,
+        concise and professional language.
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">✈️</div>
+        <div class="support-title">Travel &amp; Meetings</div>
+        <div class="support-label">Logistics</div>
+      </div>
+      <div class="support-body">
+        Domestic &amp; international travel, agendas, logistics and VIP visits with
+        full end-to-end coordination.
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">📁</div>
+        <div class="support-title">Office Systems &amp; Procedures</div>
+        <div class="support-label">Systems</div>
+      </div>
+      <div class="support-body">
+        Structured workflows, filing systems and approval paths that keep the executive
+        office running smoothly.
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🤝</div>
+        <div class="support-title">Stakeholder Coordination</div>
+        <div class="support-label">Liaison</div>
+      </div>
+      <div class="support-body">
+        Acting as a reliable point of contact between executives, leadership teams,
+        departments and external partners.
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">💻</div>
+        <div class="support-title">Tools &amp; Technology</div>
+        <div class="support-label">Digital</div>
+      </div>
+      <div class="support-body">
+        Confident with Microsoft Office, Google Workspace and exploring tools like
+        Notion, Slack and Asana.
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">📊</div>
+        <div class="support-title">Strategic Scheduling</div>
+        <div class="support-label">Strategy</div>
+      </div>
+      <div class="support-body">
+        Aligning the executive’s time with priorities, strategic goals, board agendas
+        and key deliverables.
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">📄</div>
+        <div class="support-title">Board &amp; Leadership Documentation</div>
+        <div class="support-label">Boards</div>
+      </div>
+      <div class="support-body">
+        Preparing briefings, minutes, decks and confidential reports for boards and
+        senior committees.
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">⚙️</div>
+        <div class="support-title">Workflow Optimization</div>
+        <div class="support-label">Process</div>
+      </div>
+      <div class="support-body">
+        Identifying bottlenecks, improving processes and supporting efficient
+        information and approval flows.
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🔒</div>
+        <div class="support-title">Confidential Matter Handling</div>
+        <div class="support-label">Trust</div>
+      </div>
+      <div class="support-body">
+        Managing HR topics, sensitive information and contracts with full discretion
+        and professionalism.
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🧩</div>
+        <div class="support-title">Vendor &amp; Partnership Management</div>
+        <div class="support-label">Partners</div>
+      </div>
+      <div class="support-body">
+        Coordinating vendors, embassies, agencies and legal offices to support
+        executive requirements.
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">📝</div>
+        <div class="support-title">Meeting Intelligence &amp; Alignment</div>
+        <div class="support-label">Follow-up</div>
+      </div>
+      <div class="support-body">
+        Designing agendas, capturing decisions and ensuring structured follow-up on
+        action items.
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">✅</div>
+        <div class="support-title">Project &amp; Deadline Tracking</div>
+        <div class="support-label">Projects</div>
+      </div>
+      <div class="support-body">
+        Helping track executive OKRs, KPIs and key initiatives with reminders and
+        structure to keep momentum.
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🤖</div>
+        <div class="support-title">Digital Productivity &amp; AI Tools</div>
+        <div class="support-label">AI</div>
+      </div>
+      <div class="support-body">
+        Using modern tools and AI assistants to improve speed, accuracy and daily
+        executive support.
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🚨</div>
+        <div class="support-title">Crisis &amp; Issue Management</div>
+        <div class="support-label">Calm</div>
+      </div>
+      <div class="support-body">
+        Supporting executives during urgent issues, ensuring clear information,
+        priorities and calm execution.
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="support-item">
+      <div class="support-top">
+        <div class="support-icon">🏡</div>
+        <div class="support-title">Personal &amp; Family Logistics</div>
+        <div class="support-label">Support</div>
+      </div>
+      <div class="support-body">
+        When appropriate, assisting with selected personal logistics and
+        arrangements to protect executive time.
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 </body>
