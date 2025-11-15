@@ -2,26 +2,28 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>نبذة عني – قاسم سعيد سعيد</title>
-  <title>نبذة عني – قاسم سعيد سعيد</title>
-<meta name="description" content="نبذة عن قاسم سعيد سعيد، مساعد تنفيذي أول بدعم قيادات على مستوى C-Suite في شركات الاتصالات والمجموعات القابضة في السعودية، بخبرة طويلة في إدارة المكاتب العليا." />
-<meta name="author" content="Kasem Saied" />
+  <title>نبذة عني – قاسم سعيد سعيد | مساعد تنفيذي أول</title>
+  <meta name="description" content="نبذة عن قاسم سعيد سعيد، مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين، بخبرة تزيد عن 24 عاماً في دعم القيادات العليا في السعودية." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Kasem Saied Saied" />
+
   <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="stylesheet" href="../animations.css" />
 
   <style>
     :root {
-      --bg-page: #f3eadc;
-      --bg-card: #fdf7ec;
-      --gold: #c79a2b;
-      --gold-soft: #e4c982;
-      --text-main: #2b2113;
-      --text-muted: #756a5a;
-      --border-soft: #e3d6c0;
-      --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.18);
-      --radius-xl: 26px;
-      --radius-lg: 20px;
-      --transition-fast: 0.22s ease-out;
+      --bg-body: #f4efe4;
+      --bg-card: #fbf8f1;
+      --gold: #d0a13c;
+      --gold-dark: #8b6a1e;
+      --text-main: #2c2a29;
+      --text-soft: #5d5a57;
+      --border-soft: #e0d4b8;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease-out;
+      --transition-med: 0.35s ease-out;
     }
 
     * {
@@ -31,13 +33,12 @@
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Tahoma, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg-page);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-body);
       color: var(--text-main);
+      line-height: 1.7;
       direction: rtl;
+      text-align: right;
     }
 
     a {
@@ -45,618 +46,571 @@
       color: inherit;
     }
 
-    /* HEADER & NAV */
-
-    header {
-      background: linear-gradient(90deg, #111111, #9b7a24, #c79a2b);
-      color: #fff;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    /* Top Nav (RTL) */
+    .top-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
+      background: linear-gradient(90deg, #b88a2c, #1d1810);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
-    .nav-bar {
-      max-width: 1200px;
+    .top-nav-inner {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 14px 22px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
     }
 
     .brand {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
     }
 
-    .brand-title {
-      font-size: 1.3rem;
+    .brand-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      border: 2px solid #f6d37a;
     }
 
-    .brand-subtitle {
-      font-size: 0.75rem;
-      opacity: 0.9;
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 13px;
+    }
+
+    .brand-tagline {
+      font-size: 11px;
+      opacity: 0.85;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 18px;
-      font-size: 0.92rem;
+      font-size: 14px;
     }
 
     .nav-links a {
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition: var(--transition-fast);
-      position: relative;
+      opacity: 0.9;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
-      background-color: rgba(255, 255, 255, 0.14);
+      opacity: 1;
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.7);
     }
 
     .nav-links a.active {
-      background-color: #fff;
-      color: #111;
       font-weight: 600;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+      border-color: #ffe09a;
+      opacity: 1;
     }
 
-    .lang-switch {
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      padding: 4px 11px;
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: rgba(0, 0, 0, 0.12);
+    .lang-pill {
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      opacity: 0.9;
     }
 
-    .lang-switch span {
-      font-size: 0.78rem;
-      opacity: 0.95;
+    .lang-pill:hover {
+      background: rgba(0, 0, 0, 0.12);
+      opacity: 1;
     }
 
-    /* LAYOUT */
-
-    .page-wrapper {
-      max-width: 1200px;
-      margin: 26px auto 40px;
-      padding: 0 18px 40px;
+    /* Layout */
+    main {
+      max-width: 1120px;
+      margin: 28px auto 60px;
+      padding: 0 20px 40px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
-      gap: 22px;
-      align-items: stretch;
-      margin-bottom: 28px;
-    }
-
-    .card {
-      background-color: var(--bg-card);
-      border-radius: var(--radius-xl);
+    .page-hero {
+      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.75), transparent 55%),
+                  radial-gradient(circle at bottom left, rgba(255, 226, 160, 0.4), transparent 55%),
+                  var(--bg-card);
       box-shadow: var(--shadow-soft);
-      padding: 22px 24px;
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      position: relative;
-      overflow: hidden;
+      border-radius: 26px;
+      padding: 26px 30px 22px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      pointer-events: none;
-    }
-
-    .card-header-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.26em;
+    .page-hero-kicker {
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 14px;
+      color: #fdf2c4;
+      font-size: 11px;
+      margin-bottom: 8px;
+      background: #2f2618;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
     }
 
-    h1 {
-      font-size: 1.45rem;
+    .page-title {
+      font-size: 26px;
+      font-weight: 700;
       margin-bottom: 6px;
     }
 
-    h2 {
-      font-size: 1.18rem;
+    .page-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
       margin-bottom: 10px;
     }
 
-    h3 {
-      font-size: 1.02rem;
-      margin-bottom: 6px;
+    .page-hero-text {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 780px;
     }
 
-    p {
-      font-size: 0.93rem;
-      line-height: 1.8;
-      color: var(--text-main);
+    .highlight {
+      color: #2f2618;
+      font-weight: 600;
     }
 
-    .muted {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    .badge-line {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .badge {
-      background-color: #fff;
-      border-radius: 999px;
-      padding: 4px 10px;
-      border: 1px solid var(--border-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background-color: var(--gold);
-    }
-
-    /* PROFILE CARD */
-
-    .profile-card {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .profile-photo-wrap {
-      width: 165px;
-      height: 190px;
-      border-radius: 110px;
-      padding: 4px;
-      background: radial-gradient(circle at 20% 0, #f2d88c, #1b1b1b);
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .profile-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 100px;
-      border: 3px solid #fdf7ec;
-    }
-
-    .profile-name {
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-
-    .profile-title {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .profile-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* SECTIONS */
-
+    /* Generic card / section */
     .section {
-      margin-top: 26px;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.92);
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .section-title {
-      font-size: 1.14rem;
-      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 650;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-dark);
+      background: rgba(255, 236, 186, 0.95);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      white-space: nowrap;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .section-body p + p {
+      margin-top: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .col {
+      background: #fffaf1;
+      border-radius: var(--radius-card);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.11);
+      border-color: rgba(208, 161, 60, 0.45);
+    }
+
+    .col-title {
+      font-size: 15px;
+      font-weight: 650;
+      margin-bottom: 6px;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .pill {
-      background-color: #fff;
-      border-radius: 999px;
-      padding: 5px 11px;
-      border: 1px solid var(--border-soft);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .timeline-item {
-      background-color: #fff;
-      border-radius: var(--radius-lg);
-      padding: 12px 14px;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      inset-inline-start: 10px;
-      inset-block-start: 8px;
-      width: 18px;
-      height: 3px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #c79a2b, #f5e0a4);
-    }
-
-    .timeline-role {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-    }
-
-    .timeline-company {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
-
-    .timeline-period {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      gap: 6px;
+      margin-top: 6px;
       margin-bottom: 4px;
     }
 
-    .timeline-item p {
-      font-size: 0.85rem;
-      line-height: 1.7;
+    .pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-soft);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .pill-strong {
+      background: #2f2618;
+      color: #ffe9b3;
+      border-color: #2f2618;
+      font-weight: 500;
     }
 
     ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-top: 4px;
+      padding-right: 0;
     }
 
-    .list-check li {
+    li {
+      padding-right: 18px;
       position: relative;
-      padding-right: 20px;
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-      color: var(--text-main);
+      margin-bottom: 4px;
     }
 
-    .list-check li::before {
-      content: "✓";
+    li::before {
+      content: "•";
       position: absolute;
-      right: 0;
+      right: 4px;
       top: 0;
-      font-size: 0.82rem;
-      color: var(--gold);
+      color: var(--gold-dark);
     }
 
-    .list-dash li {
-      position: relative;
-      padding-right: 14px;
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-      color: var(--text-main);
+    .timeline-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold-dark);
+      top: 7px;
+      right: 2px;
     }
 
-    .list-dash li::before {
-      content: "–";
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 1rem;
-      color: var(--gold);
+    .timeline-role {
+      font-weight: 600;
+      color: #2f2618;
     }
 
-    /* FOOTER */
+    .timeline-meta {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .footer-note {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-top: 6px;
+    }
 
     footer {
-      padding: 18px;
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.45);
+      margin-top: 10px;
     }
 
-    footer span {
-      color: var(--gold);
-      font-weight: 600;
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dotted;
     }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .nav-bar {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Responsive */
+    @media (max-width: 880px) {
+      main {
+        margin-top: 20px;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: flex-start;
+      .page-title {
+        font-size: 23px;
       }
 
-      .grid {
+      .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .profile-card {
-        flex-direction: row-reverse;
-        align-items: center;
-        text-align: right;
-      }
-
-      .profile-photo-wrap {
-        width: 135px;
-        height: 155px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .card {
+      .section {
         padding: 18px 16px;
       }
 
-      h1 {
-        font-size: 1.28rem;
+      .page-hero {
+        padding: 20px 18px 18px;
       }
 
-      .page-wrapper {
+      .top-nav-inner {
         padding-inline: 14px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        font-size: 12px;
+      }
+
+      .brand-badge {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+      }
+
+      .page-title {
+        font-size: 21px;
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="nav-bar">
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
       <div class="brand">
-        <div class="brand-title">قاسم سعيد سعيد</div>
-        <div class="brand-subtitle">
-          مساعد تنفيذي أول • دعم قيادات مجالس الإدارة والرؤساء التنفيذيين • C-Suite
+        <div class="brand-badge">KS</div>
+        <div class="brand-text">
+          <div class="brand-name">قاسم سعيد سعيد</div>
+          <div class="brand-tagline">مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين</div>
         </div>
       </div>
-
       <nav class="nav-links">
         <a href="index.html">الرئيسية</a>
         <a href="about.html" class="active">نبذة عني</a>
         <a href="portfolio.html">الأعمال</a>
         <a href="certificates.html">الشهادات</a>
         <a href="contact.html">تواصل معي</a>
-        <a href="../index.html" class="lang-switch">
-          <span>English</span>
-        </a>
+        <a class="lang-pill" href="../about.html">English</a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="page-wrapper">
-    <!-- TOP GRID: STORY + PROFILE -->
-    <section class="grid">
-      <!-- STORY -->
-      <article class="card">
-        <div class="card-header-label">
-          EXECUTIVE SUPPORT • DISCRETION • RELIABILITY
-        </div>
+  <main>
+    <!-- Page intro -->
+    <section class="page-hero fade-section fade-slow">
+      <div class="page-hero-kicker">EXECUTIVE SUPPORT · C-SUITE</div>
+      <h1 class="page-title">نبذة عن قاسم سعيد سعيد</h1>
+      <div class="page-subtitle">مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين – الرياض</div>
+      <p class="page-hero-text">
+        أنا <span class="highlight">مساعد تنفيذي أول</span> بخبرة تمتد لأكثر من
+        <span class="highlight">24 عاماً</span> في دعم قيادات على أعلى المستويات في
+        المملكة العربية السعودية؛ من رؤساء مجالس إدارة، رؤساء تنفيذيين، ونواب أول
+        للرئيس في قطاعات الاتصالات، المجموعات الخاصة والشركات المتعددة الجنسيات.
+        دوري الأساسي هو أن أكون <span class="highlight">اليد اليمنى الهادئة</span> التي
+        تحرص على الوقت، الأولويات والسمعة المهنية للقائد.
+      </p>
+    </section>
 
-        <h1>مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين</h1>
+    <!-- Profile & snapshot -->
+    <section class="section fade-section fade-delay-1">
+      <div class="section-header">
+        <h2 class="section-title">الملف المهني</h2>
+        <div class="section-tag">دعم قيادات عليا</div>
+      </div>
+      <div class="section-body">
         <p>
-          على مدى أكثر من <strong>24 عاماً</strong> في المملكة العربية السعودية، رافقت قيادات عليا في شركات
-          الاتصالات، المجموعات القابضة والقطاع الخاص. بدأت مسيرتي كسكرتير تنفيذي، وتدرجت حتى وصلت إلى
-          <strong>مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين</strong>، حيث أدير من خلال هذا الدور
-          نبض المكتب التنفيذي: جدول الأعمال، الاتصالات، التحضير الذكي للاجتماعات، والمتابعة الدقيقة للقرارات.
+          عملت خلال مسيرتي مع <span class="highlight">شركات اتصالات كبرى، مجموعات
+          تجارية، شركات صناعية ومكاتب خاصة</span>، وتوليت مسؤوليات تتراوح بين
+          إدارة المكتب التنفيذي، اليوميات المعقدة، السفر الدولي، إعداد محاضر
+          الاجتماعات، تنسيق أعمال اللجان والتعامل مع مراسلات حساسة على مستوى عالٍ.
         </p>
-        <p class="muted" style="margin-top:10px;">
-          دوري الحقيقي هو أن أجعل حياة القائد أكثر هدوءاً وتركيزاً؛ أن يصل إلى كل اجتماع وهو مُطَّلع، مُجهَّز،
-          ويملك الوقت والطاقة للتفكير في القرارات الاستراتيجية بدلاً من الانشغال بالفوضى اليومية وتفاصيل
-          المواعيد.
-        </p>
-
-        <div class="badge-line">
-          <div class="badge">
-            <span class="badge-dot"></span>
-            <span>خبرة تنفيذية +24 سنة في السعودية</span>
-          </div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            <span>الرياض – المملكة العربية السعودية</span>
-          </div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            <span>العربية (لغة أم) – الإنجليزية (بطلاقة)</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROFILE CARD -->
-      <aside class="card profile-card">
-        <div class="profile-photo-wrap">
-          <img src="../profile.jpg" alt="صورة قاسم سعيد سعيد" />
-        </div>
-        <div>
-          <div class="profile-name">قاسم سعيد سعيد</div>
-          <div class="profile-title">
-            مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين
-          </div>
-          <div class="profile-meta" style="margin-top:10px;">
-            • دعم مباشر لقيادات على مستوى C-Suite في بيئات عالية الحساسية<br />
-            • خبرة في الاتصالات، المجموعات القابضة، والقطاع الخاص<br />
-            • متاح لفرص دعم قيادي في الرياض أو لأدوار تنفيذية عن بُعد
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- EXPERIENCE TIMELINE -->
-    <section class="section">
-      <div class="card">
-        <h2 class="section-title">محطات الخبرة المهنية</h2>
-        <p class="muted">
-          كل محطة في مسيرتي أضافت طبقة جديدة من الفهم لطبيعة عمل القائد، وكيف تُدار القرارات الحساسة داخل
-          المكاتب العليا.
-        </p>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-role">سكرتير تنفيذي – بداية المسيرة</div>
-            <div class="timeline-company">شركة مقاولات كبرى – الرياض</div>
-            <div class="timeline-period">2000 – 2005</div>
-            <p>
-              تأسيس القاعدة الصلبة في الأعمال المكتبية: إدارة المراسلات، حفظ الملفات، تنسيق المواعيد، والتعامل
-              اليومي مع أقسام متعددة داخل الشركة، مع التزام عالٍ بالدقة والانضباط.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">مدير مكتب / مساعد مدير عام</div>
-            <div class="timeline-company">شركة عالمية متعددة الجنسيات</div>
-            <div class="timeline-period">2005 – 2008</div>
-            <p>
-              التعرف على ثقافة الشركات العالمية، إدارة الاجتماعات متعددة الأطراف، والتواصل مع فرق دولية، مع
-              المحافظة على المهنية والسرية والالتزام بمعايير عالية للجودة.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">مدير مكتب لرئيس مجلس إدارة مجموعة قابضة</div>
-            <div class="timeline-company">مجموعة خاصة – الرياض</div>
-            <div class="timeline-period">2008 – 2014</div>
-            <p>
-              تنظيم مكتب رئيس مجلس إدارة لمجموعة شركات، متابعة الاستثمارات، تنسيق الاجتماعات الداخلية والخارجية،
-              والربط اليومي بين مصالح الأعمال والوقت المتاح لدى رجل الأعمال.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-role">مساعد تنفيذي أول لنائب أعلى / رئيس تنفيذي</div>
-            <div class="timeline-company">شركة اتصالات رائدة في السعودية</div>
-            <div class="timeline-period">2014 – 2024</div>
-            <p>
-              إدارة مكتب قيادي في قطاع حيوي؛ إعداد جداول معقدة، تنسيق لجان واجتماعات مجالس، تحضير مواد موجزة
-              لقرارات استراتيجية، والتعامل مع مستويات عالية من المسؤولية والسرية.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY MY STYLE WORKS -->
-    <section class="section">
-      <div class="card">
-        <h2 class="section-title">ما الذي يميز أسلوبي في دعم القيادات التنفيذية؟</h2>
-        <div class="grid" style="grid-template-columns: minmax(0,1.5fr) minmax(0,1.5fr); gap:18px;">
-          <div>
-            <h3>تركيز حقيقي على وقت القائد</h3>
-            <ul class="list-check" style="margin-top:6px;">
-              <li>إعادة تصميم جدول الأعمال ليخدم الأولويات الاستراتيجية لا الاجتماعات العشوائية.</li>
-              <li>تصفية البريد والمراسلات حتى تصل للقائد الملفات ذات التأثير الأعلى فقط.</li>
-              <li>تحضير اجتماعات مختصرة بملخصات واضحة ونقاط قرار جاهزة، بعيداً عن الحشو.</li>
-            </ul>
-
-            <h3 style="margin-top:14px;">انضباط وموثوقية عالية</h3>
-            <ul class="list-check" style="margin-top:6px;">
-              <li>التزام قوي بالمواعيد، المتابعة، وإغلاق الحلقات المفتوحة في الوقت المناسب.</li>
-              <li>سرية تامة في التعامل مع المعلومات الحساسة والقرارات العليا.</li>
-              <li>تمثيل مهني للقائد أمام فرق العمل، الشركاء، والجهات الخارجية.</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3>هدوء تحت الضغط وتفكير منظم</h3>
-            <ul class="list-check" style="margin-top:6px;">
-              <li>التعامل مع الفترات الحرجة (إطلاق مشاريع، اجتماعات مجلس إدارة، زيارات وفود) بهدوء
-                وتنظيم.</li>
-              <li>إعادة ترتيب الأولويات بسرعة مع الحفاظ على التفاصيل الصغيرة التي لا يجب أن تُنسى.</li>
-              <li>التواصل مع الأطراف المختلفة بوضوح حتى لا تضيع المسؤوليات بين الفرق.</li>
-            </ul>
-
-            <h3 style="margin-top:14px;">شراكة حقيقية مع القائد</h3>
-            <ul class="list-check" style="margin-top:6px;">
-              <li>أتعامل مع دوري كشريك نجاح للقائد، لا مجرد وظيفة مكتبية.</li>
-              <li>أحافظ على صورة المكتب التنفيذي منظمة، محترمة، واحترافية أمام الجميع.</li>
-              <li>أهدف دائماً لأن يستعيد القائد جزءاً من وقته وهدوئه الذهني ليُركّز على ما لا يقدر غيره
-                على فعله.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALUES & WORK STYLE -->
-    <section class="section">
-      <div class="card">
-        <h2 class="section-title">قيم العمل وأسلوب التعاون معي</h2>
-        <div class="pill-row">
-          <span class="pill">الاحترام والسرية قبل كل شيء</span>
-          <span class="pill">وضوح في التوقعات والتواصل</span>
-          <span class="pill">جودة عالية في كل مهمة</span>
-          <span class="pill">مرونة أمام ضغط الوقت</span>
-          <span class="pill">تفكير هادئ ومنظم</span>
-          <span class="pill">التزام بقيمة الوقت</span>
-        </div>
-
-        <p style="margin-top:12px;">
-          أحب أن يكون التعاون مبنياً على الثقة والوضوح؛ ما يحتاجه القائد، ما يمكنني تقديمه، وكيف نقيس نجاح عمل
-          المكتب التنفيذي. كلما كان الحوار صريحاً، أصبح تنظيم العمل أسهل، وتحوّل المكتب إلى بيئة هادئة تساعد على
-          اتخاذ قرارات أفضل.
-        </p>
-      </div>
-    </section>
-
-    <!-- PERSONAL NOTE -->
-    <section class="section">
-      <div class="card">
-        <h2 class="section-title">لمحة شخصية سريعة</h2>
         <p>
-          إلى جانب عملي التنفيذي، أجد شغفي في الكتابة والتأمل في التجارب الإنسانية داخل المكاتب؛ كيف تتشكل
-          العلاقات، وكيف تكشف السنين عن طبائع الناس تحت الضغط. أعمل حالياً على مشروع كتاب بعنوان
-          <strong>«ثلاثون عاماً في المكاتب – ماذا تعلمت عن الناس»</strong>، إضافةً إلى مشاريع كتب متخصصة لمساعدة
-          المساعدين التنفيذيين الطموحين على تطوير مسارهم المهني.
+          يجمع مساري بين خلفية أكاديمية في <span class="highlight">الأدب العربي</span>،
+          ومعرفة قوية باللغة الإنجليزية، مع إتقان متقدم لأدوات مايكروسوفت 365
+          وأدوات التعاون الرقمي. ما أُعرف به هو <span class="highlight">الهدوء،
+          الدقة، والموثوقية</span> في بيئات عمل تتطلب أقصى درجات السرية والثقة.
         </p>
       </div>
     </section>
+
+    <!-- Experience & strengths -->
+    <section class="section fade-section fade-delay-2">
+      <div class="section-header">
+        <h2 class="section-title">الخبرات التنفيذية</h2>
+        <div class="section-tag">التدرج المهني</div>
+      </div>
+
+      <section class="two-col fade-section fade-delay-2">
+        <!-- Left: Timeline -->
+        <div class="col card-hover fade-section fade-delay-2">
+          <div class="col-title">أهم الأدوار والمسميات</div>
+          <ul class="timeline-list">
+            <li>
+              <div class="timeline-role">مساعد تنفيذي أول لنائب أول للرئيس</div>
+              <div class="timeline-meta">
+                شركة الاتصالات السعودية (STC) · 2014–2024 · قطاع الاتصالات – الرياض
+              </div>
+            </li>
+            <li>
+              <div class="timeline-role">مدير مكتب / مساعد تنفيذي</div>
+              <div class="timeline-meta">
+                مجموعة صموه القابضة ومكتب خاص · 2008–2014 · عقارات واستثمارات
+              </div>
+            </li>
+            <li>
+              <div class="timeline-role">مدير مكتب المدير العام</div>
+              <div class="timeline-meta">
+                هنكل (شركة ألمانية متعددة الجنسيات) · 2005–2008 · قطاع السلع الاستهلاكية
+              </div>
+            </li>
+            <li>
+              <div class="timeline-role">سكرتير تنفيذي / منسق مكتب</div>
+              <div class="timeline-meta">
+                الفنار · 2000–2005 · مقاولات وصناعة – المملكة العربية السعودية
+              </div>
+            </li>
+          </ul>
+
+          <div class="pill-row" style="margin-top:10px;">
+            <span class="pill pill-strong">مكتب قيادات عليا</span>
+            <span class="pill">شركات كبرى</span>
+            <span class="pill">مكاتب خاصة</span>
+            <span class="pill">الرياض · السعودية</span>
+          </div>
+        </div>
+
+        <!-- Right: Strengths -->
+        <div class="col card-hover fade-section fade-delay-3">
+          <div class="col-title">نِقاط القوة الأساسية</div>
+          <ul>
+            <li>مستوى عالٍ من الثقة والتعامل مع المعلومات الحساسة والقرارات المهمة.</li>
+            <li>تنظيم ممتاز للأولويات في يوميات مزدحمة واجتماعات متوازية ومهام متداخلة.</li>
+            <li>قدرة على العمل بهدوء تحت الضغط في بيئات سريعة التغير.</li>
+            <li>أسلوب تواصل راقٍ ومحترم بالعربية والإنجليزية، شفهياً وكتابياً.</li>
+            <li>بناء أنظمة عمل واضحة تحفظ الملفات والقرارات والمتابعات من الضياع.</li>
+          </ul>
+
+          <div class="pill-row" style="margin-top:10px;">
+            <span class="pill pill-strong">إدارة اليوميات والبريد التنفيذي</span>
+            <span class="pill">دعم لجان ومجالس</span>
+            <span class="pill">تنسيق سفر واجتماعات دولية</span>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Education & development -->
+    <section class="section fade-section fade-delay-1">
+      <div class="section-header">
+        <h2 class="section-title">التعليم والتطوير المهني</h2>
+        <div class="section-tag">تعلّم مستمر</div>
+      </div>
+
+      <div class="two-col">
+        <div class="col card-hover fade-section fade-delay-1">
+          <div class="col-title">التعليم الجامعي</div>
+          <ul class="timeline-list">
+            <li>
+              <div class="timeline-role">إجازة في الأدب العربي</div>
+              <div class="timeline-meta">
+                جامعة دمشق · سوريا
+              </div>
+            </li>
+          </ul>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-soft);">
+            من خلال دراسة الأدب العربي اكتسبت قدرة عالية على الكتابة، التحرير، وصياغة
+            النصوص العربية بأسلوب لغوي سليم واحترافي، وهو ما يخدمني في إعداد
+            المراسلات الرسمية، الخطابات والعروض الموجهة للقيادات.
+          </p>
+        </div>
+
+        <div class="col card-hover fade-section fade-delay-2">
+          <div class="col-title">المهارات الرقمية والتقنية</div>
+          <ul>
+            <li>استخدام متقدم لحزمة Microsoft 365 (Outlook, Word, PowerPoint, Excel, Teams).</li>
+            <li>تجربة في استخدام Google Workspace, Zoom وأدوات التعاون الحديثة.</li>
+            <li>اهتمام مستمر بتحديث المعرفة في أدوات الإنتاجية والذكاء الاصطناعي المساند للعمل المكتبي.</li>
+            <li>الاطلاع على أفضل الممارسات العالمية في مهنة المساعد التنفيذي وإدارة المكاتب العليا.</li>
+          </ul>
+          <div class="pill-row" style="margin-top:10px;">
+            <span class="pill pill-strong">Microsoft 365</span>
+            <span class="pill">تحضير عروض ومذكرات</span>
+            <span class="pill">إنتاجية رقمية</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How I work with leaders -->
+    <section class="section fade-section fade-delay-2">
+      <div class="section-header">
+        <h2 class="section-title">أسلوبي في العمل مع القيادات</h2>
+        <div class="section-tag">نمط العمل</div>
+      </div>
+      <div class="section-body">
+        <p>
+          أرى أن دور <span class="highlight">المساعد التنفيذي الأول</span> ليس مجرد
+          تنسيق مواعيد أو مهام إدارية، بل هو شراكة مهنية تركز على <span class="highlight">حماية وقت القائد</span>،
+          وضمان وضوح الأولويات، وتجهيز ما يلزم لاتخاذ قرارات صحيحة في الوقت المناسب.
+        </p>
+        <p style="margin-top:8px;">
+          في عملي اليومي أميل إلى <span class="highlight">التنظيم والهدوء</span>،
+          مع قدرة عالية على التكيّف مع المتغيرات، الطلبات العاجلة والمهام المفاجئة؛
+          مع الحفاظ على أسلوب محترم، متزن ومبني على الحلول، حتى في الأوقات المزدحمة.
+        </p>
+        <div class="pill-row" style="margin-top:12px;">
+          <span class="pill pill-strong">سرية وثقة</span>
+          <span class="pill">وضوح في التواصل</span>
+          <span class="pill">احترام الوقت والأولويات</span>
+          <span class="pill">هدوء تحت الضغط</span>
+        </div>
+        <p class="footer-note">
+          مقيم في الرياض، ومتاح للأدوار الحضورية داخل المملكة، بالإضافة إلى دعم
+          عن بُعد أو هجين يتوافق مع التوقيت الأمريكي عند الحاجة.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> قاسم سعيد سعيد.  
+      العربية · <a href="../about.html">English</a>
+    </footer>
   </main>
 
-  <footer>
-    © <span>قاسم سعيد سعيد</span> – مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين
-  </footer>
+  <script src="../animations.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
