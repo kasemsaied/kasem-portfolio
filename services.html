@@ -19,7 +19,7 @@
       --text-main: #2c2a29;
       --text-soft: #5d5a57;
       --border-soft: #e0d4bb;
-      --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+      --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
       --radius-card: 18px;
       --radius-pill: 999px;
       --transition-fast: 0.2s ease-out;
@@ -35,17 +35,15 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       background: white;
       padding: 15px 0;
       box-shadow: var(--shadow-soft);
-      margin-bottom: 10px;
     }
 
     nav {
       width: 95%;
-      max-width: 1300px;
+      max-width: 1450px;
       margin: auto;
       display: flex;
       align-items: center;
@@ -65,13 +63,13 @@
       color: var(--gold);
     }
 
-    /* SECTION */
+    /* MAIN SECTION */
     .section {
       width: 95%;
-      max-width: 1300px;
+      max-width: 1450px;
       margin: auto;
-      padding-top: 40px;
-      padding-bottom: 60px;
+      padding-top: 60px;
+      padding-bottom: 80px;
     }
 
     .section-header {
@@ -92,7 +90,7 @@
 
     .section-subtitle {
       margin-top: 60px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-size: 26px;
       color: var(--gold-dark);
       text-align: center;
@@ -101,8 +99,8 @@
     /* CARDS */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 35px;
       margin-top: 30px;
     }
 
@@ -117,8 +115,8 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 55px rgba(0, 0, 0, 0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 55px rgba(0,0,0,0.14);
     }
 
     .card-featured {
@@ -150,7 +148,7 @@
     }
 
     ul {
-      padding-left: 18px;
+      padding-left: 20px;
     }
 
     ul li {
@@ -160,16 +158,17 @@
     /* CTA */
     .services-cta {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 70px auto;
       text-align: center;
-      padding: 30px;
+      padding: 35px;
       background: var(--bg-accent);
       border-radius: var(--radius-card);
       border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 80px;
       padding: 30px;
       background: #ffffff;
       text-align: center;
@@ -207,7 +206,6 @@
   <h2 class="section-subtitle">Executive Assistant Packages</h2>
 
   <div class="cards-grid">
-
     <div class="card">
       <h3>Essential Executive Support</h3>
       <p class="price">USD 1,250 / month — ~15 hours</p>
@@ -248,14 +246,12 @@
         <li>Weekly executive brief</li>
       </ul>
     </div>
-
   </div>
 
-  <!-- CHIEF-OF-STAFF SUPPORT -->
+  <!-- CHIEF-OF-STAFF -->
   <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
 
   <div class="cards-grid">
-
     <div class="card">
       <h3>Strategic Operations Support</h3>
       <p class="price">USD 3,500 / month — ~30 hours</p>
@@ -289,16 +285,13 @@
         <li>Daily updates (US aligned)</li>
       </ul>
     </div>
-
   </div>
 
   <!-- CTA -->
   <div class="services-cta">
     <p><strong>Interested in working together?</strong></p>
-    <p>
-      Email: <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a><br />
-      Website: <a href="https://kasemsaied.github.io/kasem-portfolio/">kasemsaied.github.io/kasem-portfolio</a>
-    </p>
+    <p>Email: <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a><br>
+       Website: <a href="https://kasemsaied.github.io/kasem-portfolio/">kasemsaied.github.io/kasem-portfolio</a></p>
   </div>
 
 </section>
