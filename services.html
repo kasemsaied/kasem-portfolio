@@ -1,10 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  ...
+  <meta charset="UTF-8" />
+  <title>Services | Kasem Saied | Senior Executive Assistant</title>
+  <meta name="description" content="Professional remote Executive Assistant and Chief-of-Staff services by Kasem Saied — supporting CEOs and leaders worldwide with high-level administrative and strategic assistance." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Kasem Saied" />
+
+  <!-- Shared animation styles -->
+  <link rel="stylesheet" href="animations.css" />
+
+  <style>
+    :root {
+      --bg-body: #f4efe4;
+      --bg-card: #fbf8f1;
+      --bg-accent: #fff8d8;
+      --gold: #d0a13c;
+      --gold-dark: #b68a1e;
+      --text-main: #2c2a29;
+      --text-soft: #5d5a57;
+      --border-soft: #e0d4bb;
+      --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease-out;
+      --transition-med: 0.35s ease-out;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-body);
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 15px 0;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 40px;
+    }
+
+    nav {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      margin-left: 20px;
+      transition: var(--transition-fast);
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .section {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding-bottom: 60px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .section-subtitle {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: var(--gold-dark);
+      text-align: center;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      transition: var(--transition-med);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-featured {
+      background: var(--bg-accent);
+      border: 2px solid var(--gold);
+    }
+
+    .badge {
+      background: var(--gold);
+      color: white;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: var(--gold-dark);
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    .tagline {
+      color: var(--text-soft);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    .tier-label {
+      font-size: 15px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 10px;
+      display: inline-block;
+      font-weight: 600;
+      color: white;
+    }
+
+    .tier-gold { background: #c9a030; }
+    .tier-platinum { background: #969696; }
+    .tier-elite { background: #353535; }
+
+    .addons {
+      margin-top: 50px;
+    }
+
+    .addons h3 {
+      color: var(--gold-dark);
+    }
+
+    .services-cta {
+      margin-top: 50px;
+      text-align: center;
+      padding: 30px;
+      background: var(--bg-accent);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 30px;
+      background: #ffffff;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      color: var(--text-soft);
+    }
+  </style>
 </head>
+
 <body>
+
 <header>
-  ... your navigation menu ...
+  <nav>
+    <div><strong>Kasem Saied</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 </header>
 
+<section id="services" class="section">
+  <div class="section-header">
+    <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
+    <h1>Executive Support Services</h1>
+    <p>Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders, and senior leaders aligned with US time zones.</p>
+  </div>
+
+  <!-- EXECUTIVE ASSISTANT PACKAGES -->
+  <h2 class="section-subtitle">Executive Assistant Packages</h2>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <h3>Essential Executive Support</h3>
+      <p class="price">USD 1,250 / month — ~15 hours</p>
+      <p class="tagline">For executives needing light but reliable support.</p>
+      <ul>
+        <li>Calendar & schedule coordination</li>
+        <li>Email triage & inbox organization</li>
+        <li>Meeting preparation & follow-up</li>
+        <li>Light research & document formatting</li>
+        <li>Domestic & international travel planning</li>
+        <li>Weekly summary report</li>
+      </ul>
+    </div>
+
+    <div class="card card-featured">
+      <div class="badge">Most Popular</div>
+      <h3>Professional Executive Assistant</h3>
+      <p class="price">USD 2,500 / month — ~35 hours</p>
+      <p class="tagline">Balanced, high-value support for busy leaders.</p>
+      <ul>
+        <li>Full calendar & inbox management</li>
+        <li>Scheduling across time zones</li>
+        <li>Drafting communication & reports</li>
+        <li>Vendor / client coordination</li>
+        <li>Project follow-up & tracking</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Premium Executive Partner</h3>
+      <p class="price">USD 4,500 / month — ~70 hours</p>
+      <p class="tagline">Full remote Senior EA support at C-level.</p>
+      <ul>
+        <li>Calendar and inbox ownership</li>
+        <li>Board materials coordination</li>
+        <li>Confidential document handling</li>
+        <li>Travel itineraries & logistics</li>
+        <li>Weekly executive brief</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CHIEF-OF-STAFF PACKAGES -->
+  <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <h3>Strategic Operations Support</h3>
+      <p class="price">USD 3,500 / month — ~30 hours</p>
+      <ul>
+        <li>Weekly CEO strategy alignment</li>
+        <li>Communication drafting</li>
+        <li>Task & priority follow-up</li>
+        <li>Executive summaries</li>
+      </ul>
+    </div>
+
+    <div class="card card-featured">
+      <div class="badge">High Value</div>
+      <h3>Executive Chief-of-Staff Partner</h3>
+      <p class="price">USD 6,000 / month — ~60 hours</p>
+      <ul>
+        <li>Board reports</li>
+        <li>Leadership alignment</li>
+        <li>KPI dashboards</li>
+        <li>Initiative tracking</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Elite Chief-of-Staff Support</h3>
+      <p class="price">USD 9,500 / month — ~100 hours</p>
+      <ul>
+        <li>Full operational support</li>
+        <li>Strategic planning</li>
+        <li>Investor briefings</li>
+        <li>Daily updates (US aligned)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="services-cta">
+    <p><strong>Interested in working together?</strong></p>
+    <p>
+      Email: <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a><br />
+      Website: <a href="https://kasemsaied.github.io/kasem-portfolio/">kasemsaied.github.io/kasem-portfolio</a>
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 Kasem Saied — All Rights Reserved.
+</footer>
+
+</body>
+</html>
