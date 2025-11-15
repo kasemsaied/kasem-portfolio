@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact – Kasem Saied Saied | Senior Executive Assistant</title>
-  <meta name="description" content="Contact details and availability for Kasem Saied Saied, Senior Executive Assistant based in Riyadh, Saudi Arabia." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Kasem Saied Saied" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kasem Saied Saied</title>
 
   <link rel="stylesheet" href="animations.css" />
 
@@ -13,295 +11,161 @@
     :root {
       --bg-body: #f4efe4;
       --bg-card: #fbf8f1;
-      --bg-accent: #ffdf8d;
+      --bg-accent: #fff4d9;
       --gold: #d0a13c;
       --gold-dark: #8b6a1e;
       --text-main: #2c2a29;
       --text-soft: #5d5a57;
-      --border-soft: #e0d4b8;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+      --border-soft: #e0d4bb;
+      --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
       --radius-card: 18px;
       --radius-pill: 999px;
       --transition-fast: 0.2s ease-out;
-      --transition-med: 0.35s ease-out;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
       background: var(--bg-body);
+      font-family: "Segoe UI", sans-serif;
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .top-nav {
+    /* ===== GOLDEN TOP HEADER ===== */
+    header {
+      background: linear-gradient(90deg, #1b1307, #c3922f);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: linear-gradient(90deg, #1d1810, #b88a2c);
-      color: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      z-index: 999;
     }
-
-    .top-nav-inner {
-      max-width: 1120px;
+    .top-bar {
+      max-width: 1450px;
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 14px 3%;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
+      letter-spacing: 0.05em;
     }
-
     .brand-badge {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: #000;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f9f3e3;
+      color: #3b2b11;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
-      border: 2px solid #f6d37a;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
     }
-
-    .nav-links {
+    .brand-text {
+      font-size: 14px;
+    }
+    nav {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 26px;
       font-size: 14px;
     }
-
-    .nav-links a {
-      opacity: 0.85;
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    nav a {
+      text-decoration: none;
+      color: #f7f2e8;
+      font-weight: 500;
+      padding-bottom: 4px;
+      position: relative;
+      transition: 0.2s ease;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #ffd890;
+      transition: width 0.2s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a.active {
+      color: #ffffff;
+      font-weight: 650;
+    }
+    nav a.active::after {
+      width: 100%;
     }
 
-    .nav-links a:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-      border-color: rgba(255, 255, 255, 0.7);
-    }
-
-    .nav-links a.active {
-      font-weight: 600;
-      border-color: #ffe09a;
-      opacity: 1;
-    }
-
-    .lang-pill {
-      margin-left: 10px;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .lang-pill:hover {
-      background: rgba(0, 0, 0, 0.12);
-      opacity: 1;
-    }
-
-    main {
+    /* ===== LAYOUT ===== */
+    .section {
       max-width: 900px;
-      margin: 28px auto 60px;
-      padding: 0 20px 40px;
+      margin: 60px auto;
+      padding: 0 3%;
     }
-
-    .page-hero {
-      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(255, 226, 160, 0.5), transparent 55%),
-                  var(--bg-card);
+    .section-header {
+      background: var(--bg-accent);
+      padding: 40px 50px;
+      border-radius: var(--radius-card);
       box-shadow: var(--shadow-soft);
-      border-radius: 26px;
-      padding: 26px 30px 20px;
-      margin-bottom: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
     }
-
-    .page-hero-kicker {
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      font-size: 11px;
+    .section-kicker {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      font-weight: 600;
       margin-bottom: 6px;
     }
-
-    .page-title {
-      font-size: 26px;
+    .section-header h1 {
+      margin: 0;
+      font-size: 32px;
       font-weight: 700;
-      margin-bottom: 6px;
     }
-
-    .page-subtitle {
-      font-size: 14px;
+    .section-header p {
+      max-width: 700px;
+      margin-top: 12px;
       color: var(--text-soft);
-      max-width: 680px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 10px;
     }
 
     .card {
       background: var(--bg-card);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.95);
+      padding: 30px 34px;
+      border-radius: var(--radius-card);
       box-shadow: var(--shadow-soft);
-      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
-      font-size: 14px;
-      color: var(--text-soft);
     }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-      border-color: rgba(208, 161, 60, 0.5);
-      background: #fffaf2;
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
     }
-
-    .card-title {
-      font-size: 16px;
-      font-weight: 650;
-      margin-bottom: 6px;
-      color: #2f2618;
+    .contact-line {
+      margin: 8px 0;
     }
-
-    .contact-row {
-      margin-top: 8px;
-    }
-
-    .label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+    a.link {
       color: var(--gold-dark);
-      margin-bottom: 2px;
+      font-weight: 600;
+      text-decoration: none;
     }
-
-    .value {
-      font-size: 14px;
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .value a {
+    a.link:hover {
       text-decoration: underline;
-      text-decoration-style: dotted;
-      text-underline-offset: 3px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .pill {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-soft);
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--text-soft);
-      white-space: nowrap;
-    }
-
-    .pill-strong {
-      background: #2f2618;
-      color: #ffe9b3;
-      border-color: #2f2618;
-      font-weight: 500;
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 6px;
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    li {
-      padding-left: 16px;
-      position: relative;
-      margin-bottom: 4px;
-    }
-
-    li::before {
-      content: "•";
-      position: absolute;
-      left: 4px;
-      top: 0;
-      color: var(--gold-dark);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.45);
-      margin-top: 26px;
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-    }
-
-    @media (max-width: 760px) {
-      main {
-        margin-top: 20px;
-      }
-
-      .page-title {
-        font-size: 23px;
-      }
-
-      .cards {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .top-nav-inner {
-        padding-inline: 14px;
-      }
-
-      .nav-links {
-        font-size: 13px;
-        gap: 12px;
-      }
     }
   </style>
 </head>
 <body>
-  <header>
+
+<header>
   <div class="top-bar">
     <div class="brand">
       <div class="brand-badge">KS</div>
@@ -312,93 +176,56 @@
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="certificates.html">Certificates</a>
-      <a href="contact.html">Contact</a>
-      <a href="services.html" class="active">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="services.html">Services</a>
     </nav>
   </div>
 </header>
-  <main>
-    <section class="page-hero fade-section fade-slow">
-      <div class="page-hero-kicker">LET’S CONNECT</div>
-      <h1 class="page-title">Contact & Availability</h1>
-      <p class="page-subtitle">
-        I am based in Riyadh and open to on-site Executive Assistant roles in Saudi Arabia, as well as remote or hybrid
-        support aligned with US time zones.
-      </p>
 
-      <div class="cards">
-        <!-- Direct contact -->
-        <article class="card fade-section fade-delay-1">
-          <h2 class="card-title">Direct Contact</h2>
+<section class="section">
+  <div class="section-header">
+    <p class="section-kicker">LET’S CONNECT</p>
+    <h1>Contact Kasem Saied Saied</h1>
+    <p>
+      I am based in Riyadh, Saudi Arabia and open to on-site executive support
+      roles in Saudi Arabia and remote Executive Assistant / C-suite support
+      aligned with US time zones.
+    </p>
+  </div>
 
-          <div class="contact-row">
-            <div class="label">Email</div>
-            <div class="value">
-              <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
-            </div>
-          </div>
+  <div class="card">
+    <h3>Contact Details</h3>
 
-          <div class="contact-row">
-            <div class="label">Mobile (KSA)</div>
-            <div class="value">
-              <a href="tel:+966553075340">+966 55 307 5340</a>
-            </div>
-          </div>
+    <p class="contact-line">
+      Email:
+      <a class="link" href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
+    </p>
 
-          <div class="contact-row">
-            <div class="label">LinkedIn</div>
-            <div class="value">
-              <a href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">
-                linkedin.com/in/kasem-said
-              </a>
-            </div>
-          </div>
+    <p class="contact-line">
+      LinkedIn:
+      <a class="link" href="https://www.linkedin.com/in/kasem-said" target="_blank">
+        linkedin.com/in/kasem-said
+      </a>
+    </p>
 
-          <div class="contact-row">
-            <div class="label">Location & Time Zone</div>
-            <div class="value">Riyadh, Saudi Arabia · GMT+3</div>
-          </div>
+    <p class="contact-line">
+      Portfolio Website:
+      <a class="link" href="https://kasemsaied.github.io/kasem-portfolio" target="_blank">
+        kasemsaied.github.io/kasem-portfolio
+      </a>
+    </p>
 
-          <div class="pill-row">
-            <span class="pill pill-strong">Senior Executive Assistant</span>
-            <span class="pill">On-site – Riyadh</span>
-            <span class="pill">Remote · US time zones</span>
-          </div>
-        </article>
+    <p class="contact-line">
+      Location: Riyadh, Saudi Arabia
+    </p>
 
-        <!-- Collaboration -->
-        <article class="card fade-section fade-delay-2">
-          <h2 class="card-title">How I Can Help</h2>
-          <p style="font-size:13px;">
-            I am happy to discuss opportunities where my experience can bring real value to leaders and organizations.
-          </p>
-          <ul>
-            <li>Executive Assistant roles for Chairmans, CEOs and C-suite leaders.</li>
-            <li>Support in setting up or improving executive offices and workflows.</li>
-            <li>Remote evening / night support aligned with US time zones.</li>
-            <li>Short-term support for transitions, handovers or special projects.</li>
-          </ul>
-          <p style="font-size:13px;margin-top:8px;">
-            Please feel free to contact me via email or WhatsApp with a short note about the role, organization and time zone.
-          </p>
-          <div class="pill-row">
-            <span class="pill">Confidential</span>
-            <span class="pill">Professional</span>
-            <span class="pill">English &amp; Arabic</span>
-          </div>
-        </article>
-      </div>
-    </section>
+    <p style="margin-top: 20px; color: var(--text-soft);">
+      For Executive Assistant or Chief-of-Staff style support, you are welcome
+      to send a brief description of your role, your organization and how I can
+      help. I will respond as soon as possible.
+    </p>
+  </div>
+</section>
 
-    <footer>
-      © <span id="year"></span> Kasem Saied Saied. Portfolio generated for professional use.  
-      English · <a href="ar/contact.html">العربية</a>
-    </footer>
-  </main>
-
-  <script src="animations.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
