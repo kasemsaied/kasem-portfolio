@@ -2,416 +2,648 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services | Kasem Saied | Senior Executive Assistant</title>
-  <meta name="description" content="Professional remote Executive Assistant and Chief-of-Staff services by Kasem Saied — supporting CEOs and leaders with high-level administrative and strategic assistance, aligned with US time zones." />
+  <title>Executive Support Services | Kasem Saied Saied</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Kasem Saied" />
-
-  <!-- shared base styles / animations -->
+  <meta name="description" content="Premium remote Executive Assistant and Chief-of-Staff packages for CEOs, founders and senior leaders aligned with US time zones." />
+  <!-- shared animation styles -->
   <link rel="stylesheet" href="animations.css" />
 
   <style>
     :root {
       --bg-body: #f4efe4;
-      --bg-card: #fbf8f1;
-      --bg-accent: #fff8d8;
+      --bg-card: #fbf1e4;
+      --bg-accent: #ffe7b0;
+
       --gold: #d0a13c;
-      --gold-dark: #b68a1e;
+      --gold-dark: #b68a1f;
+      --gold-soft: #f7e1a8;
+
       --text-main: #2c2a29;
       --text-soft: #5d5a57;
-      --border-soft: #e0d4bb;
-      --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
-      --radius-card: 18px;
+
+      --border-soft: #e0d4b8;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+      --radius-card: 26px;
       --radius-pill: 999px;
+
       --transition-fast: 0.2s ease-out;
       --transition-med: 0.35s ease-out;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
       background: var(--bg-body);
-      font-family: "Segoe UI", Arial, sans-serif;
       color: var(--text-main);
-      line-height: 1.6;
     }
 
-    /* ===== TOP BAR HEADER (like Home) ===== */
-
-    header {
-      background: linear-gradient(90deg, #1b1307, #c3922f);
-      color: #ffffff;
-      box-shadow: var(--shadow-soft);
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .top-bar {
-      max-width: 1450px;
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      padding: 32px 20px 48px;
+    }
+
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 10px 3%;
+    }
+
+    /* ====== TOP NAV BAR (gold + black gradient) ====== */
+
+    .topbar {
+      background: linear-gradient(90deg, #1a130a 0%, #5a4420 45%, #c59832 100%);
+      color: #fff8e5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+    }
+
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 10px 20px;
+      gap: 16px;
     }
 
-    .brand {
+    .topbar-left {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      gap: 10px;
     }
 
     .brand-badge {
-      width: 36px;
-      height: 36px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      background: #f9f3e3;
-      color: #3b2b11;
+      background: radial-gradient(circle at 30% 30%, #fffbe6 0, #f0d48a 42%, #d6a43f 100%);
+      border: 2px solid rgba(255, 255, 255, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 700;
-      box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
+      color: #3a260a;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
     }
 
-    .brand-text {
-      font-size: 14px;
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      font-size: 13px;
     }
 
-    nav {
+    .topbar-right {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 18px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
       font-size: 14px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #f7f2e8;
-      font-weight: 500;
+    .nav-link {
       position: relative;
-      padding-bottom: 4px;
-      transition: color var(--transition-fast);
+      padding-inline: 2px;
+      color: #fff8e5;
+      opacity: 0.9;
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
     }
 
-    nav a::after {
+    .nav-link::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
+      inset-inline: 0;
+      bottom: -4px;
       height: 2px;
-      background: #f5d27a;
-      transition: width var(--transition-fast);
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ffe6aa, #fffbdd);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition-fast);
     }
 
-    nav a:hover {
-      color: #ffffff;
+    .nav-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    nav a.active {
-      color: #ffffff;
+    .nav-link--active {
       font-weight: 600;
     }
 
-    nav a.active::after {
-      width: 100%;
+    .nav-link--active::after {
+      transform: scaleX(1);
     }
 
-    /* ===== MAIN SECTION ===== */
+    .lang-pill {
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.2);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .lang-pill:hover {
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .topbar-left {
+        justify-content: center;
+      }
+      .topbar-right {
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* ====== HERO CARD (NO PHOTO) ====== */
+
+    .hero-card {
+      background: var(--bg-card);
+      border-radius: 32px;
+      box-shadow: var(--shadow-soft);
+      padding: 28px 26px 30px;
+      margin-top: 26px;
+      text-align: center;
+      animation: fadeUp 0.6s var(--transition-med) backwards;
+    }
+
+    .kicker-strip {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f7e6bd;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(90deg, #1b130a 0%, #5a4420 45%, #c89933 100%);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      margin: 0 0 10px;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .hero-subtitle {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 650px;
+      margin-inline: auto;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      font-size: 11px;
+      color: #8b7a63;
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #261708;
+      background: linear-gradient(135deg, #d7a63d, #f3c867);
+      box-shadow: 0 14px 30px rgba(155, 111, 25, 0.35);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(155, 111, 25, 0.48);
+    }
+
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(187, 162, 117, 0.7);
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      background: #fff9ee;
+      color: #4b3c23;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-ghost:hover {
+      background: #fff3da;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ====== SECTIONS & CARDS ====== */
 
     .section {
-      width: 95%;
-      max-width: 1450px;
-      margin: auto;
-      padding-top: 90px;
-      padding-bottom: 80px;
+      margin-top: 32px;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
 
     .section-kicker {
-      color: #d0a13c;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
       margin-bottom: 6px;
     }
 
-    .section-header h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin: 5px 0 5px 0;
+    .section-title {
+      font-size: 20px;
+      margin: 0;
       color: var(--text-main);
     }
 
-    .section-header p {
-      max-width: 780px;
-      margin: 10px auto 0;
-      color: var(--text-soft);
-    }
-
     .section-subtitle {
-      margin-top: 50px;
-      margin-bottom: 15px;
-      font-size: 24px;
-      color: var(--gold-dark);
-      text-align: center;
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 6px;
     }
-
-    /* CARDS */
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 35px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      font-size: 14px;
     }
 
     .card {
-      background: var(--bg-card);
-      padding: 30px;
-      border-radius: var(--radius-card);
+      background: #fef6e8;
+      border-radius: 26px;
+      padding: 18px 18px 18px;
       box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-      transition: var(--transition-med);
-      font-size: 16px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 45px rgba(0,0,0,0.12);
-    }
-
-    .card-featured {
-      background: var(--bg-accent);
-      border: 2px solid var(--gold);
+    .card--highlight {
+      background: #ffeec7;
+      border: 1px solid #f0ce84;
     }
 
     .badge {
-      background: var(--gold);
-      color: #ffffff;
-      padding: 6px 16px;
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      padding: 4px 10px;
       border-radius: var(--radius-pill);
-      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      background: #f5cf7f;
+      color: #55330b;
+    }
+
+    .badge--value {
+      background: #f4d49b;
+      color: #4b3413;
+    }
+
+    .card-title {
+      margin: 6px 0 8px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .card-price {
       font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      color: var(--gold-dark);
-      font-weight: bold;
-      font-size: 18px;
-      margin-top: 5px;
-    }
-
-    .tagline {
-      color: var(--text-soft);
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-
-    ul li {
+      font-weight: 600;
+      color: #9b6b11;
       margin-bottom: 8px;
     }
 
-    /* CTA */
-
-    .services-cta {
-      max-width: 1000px;
-      margin: 70px auto;
-      text-align: center;
-      padding: 35px;
-      background: var(--bg-accent);
-      border-radius: var(--radius-card);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      font-size: 16px;
+    .card-price span {
+      font-weight: 400;
+      color: #76614b;
     }
 
-    .services-cta a {
-      color: var(--gold-dark);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .services-cta a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      padding: 25px;
-      background: #ffffff;
-      text-align: center;
-      border-top: 1px solid var(--border-soft);
+    .card-body {
+      font-size: 13px;
       color: var(--text-soft);
-      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .card li {
+      margin-bottom: 4px;
+    }
+
+    /* ====== FOOTER STRIP ====== */
+
+    .cta-strip {
+      margin-top: 26px;
+      background: #fdf0c9;
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cta-strip strong {
+      color: #5b4521;
+    }
+
+    .cta-links {
+      font-size: 12px;
+    }
+
+    .cta-links a {
+      margin-left: 10px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding-top: 26px;
+      }
+      .hero-card {
+        padding-inline: 18px;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ====== ANIMATION ====== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-
 <body>
+  <div class="page-shell">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <div class="brand-badge">KS</div>
+          <div class="brand-name">KASEM SAIED SAIED</div>
+        </div>
+        <div class="topbar-right">
+          <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="certificates.html" class="nav-link">Certificates</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="services.html" class="nav-link nav-link--active">Services</a>
+          </nav>
+          <a class="lang-pill" href="ar/services.html">العربية</a>
+        </div>
+      </div>
+    </header>
 
-<header style="
-  background: linear-gradient(to right, #000000, #2e1f00, #6d5300, #c8a849, #6d5300, #2e1f00, #000000);
-  padding: 16px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  position: relative;
-  z-index: 100;">
-  
-  <!-- LEFT BADGE -->
-  <div style="display:flex; align-items:center; gap:10px; color:white; font-weight:700; font-size:16px;">
-    <span style="
-      background:#000;
-      color:#f5d997;
-      padding:6px 12px;
-      border-radius:50%;
-      border:2px solid #c9a745;
-      font-weight:700;
-    ">KS</span>
-    KASEM SAIED SAIED
+    <main>
+      <div class="container">
+        <!-- HERO (TEXT ONLY, NO PHOTO) -->
+        <section class="hero-card">
+          <div class="kicker-strip">
+            EXECUTIVE SUPPORT • DISCRETION • RELIABILITY
+          </div>
+          <h1 class="hero-title">Remote Executive Support Packages</h1>
+          <p class="hero-subtitle">
+            A clear suite of Executive Assistant and Chief-of-Staff packages for business owners, CEOs and senior leaders
+            who need structured, dependable support aligned with US time zones.
+          </p>
+          <p class="hero-meta">
+            Based in Riyadh – open to remote support in US-friendly hours for English- and Arabic-speaking leaders.
+          </p>
+          <div class="hero-actions">
+            <a href="mailto:kasem.saied@gmail.com?subject=Executive%20Support%20Packages" class="btn-primary">
+              Discuss the right package
+            </a>
+            <a href="contact.html" class="btn-ghost">Contact me first</a>
+          </div>
+        </section>
+
+        <!-- EXECUTIVE ASSISTANT PACKAGES -->
+        <section class="section">
+          <div class="section-header">
+            <div class="section-kicker">Executive Assistant Packages (EA)</div>
+            <h2 class="section-title">Executive Assistant Support</h2>
+            <p class="section-subtitle">
+              Choose the level of executive assistance that matches your workload and leadership style.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <!-- Essential -->
+            <article class="card">
+              <h3 class="card-title">Essential Executive Support</h3>
+              <p class="card-price">
+                USD 1,250 / month <span>— ~15 hours</span>
+              </p>
+              <p class="card-body">
+                For executives needing light but reliable support and a structured monthly check-in.
+              </p>
+              <ul>
+                <li>Calendar &amp; schedule coordination</li>
+                <li>Email triage &amp; light inbox organization</li>
+                <li>Meeting preparation &amp; follow-up notes</li>
+                <li>Light research &amp; document formatting</li>
+                <li>Domestic &amp; international travel planning</li>
+                <li>Weekly executive summary</li>
+              </ul>
+            </article>
+
+            <!-- Most Popular -->
+            <article class="card card--highlight">
+              <div class="badge">Most Popular</div>
+              <h3 class="card-title">Professional Executive Assistant</h3>
+              <p class="card-price">
+                USD 2,500 / month <span>— ~35 hours</span>
+              </p>
+              <p class="card-body">
+                Balanced, high-value support for busy leaders who need a real extension of their office.
+              </p>
+              <ul>
+                <li>Full calendar &amp; inbox management</li>
+                <li>Scheduling across time zones</li>
+                <li>Drafting communication &amp; reports</li>
+                <li>Vendor / client coordination</li>
+                <li>Project follow-up &amp; tracking</li>
+                <li>Board &amp; leadership meeting preparation</li>
+              </ul>
+            </article>
+
+            <!-- Premium -->
+            <article class="card">
+              <h3 class="card-title">Premium Executive Partner</h3>
+              <p class="card-price">
+                USD 4,500 / month <span>— ~70 hours</span>
+              </p>
+              <p class="card-body">
+                Full remote Senior EA support at a C-level standard, including board and confidential work.
+              </p>
+              <ul>
+                <li>Full calendar &amp; inbox ownership</li>
+                <li>Board materials coordination</li>
+                <li>Confidential document handling</li>
+                <li>Travel itineraries &amp; logistics</li>
+                <li>Weekly executive brief &amp; action tracking</li>
+                <li>Proactive liaison with key stakeholders</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- CHIEF OF STAFF PACKAGES -->
+        <section class="section">
+          <div class="section-header">
+            <div class="section-kicker">Chief of Staff (EA + CoS)</div>
+            <h2 class="section-title">Chief-of-Staff Level Support</h2>
+            <p class="section-subtitle">
+              For leaders who need structured, strategic support beyond classic Executive Assistant work.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <!-- Strategic Ops -->
+            <article class="card">
+              <h3 class="card-title">Strategic Operations Support</h3>
+              <p class="card-price">
+                USD 3,500 / month <span>— ~30 hours</span>
+              </p>
+              <p class="card-body">
+                Combines executive assistance with light Chief-of-Staff duties around priorities and follow-up.
+              </p>
+              <ul>
+                <li>Weekly CEO strategy alignment</li>
+                <li>Communication drafting &amp; review</li>
+                <li>Task &amp; priority follow-up</li>
+                <li>Basic stakeholder coordination</li>
+                <li>Executive summaries &amp; status notes</li>
+              </ul>
+            </article>
+
+            <!-- Exec CoS Partner -->
+            <article class="card card--highlight">
+              <div class="badge badge--value">High Value</div>
+              <h3 class="card-title">Executive Chief-of-Staff Partner</h3>
+              <p class="card-price">
+                USD 6,000 / month <span>— ~60 hours</span>
+              </p>
+              <p class="card-body">
+                A strong blend of EA + CoS for leaders who want one trusted partner managing information &amp; rhythm.
+              </p>
+              <ul>
+                <li>Board reports &amp; briefings support</li>
+                <li>Leadership meeting alignment</li>
+                <li>KPI dashboards &amp; simple trackers</li>
+                <li>Initiative &amp; project tracking</li>
+                <li>First-draft preparation of key documents</li>
+              </ul>
+            </article>
+
+            <!-- Elite CoS -->
+            <article class="card">
+              <h3 class="card-title">Elite Chief-of-Staff Support</h3>
+              <p class="card-price">
+                USD 9,500 / month <span>— ~100 hours</span>
+              </p>
+              <p class="card-body">
+                A deep partnership where I act as your virtual office backbone and coordination point.
+              </p>
+              <ul>
+                <li>Full operational support for the executive office</li>
+                <li>Strategic planning &amp; initiative tracking</li>
+                <li>Investor / board briefings preparation</li>
+                <li>Multi-team coordination &amp; follow-up</li>
+                <li>Daily updates in US-aligned hours</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- BOTTOM CTA STRIP -->
+        <section class="cta-strip">
+          <div>
+            <strong>Not sure which package fits?</strong>
+            We can start with a single month, then adjust the scope and hours once we see your real workload.
+          </div>
+          <div class="cta-links">
+            <a href="mailto:kasem.saied@gmail.com?subject=Which%20package%20is%20right%20for%20me%3F">Email Kasem</a>
+            <a href="contact.html">Contact form</a>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
-
-  <!-- NAVIGATION -->
-  <nav style="display:flex; gap:22px; font-size:15px;">
-    <a href="index.html" style="color:#f7d98f; font-weight:700; text-decoration:none;">Home</a>
-    <a href="about.html" style="color:white; text-decoration:none;">About</a>
-    <a href="portfolio.html" style="color:white; text-decoration:none;">Portfolio</a>
-    <a href="certificates.html" style="color:white; text-decoration:none;">Certificates</a>
-    <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
-    <a href="services.html" style="color:white; text-decoration:none;">Services</a>
-  </nav>
-
-</header>
-
-
-<section id="services" class="section">
-
-  <div class="section-header">
-    <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
-    <h1>Executive Support Services</h1>
-    <p>
-      Premium remote Executive Assistant and Chief-of-Staff support for CEOs, founders,
-      and senior leaders, aligned with US time zones.
-    </p>
-  </div>
-
-  <!-- Executive Assistant Packages -->
-  <h2 class="section-subtitle">Executive Assistant Packages</h2>
-
-  <div class="cards-grid">
-    <div class="card">
-      <h3>Essential Executive Support</h3>
-      <p class="price">USD 1,250 / month — ~15 hours</p>
-      <p class="tagline">For executives needing light but reliable support.</p>
-      <ul>
-        <li>Calendar & schedule coordination</li>
-        <li>Email triage & inbox organization</li>
-        <li>Meeting preparation & follow-up</li>
-        <li>Light research & document formatting</li>
-        <li>Domestic & international travel planning</li>
-        <li>Weekly summary report</li>
-      </ul>
-    </div>
-
-    <div class="card card-featured">
-      <div class="badge">Most Popular</div>
-      <h3>Professional Executive Assistant</h3>
-      <p class="price">USD 2,500 / month — ~35 hours</p>
-      <p class="tagline">Balanced, high-value support for busy leaders.</p>
-      <ul>
-        <li>Full calendar & inbox management</li>
-        <li>Scheduling across time zones</li>
-        <li>Drafting communication & reports</li>
-        <li>Vendor / client coordination</li>
-        <li>Project follow-up & tracking</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Premium Executive Partner</h3>
-      <p class="price">USD 4,500 / month — ~70 hours</p>
-      <p class="tagline">Full remote Senior EA support at C-level.</p>
-      <ul>
-        <li>Full calendar & inbox ownership</li>
-        <li>Board materials coordination</li>
-        <li>Confidential document handling</li>
-        <li>Travel itineraries & logistics</li>
-        <li>Weekly executive brief</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Chief-of-Staff Packages -->
-  <h2 class="section-subtitle">Chief-of-Staff Support Packages</h2>
-
-  <div class="cards-grid">
-    <div class="card">
-      <h3>Strategic Operations Support</h3>
-      <p class="price">USD 3,500 / month — ~30 hours</p>
-      <ul>
-        <li>Weekly CEO strategy alignment</li>
-        <li>Communication drafting</li>
-        <li>Task & priority follow-up</li>
-        <li>Executive summaries</li>
-      </ul>
-    </div>
-
-    <div class="card card-featured">
-      <div class="badge">High Value</div>
-      <h3>Executive Chief-of-Staff Partner</h3>
-      <p class="price">USD 6,000 / month — ~60 hours</p>
-      <ul>
-        <li>Board reports</li>
-        <li>Leadership alignment</li>
-        <li>KPI dashboards</li>
-        <li>Initiative tracking</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Elite Chief-of-Staff Support</h3>
-      <p class="price">USD 9,500 / month — ~100 hours</p>
-      <ul>
-        <li>Full operational support</li>
-        <li>Strategic planning</li>
-        <li>Investor briefings</li>
-        <li>Daily updates (US aligned)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Call to Action -->
-  <div class="services-cta">
-    <p><strong>Interested in working together?</strong></p>
-    <p>
-      Email:
-      <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a><br />
-      Website:
-      <a href="https://kasemsaied.github.io/kasem-portfolio/">kasemsaied.github.io/kasem-portfolio</a>
-    </p>
-  </div>
-
-</section>
-
-<footer>
-  © 2025 Kasem Saied — All Rights Reserved.
-</footer>
-
 </body>
 </html>
