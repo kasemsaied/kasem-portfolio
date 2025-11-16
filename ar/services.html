@@ -2,83 +2,66 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>خدمات الدعم التنفيذي | قاسم سعيد سعيد</title>
+  <title>خدمات الدعم التنفيذي لرؤساء الأعمال والرؤساء التنفيذيين</title>
+  <meta name="description" content="باقات دعم تنفيذي مرنة وخدمات مساعد تنفيذي ومسؤول مكتب رئيس (Chief of Staff) لرؤساء الشركات والقادة التنفيذيين." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="باقات دعم تنفيذي متكاملة (مساعد تنفيذي + Chief of Staff) لرؤساء الأعمال والمديرين التنفيذيين، مع توافق كامل مع المناطق الزمنية في الولايات المتحدة." />
+  <meta name="author" content="Kasem Saied Saied" />
+
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <!-- Shared animations & small effects -->
   <link rel="stylesheet" href="../animations.css" />
+
   <style>
     :root {
       --bg-body: #f4efe4;
-      --bg-card: #fbf1e4;
-      --bg-accent: #ffe7b0;
-
+      --bg-card: #fbf8f1;
       --gold: #d0a13c;
-      --gold-dark: #b68a1f;
-      --gold-soft: #f7e1a8;
-
-      --text-main: #2c2a29;
-      --text-soft: #5d5a57;
-
+      --gold-dark: #8b6a1e;
+      --text-main: #1f1c19;
+      --text-soft: #5d5954;
       --border-soft: #e0d4b8;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-      --radius-card: 26px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.08);
+      --radius-card: 20px;
       --radius-pill: 999px;
-
-      --transition-fast: 0.2s ease-out;
-      --transition-med: 0.35s ease-out;
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.32s ease-out;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Tahoma", sans-serif;
       background: var(--bg-body);
       color: var(--text-main);
-      direction: rtl;
+      line-height: 1.8;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    /* ====== GLOBAL LAYOUT ====== */
-
-    .page-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    /* Top nav -------------------------------------------------- */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(90deg, #1d1810, #b88a2c);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
-    main {
-      flex: 1;
-      padding: 32px 20px 48px;
-    }
-
-    .container {
-      max-width: 1100px;
+    .top-nav-inner {
+      max-width: 1120px;
       margin: 0 auto;
-    }
-
-    /* ====== TOP NAV BAR (black + gold gradient) ====== */
-
-    .topbar {
-      background: linear-gradient(90deg, #1a130a 0%, #5a4420 45%, #c59832 100%);
-      color: #fff8e5;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
-    }
-
-    .topbar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
       gap: 16px;
     }
 
@@ -86,587 +69,460 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
     }
 
     .brand-badge {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff6da, #c99a32);
-      border: 2px solid rgba(255, 255, 255, 0.85);
+      width: 26px;
+      height: 26px;
+      border-radius: var(--radius-pill);
+      background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      color: #20160a;
-      flex-shrink: 0;
-    }
-
-    .brand-name {
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      font-weight: 700;
+      border: 2px solid #f6d37a;
     }
 
-    .nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       font-size: 14px;
     }
 
-    .nav-link {
-      position: relative;
-      padding-inline: 2px;
-      color: #fff8e5;
-      opacity: 0.9;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
+    .nav-links a {
+      opacity: .9;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+      white-space: nowrap;
     }
 
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      inset-inline: 0;
-      bottom: -4px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ffe6aa, #fffbdd);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform var(--transition-fast);
-    }
-
-    .nav-link:hover {
+    .nav-links a:hover {
       opacity: 1;
       transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.7);
     }
 
-    .nav-link--active {
+    .nav-links a.active {
       font-weight: 600;
+      border-color: #ffe09a;
+      opacity: 1;
     }
 
-    .nav-link--active::after {
-      transform: scaleX(1);
-    }
-
-    .nav-cta {
-      margin-right: 10px;
-      padding: 6px 14px;
+    .lang-pill {
+      padding: 4px 12px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255,255,255,0.7);
       font-size: 12px;
-      font-weight: 600;
-      background: rgba(0, 0, 0, 0.15);
-      backdrop-filter: blur(5px);
-      color: #fffef5;
-      cursor: pointer;
-      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      opacity: .95;
+      background: rgba(0,0,0,0.2);
     }
 
-    .nav-cta:hover {
-      background: rgba(0, 0, 0, 0.28);
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
-      transform: translateY(-1px);
+    .lang-pill:hover {
+      background: rgba(0,0,0,0.35);
     }
 
-    /* ====== HERO SECTION (headline + photo) ====== */
+    /* Layout --------------------------------------------------- */
+    main {
+      max-width: 1120px;
+      margin: 26px auto 60px;
+      padding: 0 20px 40px;
+    }
 
-    .hero {
-      background: var(--bg-card);
+    /* Hero card WITHOUT photo ---------------------------------- */
+    .hero-card {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.9), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(255,226,160,.5), transparent 55%),
+        var(--bg-card);
       box-shadow: var(--shadow-soft);
-      border-radius: 34px;
-      padding: 32px 32px 30px;
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: minmax(0, 3.1fr) minmax(0, 1.4fr);
-      gap: 28px;
-      align-items: center;
-      animation: fadeUp 0.6s var(--transition-med) backwards;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 24px 22px 26px;
-      }
-    }
-
-    .hero-text {
-      text-align: right;
+      border-radius: 26px;
+      padding: 26px 32px 22px;
+      border: 1px solid rgba(255,255,255,0.96);
+      margin-bottom: 28px;
+      text-align: center;
     }
 
     .hero-kicker {
-      font-size: 11px;
-      letter-spacing: 0.25em;
+      letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--gold-dark);
+      color: #fdf2c4;
+      font-size: 11px;
       margin-bottom: 10px;
+      background: #2f2617;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
     }
 
     .hero-title {
-      font-size: 26px;
-      line-height: 1.4;
-      margin: 0 0 8px;
-      color: var(--text-main);
-    }
-
-    .hero-sub {
-      margin: 0 0 16px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-soft);
-    }
-
-    .hero-meta {
-      margin-bottom: 18px;
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      font-size: 24px;
+      font-weight: 700;
       margin-bottom: 6px;
     }
 
-    .btn-primary,
-    .btn-ghost {
-      border-radius: var(--radius-pill);
-      padding: 10px 22px;
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-text {
       font-size: 14px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+      color: var(--text-soft);
+      max-width: 900px;
+      margin: 0 auto 14px;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #d7a63d, #f3c867);
-      color: #24170a;
-      box-shadow: 0 14px 30px rgba(155, 111, 25, 0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 36px rgba(155, 111, 25, 0.48);
-    }
-
-    .btn-ghost {
-      background: #fff7e5;
-      color: #7b5a22;
-      border: 1px solid rgba(226, 190, 117, 0.9);
-    }
-
-    .btn-ghost:hover {
-      background: #fff0cf;
-      transform: translateY(-1px);
-    }
-
-    .hero-caption {
-      font-size: 11px;
-      color: #958873;
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
       margin-top: 6px;
     }
 
-    .hero-photo-wrap {
+    .tag-pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--border-soft);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .hero-buttons {
       display: flex;
       justify-content: center;
-      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .hero-photo-inner {
-      text-align: center;
-    }
-
-    .hero-photo-ring {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff7e0, #e5bf6e);
-      box-shadow: 0 18px 36px rgba(153, 115, 34, 0.4);
-      padding: 6px;
-      margin: 0 auto 12px;
-      display: flex;
+    .btn-gold,
+    .btn-outline {
+      font-size: 13px;
+      padding: 7px 18px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 6px;
+      cursor: default;
+      border-width: 1px;
+      border-style: solid;
     }
 
-    .hero-photo {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      border: 4px solid #fdf3df;
+    .btn-gold {
+      background: linear-gradient(135deg, #f4d782, #c99a32);
+      border-color: #b8861f;
+      color: #2c210f;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.23);
     }
 
-    .hero-photo-name {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(0,0,0,0.18);
+      color: var(--text-main);
     }
 
-    .hero-photo-role {
+    .hero-footnote {
       font-size: 12px;
       color: var(--text-soft);
+      margin-top: 10px;
     }
 
-    /* ====== SERVICES SECTION ====== */
-
+    /* Sections & cards ---------------------------------------- */
     .section {
-      margin-top: 34px;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 26px;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 6px;
+      margin-top: 26px;
     }
 
     .section-title {
-      font-size: 22px;
-      margin: 0 0 6px;
-      color: var(--text-main);
+      font-size: 18px;
+      font-weight: 650;
+      margin-bottom: 8px;
     }
 
-    .section-header p {
-      margin: 0;
-      color: var(--text-soft);
+    .section-note {
       font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 14px;
     }
 
-    .section-subtitle {
-      font-size: 17px;
-      margin: 0 0 18px;
-      color: var(--text-main);
-      text-align: center;
-    }
-
-    .cards-grid {
+    .cards-row {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
+    .package-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.96);
+      padding: 18px 18px 14px;
+      font-size: 13px;
+      color: var(--text-soft);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
+    }
+
+    .package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 42px rgba(0,0,0,0.12);
+      border-color: rgba(208,161,60,0.55);
+      background: #fffaf3;
+    }
+
+    .package-label {
+      font-size: 11px;
+      color: var(--gold-dark);
+      margin-bottom: 4px;
+    }
+
+    .package-title {
+      font-size: 15px;
+      font-weight: 650;
+      margin-bottom: 6px;
+      color: #2f2618;
+    }
+
+    .package-price {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
+    }
+
+    .package-list {
+      list-style: disc;
+      padding-right: 18px;
+      margin-top: 4px;
+    }
+
+    .package-list li {
+      margin-bottom: 3px;
+    }
+
+    .bottom-note-card {
+      margin-top: 22px;
+      background: #f8e9b8;
+      border-radius: 16px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #5a4822;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(0,0,0,0.45);
+      margin-top: 26px;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
     @media (max-width: 900px) {
-      .cards-grid {
+      .cards-row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 640px) {
-      .cards-grid {
+      main {
+        margin-top: 20px;
+      }
+      .cards-row {
         grid-template-columns: minmax(0, 1fr);
       }
-    }
-
-    .card {
-      background: #fdf3e2;
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-soft);
-      padding: 18px 18px 16px;
-      display: flex;
-      flex-direction: column;
-      font-size: 13px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card--highlight {
-      background: #ffeec4;
-      border: 1px solid rgba(212, 168, 67, 0.6);
-    }
-
-    .card-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      background: #f9dc98;
-      font-size: 11px;
-      font-weight: 600;
-      color: #5d461b;
-    }
-
-    .card-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin: 10px 0 6px;
-      color: var(--text-main);
-    }
-
-    .price {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #805619;
-    }
-
-    .price span {
-      font-weight: 400;
-      color: var(--text-soft);
-    }
-
-    .card-tagline {
-      margin: 0 0 8px;
-      color: var(--text-soft);
-    }
-
-    .card ul {
-      margin: 0;
-      padding-right: 18px;
-      list-style: disc;
-      color: var(--text-soft);
-    }
-
-    .card ul li + li {
-      margin-top: 4px;
-    }
-
-    /* ====== FOOTER CALL-TO-ACTION ====== */
-
-    .cta-bar {
-      margin-top: 30px;
-      background: #ffeebf;
-      border-radius: 22px;
-      padding: 16px 22px 18px;
-      text-align: center;
-      font-size: 13px;
-      color: #775420;
-      box-shadow: 0 10px 28px rgba(153, 115, 34, 0.16);
-    }
-
-    .cta-bar strong {
-      font-weight: 600;
-    }
-
-    .cta-links {
-      margin-top: 6px;
-      font-size: 12px;
-    }
-
-    .cta-links a {
-      color: #684716;
-      font-weight: 600;
-    }
-
-    .cta-links span {
-      opacity: 0.6;
-      margin: 0 6px;
-    }
-
-    /* ====== ANIMATIONS ====== */
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
+      .top-nav-inner {
+        padding-inline: 14px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .nav-links {
+        font-size: 13px;
+        gap: 12px;
+      }
+      .hero-card {
+        padding-inline: 18px;
+      }
+      .hero-title {
+        font-size: 22px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <!-- TOP NAVBAR -->
-    <header class="topbar">
-      <div class="topbar-inner">
-        <!-- Right side: name & badge -->
-        <div class="brand">
-          <div class="brand-badge">KS</div>
-          <div class="brand-name">KASEM SAIED SAIED</div>
-        </div>
-
-        <!-- Left side: nav links (RTL) -->
-        <nav class="nav">
-          <a href="index.html" class="nav-link">الرئيسية</a>
-          <a href="../portfolio.html" class="nav-link">الملف المهني</a>
-          <a href="../certificates.html" class="nav-link">الشهادات والتقدير</a>
-          <a href="services.html" class="nav-link nav-link--active">خدمات الدعم</a>
-          <a href="../contact.html" class="nav-link">تواصل معي</a>
-          <a href="../services.html" class="nav-cta">EN English</a>
-        </nav>
+  <!-- Top navigation (Arabic) -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">نبذة عني</a>
+        <a href="portfolio.html">الأعمال</a>
+        <a href="certificates.html">الشهادات</a>
+        <a href="services.html" class="active">خدمات الدعم</a>
+        <a href="contact.html">تواصل معي</a>
+        <a class="lang-pill" href="../services.html">EN English</a>
+      </nav>
+      <div class="brand">
+        <div class="brand-badge">KS</div>
+        KASEM SAIED SAIED
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <div class="container">
-        <!-- HERO -->
-        <section class="hero">
-          <div class="hero-text">
-            <div class="hero-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</div>
-            <h1 class="hero-title">
-              خدمات دعم تنفيذي عن بُعد<br />
-              لرؤساء الأعمال والرؤساء التنفيذيين
-            </h1>
-            <p class="hero-sub">
-              باقات متكاملة من خدمات المساعد التنفيذي الأول ورئيس الموظفين (Chief of Staff)،
-              مصمَّمة خصيصًا لأصحاب القرار في الشركات، مع توافق كامل مع المناطق الزمنية في الولايات المتحدة.
-            </p>
-            <p class="hero-meta">
-              أكثر من <strong>24 سنة</strong> خبرة مباشرة مع رؤساء مجالس الإدارة، الرؤساء التنفيذيين،
-              ومجالس الإدارة في السعودية والقطاع الخاص – مع تركيز على السرية، الاحتراف، والهيكلة الواضحة للعمل التنفيذي.
-            </p>
-            <div class="hero-actions">
-              <button class="btn-primary">اطلب استشارة مجانية</button>
-              <button class="btn-ghost">اطلب عرض أسعار تفصيلي</button>
-            </div>
-            <p class="hero-caption">
-              متواجد في الرياض – متاح للدعم عن بُعد لقادة الأعمال داخل السعودية وخارجها مع توافق كامل مع التوقيت الأمريكي.
-            </p>
-          </div>
-
-          <div class="hero-photo-wrap">
-            <div class="hero-photo-inner">
-              <div class="hero-photo-ring">
-                <img src="../profile.jpg" alt="قاسم سعيد سعيد" class="hero-photo" />
-              </div>
-              <div class="hero-photo-name">قاسم سعيد سعيد</div>
-              <div class="hero-photo-role">مساعد تنفيذي أول | Chief of Staff</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- EXECUTIVE ASSISTANT PACKAGES -->
-        <section class="section">
-          <header class="section-header">
-            <div class="section-kicker">باقات الدعم التنفيذي</div>
-            <h2 class="section-title">باقات المساعد التنفيذي</h2>
-            <p>اختر مستوى الشراكة والوقت الإداري المناسب لاحتياجاتك التنفيذية.</p>
-          </header>
-
-          <h3 class="section-subtitle">باقات المساعد التنفيذي (EA)</h3>
-
-          <div class="cards-grid">
-            <!-- 1 -->
-            <article class="card">
-              <h4 class="card-title">دعم تنفيذي أساسي</h4>
-              <p class="price">2,500 دولار شهريًا <span>— حوالي 35 ساعة</span></p>
-              <p class="card-tagline">دعم إداري مستمر لمساعدتك على الحفاظ على إيقاع عمل منتظم.</p>
-              <ul>
-                <li>إدارة التقويم وجدولة الاجتماعات.</li>
-                <li>فرز البريد الإلكتروني وترتيب الأولويات.</li>
-                <li>تنظيم الملفات والوثائق الأساسية.</li>
-                <li>إعداد تقارير ومتابعة أسبوعية للمهام.</li>
-                <li>تنسيق مواعيد شخصية مرتبطة بالعمل عند الحاجة.</li>
-              </ul>
-            </article>
-
-            <!-- 2 -->
-            <article class="card card--highlight">
-              <div class="card-badge">الأكثر طلبًا</div>
-              <h4 class="card-title">شريك تنفيذي محترف</h4>
-              <p class="price">4,500 دولار شهريًا <span>— حوالي 70 ساعة</span></p>
-              <p class="card-tagline">باقات متوازنة تجمع بين إدارة التنفيذ والمتابعة والتحضير للاجتماعات.</p>
-              <ul>
-                <li>إدارة كاملة للتقويم والبريد الإلكتروني.</li>
-                <li>تحضير جداول الأعمال وعروض المختصرة للاجتماعات.</li>
-                <li>متابعة القرارات والإجراءات بعد الاجتماعات.</li>
-                <li>صياغة مراسلات رسمية داخلية وخارجية.</li>
-                <li>تنسيق السفر والاجتماعات الخارجية.</li>
-              </ul>
-            </article>
-
-            <!-- 3 -->
-            <article class="card">
-              <h4 class="card-title">شريك تنفيذي مميز</h4>
-              <p class="price">6,000 دولار شهريًا <span>— حوالي 100 ساعة</span></p>
-              <p class="card-tagline">دعم تنفيذي عالي المستوى لقادة الشركات كثيرة الالتزامات والملفات.</p>
-              <ul>
-                <li>إدارة شاملة للتقويم، البريد، الاجتماعات، والسفر.</li>
-                <li>مراقبة أولويات الرئيس التنفيذي وجدولة وقته وفق الأهم.</li>
-                <li>إعداد ملخصات تنفيذية وتقارير شهرية لصورة شاملة.</li>
-                <li>تنسيق مستمر مع فرق العمل، المستشارين، والشركاء.</li>
-                <li>مستوى أعلى من التفرغ والمرونة وفق احتياج الرئيس.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <!-- CHIEF OF STAFF PACKAGES -->
-        <section class="section">
-          <header class="section-header">
-            <div class="section-kicker">شراكة استراتيجية</div>
-            <h2 class="section-title">باقات رئيس الموظفين التنفيذي (Chief of Staff)</h2>
-            <p>مستوى أعمق من الشراكة الإدارية لدعم القيادة العليا في التخطيط والتنفيذ.</p>
-          </header>
-
-          <h3 class="section-subtitle">باقات Chief of Staff</h3>
-
-          <div class="cards-grid">
-            <!-- 1 -->
-            <article class="card">
-              <h4 class="card-title">دعم العمليات الاستراتيجية</h4>
-              <p class="price">3,500 دولار شهريًا <span>— حوالي 30 ساعة</span></p>
-              <p class="card-tagline">مناسب للرؤساء الذين يحتاجون إلى عين إدارية إضافية على التنفيذ.</p>
-              <ul>
-                <li>متابعة المبادرات والمشاريع ذات الأولوية العالية.</li>
-                <li>مساعدة في تنظيم الاجتماعات الاستراتيجية الرئيسية.</li>
-                <li>إعداد ملخصات تنفيذية وتقارير موجزة لمجالس الإدارة.</li>
-                <li>مراجعة خطط العمل وتقارير الأداء من الفرق التنفيذية.</li>
-                <li>تنسيق تواصل منتظم بين الرئيس وفريق القيادة.</li>
-              </ul>
-            </article>
-
-            <!-- 2 -->
-            <article class="card card--highlight">
-              <div class="card-badge">قيمة عالية</div>
-              <h4 class="card-title">شريك رئيس الموظفين التنفيذي</h4>
-              <p class="price">6,000 دولار شهريًا <span>— حوالي 60 ساعة</span></p>
-              <p class="card-tagline">شراكة يومية تقريبًا لقيادة العمليات، القرارات، والتحضير لمستقبل الشركة.</p>
-              <ul>
-                <li>بناء ومتابعة لوحة قيادة (Dashboards) للمشاريع والمبادرات.</li>
-                <li>تنسيق مواد مجالس الإدارة والعروض والوثائق المساندة.</li>
-                <li>إدارة قنوات التواصل بين الرئيس والمستشارين/الشركاء.</li>
-                <li>مراجعة مستمرة للأولويات والتنبيه للمخاطر والفرص.</li>
-                <li>مساعدة في تصميم وإدارة الاجتماعات التنفيذية الدورية.</li>
-              </ul>
-            </article>
-
-            <!-- 3 -->
-            <article class="card">
-              <h4 class="card-title">شريك تنفيذي متكامل (EA + Chief of Staff)</h4>
-              <p class="price">9,500 دولار شهريًا <span>— باقة مدمجة عالية التخصيص</span></p>
-              <p class="card-tagline">
-                دمج كامل بين دور المساعد التنفيذي الأول ودور رئيس الموظفين، لخدمة قيادات تحتاج إلى دعم مركّز ومكثّف.
-              </p>
-              <ul>
-                <li>تولي الجانب التشغيلي اليومي (تقويم، بريد، اجتماعات، سفر).</li>
-                <li>قيادة المتابعة الاستراتيجية للمشاريع والأهداف السنوية.</li>
-                <li>إعداد تقارير ومذكرات موجزة للرئيس عن مختلف الملفات.</li>
-                <li>التنسيق مع فرق العمل لتطبيق القرارات وتحديث حالة التنفيذ.</li>
-                <li>مرونة في توزيع الساعات بين الدورين حسب احتياجك الشهري.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <!-- FOOTER CTA -->
-        <section class="cta-bar">
-          <div><strong>هل ترغب في باقة خاصة تناسب وضعك الحالي؟</strong></div>
-          <div>يمكن تعديل عدد الساعات ونطاق العمل بعد جلسة تعريف قصيرة لفهم احتياجاتك التنفيذية بشكل أوضح.</div>
-          <div class="cta-links">
-            <a href="../contact.html">راسلني لتحديد موعد مكالمة تعريفية</a>
-            <span>•</span>
-            <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
-          </div>
-        </section>
+  <main>
+    <!-- Hero without image -->
+    <section class="hero-card fade-section fade-slow">
+      <div class="hero-kicker">EXECUTIVE SUPPORT · DISCRETION · RELIABILITY</div>
+      <h1 class="hero-title">خدمات دعم تنفيذي عن بُعد لرؤساء الأعمال والرؤساء التنفيذيين</h1>
+      <p class="hero-subtitle">
+        باقات مرنة لخدمات المساعد التنفيذي ومسؤول مكتب الرئيس (Chief of Staff) مصمّمة لتناسب احتياجاتك في إدارة المكتب التنفيذي.
+      </p>
+      <p class="hero-text">
+        أكثر من 24 عاماً من دعم المكاتب العليا في شركات الاتصالات، المجموعات الكبرى والقطاع الخاص في المملكة العربية السعودية. أقدّم لك دعماً تنفيذياً هادئاً وموثوقاً يساعدك على تنظيم الوقت، ترتيب الأولويات، متابعة القرارات، إعداد الاجتماعات واللجان، وتنفيذ المهام اليومية بسلاسة — سواء كان ذلك في المكتب أو عن بُعد متوافقاً مع التوقيت الأمريكي.
+      </p>
+      <div class="hero-tags">
+        <span class="tag-pill">دعم تنفيذي متقدّم</span>
+        <span class="tag-pill">سرّية عالية</span>
+        <span class="tag-pill">متابعة دقيقة للمهام</span>
+        <span class="tag-pill">تجربة شركات كبرى</span>
       </div>
-    </main>
-  </div>
+      <div class="hero-buttons">
+        <div class="btn-gold">طلب مكالمة تعارف</div>
+        <div class="btn-outline">معرفة تفاصيل الباقات</div>
+      </div>
+      <div class="hero-footnote">
+        يمكن تعديل محتوى الباقات بالتفاهم المباشر بما يتناسب مع طبيعة عملك وحجم مكتبك التنفيذي.
+      </div>
+    </section>
+
+    <!-- Executive Assistant packages -->
+    <section class="section fade-section fade-delay-1">
+      <h2 class="section-title">باقات المساعد التنفيذي</h2>
+      <p class="section-note">
+        أمثلة تقريبية لباقات شهرية لخدمة المساعد التنفيذي للمستويات التنفيذية العليا (EA).
+      </p>
+
+      <div class="cards-row">
+        <!-- Basic EA -->
+        <article class="package-card">
+          <div class="package-label">باقة دعم تنفيذي أساسي</div>
+          <div class="package-title">دعم تنفيذي أساسي</div>
+          <div class="package-price">2,500 ريال شهرياً — ساعات مرنة كل أسبوع</div>
+          <ul class="package-list">
+            <li>إدارة جدول المواعيد والمتابعة الأساسية مع فريق العمل.</li>
+            <li>تنظيم البريد الإلكتروني وتصنيف الرسائل المهمة.</li>
+            <li>إعداد موجزات مختصرة قبل الاجتماعات الرئيسية.</li>
+            <li>متابعة بنود العمل والمهام البسيطة بعد الاجتماعات.</li>
+            <li>دعم مكتبي عن بعد مع تقارير مختصرة أسبوعية.</li>
+          </ul>
+        </article>
+
+        <!-- Standard EA -->
+        <article class="package-card">
+          <div class="package-label">الباقة الأكثر توازناً</div>
+          <div class="package-title">بـاقة مساعد تنفيذي محترف</div>
+          <div class="package-price">4,500 ريال شهرياً — حتى 70 ساعة (عن بُعد)</div>
+          <ul class="package-list">
+            <li>إدارة شاملة لجدول الرئيس التنفيذي وترتيب الأولويات.</li>
+            <li>صياغة وإرسال مراسلات رسمية بالبريد الإلكتروني (عربي/إنجليزي).</li>
+            <li>تنسيق الاجتماعات، مكالمات Zoom وجدولة اللقاءات مع الإدارة العليا.</li>
+            <li>إعداد ملخصات قبل/بعد الاجتماعات مع متابعة واضحة لبنود العمل.</li>
+            <li>تنسيق أولي للسفر والاجتماعات الخارجية عند الحاجة.</li>
+          </ul>
+        </article>
+
+        <!-- Premium EA -->
+        <article class="package-card">
+          <div class="package-label">أعلى مستوى دعم للمكتب التنفيذي</div>
+          <div class="package-title">بـاقة دعم تنفيذي متقدّم</div>
+          <div class="package-price">6,000 ريال شهرياً — حتى 100 ساعة (عن بُعد + حضور جزئي)</div>
+          <ul class="package-list">
+            <li>إدارة يومية متقدمة للجدول والبريد والمهام الخاصة بالرئيس التنفيذي.</li>
+            <li>تجهيز كامل لاجتماعات اللجان الداخلية واللقاءات الدورية.</li>
+            <li>متابعة تنفيذ القرارات مع الإدارات المعنية وتذكير دقيق بالمواعيد النهائية.</li>
+            <li>تنسيق سفر واستقبال ضيوف كبار عند الحاجة (منسّق مع شركائك الداخليين).</li>
+            <li>تقارير شهرية عن أداء المكتب التنفيذي وتحسين مسار العمل.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Chief of Staff packages -->
+    <section class="section fade-section fade-delay-2">
+      <h2 class="section-title">باقات رئيس الموظفين التنفيذي (Chief of Staff)</h2>
+      <p class="section-note">
+        مستوى أعلى من الدعم للمكاتب القيادية التي تحتاج إلى متابعة استراتيجية وتنفيذية متقدمة.
+      </p>
+
+      <div class="cards-row">
+        <!-- Strategy support -->
+        <article class="package-card">
+          <div class="package-label">دعم المعلومات الاستراتيجية</div>
+          <div class="package-title">دعم الملفات والقرارات</div>
+          <div class="package-price">7,500 ريال شهرياً — ساعات متفق عليها</div>
+          <ul class="package-list">
+            <li>مراجعة الملفات الرئيسية قبل عرضها على الرئيس أو مجلس الإدارة.</li>
+            <li>إعداد أسئلة رئيسية ونقاط تركيز للاجتماعات المهمة.</li>
+            <li>تجميع ملخصات شهرية عن المشاريع والمبادرات الرئيسية.</li>
+            <li>متابعة تنفيذ القرارات الاستراتيجية مع المعنيين.</li>
+          </ul>
+        </article>
+
+        <!-- Mixed EA + CoS -->
+        <article class="package-card">
+          <div class="package-label">دعم مشترك (EA + Chief of Staff)</div>
+          <div class="package-title">باقة دعم متكاملة</div>
+          <div class="package-price">9,500 ريال شهرياً — دعم تنفيذي + متابعات استراتيجية</div>
+          <ul class="package-list">
+            <li>كافة خدمات المساعد التنفيذي المتقدّم.</li>
+            <li>تنسيق أولويات الرئيس مع فرق العمل والمشاريع الرئيسية.</li>
+            <li>إدارة قوائم المتابعة (Follow-up) على مستوى عالٍ من الدقة.</li>
+            <li>تنسيق إعداد العروض التقديمية والاجتماعات الرئيسية.</li>
+          </ul>
+        </article>
+
+        <!-- Custom -->
+        <article class="package-card">
+          <div class="package-label">مخصص للرؤساء وأصحاب الأعمال</div>
+          <div class="package-title">باقات خاصة للرؤساء التنفيذيين</div>
+          <div class="package-price">يتم الاتفاق على السعر بعد جلسة تعريف وتقييم للاحتياج</div>
+          <ul class="package-list">
+            <li>تصميم باقة خاصة حسب حجم أعمالك وطبيعة مكتبك التنفيذي.</li>
+            <li>إمكانية الجمع بين دعم شخصي، إداري واستراتيجي في باقة واحدة.</li>
+            <li>مرونة في عدد الساعات ومستوى التواجد (عن بُعد / حضور جزئي).</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bottom note -->
+    <div class="bottom-note-card fade-section fade-delay-3">
+      جميع الأرقام المذكورة تقريبية وقابلة للتعديل بعد مناقشة احتياجاتك الفعلية.  
+      أفضل خطوة هي البدء بمكالمة تعريفية قصيرة (15–20 دقيقة) لتوضيح طبيعة عملك، ومن ثم اقتراح باقة مناسبة لك.
+      يمكنك التواصل مباشرة عبر البريد: <strong>kasemsaied@gmail.com</strong>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Kasem Saied Saied · مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين
+    </footer>
+  </main>
+
+  <script src="../animations.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
