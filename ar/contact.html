@@ -2,44 +2,45 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>تواصل معي – قاسم سعيد سعيد | مساعد تنفيذي أول</title>
-  <meta name="description" content="بيانات التواصل والتوفّر الخاصّة بقاسم سعيد سعيد، مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين في الرياض." />
+  <title>تواصل معي | قاسم سعيد سعيد</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Kasem Saied Saied" />
-
-  <link rel="icon" type="image/png" href="../favicon.png" />
+  <meta name="description" content="تواصل مع قاسم سعيد سعيد، مساعد تنفيذي أول ورئيس موظفين لدعم الرؤساء التنفيذيين ورؤساء مجالس الإدارة في السعودية وخارجها." />
+  <!-- shared animation styles -->
   <link rel="stylesheet" href="../animations.css" />
 
   <style>
     :root {
       --bg-body: #f4efe4;
-      --bg-card: #fbf8f1;
-      --bg-accent: #ffdf8d;
+      --bg-card: #fbf1e4;
+      --bg-accent: #ffe7b0;
+
       --gold: #d0a13c;
-      --gold-dark: #8b6a1e;
+      --gold-dark: #b68a1f;
+      --gold-soft: #f7e1a8;
+
       --text-main: #2c2a29;
       --text-soft: #5d5a57;
+
       --border-soft: #e0d4b8;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-      --radius-card: 18px;
+
+      --radius-card: 26px;
       --radius-pill: 999px;
+
       --transition-fast: 0.2s ease-out;
       --transition-med: 0.35s ease-out;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
       background: var(--bg-body);
       color: var(--text-main);
-      line-height: 1.7;
       direction: rtl;
-      text-align: right;
     }
 
     a {
@@ -47,388 +48,427 @@
       color: inherit;
     }
 
-    .top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: linear-gradient(90deg, #b88a2c, #1d1810);
-      color: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .top-nav-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 12px 20px;
+    .page-shell {
+      min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-
-    .brand-badge {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      border: 2px solid #f6d37a;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      opacity: 0.9;
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-      border-color: rgba(255, 255, 255, 0.7);
-    }
-
-    .nav-links a.active {
-      font-weight: 600;
-      border-color: #ffe09a;
-      opacity: 1;
-    }
-
-    .lang-pill {
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .lang-pill:hover {
-      background: rgba(0, 0, 0, 0.12);
-      opacity: 1;
+      flex-direction: column;
     }
 
     main {
-      max-width: 900px;
-      margin: 28px auto 60px;
-      padding: 0 20px 40px;
+      flex: 1;
+      padding: 32px 20px 48px;
     }
 
-    .page-hero {
-      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.8), transparent 55%),
-                  radial-gradient(circle at bottom left, rgba(255, 226, 160, 0.5), transparent 55%),
-                  var(--bg-card);
-      box-shadow: var(--shadow-soft);
-      border-radius: 26px;
-      padding: 26px 30px 20px;
-      margin-bottom: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .page-hero-kicker {
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #fdf2c4;
-      font-size: 11px;
-      margin-bottom: 6px;
-      background: #2f2618;
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
+    /* ====== TOP NAV BAR (gold + black gradient) ====== */
+
+    .topbar {
+      background: linear-gradient(90deg, #1a130a 0%, #5a4420 45%, #c59832 100%);
+      color: #fff8e5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
     }
 
-    .page-title {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .page-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 680px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 10px;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow: var(--shadow-soft);
-      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
-      font-size: 14px;
-      color: var(--text-soft);
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-      border-color: rgba(208, 161, 60, 0.5);
-      background: #fffaf2;
-    }
-
-    .card-title {
-      font-size: 16px;
-      font-weight: 650;
-      margin-bottom: 6px;
-      color: #2f2618;
-    }
-
-    .contact-row {
-      margin-top: 8px;
-    }
-
-    .label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--gold-dark);
-      margin-bottom: 2px;
-    }
-
-    .value {
-      font-size: 14px;
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .value a {
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      text-underline-offset: 3px;
-    }
-
-    .pill-row {
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      gap: 16px;
     }
 
-    .pill {
+    /* right side: name + tagline */
+    .topbar-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      font-size: 12px;
+    }
+
+    .topbar-name {
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .topbar-tagline {
       font-size: 11px;
-      padding: 4px 10px;
+      opacity: 0.9;
+    }
+
+    /* left side: nav + language pill */
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .lang-pill {
+      padding: 6px 16px;
       border-radius: var(--radius-pill);
-      border: 1px solid var(--border-soft);
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--text-soft);
-      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.24);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
     }
 
-    .pill-strong {
-      background: #2f2618;
-      color: #ffe9b3;
-      border-color: #2f2618;
-      font-weight: 500;
+    .lang-pill:hover {
+      background: rgba(0, 0, 0, 0.32);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
     }
 
-    ul {
-      list-style: none;
-      margin-top: 6px;
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-inline: 2px;
+      color: #fff8e5;
+      opacity: 0.9;
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      bottom: -4px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ffe6aa, #fffbdd);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .nav-link--active {
+      font-weight: 600;
+    }
+
+    .nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .topbar-right {
+        align-items: center;
+        text-align: center;
+      }
+      .topbar-left {
+        justify-content: space-between;
+      }
+      .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* ====== CONTACT CARD ====== */
+
+    .contact-card {
+      background: var(--bg-card);
+      border-radius: 32px;
+      box-shadow: var(--shadow-soft);
+      padding: 28px 30px 30px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 28px;
+      margin-top: 28px;
+      animation: fadeUp 0.6s var(--transition-med) backwards;
+    }
+
+    @media (max-width: 900px) {
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 22px 20px 26px;
+      }
+    }
+
+    .form-title {
+      text-align: right;
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .form-helper {
       font-size: 13px;
       color: var(--text-soft);
-      padding-right: 0;
+      margin-bottom: 20px;
     }
 
-    li {
-      padding-right: 16px;
-      position: relative;
-      margin-bottom: 4px;
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    li::before {
-      content: "•";
-      position: absolute;
-      right: 4px;
-      top: 0;
-      color: var(--gold-dark);
-    }
-
-    footer {
-      text-align: center;
+    .field-label {
       font-size: 12px;
-      color: rgba(0, 0, 0, 0.45);
-      margin-top: 26px;
+      margin-bottom: 4px;
+      color: #847865;
     }
 
-    footer a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-style: dotted;
+    .field {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 10px 18px;
+      font-size: 13px;
+      background: #fef7ec;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
     }
 
-    @media (max-width: 760px) {
-      main {
-        margin-top: 20px;
-      }
+    .field:focus {
+      outline: none;
+      border-color: #d3aa4b;
+      box-shadow: 0 0 0 2px rgba(211, 170, 75, 0.35);
+      background: #fffaf0;
+    }
 
-      .page-title {
-        font-size: 23px;
-      }
+    .field-textarea {
+      border-radius: 18px;
+      min-height: 140px;
+      resize: vertical;
+    }
 
-      .cards {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .submit-wrap {
+      margin-top: 6px;
+    }
 
-      .top-nav-inner {
-        padding-inline: 14px;
-      }
+    .btn-submit {
+      width: 100%;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #261708;
+      background: linear-gradient(135deg, #d7a63d, #f3c867);
+      box-shadow: 0 14px 30px rgba(155, 111, 25, 0.35);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
 
-      .nav-links {
-        font-size: 13px;
-        gap: 12px;
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(155, 111, 25, 0.48);
+    }
+
+    /* right column */
+
+    .contact-info h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .contact-info p {
+      margin: 0 0 10px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+
+    .info-item {
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .info-item strong {
+      color: #5d4b2a;
+    }
+
+    .info-links {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .pill-link {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(132, 120, 101, 0.3);
+      background: rgba(255, 255, 255, 0.8);
+      color: #6a5531;
+    }
+
+    /* ====== SECOND CARD ====== */
+
+    .info-card {
+      margin-top: 24px;
+      background: #fdf3e3;
+      border-radius: 24px;
+      padding: 18px 22px 18px;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .info-card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--text-main);
+    }
+
+    .info-card p {
+      margin: 0;
+      line-height: 1.9;
+    }
+
+    /* ====== ANIMATION ====== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
-  <header style="
-  background: linear-gradient(to right, #000000, #2e1f00, #6d5300, #c8a849, #6d5300, #2e1f00, #000000);
-  padding: 16px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  position: relative;
-  z-index: 100;">
-  
-  <!-- LEFT BADGE -->
-  <div style="display:flex; align-items:center; gap:10px; color:white; font-weight:700; font-size:16px;">
-    <span style="
-      background:#000;
-      color:#f5d997;
-      padding:6px 12px;
-      border-radius:50%;
-      border:2px solid #c9a745;
-      font-weight:700;
-    ">KS</span>
-    KASEM SAIED SAIED
-  </div>
+  <div class="page-shell">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <!-- right: name + tagline -->
+        <div class="topbar-right">
+          <div class="topbar-name">قاسم سعيد سعيد</div>
+          <div class="topbar-tagline">
+            مساعد تنفيذي أول • دعم قيادات مجالس الإدارة والرؤساء التنفيذيين
+          </div>
+        </div>
 
-  <!-- NAVIGATION -->
-  <nav style="display:flex; gap:22px; font-size:15px;">
-    <a href="index.html" style="color:#f7d98f; font-weight:700; text-decoration:none;">Home</a>
-    <a href="about.html" style="color:white; text-decoration:none;">About</a>
-    <a href="portfolio.html" style="color:white; text-decoration:none;">Portfolio</a>
-    <a href="certificates.html" style="color:white; text-decoration:none;">Certificates</a>
-    <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
-    <a href="services.html" style="color:white; text-decoration:none;">Services</a>
-  </nav>
+        <!-- left: nav + language -->
+        <div class="topbar-left">
+          <a class="lang-pill" href="../contact.html">English</a>
 
-</header>
+          <nav class="nav">
+            <a href="index.html" class="nav-link">الرئيسية</a>
+            <a href="about.html" class="nav-link">نبذة عني</a>
+            <a href="portfolio.html" class="nav-link">الأعمال</a>
+            <a href="certificates.html" class="nav-link">الشهادات</a>
+            <a href="contact.html" class="nav-link nav-link--active">تواصل معي</a>
+          </nav>
+        </div>
+      </div>
+    </header>
 
+    <main>
+      <div class="container">
+        <!-- CONTACT MAIN CARD -->
+        <section class="contact-card">
+          <!-- Left: form -->
+          <div>
+            <h1 class="form-title">نموذج تواصل سريع</h1>
+            <p class="form-helper">
+              يمكنك استخدام النموذج لإرسال رسالة مختصرة. سأتفقد البريد الإلكتروني الافتراضي لديك لتأكيد الإرسال.
+              أفضل طريقة للتواصل هي البريد الإلكتروني أو رسالة مكتوبة أولاً، ثم يمكن ترتيب مكالمة أو اجتماع حسب ما يناسب جدولك.
+            </p>
 
-  <main>
-    <section class="page-hero fade-section fade-slow">
-      <div class="page-hero-kicker">LET’S CONNECT</div>
-      <h1 class="page-title">التواصل والتوفّر</h1>
-      <p class="page-subtitle">
-        أُقيم في الرياض، ومتاح لأدوار المساعد التنفيذي الأول حضوريّاً داخل المملكة، بالإضافة إلى
-        دعم عن بُعد أو هجِين متوافق مع التوقيت الأمريكي عند الحاجة.
-      </p>
+            <form class="contact-form"
+              onsubmit="window.location='mailto:kasem.saied@gmail.com?subject=' + encodeURIComponent(this.subject.value || 'رسالة جديدة من النموذج') + '&body=' + encodeURIComponent('الاسم: ' + (this.name.value || '') + '\nالبريد الإلكتروني: ' + (this.email.value || '') + '\n\nالرسالة:\n' + (this.message.value || '')); return false;">
+              <div>
+                <div class="field-label">البريد الإلكتروني</div>
+                <input class="field" type="email" name="email" placeholder="your@email.com" required />
+              </div>
 
-      <div class="cards">
-        <!-- Direct contact -->
-        <article class="card fade-section fade-delay-1">
-          <h2 class="card-title">بيانات التواصل المباشر</h2>
+              <div>
+                <div class="field-label">الاسم الكامل</div>
+                <input class="field" type="text" name="name" placeholder="اكتب اسمك هنا" />
+              </div>
 
-          <div class="contact-row">
-            <div class="label">البريد الإلكتروني</div>
-            <div class="value">
+              <div>
+                <div class="field-label">الموضوع</div>
+                <input class="field" type="text" name="subject" placeholder="مثال: فرصة وظيفة مساعد تنفيذي" />
+              </div>
+
+              <div>
+                <div class="field-label">الرسالة</div>
+                <textarea class="field field-textarea" name="message"
+                  placeholder="اكتب بإيجاز ما تود مناقشته أو نوع الفرصة التي ترغب في الحديث عنها."></textarea>
+              </div>
+
+              <div class="submit-wrap">
+                <button type="submit" class="btn-submit">إرسال الرسالة</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right: contact info -->
+          <aside class="contact-info">
+            <h2>تواصل معي</h2>
+            <p>
+              إذا كنت تبحث عن مساعد تنفيذي أول يدير مكتبك بهدوء وفعالية، أو ترغب في مناقشة فرصة عمل أو تعاون،
+              يسعدني أن أتواصل معك. أفضل أسلوب للتواصل هو البريد الإلكتروني أو الرسائل المكتوبة أولاً، ثم يمكن ترتيب مكالمة
+              أو اجتماع خلال وقت منسَّق قدر المستطاع.
+            </p>
+
+            <p class="info-item">
+              <strong>البريد الإلكتروني:</strong>
               <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="label">الجوال (السعودية)</div>
-            <div class="value">
-              <a href="tel:+966553075340">+966 55 307 5340</a>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="label">لينكدإن</div>
-            <div class="value">
+            </p>
+            <p class="info-item">
+              <strong>الموقع:</strong> الرياض، المملكة العربية السعودية
+            </p>
+            <p class="info-item">
+              <strong>الهاتف (واتساب):</strong>
+              <a href="https://wa.me/966553075340" target="_blank" rel="noopener">+966 55 307 5340</a>
+            </p>
+            <p class="info-item">
+              <strong>حساب لينكدإن:</strong>
               <a href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">
                 linkedin.com/in/kasem-said
               </a>
+            </p>
+
+            <div class="info-links">
+              <span class="pill-link">متاح لدعم قيادات عن بُعد في السعودية ودولياً</span>
+              <span class="pill-link">جاهز لمقابلات عبر Zoom / Teams حسب الترتيب</span>
             </div>
-          </div>
+          </aside>
+        </section>
 
-          <div class="contact-row">
-            <div class="label">الموقع والتوقيت</div>
-            <div class="value">الرياض، المملكة العربية السعودية · GMT+3</div>
-          </div>
-
-          <div class="pill-row">
-            <span class="pill pill-strong">مساعد تنفيذي أول</span>
-            <span class="pill">حضورياً – الرياض</span>
-            <span class="pill">عن بُعد – توقيت أمريكا</span>
-          </div>
-        </article>
-
-        <!-- Collaboration -->
-        <article class="card fade-section fade-delay-2">
-          <h2 class="card-title">مجالات التعاون الممكنة</h2>
-          <p style="font-size:13px;">
-            يسعدني التحدث مع الجهات التي تبحث عن دعم تنفيذي موثوق لمكاتب القيادات العليا.
+        <!-- SECOND CARD -->
+        <section class="info-card">
+          <h2>كيف أتعامل مع الطلبات الجديدة؟</h2>
+          <p>
+            أحرص دائمًا على فهم طبيعة الدور، ثقافة الجهة، وتوقعات القيادة قبل اتخاذ أي قرار.
+            إذا كانت هناك ملاءمة حقيقية بين احتياجك وبين أسلوبي في العمل، يمكننا الاتفاق على خطوة تجريبية
+            أو فترة تعارف محددة قبل أي التزام طويل المدى. الهدف هو بناء شراكة عمل مستقرة، واضحة ومسؤولة،
+            تحترم وقتك ووقتي وتضيف قيمة حقيقية لجدول أعمالك اليومي.
           </p>
-          <ul>
-            <li>أدوار مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين وقادة المجموعات.</li>
-            <li>دعم في إنشاء أو تطوير المكتب التنفيذي ونظم العمل الداخلي.</li>
-            <li>دعم عن بُعد في المساء/الليل متوافق مع التوقيت الأمريكي.</li>
-            <li>دعم مرحلي خلال فترات الانتقال، التسليم والاستلام أو المشاريع الخاصة.</li>
-          </ul>
-          <p style="font-size:13px;margin-top:8px;">
-            يمكنكم التواصل عبر البريد الإلكتروني أو الواتساب مع توضيح مختصر عن طبيعة الدور، جهة العمل
-            والتوقيت المطلوب.
-          </p>
-          <div class="pill-row">
-            <span class="pill">خصوصية كاملة</span>
-            <span class="pill">تواصل مهني</span>
-            <span class="pill">عربي &amp; إنجليزي</span>
-          </div>
-        </article>
+        </section>
       </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> قاسم سعيد سعيد.  
-      العربية · <a href="../contact.html">English</a>
-    </footer>
-  </main>
-
-  <script src="../animations.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    </main>
+  </div>
 </body>
 </html>
