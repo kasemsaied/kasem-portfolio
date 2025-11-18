@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <title>Home – Kasem Saied Saied | Senior Executive Assistant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Kasem Saied Saied – Senior Executive Assistant to Chairmans, CEOs & Senior Leaders in Saudi Arabia. Executive support, discretion and reliability with US time zone alignment." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Kasem Saied Saied – Senior Executive Assistant to Chairmen, CEOs & Senior Leaders. 24+ years of C-Suite support in telecom, industrial and investment groups. Remote-ready for US time zones."
+  />
   <style>
     :root {
-      --bg-body: #f4efe4;
-      --bg-card: #fbf1df;
-      --bg-accent: #fff4d8;
-      --gold: #d0a13c;
-      --gold-dark: #8b6a1f;
-      --gold-soft: #f0e2c5;
-      --text-main: #2c2a29;
-      --text-soft: #5d5a57;
-      --border-soft: #e0d4b8;
+      --bg: #f5ecdd;
+      --card-bg: #fff7ea;
+      --accent: #c89b4f;
+      --accent-soft: #f0d8aa;
+      --text-main: #2c2722;
+      --text-muted: #7b6f63;
+      --border-subtle: #ead7ba;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-      --radius-card: 18px;
-      --radius-pill: 999px;
-      --transition-fast: 0.2s ease-out;
-      --transition-med: 0.35s ease-out;
+      --radius-xl: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
     }
 
     * {
@@ -30,10 +29,10 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-body);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #fdf5e6, #f2e5d3);
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -41,862 +40,889 @@
       text-decoration: none;
     }
 
-    /* ===== LAYOUT ===== */
+    /* Top nav */
 
-    .top-bar {
-      background: linear-gradient(90deg, #201207, #c89b34);
-      color: #fff;
-      padding: 10px 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.18);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .nav-row {
+    .nav-bar {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      border-radius: 999px;
+      background: rgba(255, 247, 234, 0.85);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
     }
 
-    .brand {
+    .nav-left {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 600;
       letter-spacing: 0.03em;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
-    .brand-badge {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: #15100b;
-      border: 2px solid #f2cf72;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-    }
-
-    .brand-badge span {
-      font-weight: 700;
-      color: #f7dea1;
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 26px;
-      font-size: 14px;
+      gap: 18px;
+      font-size: 13px;
+      font-weight: 500;
     }
 
-    .nav-link {
-      position: relative;
-      padding-bottom: 4px;
-      opacity: 0.88;
-      transition: opacity var(--transition-fast);
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 2px;
+    .nav-links a {
+      padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.0);
-      transform-origin: center;
-      transform: scaleX(0.4);
-      transition: background var(--transition-fast), transform var(--transition-fast);
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
-    .nav-link:hover {
-      opacity: 1;
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: #2b241a;
     }
 
-    .nav-link.active {
-      font-weight: 600;
-      opacity: 1;
+    .nav-links a.nav-active {
+      background: var(--accent);
+      color: #fff;
     }
 
-    .nav-link.active::after {
-      background: #ffe6a3;
-      transform: scaleX(1);
-    }
+    /* Page layout */
 
-    main {
-      padding: 30px 0 40px;
-    }
-
-    .page-grid {
-      max-width: 1150px;
-      margin: 0 auto;
+    .page-wrap {
+      max-width: 1180px;
+      margin: 30px auto 60px;
       padding: 0 20px 40px;
     }
 
-    /* ===== HERO SECTION ===== */
-
-    .hero {
-      background: linear-gradient(145deg, #fbf1df, #fff8ea);
-      border-radius: 26px;
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow-soft);
-      padding: 26px 34px 26px;
+      padding: 28px 32px;
       display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 28px;
-      margin-bottom: 26px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.6), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(255,230,170,0.45), transparent 55%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: contents;
+      grid-template-columns: auto 1fr;
+      gap: 22px;
     }
 
     .hero-left {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      gap: 14px;
+      gap: 12px;
+      min-width: 160px;
     }
 
-    .hero-photo-wrap {
-      width: 150px;
-      height: 150px;
+    .profile-photo-wrap {
+      width: 118px;
+      height: 118px;
       border-radius: 50%;
-      padding: 5px;
-      background: radial-gradient(circle at 30% 0%, #ffe9af, #d19c33);
+      padding: 4px;
+      background: linear-gradient(145deg, #f3d9a2, #d9b679);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
     }
 
-    .hero-photo-wrap img {
+    .profile-photo {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff9ec;
+      overflow: hidden;
+      background: #ddd;
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-name {
       font-weight: 600;
-      font-size: 16px;
+      font-size: 15px;
+      text-align: center;
     }
 
-    .hero-role {
-      font-size: 13px;
-      color: var(--text-soft);
+    .hero-title-small {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
     }
 
     .hero-right {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 14px;
     }
 
-    .hero-kicker {
+    .hero-label {
       font-size: 11px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--text-soft);
+      color: var(--text-muted);
     }
 
     .hero-title {
-      font-size: 24px;
-      line-height: 1.35;
-      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
     }
 
-    .hero-text {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 620px;
+    .hero-summary {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    .hero-summary strong {
+      color: #4a3b2e;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       margin-top: 4px;
     }
 
     .btn {
       border-radius: 999px;
-      padding: 9px 20px;
+      border: none;
+      padding: 8px 18px;
       font-size: 13px;
-      border: 0;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 6px;
-      text-decoration: none;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+      font-weight: 500;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background 0.12s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #d8a63c, #b27a1d);
+      background: linear-gradient(135deg, #c89b4f, #a67a2f);
       color: #fff;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.3);
-      background: linear-gradient(135deg, #e2b548, #c1841e);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
     }
 
     .btn-ghost {
-      background: #fff;
-      color: var(--text-main);
-      border: 1px solid #e2d3b8;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--accent-soft);
+      color: #5c4b3a;
     }
 
     .btn-ghost:hover {
-      background: #fffaf1;
+      background: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
     }
 
-    .hero-meta {
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-top: 4px;
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
     }
 
-    /* ===== 2-COLUMN SECTION (QUICK FACTS + SKILLS) ===== */
+    .hero-footnote span {
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border-subtle);
+    }
 
-    .grid-2 {
+    .hero-footnote .badge-remote {
+      border-color: #9dc3a4;
+      background: #edf7ef;
+      color: #305b39;
+      font-weight: 500;
+    }
+
+    /* Info row (Quick facts + Skills) */
+
+    .info-row {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
       gap: 18px;
-      margin-bottom: 26px;
+      margin-top: 22px;
     }
 
     .card {
-      background: var(--bg-card);
-      border-radius: var(--radius-card);
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-soft);
-      padding: 18px 20px 18px;
+      padding: 18px 20px 16px;
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 8px;
+      align-items: baseline;
       margin-bottom: 10px;
+      gap: 12px;
     }
 
     .card-title {
-      margin: 0;
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #574733;
     }
 
     .card-pill {
       font-size: 11px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: #fff4d5;
-      border: 1px solid #f0e2c5;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #fdf3e0;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
     .facts-grid {
       display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      row-gap: 6px;
-      column-gap: 12px;
-      font-size: 13px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      font-size: 12px;
     }
 
-    .facts-label {
-      color: var(--text-soft);
+    .fact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
     }
 
-    .facts-value {
+    .fact-value {
       font-weight: 500;
     }
 
-    .tag-row {
+    .fact-tag-row {
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 10px;
     }
 
-    .tag {
+    .fact-tag {
       font-size: 11px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid #f0e2c5;
-      background: #fffaf2;
-      color: var(--text-soft);
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
     }
 
-    /* Skills columns */
+    .fact-tag.strong {
+      background: #edf7ef;
+      color: #305b39;
+      border-color: #9dc3a4;
+      font-weight: 600;
+    }
+
+    .facts-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* Skills cards */
+
     .skills-columns {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
-      font-size: 12px;
+      font-size: 11.5px;
     }
 
-    .skill-card {
-      background: #fffdf7;
-      border-radius: 16px;
-      border: 1px solid #f0e2c5;
-      padding: 9px 10px 10px;
+    .skill-pill {
+      background: #fff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 10px 9px;
     }
 
-    .skill-kicker {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .skill-title {
-      font-size: 13px;
+    .skill-pill-title {
+      font-size: 11px;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       margin-bottom: 4px;
+      color: #5b4731;
     }
 
-    .skill-body {
-      color: var(--text-soft);
-      font-size: 12px;
+    .skill-pill-body {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
-    /* ===== HOW I SUPPORT EXECUTIVES (NEW ICON BOXES) ===== */
+    /* Support grid */
 
     .support-card {
-      background: var(--bg-card);
-      border-radius: 26px;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow-soft);
-      padding: 24px 26px 26px;
+      padding: 18px 20px 16px;
+      margin-top: 24px;
     }
 
     .support-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 16px;
-      gap: 10px;
+      margin-bottom: 12px;
+      gap: 12px;
     }
 
-    .support-header h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .support-header small {
-      color: var(--text-soft);
-      font-size: 12px;
+    .support-note {
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     .support-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
-      font-size: 12px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 11.5px;
     }
 
-    .support-item {
-      background: #fffdf7;
-      border-radius: 14px;
-      border: 1px solid #f0e2c5;
-      padding: 10px 11px 11px;
+    .support-pill {
+      background: #fff;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      padding: 9px 9px 8px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 3px;
     }
 
-    .support-top {
+    .support-pill-header {
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .support-icon {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      background: #fff4d5;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #805816;
-      flex-shrink: 0;
+      gap: 6px;
     }
 
     .support-title {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 600;
-      flex: 1;
+      color: #574733;
     }
 
-    .support-label {
+    .support-badge {
       font-size: 10px;
-      padding: 2px 8px;
+      padding: 2px 6px;
       border-radius: 999px;
-      background: #f6efe0;
-      color: var(--text-soft);
-      border: 1px solid #f0e2c5;
-      flex-shrink: 0;
+      background: #fdf3e0;
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
     }
 
-    .support-body {
-      color: var(--text-soft);
-      font-size: 12px;
-      margin-top: 3px;
+    .support-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.45;
     }
 
-    /* ===== FOOTER ===== */
+    .support-icon {
+      font-size: 11px;
+      margin-right: 4px;
+    }
+
+    /* Footer */
 
     footer {
-      padding: 20px 0 26px;
-      font-size: 11px;
-      color: var(--text-soft);
       text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 26px;
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* Responsive */
 
     @media (max-width: 900px) {
-      .hero {
+      .hero-card {
         grid-template-columns: 1fr;
-        text-align: center;
       }
-      .hero-right {
+      .hero-left {
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
+        gap: 18px;
       }
-      .hero-text {
-        max-width: 100%;
+      .hero-name,
+      .hero-title-small {
+        text-align: left;
       }
-      .hero-actions {
-        justify-content: center;
-      }
-      .grid-2 {
+      .info-row {
         grid-template-columns: 1fr;
       }
       .skills-columns {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .support-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
-      .nav-links {
-        gap: 12px;
-        font-size: 13px;
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
       }
-      .hero {
-        padding: 20px 18px 20px;
+      .hero-card {
+        padding: 22px 18px;
       }
-      .page-grid {
+      .page-wrap {
         padding: 0 14px 30px;
       }
       .skills-columns {
         grid-template-columns: 1fr;
       }
-      .support-card {
-        padding: 18px 16px 18px;
+      .support-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <!-- ===== TOP GOLD BAR + NAV ===== -->
-  <header class="top-bar">
-    <div class="container nav-row">
-      <div class="brand">
-        <div class="brand-badge"><span>KS</span></div>
-        <span>KASEM SAIED SAIED</span>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="certificates.html" class="nav-link">Certificates</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="services.html" class="nav-link">Services</a>
-      </nav>
+  <!-- Top navigation -->
+  <header class="nav-bar">
+    <div class="nav-left">
+      <span class="nav-dot"></span>
+      <span>Kasem Saied Saied</span>
     </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-active">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <div class="page-grid">
-      <!-- ===== HERO ===== -->
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="hero-left">
-            <div class="hero-photo-wrap">
-              <img src="profile.jpg" alt="Kasem Saied Saied portrait" />
-            </div>
-            <div class="hero-name">Kasem Saied Saied</div>
-            <div class="hero-role">Senior Executive Assistant</div>
-          </div>
+  <main class="page-wrap">
+    <!-- Hero card -->
+    <section class="hero-card">
+      <div class="hero-left">
+        <div class="profile-photo-wrap">
+          <!-- Replace background-image URL with your real photo if you like -->
+          <div
+            class="profile-photo"
+            style="
+              background-image: url('images/profile.jpg');
+            "
+          ></div>
+        </div>
+        <div>
+          <div class="hero-name">Kasem Saied Saied</div>
+          <div class="hero-title-small">Senior Executive Assistant</div>
+        </div>
+      </div>
 
-          <div class="hero-right">
-            <div class="hero-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</div>
-            <h1 class="hero-title">
-              Senior Executive Assistant to Chairmans,<br />
-              CEOs &amp; Senior Leaders
-            </h1>
-            <p class="hero-text">
-              With more than 24 years of experience directly supporting C-suite leaders,
-              SVPs and senior executives in Saudi Arabia, I specialize in executive operations,
-              communication and workflow excellence across telecommunications, multinational
-              environments and private business groups.
-            </p>
-            <div class="hero-actions">
-              <a href="Kasem Saied-Resume 2025-En.pdf" class="btn btn-primary" download>
-                Download CV
-              </a>
-              <a href="contact.html" class="btn btn-ghost">
-                Contact Me
-              </a>
+      <div class="hero-right">
+        <div class="hero-label">
+          EXECUTIVE SUPPORT · DISCRETION · RELIABILITY
+        </div>
+        <h1 class="hero-title">
+          Senior Executive Assistant to Chairmen, CEOs &amp; Senior Leaders
+        </h1>
+        <p class="hero-summary">
+          With over <strong>24 years of experience</strong> directly supporting
+          C-suite leaders, SVPs and senior executives in Saudi Arabia, I
+          specialise in executive operations, communication and
+          board-level support. I have helped CEOs and Chairmen in
+          <strong>telecom, industrial, investment and private offices</strong>
+          manage complex calendars, confidential matters and high-stakes
+          decisions across multiple time zones.
+          <br /><br />
+          Recent experience includes <strong>reducing meeting overload by
+          20%+</strong> through calendar optimisation, coordinating
+          <strong>200+ annual international travel itineraries</strong>, and
+          preparing board documents and briefing packs for
+          <strong>multi-billion SAR organisations</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="Kasem-Saied-Senior-Executive-Assistant-CV.pdf" class="btn btn-primary">
+            Download CV
+          </a>
+          <a href="contact.html" class="btn btn-ghost">Contact for Opportunities</a>
+        </div>
+
+        <div class="hero-footnote">
+          <span>Based in Riyadh, Saudi Arabia</span>
+          <span>Open to on-site roles in KSA &amp; GCC</span>
+          <span class="badge-remote">
+            Remote-ready for US / EU executives · US time-zone support
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info row -->
+    <section class="info-row">
+      <!-- Quick facts -->
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Quick Facts</h2>
+          <span class="card-pill">Profile snapshot</span>
+        </div>
+        <div class="facts-grid">
+          <div>
+            <div class="fact-label">Location</div>
+            <div class="fact-value">Riyadh, Saudi Arabia</div>
+          </div>
+          <div>
+            <div class="fact-label">Experience</div>
+            <div class="fact-value">24+ years in executive support</div>
+          </div>
+          <div>
+            <div class="fact-label">Industries</div>
+            <div class="fact-value">
+              Telecom, industrial, investment, private offices
             </div>
-            <div class="hero-meta">
-              Based in Riyadh · Open to on-site roles in Saudi Arabia and remote Executive Assistant /
-              C-suite support aligned with US time zones.
+          </div>
+          <div>
+            <div class="fact-label">Languages</div>
+            <div class="fact-value">
+              Arabic (native), English (fluent)
+            </div>
+          </div>
+          <div>
+            <div class="fact-label">Availability</div>
+            <div class="fact-value">
+              On-site KSA / GCC · Remote · US &amp; EU time zones
+            </div>
+          </div>
+          <div>
+            <div class="fact-label">Citizenship</div>
+            <div class="fact-value">
+              Syrian · Long-term resident in Saudi Arabia
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- ===== QUICK FACTS + SKILLS ===== -->
-      <section class="grid-2">
-        <!-- Quick Facts -->
-        <article class="card">
-          <div class="card-header">
-            <h2 class="card-title">Quick Facts</h2>
-            <span class="card-pill">Profile snapshot</span>
-          </div>
-          <div class="facts-grid">
-            <div class="facts-label">Location</div>
-            <div class="facts-value">Riyadh, Saudi Arabia</div>
-
-            <div class="facts-label">Experience</div>
-            <div class="facts-value">24+ years in executive support</div>
-
-            <div class="facts-label">Industries</div>
-            <div class="facts-value">
-              Telecom, multinational groups, private offices
-            </div>
-
-            <div class="facts-label">Languages</div>
-            <div class="facts-value">Arabic (native), English (fluent)</div>
-
-            <div class="facts-label">Availability</div>
-            <div class="facts-value">
-              On-site Riyadh · Remote · US time zones
-            </div>
-          </div>
-
-          <div class="tag-row">
-            <div class="tag">C-level diary &amp; inbox control</div>
-            <div class="tag">Board &amp; committee support</div>
-            <div class="tag">Travel &amp; logistics</div>
-            <div class="tag">Confidential documents</div>
-          </div>
-        </article>
-
-        <!-- Skills Highlights -->
-        <article class="card">
-          <div class="card-header">
-            <h2 class="card-title">Skills Highlights</h2>
-            <span class="card-pill">Executive operations</span>
-          </div>
-
-          <div class="skills-columns">
-            <!-- Column 1 -->
-            <div class="skill-card">
-              <div class="skill-kicker">EXECUTIVE OPERATIONS</div>
-              <div class="skill-title">Office &amp; Leadership Support</div>
-              <div class="skill-body">
-                High-level assistance for daily operations, meetings, follow-ups and cross-department
-                coordination for senior leaders.
-              </div>
-            </div>
-
-            <!-- Column 2 -->
-            <div class="skill-card">
-              <div class="skill-kicker">COMMUNICATION</div>
-              <div class="skill-title">Arabic &amp; English</div>
-              <div class="skill-body">
-                Professional correspondence, board materials and presentations in both languages with
-                diplomatic tone and clarity.
-              </div>
-            </div>
-
-            <!-- Column 3 -->
-            <div class="skill-card">
-              <div class="skill-kicker">TECHNOLOGY</div>
-              <div class="skill-title">Productivity &amp; AI Tools</div>
-              <div class="skill-body">
-                Microsoft 365, Google Workspace, Zoom, Notion, Slack and modern AI tools to improve
-                productivity and decision-making.
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- ===== HOW I SUPPORT EXECUTIVES (ICON GRID) ===== -->
-      <section class="support-card">
-        <div class="support-header">
-          <h2>How I Support Executives</h2>
-          <small>Key areas where I add structure, calm and reliability to a busy office.</small>
+        <div class="fact-tag-row">
+          <span class="fact-tag">C-suite diary &amp; inbox control</span>
+          <span class="fact-tag">Board &amp; committee support</span>
+          <span class="fact-tag">Travel &amp; logistics</span>
+          <span class="fact-tag">Confidential documents</span>
+          <span class="fact-tag strong">
+            Proven ability to support CEOs remotely
+          </span>
         </div>
 
-        <div class="support-grid">
-          <!-- 1 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🗓</div>
-              <div class="support-title">Calendar &amp; Inbox Mastery</div>
-              <div class="support-label">Time</div>
-            </div>
-            <div class="support-body">
-              Managing complex calendars, inboxes and shifting priorities so that leaders
-              focus on what truly matters.
+        <p class="facts-note">
+          Highlights include supporting executives of a
+          <strong>leading Saudi telecom group</strong> for nearly a decade and
+          helping leadership teams navigate growth, restructuring and
+          international expansion.
+        </p>
+      </article>
+
+      <!-- Skills highlights -->
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Skills Highlights</h2>
+          <span class="card-pill">Executive operations</span>
+        </div>
+        <div class="skills-columns">
+          <div class="skill-pill">
+            <div class="skill-pill-title">Office Leadership</div>
+            <div class="skill-pill-body">
+              C-suite &amp; board support, high-level gatekeeping, office
+              protocols, senior stakeholder coordination and cross-department
+              follow-up.
             </div>
           </div>
-
-          <!-- 2 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">✉️</div>
-              <div class="support-title">Executive Communication</div>
-              <div class="support-label">Clarity</div>
-            </div>
-            <div class="support-body">
-              Drafting and polishing emails, memos, reports and presentations in clear,
-              concise and professional language.
+          <div class="skill-pill">
+            <div class="skill-pill-title">Communication</div>
+            <div class="skill-pill-body">
+              Arabic &amp; English drafting, executive correspondence, meeting
+              briefs, speech notes, presentations and diplomatic email tone.
             </div>
           </div>
-
-          <!-- 3 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">✈️</div>
-              <div class="support-title">Travel &amp; Meetings</div>
-              <div class="support-label">Logistics</div>
-            </div>
-            <div class="support-body">
-              Domestic &amp; international travel, agendas, logistics and VIP visits with
-              full end-to-end coordination.
+          <div class="skill-pill">
+            <div class="skill-pill-title">Productivity &amp; AI Tools</div>
+            <div class="skill-pill-body">
+              Microsoft 365, Google Workspace, Zoom, Notion, Slack &amp; modern
+              AI tools to streamline workflows, information flow and
+              decision-making.
             </div>
           </div>
-
-          <!-- 4 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">📁</div>
-              <div class="support-title">Office Systems &amp; Procedures</div>
-              <div class="support-label">Systems</div>
-            </div>
-            <div class="support-body">
-              Structured workflows, filing systems and approval paths that keep the executive
-              office running smoothly.
+          <div class="skill-pill">
+            <div class="skill-pill-title">Governance</div>
+            <div class="skill-pill-body">
+              Board packs, agendas, minutes, resolutions and action tracking for
+              committees and investment entities.
             </div>
           </div>
-
-          <!-- 5 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🤝</div>
-              <div class="support-title">Stakeholder Coordination</div>
-              <div class="support-label">Liaison</div>
-            </div>
-            <div class="support-body">
-              Acting as a reliable point of contact between executives, leadership teams,
-              departments and external partners.
+          <div class="skill-pill">
+            <div class="skill-pill-title">Operations</div>
+            <div class="skill-pill-body">
+              Calendar optimisation, travel &amp; events, expense control,
+              vendor coordination and senior visitor management.
             </div>
           </div>
-
-          <!-- 6 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">💻</div>
-              <div class="support-title">Tools &amp; Technology</div>
-              <div class="support-label">Digital</div>
-            </div>
-            <div class="support-body">
-              Confident with Microsoft Office, Google Workspace and exploring tools like
-              Notion, Slack and Asana.
-            </div>
-          </div>
-
-          <!-- 7 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">📊</div>
-              <div class="support-title">Strategic Scheduling</div>
-              <div class="support-label">Strategy</div>
-            </div>
-            <div class="support-body">
-              Aligning the executive’s time with priorities, strategic goals, board agendas
-              and key deliverables.
-            </div>
-          </div>
-
-          <!-- 8 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">📄</div>
-              <div class="support-title">Board &amp; Leadership Documentation</div>
-              <div class="support-label">Boards</div>
-            </div>
-            <div class="support-body">
-              Preparing briefings, minutes, decks and confidential reports for boards and
-              senior committees.
-            </div>
-          </div>
-
-          <!-- 9 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">⚙️</div>
-              <div class="support-title">Workflow Optimization</div>
-              <div class="support-label">Process</div>
-            </div>
-            <div class="support-body">
-              Identifying bottlenecks, improving processes and supporting efficient
-              information and approval flows.
-            </div>
-          </div>
-
-          <!-- 10 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🔒</div>
-              <div class="support-title">Confidential Matter Handling</div>
-              <div class="support-label">Trust</div>
-            </div>
-            <div class="support-body">
-              Managing HR topics, sensitive information and contracts with full discretion
-              and professionalism.
-            </div>
-          </div>
-
-          <!-- 11 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🧩</div>
-              <div class="support-title">Vendor &amp; Partnership Management</div>
-              <div class="support-label">Partners</div>
-            </div>
-            <div class="support-body">
-              Coordinating vendors, embassies, agencies and legal offices to support
-              executive requirements.
-            </div>
-          </div>
-
-          <!-- 12 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">📝</div>
-              <div class="support-title">Meeting Intelligence &amp; Alignment</div>
-              <div class="support-label">Follow-up</div>
-            </div>
-            <div class="support-body">
-              Designing agendas, capturing decisions and ensuring structured follow-up on
-              action items.
-            </div>
-          </div>
-
-          <!-- 13 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">✅</div>
-              <div class="support-title">Project &amp; Deadline Tracking</div>
-              <div class="support-label">Projects</div>
-            </div>
-            <div class="support-body">
-              Helping track executive OKRs, KPIs and key initiatives with reminders and
-              structure to keep momentum.
-            </div>
-          </div>
-
-          <!-- 14 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🤖</div>
-              <div class="support-title">Digital Productivity &amp; AI Tools</div>
-              <div class="support-label">AI</div>
-            </div>
-            <div class="support-body">
-              Using modern tools and AI assistants to improve speed, accuracy and daily
-              executive support.
-            </div>
-          </div>
-
-          <!-- 15 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🚨</div>
-              <div class="support-title">Crisis &amp; Issue Management</div>
-              <div class="support-label">Calm</div>
-            </div>
-            <div class="support-body">
-              Supporting executives during urgent issues, ensuring clear information,
-              priorities and calm execution.
-            </div>
-          </div>
-
-          <!-- 16 -->
-          <div class="support-item">
-            <div class="support-top">
-              <div class="support-icon">🏡</div>
-              <div class="support-title">Personal &amp; Family Logistics</div>
-              <div class="support-label">Support</div>
-            </div>
-            <div class="support-body">
-              When appropriate, assisting with selected personal logistics and
-              arrangements to protect executive time.
+          <div class="skill-pill">
+            <div class="skill-pill-title">Confidential Matters</div>
+            <div class="skill-pill-body">
+              Handling sensitive topics, discreet support for family-related
+              arrangements and trusted management of private documentation.
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </article>
+    </section>
+
+    <!-- How I support executives -->
+    <section class="support-card">
+      <div class="support-header">
+        <h2 class="card-title">How I Support Executives</h2>
+        <div class="support-note">
+          Key areas where I add structure, calm and reliability to a busy
+          office.
+        </div>
+      </div>
+      <div class="support-grid">
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              <span class="support-icon">📅</span>Calendar &amp; Inbox Mastery
+            </div>
+            <span class="support-badge">Core</span>
+          </div>
+          <div class="support-desc">
+            Managing complex calendars, prioritising what truly matters, and
+            shielding executives from noise while keeping them informed.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              ✉️ Executive Communication
+            </div>
+            <span class="support-badge">Writing</span>
+          </div>
+          <div class="support-desc">
+            Drafting and polishing emails, letters and speeches in Arabic &amp;
+            English, aligned with the executive’s tone and image.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              ✈️ Travel &amp; Meetings
+            </div>
+            <span class="support-badge">Logistics</span>
+          </div>
+          <div class="support-desc">
+            Domestic &amp; international travel planning, visas, hotels, cars
+            and end-to-end itineraries for high-value trips.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🗂 Office Systems &amp; Procedures
+            </div>
+            <span class="support-badge">Systems</span>
+          </div>
+          <div class="support-desc">
+            Creating simple systems and workflows that keep the office and the
+            executive aligned.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🤝 Stakeholder Coordination
+            </div>
+            <span class="support-badge">Relations</span>
+          </div>
+          <div class="support-desc">
+            Acting as a reliable point of contact between executives, board
+            members, departments and external partners.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              💻 Tools &amp; Technology
+            </div>
+            <span class="support-badge">Digital</span>
+          </div>
+          <div class="support-desc">
+            Confident with Microsoft Office, Google Workspace and modern AI
+            tools to support smarter decisions and faster execution.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              📊 Strategic Scheduling
+            </div>
+            <span class="support-badge">Focus</span>
+          </div>
+          <div class="support-desc">
+            Protecting thinking time, aligning calendars with strategic
+            priorities and creating space for what truly matters.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              📝 Board &amp; Leadership Documentation
+            </div>
+            <span class="support-badge">Boards</span>
+          </div>
+          <div class="support-desc">
+            Preparing decks, packs and minutes for board and committee meetings
+            with clear follow-up actions.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              📦 Vendor &amp; Partner Management
+            </div>
+            <span class="support-badge">External</span>
+          </div>
+          <div class="support-desc">
+            Coordinating with service providers and suppliers to support
+            executive needs and office requirements.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🔍 Meeting Intelligence &amp; Alignment
+            </div>
+            <span class="support-badge">Insight</span>
+          </div>
+          <div class="support-desc">
+            Capturing decisions, risks and next steps, ensuring the right
+            follow-up so meetings lead to action.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              📈 Digital Productivity &amp; AI Tools
+            </div>
+            <span class="support-badge">Modern</span>
+          </div>
+          <div class="support-desc">
+            Using AI writing and productivity tools to draft, summarise and
+            prepare documents efficiently for executives.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🚨 Crisis &amp; Issue Management
+            </div>
+            <span class="support-badge">Calm</span>
+          </div>
+          <div class="support-desc">
+            Supporting executives during urgent situations with clear
+            priorities, calm communication and reliable execution.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              👪 Personal &amp; Family Logistics
+            </div>
+            <span class="support-badge">Trusted</span>
+          </div>
+          <div class="support-desc">
+            When requested, assisting with selected personal arrangements to
+            free executive time and focus.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🧭 Remote &amp; US Time-Zone Support
+            </div>
+            <span class="support-badge">Remote</span>
+          </div>
+          <div class="support-desc">
+            Comfortable working evening hours in Riyadh to align with US mornings
+            and afternoons, using Zoom, Teams, Slack and cloud tools.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🔐 Confidential Matter Handling
+            </div>
+            <span class="support-badge">Discretion</span>
+          </div>
+          <div class="support-desc">
+            Managing high-risk topics, sensitive information and confidential
+            contacts with absolute discretion.
+          </div>
+        </div>
+
+        <div class="support-pill">
+          <div class="support-pill-header">
+            <div class="support-title">
+              🔄 Workflow Optimisation
+            </div>
+            <span class="support-badge">Efficiency</span>
+          </div>
+          <div class="support-desc">
+            Identifying bottlenecks, simplifying processes and keeping
+            information flowing smoothly between teams.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Kasem Saied Saied — Senior Executive Assistant
+    </footer>
   </main>
-
-  <footer>
-    © 2025 Kasem Saied Saied — All Rights Reserved.
-  </footer>
 </body>
 </html>
