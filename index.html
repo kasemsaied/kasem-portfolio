@@ -1,276 +1,528 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kasem Saied Saied – Senior Executive Assistant</title>
+  <meta charset="UTF-8" />
+  <title>خدمات الدعم التنفيذي لرؤساء الأعمال والرؤساء التنفيذيين</title>
+  <meta name="description" content="باقات دعم تنفيذي مرنة وخدمات مساعد تنفيذي ومسؤول مكتب رئيس (Chief of Staff) لرؤساء الشركات والقادة التنفيذيين." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Kasem Saied Saied" />
 
-<!-- ============================
-      PREMIUM GLOBAL CSS
-=============================== -->
-<style>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <!-- Shared animations & small effects -->
+  <link rel="stylesheet" href="../animations.css" />
 
-/* ---------- GLOBAL COLORS ---------- */
-:root {
-  --gold-dark: #b8892e;
-  --gold-mid: #d9b56b;
-  --gold-light: #f7e3b3;
+  <style>
+    :root {
+      --bg-body: #f4efe4;
+      --bg-card: #fbf8f1;
+      --gold: #d0a13c;
+      --gold-dark: #8b6a1e;
+      --text-main: #1f1c19;
+      --text-soft: #5d5954;
+      --border-soft: #e0d4b8;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.08);
+      --radius-card: 20px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.32s ease-out;
+    }
 
-  --bg-main: #f3ecdf;
-  --bg-card: #f9f5ed;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  --text-dark: #2b2b2b;
-  --text-soft: #6b6b6b;
-  --shadow-soft: rgba(0,0,0,0.12);
-}
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Tahoma", sans-serif;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
 
-/* ---------- RESET ---------- */
-body {
-  margin: 0;
-  background: var(--bg-main);
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: var(--text-dark);
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* ---------- NAVBAR ---------- */
-.navbar {
-  width: 100%;
-  background: linear-gradient(90deg, #000, #b8892e, #d9b56b);
-  padding: 12px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* Top nav -------------------------------------------------- */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(90deg, #1d1810, #b88a2c);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-}
+    .top-nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-.ks-badge {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #f2dca0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #000;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
 
-.nav-links a {
-  margin-left: 26px;
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  opacity: 0.92;
-}
+    .brand-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: var(--radius-pill);
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      border: 2px solid #f6d37a;
+    }
 
-.nav-links a:hover,
-.nav-links .active {
-  opacity: 1;
-  font-weight: 700;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
 
-/* ---------- HEADER CARD ---------- */
-.header-card {
-  max-width: 1100px;
-  margin: 40px auto;
-  background: var(--bg-card);
-  padding: 38px;
-  border-radius: 26px;
-  box-shadow: 0 8px 24px var(--shadow-soft);
-  display: flex;
-  gap: 34px;
-  align-items: center;
-}
+    .nav-links a {
+      opacity: .9;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+      white-space: nowrap;
+    }
 
-/* ---------- PREMIUM PROFILE PHOTO ---------- */
-.profile-photo-wrap {
-  width: 180px;
-  height: 180px;
-  padding: 5px;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-mid));
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow:
-    0 6px 24px rgba(0,0,0,0.15),
-    0 3px 12px rgba(0,0,0,0.10);
-  animation: fadeInPhoto 0.8s ease-out;
-}
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.7);
+    }
 
-.profile-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
+    .nav-links a.active {
+      font-weight: 600;
+      border-color: #ffe09a;
+      opacity: 1;
+    }
 
-@keyframes fadeInPhoto {
-  from { opacity: 0; transform: scale(0.94); }
-  to   { opacity: 1; transform: scale(1); }
-}
+    .lang-pill {
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.7);
+      font-size: 12px;
+      opacity: .95;
+      background: rgba(0,0,0,0.2);
+    }
 
-/* ---------- SECTION TITLES ---------- */
-.section-title {
-  text-align: center;
-  font-size: 26px;
-  margin-top: 60px;
-  font-weight: 700;
-  color: var(--text-dark);
-}
+    .lang-pill:hover {
+      background: rgba(0,0,0,0.35);
+    }
 
-/* ---------- CARD GRID ---------- */
-.card-grid {
-  max-width: 1100px;
-  margin: 26px auto 80px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-}
+    /* Layout --------------------------------------------------- */
+    main {
+      max-width: 1120px;
+      margin: 26px auto 60px;
+      padding: 0 20px 40px;
+    }
 
-.card {
-  background: var(--bg-card);
-  padding: 22px;
-  border-radius: 22px;
-  box-shadow: 0 6px 18px var(--shadow-soft);
-}
+    /* Hero card WITHOUT photo ---------------------------------- */
+    .hero-card {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.9), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(255,226,160,.5), transparent 55%),
+        var(--bg-card);
+      box-shadow: var(--shadow-soft);
+      border-radius: 26px;
+      padding: 26px 32px 22px;
+      border: 1px solid rgba(255,255,255,0.96);
+      margin-bottom: 28px;
+      text-align: center;
+    }
 
-.card h3 {
-  margin: 0 0 10px;
-  font-size: 17px;
-  font-weight: 700;
-}
+    .hero-kicker {
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #fdf2c4;
+      font-size: 11px;
+      margin-bottom: 10px;
+      background: #2f2617;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
 
-.card p {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 14px;
-}
+    .hero-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
 
-/* ---------- FOOTER ---------- */
-.footer {
-  text-align: center;
-  padding: 26px;
-  color: var(--text-soft);
-  font-size: 14px;
-  margin-top: 40px;
-}
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
 
-</style>
+    .hero-text {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 900px;
+      margin: 0 auto 14px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .tag-pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--border-soft);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .btn-gold,
+    .btn-outline {
+      font-size: 13px;
+      padding: 7px 18px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: default;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f4d782, #c99a32);
+      border-color: #b8861f;
+      color: #2c210f;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.23);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(0,0,0,0.18);
+      color: var(--text-main);
+    }
+
+    .hero-footnote {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 10px;
+    }
+
+    /* Sections & cards ---------------------------------------- */
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 650;
+      margin-bottom: 8px;
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .package-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.96);
+      padding: 18px 18px 14px;
+      font-size: 13px;
+      color: var(--text-soft);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
+    }
+
+    .package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 42px rgba(0,0,0,0.12);
+      border-color: rgba(208,161,60,0.55);
+      background: #fffaf3;
+    }
+
+    .package-label {
+      font-size: 11px;
+      color: var(--gold-dark);
+      margin-bottom: 4px;
+    }
+
+    .package-title {
+      font-size: 15px;
+      font-weight: 650;
+      margin-bottom: 6px;
+      color: #2f2618;
+    }
+
+    .package-price {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
+    }
+
+    .package-list {
+      list-style: disc;
+      padding-right: 18px;
+      margin-top: 4px;
+    }
+
+    .package-list li {
+      margin-bottom: 3px;
+    }
+
+    .bottom-note-card {
+      margin-top: 22px;
+      background: #f8e9b8;
+      border-radius: 16px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #5a4822;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(0,0,0,0.45);
+      margin-top: 26px;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    @media (max-width: 900px) {
+      .cards-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        margin-top: 20px;
+      }
+      .cards-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .top-nav-inner {
+        padding-inline: 14px;
+      }
+      .nav-links {
+        font-size: 13px;
+        gap: 12px;
+      }
+      .hero-card {
+        padding-inline: 18px;
+      }
+      .hero-title {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
+  <!-- Top navigation (Arabic) -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">نبذة عني</a>
+        <a href="portfolio.html">الأعمال</a>
+        <a href="certificates.html">الشهادات</a>
+        <a href="services.html" class="active">خدمات الدعم</a>
+        <a href="contact.html">تواصل معي</a>
+        <a class="lang-pill" href="../services.html">EN English</a>
+      </nav>
+      <div class="brand">
+        <div class="brand-badge">KS</div>
+        KASEM SAIED SAIED
+      </div>
+    </div>
+  </header>
 
-<!-- ============================
-      NAVBAR
-=============================== -->
-<div class="navbar">
-  <div class="nav-left">
-    <div class="ks-badge">KS</div>
-    KASEM SAIED SAIED
-  </div>
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="certificates.html">Certificates</a>
-    <a href="contact.html">Contact</a>
-    <a href="services.html">Services</a>
-  </div>
-</div>
+  <main>
+    <!-- Hero without image -->
+    <section class="hero-card fade-section fade-slow">
+      <div class="hero-kicker">EXECUTIVE SUPPORT · DISCRETION · RELIABILITY</div>
+      <h1 class="hero-title">خدمات دعم تنفيذي عن بُعد لرؤساء الأعمال والرؤساء التنفيذيين</h1>
+      <p class="hero-subtitle">
+        باقات مرنة لخدمات المساعد التنفيذي ومسؤول مكتب الرئيس (Chief of Staff) مصمّمة لتناسب احتياجاتك في إدارة المكتب التنفيذي.
+      </p>
+      <p class="hero-text">
+        أكثر من 24 عاماً من دعم المكاتب العليا في شركة الاتصالات، المجموعات الكبرى والقطاع الخاص في المملكة العربية السعودية. أقدّم لك دعماً تنفيذياً هادئاً وموثوقاً يساعدك على تنظيم الوقت، ترتيب الأولويات، متابعة القرارات، إعداد الاجتماعات واللجان، وتنفيذ المهام اليومية بسلاسة — سواء كان ذلك في المكتب أو عن بُعد متوافقاً مع التوقيت الأمريكي.
+      </p>
+      <div class="hero-tags">
+        <span class="tag-pill">دعم تنفيذي متقدّم</span>
+        <span class="tag-pill">سرّية عالية</span>
+        <span class="tag-pill">متابعة دقيقة للمهام</span>
+        <span class="tag-pill">تجربة شركات كبرى</span>
+      </div>
+      <div class="hero-buttons">
+        <div class="btn-gold">طلب مكالمة تعارف</div>
+        <div class="btn-outline">معرفة تفاصيل الباقات</div>
+      </div>
+      <div class="hero-footnote">
+        يمكن تعديل محتوى الباقات بالتفاهم المباشر بما يتناسب مع طبيعة عملك وحجم مكتبك التنفيذي.
+      </div>
+    </section>
 
+    <!-- Executive Assistant packages -->
+    <section class="section fade-section fade-delay-1">
+      <h2 class="section-title">باقات المساعد التنفيذي</h2>
+      <p class="section-note">
+        أمثلة تقريبية لباقات شهرية لخدمة المساعد التنفيذي للمستويات التنفيذية العليا (EA).
+      </p>
 
-<!-- ============================
-      HEADER CARD
-=============================== -->
-<div class="header-card">
+      <div class="cards-row">
+        <!-- Basic EA -->
+        <article class="package-card">
+          <div class="package-label">باقة دعم تنفيذي أساسي</div>
+          <div class="package-title">دعم تنفيذي أساسي</div>
+          <div class="package-price">2,500 دولار شهرياً — ساعات مرنة كل أسبوع</div>
+          <ul class="package-list">
+            <li>إدارة جدول المواعيد والمتابعة الأساسية مع فريق العمل.</li>
+            <li>تنظيم البريد الإلكتروني وتصنيف الرسائل المهمة.</li>
+            <li>إعداد موجزات مختصرة قبل الاجتماعات الرئيسية.</li>
+            <li>متابعة بنود العمل والمهام البسيطة بعد الاجتماعات.</li>
+            <li>دعم مكتبي عن بعد مع تقارير مختصرة أسبوعية.</li>
+          </ul>
+        </article>
 
-  <!-- PHOTO -->
-  <div class="profile-photo-wrap">
-    <img src="profile.jpg" alt="Kasem Saied" class="profile-photo">
-  </div>
+        <!-- Standard EA -->
+        <article class="package-card">
+          <div class="package-label">الباقة الأكثر توازناً</div>
+          <div class="package-title">بـاقة مساعد تنفيذي محترف</div>
+          <div class="package-price">4,500 دولار شهرياً — حتى 70 ساعة (عن بُعد)</div>
+          <ul class="package-list">
+            <li>إدارة شاملة لجدول الرئيس التنفيذي وترتيب الأولويات.</li>
+            <li>صياغة وإرسال مراسلات رسمية بالبريد الإلكتروني (عربي/إنجليزي).</li>
+            <li>تنسيق الاجتماعات، مكالمات Zoom وجدولة اللقاءات مع الإدارة العليا.</li>
+            <li>إعداد ملخصات قبل/بعد الاجتماعات مع متابعة واضحة لبنود العمل.</li>
+            <li>تنسيق أولي للسفر والاجتماعات الخارجية عند الحاجة.</li>
+          </ul>
+        </article>
 
-  <!-- TEXT -->
-  <div>
-    <small style="color: var(--gold-dark); letter-spacing: 0.05em; font-weight:600;">
-      EXECUTIVE SUPPORT • DISCRETION • RELIABILITY
-    </small>
+        <!-- Premium EA -->
+        <article class="package-card">
+          <div class="package-label">أعلى مستوى دعم للمكتب التنفيذي</div>
+          <div class="package-title">بـاقة دعم تنفيذي متقدّم</div>
+          <div class="package-price">6,000 دولار شهرياً — حتى 100 ساعة (عن بُعد + حضور جزئي)</div>
+          <ul class="package-list">
+            <li>إدارة يومية متقدمة للجدول والبريد والمهام الخاصة بالرئيس التنفيذي.</li>
+            <li>تجهيز كامل لاجتماعات اللجان الداخلية واللقاءات الدورية.</li>
+            <li>متابعة تنفيذ القرارات مع الإدارات المعنية وتذكير دقيق بالمواعيد النهائية.</li>
+            <li>تنسيق سفر واستقبال ضيوف كبار عند الحاجة (منسّق مع شركائك الداخليين).</li>
+            <li>تقارير شهرية عن أداء المكتب التنفيذي وتحسين مسار العمل.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-    <h1 style="margin: 10px 0 10px; font-size: 32px; font-weight: 800;">
-      Senior Executive Assistant to Chairmans,<br> CEOs & Senior Leaders
-    </h1>
+    <!-- Chief of Staff packages -->
+    <section class="section fade-section fade-delay-2">
+      <h2 class="section-title">باقات رئيس الموظفين التنفيذي (Chief of Staff)</h2>
+      <p class="section-note">
+        مستوى أعلى من الدعم للمكاتب القيادية التي تحتاج إلى متابعة استراتيجية وتنفيذية متقدمة.
+      </p>
 
-    <p style="color: var(--text-soft); line-height: 1.6; max-width: 600px;">
-      With 24+ years of experience directly supporting CEOs, SVPs and senior executives in Saudi Arabia,
-      I specialize in executive operations, communication and workflow excellence across telecommunications,
-      multinational environments and private business groups.
-    </p>
+      <div class="cards-row">
+        <!-- Strategy support -->
+        <article class="package-card">
+          <div class="package-label">دعم المعلومات الاستراتيجية</div>
+          <div class="package-title">دعم الملفات والقرارات</div>
+          <div class="package-price">7,500 دولار شهرياً — ساعات متفق عليها</div>
+          <ul class="package-list">
+            <li>مراجعة الملفات الرئيسية قبل عرضها على الرئيس أو مجلس الإدارة.</li>
+            <li>إعداد أسئلة رئيسية ونقاط تركيز للاجتماعات المهمة.</li>
+            <li>تجميع ملخصات شهرية عن المشاريع والمبادرات الرئيسية.</li>
+            <li>متابعة تنفيذ القرارات الاستراتيجية مع المعنيين.</li>
+          </ul>
+        </article>
 
-    <div style="margin-top: 20px; display:flex; gap:14px;">
-      <a href="Kasem Saied Resume.pdf" 
-         style="background: var(--gold-dark); padding:10px 20px; border-radius:20px; color:white; text-decoration:none; font-weight:600;">
-         Download CV
-      </a>
-      <a href="contact.html"
-         style="background:white; padding:10px 20px; border-radius:20px; color:var(--text-dark); text-decoration:none; border:1px solid #ccc;">
-         Contact Me
-      </a>
+        <!-- Mixed EA + CoS -->
+        <article class="package-card">
+          <div class="package-label">دعم مشترك (EA + Chief of Staff)</div>
+          <div class="package-title">باقة دعم متكاملة</div>
+          <div class="package-price">9,500 دولار شهرياً — دعم تنفيذي + متابعات استراتيجية</div>
+          <ul class="package-list">
+            <li>كافة خدمات المساعد التنفيذي المتقدّم.</li>
+            <li>تنسيق أولويات الرئيس مع فرق العمل والمشاريع الرئيسية.</li>
+            <li>إدارة قوائم المتابعة (Follow-up) على مستوى عالٍ من الدقة.</li>
+            <li>تنسيق إعداد العروض التقديمية والاجتماعات الرئيسية.</li>
+          </ul>
+        </article>
+
+        <!-- Custom -->
+        <article class="package-card">
+          <div class="package-label">مخصص للرؤساء وأصحاب الأعمال</div>
+          <div class="package-title">باقات خاصة للرؤساء التنفيذيين</div>
+          <div class="package-price">يتم الاتفاق على السعر بعد جلسة تعريف وتقييم للاحتياج</div>
+          <ul class="package-list">
+            <li>تصميم باقة خاصة حسب حجم أعمالك وطبيعة مكتبك التنفيذي.</li>
+            <li>إمكانية الجمع بين دعم شخصي، إداري واستراتيجي في باقة واحدة.</li>
+            <li>مرونة في عدد الساعات ومستوى التواجد (عن بُعد / حضور جزئي).</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bottom note -->
+    <div class="bottom-note-card fade-section fade-delay-3">
+      جميع الأرقام المذكورة تقريبية وقابلة للتعديل بعد مناقشة احتياجاتك الفعلية.  
+      أفضل خطوة هي البدء بمكالمة تعريفية قصيرة (15–20 دقيقة) لتوضيح طبيعة عملك، ومن ثم اقتراح باقة مناسبة لك.
+      يمكنك التواصل مباشرة عبر البريد: <strong>kasemsaied@gmail.com</strong>
     </div>
 
-  </div>
-</div>
+    <footer>
+      © <span id="year"></span> Kasem Saied Saied · مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين
+    </footer>
+  </main>
 
-
-<!-- ============================
-      QUICK FACTS SECTION
-=============================== -->
-<div class="section-title">Quick Facts</div>
-
-<div class="card-grid">
-
-  <div class="card">
-    <h3>Location</h3>
-    <p>Riyadh, Saudi Arabia</p>
-  </div>
-
-  <div class="card">
-    <h3>Experience</h3>
-    <p>24+ years in executive support</p>
-  </div>
-
-  <div class="card">
-    <h3>Industries</h3>
-    <p>Telecom, multinational groups, private offices</p>
-  </div>
-
-  <div class="card">
-    <h3>Languages</h3>
-    <p>Arabic (native), English (fluent)</p>
-  </div>
-
-  <div class="card">
-    <h3>Availability</h3>
-    <p>On-site Riyadh • Remote • US time zones</p>
-  </div>
-
-</div>
-
-
-<!-- ============================
-      FOOTER
-=============================== -->
-<div class="footer">
-  © 2025 Kasem Saied Saied — All Rights Reserved.
-</div>
-
+  <script src="../animations.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
