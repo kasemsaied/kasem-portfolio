@@ -11,16 +11,13 @@
     :root {
       --bg-body: #f4efe4;
       --bg-card: #fbf1e4;
-      --bg-accent: #fff3cf;
 
       --gold: #d0a13c;
       --gold-dark: #b68a1f;
-      --gold-soft: #f7e1a8;
 
       --text-main: #2c2a29;
       --text-soft: #5d5a57;
 
-      --border-soft: #e0d4b8;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
 
       --radius-card: 26px;
@@ -30,9 +27,7 @@
       --transition-med: 0.35s ease-out;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -180,140 +175,101 @@
         align-items: stretch;
         gap: 8px;
       }
-      .topbar-left {
-        justify-content: center;
-      }
-      .topbar-center {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .topbar-right {
-        justify-content: center;
-      }
+      .topbar-left { justify-content: center; }
+      .topbar-center { justify-content: center; flex-wrap: wrap; }
+      .topbar-right { justify-content: center; }
     }
 
-    /* ====== HERO CARD ====== */
+    /* ====== HERO (MATCH ARABIC STYLE) ====== */
 
     .hero-card {
       margin-top: 30px;
-      background: var(--bg-card);
+      background: radial-gradient(circle at 0% 100%, #f9e0b9 0, #fdf3dd 35%, #ffffff 100%);
       border-radius: 32px;
       box-shadow: var(--shadow-soft);
-      padding: 26px 30px 26px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 24px;
-      align-items: center;
+      padding: 26px 34px 26px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       animation: fadeUp 0.6s var(--transition-med) backwards;
     }
 
-    .hero-kicker-row {
+    .hero-top-row {
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
+      justify-content: flex-end;
+      margin-bottom: 16px;
     }
 
-    .hero-kicker {
+    .hero-tag-top {
+      padding: 7px 18px;
+      border-radius: var(--radius-pill);
+      background: #2b210f;
+      color: #fff7df;
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #8b702f;
-    }
-
-    .hero-tag {
-      padding: 4px 10px;
-      font-size: 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid #e1cfab;
-      background: #fffaf0;
-      color: #7b6124;
-      white-space: nowrap;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
     }
 
     .hero-title {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       color: var(--text-main);
+      text-align: right; /* visually similar to Arabic screenshot */
     }
 
     .hero-body {
       font-size: 13px;
       color: var(--text-soft);
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: #9a8463;
+      line-height: 1.8;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: 0;
+      text-align: right;
     }
 
     .hero-actions {
-      margin-top: 14px;
+      margin-top: 18px;
+      width: 100%;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-primary,
-    .btn-ghost {
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+      justify-content: flex-end;
     }
 
     .btn-primary {
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      border: none;
       background: linear-gradient(135deg, #d7a63d, #f3c867);
       color: #281709;
-      box-shadow: 0 14px 30px rgba(155, 111, 25, 0.35);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 16px 32px rgba(155, 111, 25, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 36px rgba(155, 111, 25, 0.48);
+      box-shadow: 0 20px 40px rgba(155, 111, 25, 0.55);
     }
 
-    .btn-ghost {
-      background: #fffaf1;
-      color: #5e4723;
-      border: 1px solid #e2cfaf;
-    }
-
-    .btn-ghost:hover {
-      background: #fff3dd;
-      border-color: #d1b27a;
-      transform: translateY(-1px);
-    }
-
-    .hero-meta {
-      font-size: 11px;
-      color: #8f7d67;
-      text-align: right;
-    }
-
-    @media (max-width: 860px) {
+    @media (max-width: 720px) {
       .hero-card {
-        grid-template-columns: 1fr;
-        padding-inline: 22px;
+        padding: 20px 18px 22px;
       }
-      .hero-meta {
-        text-align: left;
+      .hero-title,
+      .hero-body {
+        text-align: left;   /* better for mobile English reading */
+        margin: 0;
       }
-    }
-
-    @media (max-width: 600px) {
-      .hero-card {
-        padding-inline: 16px;
+      .hero-actions {
+        justify-content: flex-start;
       }
     }
 
@@ -430,27 +386,17 @@
     }
 
     @media (max-width: 1024px) {
-      .cert-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      .cert-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 800px) {
-      .cert-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .cert-card--wide {
-        grid-column: span 2;
-      }
+      .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cert-card--wide { grid-column: span 2; }
     }
 
     @media (max-width: 540px) {
-      .cert-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .cert-card--wide {
-        grid-column: span 1;
-      }
+      .cert-grid { grid-template-columns: minmax(0, 1fr); }
+      .cert-card--wide { grid-column: span 1; }
     }
 
     /* ====== FOOTER ====== */
@@ -467,14 +413,8 @@
     /* ====== ANIMATION ====== */
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -505,30 +445,21 @@
 
     <main>
       <div class="container">
-        <!-- HERO -->
+        <!-- HERO (English, styled like Arabic hero) -->
         <section class="hero-card">
-          <div>
-            <div class="hero-kicker-row">
-              <div class="hero-kicker">TRUST • TRACK RECORD</div>
-              <div class="hero-tag">Official documents available on request</div>
-            </div>
-            <h1 class="hero-title">Certificates & Appreciation Letters</h1>
-            <p class="hero-body">
-              A collection of employment certificates, appreciation letters and formal records from
-              my long tenure in Saudi Arabia. These documents reflect stable service, positive
-              performance and strong references with major Saudi companies and private offices.
-            </p>
-            <p class="hero-note">
-              For security and confidentiality, only a selection of certificates is shared publicly.
-              Full PDFs are available upon request to serious employers.
-            </p>
-            <div class="hero-actions">
-              <a href="Kasem Said-Resume 2025-En.pdf" class="btn-primary">View full CV (PDF)</a>
-              <a href="Kasem Said-Resume 2025-Ar.pdf" class="btn-ghost">View Arabic CV (PDF)</a>
-            </div>
+          <div class="hero-top-row">
+            <span class="hero-tag-top">TRUST · TRACK RECORD</span>
           </div>
-          <div class="hero-meta">
-            Updated: 2025 &nbsp;•&nbsp; Based in Riyadh – open to on-site and remote C-Suite support.
+          <h1 class="hero-title">Certificates &amp; Appreciation Letters</h1>
+          <p class="hero-body">
+            A curated collection of experience certificates, recommendation letters, university
+            qualifications and professional courses that document my long career in Saudi Arabia
+            and reflect a strong commitment to professionalism and continuous development.
+          </p>
+          <div class="hero-actions">
+            <a href="Kasem Said-Resume 2025-En.pdf" class="btn-primary" target="_blank">
+              View full CV (PDF)
+            </a>
           </div>
         </section>
 
@@ -561,7 +492,7 @@
             <!-- Sumou -->
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">Real Estate & Investments</span>
+                <span class="cert-label">Real Estate &amp; Investments</span>
                 <span class="cert-pill">PDF</span>
               </div>
               <div class="cert-title">Sumou Holding – Executive Office Manager</div>
@@ -597,10 +528,10 @@
             <!-- Alfanar -->
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">Engineering & Manufacturing</span>
+                <span class="cert-label">Engineering &amp; Manufacturing</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">Alfanar – Administrative & Office Support</div>
+              <div class="cert-title">Alfanar – Administrative &amp; Office Support</div>
               <div class="cert-meta">2000 – 2005 &nbsp;•&nbsp; Riyadh</div>
               <div class="cert-body">
                 Certificate documenting early experience in a large Saudi industrial group, covering
@@ -617,17 +548,17 @@
         <!-- SECTION 2: APPRECIATION LETTERS -->
         <section class="cert-section">
           <div class="section-header">
-            <h2 class="section-title">Appreciation & Recognition Letters</h2>
+            <h2 class="section-title">Appreciation &amp; Recognition Letters</h2>
             <span class="section-tag">Thank-you letters from executives and clients</span>
           </div>
 
           <div class="cert-grid">
             <article class="cert-card cert-card--wide">
               <div class="cert-label-row">
-                <span class="cert-label">Chairman & C-Suite</span>
+                <span class="cert-label">Chairman &amp; C-Suite</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">Letters of Appreciation – Chairmen & Senior Executives</div>
+              <div class="cert-title">Letters of Appreciation – Chairmen &amp; Senior Executives</div>
               <div class="cert-meta">Various years</div>
               <div class="cert-body">
                 A collection of letters praising professionalism, loyalty and high-quality support in
@@ -641,10 +572,10 @@
 
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">Projects & Events</span>
+                <span class="cert-label">Projects &amp; Events</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">Project & Event Recognition</div>
+              <div class="cert-title">Project &amp; Event Recognition</div>
               <div class="cert-meta">Different employers</div>
               <div class="cert-body">
                 Thank-you notes for organizing events, managing VIP visits, and handling complex
@@ -662,7 +593,7 @@
                 <span class="cert-pill">PDF</span>
               </div>
               <div class="cert-title">Internal Performance Notes</div>
-              <div class="cert-meta">Team & managers</div>
+              <div class="cert-meta">Team &amp; managers</div>
               <div class="cert-body">
                 Short messages and notes highlighting reliability, attitude and collaboration
                 with colleagues across departments.
@@ -678,7 +609,7 @@
         <!-- SECTION 3: EDUCATION & COURSES -->
         <section class="cert-section">
           <div class="section-header">
-            <h2 class="section-title">Education, Training & Courses</h2>
+            <h2 class="section-title">Education, Training &amp; Courses</h2>
             <span class="section-tag">Academic degree and professional development</span>
           </div>
 
@@ -702,10 +633,10 @@
 
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">Office & Productivity</span>
+                <span class="cert-label">Office &amp; Productivity</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">Windows & Microsoft Office Courses</div>
+              <div class="cert-title">Windows &amp; Microsoft Office Courses</div>
               <div class="cert-meta">Windows / Office (1996+)</div>
               <div class="cert-body">
                 Certificates in Windows, Word, Excel and PowerPoint used daily in executive
@@ -722,7 +653,7 @@
                 <span class="cert-label">Legacy Systems</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">DOS & Early IT Training</div>
+              <div class="cert-title">DOS &amp; Early IT Training</div>
               <div class="cert-meta">DOS (1996)</div>
               <div class="cert-body">
                 Early training in DOS and basic computer operations – the starting point of my
@@ -730,13 +661,13 @@
               </div>
               <div class="cert-footer">
                 <span>Arabic</span>
-                <a href="DOS-course 1996.pdf" class="cert-link" target="_blank">View certificate (PDF)</a>
+                <a href="P.C (Dos)course 1996.pdf" class="cert-link" target="_blank">View certificate (PDF)</a>
               </div>
             </article>
 
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">Administration & Business</span>
+                <span class="cert-label">Administration &amp; Business</span>
                 <span class="cert-pill">PDF</span>
               </div>
               <div class="cert-title">Diploma – Business Administration</div>
@@ -752,10 +683,10 @@
 
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">CRM & Communication</span>
+                <span class="cert-label">CRM &amp; Communication</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">CRM & Customer Relationship Courses</div>
+              <div class="cert-title">CRM &amp; Customer Relationship Courses</div>
               <div class="cert-meta">Telecom sector training</div>
               <div class="cert-body">
                 Courses linked to customer communication, service quality and CRM tools in a
@@ -763,16 +694,16 @@
               </div>
               <div class="cert-footer">
                 <span>Arabic</span>
-                <a href="CRM & customers course-1999.pdf" class="cert-link" target="_blank">View certificate (PDF)</a>
+                <a href="P.C (Win)Course 1996.pdf" class="cert-link" target="_blank">View certificate (PDF)</a>
               </div>
             </article>
 
             <article class="cert-card">
               <div class="cert-label-row">
-                <span class="cert-label">Workshops & Seminars</span>
+                <span class="cert-label">Workshops &amp; Seminars</span>
                 <span class="cert-pill">PDF</span>
               </div>
-              <div class="cert-title">Courses & Workshops (Selection)</div>
+              <div class="cert-title">Courses &amp; Workshops (Selection)</div>
               <div class="cert-meta">Various years</div>
               <div class="cert-body">
                 A selection of workshops and short courses in management, communication and
@@ -787,7 +718,7 @@
         </section>
 
         <div class="footer">
-          © 2025 Kasem Saied Saied — Certificates & Appreciation Letters.
+          © 2025 Kasem Saied Saied — Certificates &amp; Appreciation Letters.
         </div>
       </div>
     </main>
