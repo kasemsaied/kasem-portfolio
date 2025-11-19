@@ -46,3 +46,17 @@ html {
   transform: translateY(-4px);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
 }
+/* Circular Orbit Animation for Services Button */
+.orbit-btn {
+  display: inline-block;
+  position: relative;
+  animation: orbit 4s linear infinite;
+}
+
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+  25%  { transform: rotate(90deg) translateX(12px) rotate(-90deg); }
+  50%  { transform: rotate(180deg) translateX(12px) rotate(-180deg); }
+  75%  { transform: rotate(270deg) translateX(12px) rotate(-270deg); }
+  100% { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+}
