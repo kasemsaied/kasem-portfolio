@@ -2,592 +2,280 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Kasem Saied Saied | Senior Executive Assistant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kasem Saied Saied – Senior Executive Assistant to C-Suite leaders with 24+ years of experience in Saudi Arabia." />
+
+  <!-- Shared animation styles -->
   <link rel="stylesheet" href="animations.css" />
 
   <style>
     :root {
       --bg-body: #f4efe4;
-      --bg-card: #fbf4e7;
-      --bg-card-soft: #f7ecdd;
-      --bg-header: linear-gradient(to right, #000000, #2e1f00, #6d5300, #c9a745, #6d5300, #2e1f00, #000000);
+      --bg-card: #fbf8f1;
+      --bg-accent: #fff4d9;
       --gold: #d0a13c;
-      --gold-soft: #f1d18a;
-      --gold-dark: #8a6414;
-      --text-main: #2b2722;
-      --text-soft: #6a6154;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-      --radius-card: 26px;
-      --radius-soft: 20px;
-      --pill-radius: 999px;
-    }
-
-    * {
-      box-sizing: border-box;
+      --gold-dark: #8b6a1e;
+      --text-main: #2c2a29;
+      --text-soft: #5d5a57;
+      --border-soft: #e0d4bb;
+      --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease-out;
     }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Tahoma, sans-serif;
+      padding: 0;
       background: var(--bg-body);
+      font-family: "Segoe UI", sans-serif;
       color: var(--text-main);
       line-height: 1.6;
-      direction: ltr;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== Top Navigation ===== */
-
+    /* ===== GOLDEN TOP HEADER ===== */
     header {
-      background: var(--bg-header);
-      padding: 14px 32px;
+      background: linear-gradient(90deg, #1b1307, #c3922f);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .top-bar {
+      max-width: 1450px;
+      margin: 0 auto;
+      padding: 14px 3%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
-
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.06em;
+      gap: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
     }
-
     .brand-badge {
-      background: #000;
-      color: var(--gold-soft);
-      padding: 6px 12px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      border: 2px solid var(--gold-soft);
-      font-size: 13px;
+      background: #f9f3e3;
+      color: #3b2b11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
     }
-
+    .brand-text {
+      font-size: 14px;
+    }
     nav {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 15px;
+      gap: 26px;
+      font-size: 14px;
     }
-
     nav a {
-      color: #fff;
-      opacity: 0.9;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    nav a.active {
-      color: var(--gold-soft);
-      font-weight: 700;
-    }
-
-    .lang-switch {
-      margin-left: 18px;
-      padding: 4px 18px;
-      border-radius: var(--pill-radius);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      color: #fff;
-      font-size: 13px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(0, 0, 0, 0.18);
-    }
-
-    .lang-switch span {
-      font-size: 11px;
-      opacity: 0.9;
-    }
-
-    /* ===== Layout ===== */
-
-    .page {
-      padding: 32px 16px 80px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .section-sub {
-      font-size: 14px;
-      color: var(--text-soft);
-      margin-bottom: 22px;
-    }
-
-    /* ===== Hero / Intro Card ===== */
-
-    .hero-card {
-      background: radial-gradient(circle at top, #fffaf3 0, #f5eadc 55%, #f0e2cf 100%);
-      border-radius: 34px;
-      box-shadow: var(--shadow-soft);
-      padding: 26px 30px 24px;
-      margin-bottom: 30px;
+      text-decoration: none;
+      color: #f7f2e8;
+      font-weight: 500;
+      padding-bottom: 4px;
       position: relative;
-      overflow: hidden;
+      transition: 0.2s ease;
     }
-
-    .hero-tag {
-      font-size: 10px;
-      color: var(--gold-dark);
-      letter-spacing: 0.15em;
-      margin-bottom: 8px;
-    }
-
-    .hero-tag span {
-      border-bottom: 1px solid rgba(208, 161, 60, 0.5);
-      padding-bottom: 1px;
-    }
-
-    .hero-main-title {
-      font-size: 20px;
-      font-weight: 800;
-      margin: 0 0 8px;
-    }
-
-    .hero-text {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 900px;
-    }
-
-    .hero-pill-row {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-
-    .hero-pill {
-      padding: 4px 12px;
-      border-radius: var(--pill-radius);
-      background: #fff4d6;
-      color: var(--gold-dark);
-      border: 1px solid rgba(208, 161, 60, 0.4);
-    }
-
-    /* ===== Generic Card Layouts ===== */
-
-    .card-section {
-      margin-bottom: 32px;
-    }
-
-    .card-section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 12px;
-      gap: 16px;
-    }
-
-    .card-section-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .card-section-note {
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    .two-col-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .one-col-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 16px;
-    }
-
-    .soft-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-card);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      font-size: 13px;
-    }
-
-    .soft-card-alt {
-      background: var(--bg-card-soft);
-    }
-
-    .card-tag-pill {
+    nav a::after {
+      content: "";
       position: absolute;
-      top: 10px;
-      left: 16px;
-      font-size: 10px;
-      padding: 3px 9px;
-      border-radius: var(--pill-radius);
-      background: #f6e4c2;
-      color: #7a5a1c;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #ffd890;
+      transition: width 0.2s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a.active {
+      color: #ffffff;
+      font-weight: 650;
+    }
+    nav a.active::after {
+      width: 100%;
     }
 
-    .card-title {
-      font-size: 15px;
+    /* ===== PAGE LAYOUT ===== */
+    .section {
+      max-width: 1250px;
+      margin: 60px auto;
+      padding: 0 3%;
+    }
+
+    .section-header {
+      background: var(--bg-accent);
+      padding: 40px 50px;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s ease;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .section-header h1 {
+      margin: 0;
+      font-size: 36px;
       font-weight: 700;
-      margin-bottom: 6px;
-      padding-right: 40px;
     }
 
-    .card-body {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 6px;
-    }
-
-    .card-list {
-      margin: 6px 0 0;
-      padding-left: 18px;
-      font-size: 13px;
+    .section-header p {
+      max-width: 780px;
+      margin-top: 12px;
       color: var(--text-soft);
     }
 
-    .card-list li {
-      margin-bottom: 3px;
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--bg-card);
+      padding: 35px;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 30px;
+      animation: fadeUp 1s ease;
     }
-
-    .card-footer-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
+    .card h3 {
+      margin-top: 0;
+      color: var(--text-main);
+      font-size: 22px;
     }
-
-    .chip {
-      padding: 3px 10px;
-      border-radius: var(--pill-radius);
-      background: #fff5de;
+    .tag {
+      display: inline-block;
+      background: var(--bg-accent);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
       color: var(--gold-dark);
-      border: 1px solid rgba(208, 161, 60, 0.35);
-      white-space: nowrap;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
-    .chip-dark {
-      background: #3a2908;
-      color: #fce8af;
-      border-color: transparent;
-    }
-
-    /* ===== Footer ===== */
-
-    footer {
-      text-align: center;
-      font-size: 11px;
-      color: var(--text-soft);
-      padding-top: 20px;
-      padding-bottom: 10px;
-    }
-
-    /* ===== Responsive ===== */
-
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        row-gap: 6px;
-        justify-content: flex-start;
-      }
-
-      .lang-switch {
-        margin-left: 0;
-      }
-
-      .hero-card {
-        padding: 22px 18px 18px;
-      }
-
-      .card-section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .two-col-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    /* Fade animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="brand">
-      <div class="brand-badge">KS</div>
-      KASEM SAIED SAIED
-    </div>
+<!-- ===== HEADER ===== -->
+<header style="
+  background: linear-gradient(to right, #000000, #2e1f00, #6d5300, #c8a849, #6d5300, #2e1f00, #000000);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 100;">
+  
+  <!-- LEFT BADGE -->
+  <div style="display:flex; align-items:center; gap:10px; color:white; font-weight:700; font-size:16px;">
+    <span style="
+      background:#000;
+      color:#f5d997;
+      padding:6px 12px;
+      border-radius:50%;
+      border:2px solid #c9a745;
+      font-weight:700;
+    ">KS</span>
+    KASEM SAIED SAIED
+  </div>
 
-    <div style="display:flex; align-items:center;">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="certificates.html">Certificates</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="ar/index.html" class="lang-switch">
-        عربي <span>AR</span>
-      </a>
-    </div>
-  </header>
+  <!-- NAVIGATION -->
+  <nav style="display:flex; gap:22px; font-size:15px;">
+    <a href="index.html" style="color:#f7d98f; font-weight:700; text-decoration:none;">Home</a>
+    <a href="about.html" style="color:white; text-decoration:none;">About</a>
+    <a href="portfolio.html" style="color:white; text-decoration:none;">Portfolio</a>
+    <a href="certificates.html" style="color:white; text-decoration:none;">Certificates</a>
+    <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
+    <a href="services.html" style="color:white; text-decoration:none;">Services</a>
+  </nav>
 
-  <main class="page">
-    <div class="container">
+</header>
 
-      <!-- ===== Intro / Hero ===== -->
-      <section class="hero-card fade-section fade-slow">
-        <div class="hero-tag">
-          <span>TRUST • TRACK RECORD • EXECUTIVE SUPPORT</span>
-        </div>
-        <h1 class="hero-main-title">Executive strengths, reputation and the way I support leaders</h1>
-        <p class="hero-text">
-          Over more than <strong>24 years</strong> in Saudi Arabia I have supported C-level leaders,
-          chairmen and senior executives in telecom, investment groups and private offices. The cards
-          below summarise the strengths that my leaders have repeatedly highlighted in feedback,
-          recommendation letters and day-to-day work.
-        </p>
-        <div class="hero-pill-row">
-          <span class="hero-pill">Calm, discreet presence around the leader</span>
-          <span class="hero-pill">Strong Arabic &amp; English executive communication</span>
-          <span class="hero-pill">Trusted with confidential and sensitive matters</span>
-        </div>
-      </section>
 
-      <!-- ===== Executive Strengths ===== -->
-      <section class="card-section fade-section">
-        <div class="card-section-header">
-          <div>
-            <div class="card-section-title">Executive Strengths</div>
-            <div class="card-section-note">
-              What I bring to the office of the Chairman / CEO in terms of judgement, coordination and reputation.
-            </div>
-          </div>
-        </div>
+<!-- ===== ABOUT SECTION ===== -->
+<section class="section">
+  <div class="section-header">
+    <p class="section-kicker">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</p>
+    <h1>About Kasem Saied Saied</h1>
+    <p>SENIOR EXECUTIVE ASSISTANT · RIYADH, SAUDI ARABIA</p>
+    <p>
+      I am a Senior Executive Assistant with more than <strong>24 years of experience</strong>
+      supporting C-suite leaders, chairmen, CEOs and SVPs in Saudi Arabia. I help
+      busy leaders run their offices, communications and priorities with clarity,
+      structure and trust.
+    </p>
+  </div>
 
-        <div class="two-col-grid">
-          <!-- Card 1 -->
-          <article class="soft-card">
-            <span class="card-tag-pill">Executive impact</span>
-            <h2 class="card-title">Building a trusted information hub around the leader</h2>
-            <p class="card-body">
-              Acting as a quiet “control centre” around the executive: collecting information,
-              filtering what really matters and presenting it in a clear, concise way so decisions
-              are easier to take.
-            </p>
-            <ul class="card-list">
-              <li>Summarising long emails and reports into short, actionable points.</li>
-              <li>Aligning diaries, meetings and travel with strategic priorities.</li>
-              <li>Protecting the leader’s time and attention from distractions.</li>
-              <li>Acting as a single, organised point of contact for many stakeholders.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip">Executive office mindset</span>
-              <span class="chip">Calm under pressure</span>
-            </div>
-          </article>
+  <!-- Professional Profile -->
+  <div class="card">
+    <h3>Professional Profile</h3>
+    <p>
+      Over my career I have worked with <strong>multinational companies, major Saudi business 
+      groups and private offices</strong>, handling executive calendars, board logistics,
+      international travel, sensitive correspondence and high-priority initiatives.
+    </p>
 
-          <!-- Card 2 -->
-          <article class="soft-card soft-card-alt">
-            <span class="card-tag-pill">Reputation</span>
-            <h2 class="card-title">Professional relationships &amp; reputation with senior leaders</h2>
-            <p class="card-body">
-              My career has been built on long-term relationships with SVPs, CEOs, chairmen and business owners.
-              I am known for respectful communication, discretion and a very high sense of responsibility.
-            </p>
-            <ul class="card-list">
-              <li>Experience with multinational cultures and high-level boards.</li>
-              <li>Diplomatic communication in Arabic and English with VIPs.</li>
-              <li>Balancing firmness and respect when following up on decisions.</li>
-              <li>Protecting the image of the leader and the organisation in every interaction.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip">Trusted representative</span>
-              <span class="chip">Board &amp; committee exposure</span>
-            </div>
-          </article>
-        </div>
-      </section>
+    <p>
+      My background combines a degree in <strong>Arabic Literature</strong> with strong 
+      <strong>English communication skills</strong> and advanced Microsoft Office and 
+      productivity tools. I am known for calm, discreet support and for protecting 
+      the executive’s time, focus and reputation.
+    </p>
 
-      <!-- ===== Technical & Digital Strengths ===== -->
-      <section class="card-section fade-section">
-        <div class="card-section-header">
-          <div>
-            <div class="card-section-title">Technical &amp; Digital Strengths</div>
-            <div class="card-section-note">
-              Tools and systems I use to keep the executive office organised, efficient and digitally smart.
-            </div>
-          </div>
-        </div>
+    <span class="tag">C-SUITE EXECUTIVE SUPPORT</span>
+  </div>
 
-        <div class="two-col-grid">
-          <!-- Card 3 -->
-          <article class="soft-card soft-card-alt">
-            <span class="card-tag-pill">Core tools</span>
-            <h2 class="card-title">Microsoft 365 &amp; office productivity</h2>
-            <p class="card-body">
-              Confident, daily use of Microsoft tools to manage calendars, tasks, documents and presentations
-              at executive level.
-            </p>
-            <ul class="card-list">
-              <li>Outlook – advanced use of calendars, shared mailboxes and rules.</li>
-              <li>Word &amp; PowerPoint – board-ready documents, decks and minutes.</li>
-              <li>Excel – structured trackers, simple dashboards and follow-up sheets.</li>
-              <li>Teams / Zoom – online meetings, notes and action tracking.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip-dark">Microsoft 365</span>
-              <span class="chip">Executive reporting</span>
-            </div>
-          </article>
+  <!-- Experience -->
+  <div class="card">
+    <h3>Executive Experience</h3>
+    <span class="tag">CAREER HISTORY</span>
 
-          <!-- Card 4 -->
-          <article class="soft-card">
-            <span class="card-tag-pill">Digital office</span>
-            <h2 class="card-title">Smart organisation &amp; modern collaboration</h2>
-            <p class="card-body">
-              Combining traditional admin discipline with modern digital tools to keep information flowing
-              smoothly around the leader and their team.
-            </p>
-            <ul class="card-list">
-              <li>Using shared drives and structured folders for easy document access.</li>
-              <li>Exploring tools like Google Workspace, Notion and other cloud platforms.</li>
-              <li>Setting up clear file-naming and version control practices.</li>
-              <li>Using simple automation and templates to save time on repetitive tasks.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip">Digital organisation</span>
-              <span class="chip">Process improvement</span>
-            </div>
-          </article>
-        </div>
-      </section>
+    <ul>
+      <li><strong>Senior Executive Assistant to SVP</strong><br>
+          Saudi Telecom Company (STC) · 2014–2024 · Telecom – Riyadh
+      </li>
+      <br>
+      <li><strong>Executive Office Manager / Executive Assistant</strong><br>
+          Sumou Holding & Private Business Office · 2008–2014 · Real estate & investments
+      </li>
+      <br>
+      <li><strong>Executive Office Manager to Managing Director</strong><br>
+          Henkel (Germany) · 2005–2008 · FMCG – Riyadh
+      </li>
+      <br>
+      <li><strong>Executive Secretary / Office Support</strong><br>
+          Alfanar Construction Group · 2000–2005 · Engineering & contracting
+      </li>
+    </ul>
+  </div>
+</section>
 
-      <!-- ===== Learning & Professional Development ===== -->
-      <section class="card-section fade-section">
-        <div class="card-section-header">
-          <div>
-            <div class="card-section-title">Learning &amp; Professional Development</div>
-            <div class="card-section-note">
-              How I keep myself growing so that I can keep serving leaders at a higher level.
-            </div>
-          </div>
-        </div>
-
-        <div class="two-col-grid">
-          <!-- Card 5 -->
-          <article class="soft-card">
-            <span class="card-tag-pill">Academic &amp; courses</span>
-            <h2 class="card-title">Formal education &amp; business training</h2>
-            <p class="card-body">
-              Bachelor’s in Arabic Literature plus several business administration and
-              office-management-related courses over the years.
-            </p>
-            <ul class="card-list">
-              <li>Academic background that supports strong writing and language skills.</li>
-              <li>Diploma / courses in business, administration and office systems.</li>
-              <li>Continuous internal training in telecom and corporate environments.</li>
-              <li>Ongoing self-study in leadership, management and communication.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip">Arabic Literature</span>
-              <span class="chip">Business administration courses</span>
-            </div>
-          </article>
-
-          <!-- Card 6 -->
-          <article class="soft-card soft-card-alt">
-            <span class="card-tag-pill">Growth mindset</span>
-            <h2 class="card-title">Always learning from leaders, teams and projects</h2>
-            <p class="card-body">
-              I see every assignment as an opportunity to learn something new: a better way to
-              organise information, a clearer way to write, a smarter way to use tools.
-            </p>
-            <ul class="card-list">
-              <li>Listening carefully to how different leaders prefer to communicate and decide.</li>
-              <li>Asking for feedback and adjusting my style accordingly.</li>
-              <li>Learning from crises and difficult situations instead of repeating mistakes.</li>
-              <li>Sharing what I learn with junior colleagues when appropriate.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip">Continuous improvement</span>
-              <span class="chip">Learning from experience</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ===== How I Work With Leaders ===== -->
-      <section class="card-section fade-section">
-        <div class="card-section-header">
-          <div>
-            <div class="card-section-title">How I Work With Leaders</div>
-            <div class="card-section-note">
-              A brief summary of my working style when I join a chairman, CEO or senior executive.
-            </div>
-          </div>
-        </div>
-
-        <div class="one-col-grid">
-          <article class="soft-card soft-card-alt">
-            <span class="card-tag-pill">Working style</span>
-            <h2 class="card-title">Quiet, reliable and fully aligned with the executive</h2>
-            <p class="card-body">
-              My goal is to make the leader’s day lighter, clearer and more focused – not heavier.
-              I do this by taking ownership of many details so that they can stay with the big picture.
-            </p>
-            <ul class="card-list">
-              <li>Starting by understanding the executive’s goals, priorities and preferred rhythm.</li>
-              <li>Keeping them informed without flooding them with information.</li>
-              <li>Handling sensitive matters with full discretion and loyalty.</li>
-              <li>Representing the leader’s tone and standards in all communication.</li>
-              <li>Maintaining a positive, respectful atmosphere around the office.</li>
-            </ul>
-            <div class="card-footer-row">
-              <span class="chip-dark">Proven ability to support CEOs remotely</span>
-              <span class="chip">Discretion &amp; reliability</span>
-              <span class="chip">Service-oriented attitude</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <footer>
-        © 2025 Kasem Saied Saied – Senior Executive Assistant. All rights reserved.
-      </footer>
-    </div>
-  </main>
 </body>
 </html>
