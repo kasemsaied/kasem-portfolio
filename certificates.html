@@ -1,511 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>What Leaders Appreciate – Kasem Saied Saied</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <title>Certificates & Recommendation Letters – Kasem Saied Saied</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Certificates of appreciation and recommendation letters received by Kasem Saied Saied from senior leaders and executives." />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-    <style>
-        :root {
-            --bg-page: #f4f0e8;
-            --bg-card: #ffffff;
-            --bg-card-soft: #f9f5ec;
-            --text-main: #1f2428;
-            --text-muted: #6b6f75;
-            --gold: #b89232;
-            --gold-soft: #f0dba3;
-            --gold-dark: #8a6924;
-            --shadow-soft: 0 14px 35px rgba(0, 0, 0, 0.07);
-            --radius-lg: 18px;
-            --radius-md: 14px;
-            --radius-pill: 999px;
-        }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --gold: #cfa43b;
+      --gold-soft: #f3e3b8;
+      --gold-deep: #b38626;
+      --bg-main: #f3ede1;
+      --bg-card: #faf7f0;
+      --text-main: #2b2620;
+      --text-muted: #6b6256;
+      --border-soft: #e0d4c2;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --radius-pill: 999px;
+    }
 
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--bg-page);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        a {
-            color: inherit;
-        }
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        /* Top bar / nav */
+    /* HEADER & NAV */
+    header {
+      background: linear-gradient(90deg, #111, #2b2113, #cfa43b);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .top-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .top-bar-inner {
-            background: linear-gradient(90deg, #111111, #b89232);
-            color: #fff;
-            padding: 12px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-        .brand {
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
+    .brand-name {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 18px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            font-size: 0.9rem;
-        }
+    .brand-tagline {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.19em;
+      opacity: 0.85;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #fdfdfd;
-            position: relative;
-            padding-bottom: 3px;
-        }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 26px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
 
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 0;
-            background: var(--gold-soft);
-            transition: width 0.18s ease-out;
-        }
+    nav a {
+      color: #fdfdfd;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.2s ease;
+    }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.2s ease;
+    }
 
-        .nav-links a.active {
-            font-weight: 600;
-        }
+    nav a:hover::after {
+      width: 100%;
+    }
 
-        .nav-links a.active::after {
-            width: 100%;
-        }
+    nav a.active {
+      color: var(--gold-soft);
+      font-weight: 600;
+    }
 
-        main {
-            max-width: 1080px;
-            margin: 32px auto 48px;
-            padding: 0 16px 40px;
-        }
+    nav a.active::after {
+      width: 100%;
+    }
 
-        /* Generic sections */
+    /* PAGE WRAPPER */
+    main {
+      max-width: 1120px;
+      margin: 28px auto 40px auto;
+      padding: 0 20px 40px 20px;
+    }
 
-        .section-wrapper {
-            margin-bottom: 32px;
-        }
+    /* PAGE TITLE CARD */
+    .page-hero {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      padding: 26px 26px 22px 26px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      margin-bottom: 28px;
+    }
 
-        .hero-card {
-            background: radial-gradient(circle at top left, #fffef7, #f6f0e2);
-            border-radius: var(--radius-lg);
-            padding: 26px 28px 24px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid #f0e4ce;
-        }
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
 
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 0 8px;
-            letter-spacing: 0.02em;
-        }
+    .page-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
 
-        .section-subtitle {
-            margin: 0;
-            font-size: 0.96rem;
-            color: var(--text-muted);
-        }
+    .page-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 660px;
+    }
 
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
-        }
+    /* CERTIFICATE GRID */
+    .section-heading {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
 
-        .hero-badge {
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: var(--radius-pill);
-            background: rgba(184, 146, 50, 0.1);
-            color: var(--gold-dark);
-        }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
 
-        /* Certificates grid */
+    .cert-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px 18px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-            margin-top: 20px;
-        }
+    .cert-top-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-deep);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(207, 164, 59, 0.1);
+      width: fit-content;
+    }
 
-        .cert-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            padding: 16px 18px 14px;
-            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f0e4ce;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
+    .cert-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
 
-        .cert-chip {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--gold-dark);
-            background: #fdf6e7;
-            padding: 2px 8px;
-            border-radius: var(--radius-pill);
-            display: inline-block;
-            margin-bottom: 8px;
-        }
+    .cert-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
 
-        .cert-title {
-            font-weight: 600;
-            font-size: 0.98rem;
-            margin-bottom: 4px;
-        }
+    .cert-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
 
-        .cert-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    }
 
-        .cert-text {
-            font-size: 0.86rem;
-            color: #424549;
-            margin-bottom: 12px;
-        }
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    }
 
-        .cert-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: auto;
-        }
+    .btn-primary:hover {
+      background: var(--gold-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    }
 
-        .btn-link,
-        .btn-outline-gold {
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: var(--radius-pill);
-            border: 1px solid transparent;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            white-space: nowrap;
-        }
+    .btn-ghost {
+      background: transparent;
+      color: var(--gold-deep);
+      border: 1px solid rgba(207, 164, 59, 0.55);
+    }
 
-        .btn-link {
-            border-color: transparent;
-            color: var(--gold-dark);
-            background: transparent;
-        }
+    .btn-ghost:hover {
+      background: rgba(207, 164, 59, 0.06);
+    }
 
-        .btn-link span {
-            font-size: 0.9em;
-        }
+    .btn span.icon {
+      font-size: 14px;
+      line-height: 1;
+    }
 
-        .btn-outline-gold {
-            border-color: var(--gold);
-            color: var(--gold-dark);
-            background: #fffaf1;
-        }
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      padding: 16px 20px 22px 20px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      background: #f0e7d7;
+    }
 
-        .btn-outline-gold:hover {
-            background: var(--gold);
-            color: #fff;
-        }
+    footer a {
+      color: var(--gold-deep);
+      text-decoration: none;
+    }
 
-        .btn-link:hover {
-            text-decoration: underline;
-        }
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-        .cert-tagline {
-            margin-top: 4px;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
 
-        /* Info block */
+      nav ul {
+        gap: 18px;
+        font-size: 11px;
+      }
 
-        .info-note {
-            background: var(--bg-card-soft);
-            border-radius: var(--radius-md);
-            padding: 12px 14px;
-            font-size: 0.86rem;
-            color: var(--text-muted);
-            border: 1px dashed #e1d5c2;
-            margin-top: 10px;
-        }
+      .page-title {
+        font-size: 21px;
+      }
 
-        .info-note strong {
-            color: var(--gold-dark);
-        }
-
-        /* Footer */
-
-        footer {
-            text-align: center;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            padding: 18px 0 28px;
-        }
-
-        .footer-name {
-            color: var(--gold-dark);
-            font-weight: 600;
-        }
-
-        /* Responsive */
-
-        @media (max-width: 960px) {
-            main {
-                margin-top: 24px;
-            }
-            .cert-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 720px) {
-            .top-bar-inner {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-                padding: 10px 16px;
-            }
-            .nav-links {
-                gap: 16px;
-                font-size: 0.86rem;
-            }
-            main {
-                padding: 0 12px 32px;
-            }
-            .hero-card {
-                padding: 18px 16px;
-            }
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+      .page-hero {
+        padding: 22px 18px 18px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-name">KASEM SAIED SAIED</div>
+        <div class="brand-tagline">Senior Executive Assistant · C-Suite Support · Remote Ready</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="certificates.html" class="active">Certificates</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Top navigation (same style as other pages) -->
-    <header class="top-bar">
-        <div class="top-bar-inner">
-            <div class="brand">KASEM SAIED SAIED</div>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-                <a href="certificates.html" class="active">What Leaders Appreciate</a>
-            </nav>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="page-eyebrow">Proof of Trust & Appreciation</div>
+      <h1 class="page-title">Certificates & Recommendation Letters</h1>
+      <p class="page-subtitle">
+        A selection of formal recommendation letters and certificates of appreciation I have received from senior executives
+        and business leaders, acknowledging my work as a Senior Executive Assistant.
+      </p>
+    </section>
+
+    <!-- Certificates grid -->
+    <h2 class="section-heading">What Leaders Appreciate</h2>
+
+    <section class="cert-grid">
+      <!-- Certificate 1: Cenk Serdar -->
+      <article class="cert-card">
+        <div class="cert-top-tag">Recommendation Letter</div>
+        <h3 class="cert-title">Recommendation Letter – Cenk Serdar, SVP at STC</h3>
+        <p class="cert-meta">
+          Formal letter from <strong>Cenk Serdar</strong>, Senior Vice President at <strong>Saudi Telecom Company (STC)</strong>, 
+          recognizing my performance, work ethic and contribution as a Senior Executive Assistant in a demanding executive environment.
+        </p>
+        <div class="cert-footer">
+          <!-- View in new tab -->
+          <a
+            class="btn btn-primary"
+            href="certificates/Cenk%20Serdar%20STC%20SVP-recommendation%20letter.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="icon">🔍</span>
+            <span>View Certificate</span>
+          </a>
+
+          <!-- Download directly -->
+          <a
+            class="btn btn-ghost"
+            href="certificates/Cenk%20Serdar%20STC%20SVP-recommendation%20letter.pdf"
+            download
+          >
+            <span class="icon">⬇️</span>
+            <span>Download PDF</span>
+          </a>
         </div>
-    </header>
+      </article>
 
-    <main>
-        <!-- Hero / Intro -->
-        <section class="section-wrapper">
-            <div class="hero-card">
-                <h1 class="section-title">What Leaders Appreciate</h1>
-                <p class="section-subtitle">
-                    A curated selection of appreciation letters and recognition certificates from Chairmans,
-                    CEOs and senior leaders I have supported across telecommunications, multinational
-                    and private business groups.
-                </p>
+      <!-- ADD MORE CERTIFICATES LATER BY DUPLICATING THIS CARD BLOCK -->
+      <!--
+      <article class="cert-card">
+        <div class="cert-top-tag">Certificate of Appreciation</div>
+        <h3 class="cert-title">[Title of certificate]</h3>
+        <p class="cert-meta">
+          Short description of who issued it, context and what it recognizes.
+        </p>
+        <div class="cert-footer">
+          <a class="btn btn-primary" href="certificates/Your-Next-Certificate.pdf" target="_blank" rel="noopener">
+            <span class="icon">🔍</span>
+            <span>View Certificate</span>
+          </a>
+          <a class="btn btn-ghost" href="certificates/Your-Next-Certificate.pdf" download>
+            <span class="icon">⬇️</span>
+            <span>Download PDF</span>
+          </a>
+        </div>
+      </article>
+      -->
+    </section>
+  </main>
 
-                <div class="hero-badges">
-                    <span class="hero-badge">Long-term trust with C-suite leaders</span>
-                    <span class="hero-badge">Recognition for reliability & discretion</span>
-                    <span class="hero-badge">24+ years of executive support</span>
-                </div>
-
-                <div class="info-note">
-                    <strong>Note:</strong> For privacy reasons, some sensitive details (signatures, company
-                    IDs, personal contact details) can be blurred before sharing publicly. Full originals
-                    are available on request during the hiring process.
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificates Grid -->
-        <section class="section-wrapper">
-            <h2 class="section-title">Selected Certificates & Letters</h2>
-            <p class="section-subtitle">
-                Click “View” to open each document in a new tab. You can also download a copy if needed.
-                File names below are just examples – you can replace them with your actual PDFs.
-            </p>
-
-            <div class="cert-grid">
-                <!-- 1. STC SVP -->
-                <article class="cert-card">
-                    <span class="cert-chip">Telecommunications · STC</span>
-                    <div class="cert-title">Appreciation Letter from Senior Vice President</div>
-                    <div class="cert-meta">Saudi Telecom Company (STC) &middot; Riyadh</div>
-                    <div class="cert-text">
-                        Formal appreciation letter from the Senior Vice President recognizing continuous
-                        support, reliability and handling of high-priority executive office matters over
-                        many years.
-                    </div>
-                    <div class="cert-actions">
-                        <a class="btn-link" href="certificates/stc-svp-appreciation.pdf" target="_blank">
-                            View <span>↗</span>
-                        </a>
-                        <a class="btn-outline-gold" href="certificates/stc-svp-appreciation.pdf" target="_blank">
-                            Download PDF
-                        </a>
-                    </div>
-                    <div class="cert-tagline">
-                        Highlights trust at C-suite level in a major telecom organisation.
-                    </div>
-                </article>
-
-                <!-- 2. Sumou / Private Holding -->
-                <article class="cert-card">
-                    <span class="cert-chip">Private Holding Group</span>
-                    <div class="cert-title">Recognition from Chairman & Business Owner</div>
-                    <div class="cert-meta">Sumou Holding (or similar) &middot; Executive Office</div>
-                    <div class="cert-text">
-                        Certificate or letter from a high-profile Chairman acknowledging loyalty, integrity
-                        and professional management of the executive office and personal affairs.
-                    </div>
-                    <div class="cert-actions">
-                        <a class="btn-link" href="certificates/chairman-recognition.pdf" target="_blank">
-                            View <span>↗</span>
-                        </a>
-                        <a class="btn-outline-gold" href="certificates/chairman-recognition.pdf" target="_blank">
-                            Download PDF
-                        </a>
-                    </div>
-                    <div class="cert-tagline">
-                        Shows ability to support top decision-makers in sensitive roles.
-                    </div>
-                </article>
-
-                <!-- 3. Henkel -->
-                <article class="cert-card">
-                    <span class="cert-chip">Multinational · Henkel</span>
-                    <div class="cert-title">Certificate of Appreciation from Managing Director</div>
-                    <div class="cert-meta">Henkel &middot; Executive Office Manager</div>
-                    <div class="cert-text">
-                        Appreciation document from the Managing Director of a multinational company for
-                        strong coordination, communication and office management in an international environment.
-                    </div>
-                    <div class="cert-actions">
-                        <a class="btn-link" href="certificates/henkel-md-appreciation.pdf" target="_blank">
-                            View <span>↗</span>
-                        </a>
-                        <a class="btn-outline-gold" href="certificates/henkel-md-appreciation.pdf" target="_blank">
-                            Download PDF
-                        </a>
-                    </div>
-                    <div class="cert-tagline">
-                        Demonstrates experience within global corporate standards and culture.
-                    </div>
-                </article>
-
-                <!-- 4. Alfanar -->
-                <article class="cert-card">
-                    <span class="cert-chip">Construction & Engineering</span>
-                    <div class="cert-title">Service & Appreciation Certificate</div>
-                    <div class="cert-meta">Alfanar &middot; Executive Secretary / Office Manager</div>
-                    <div class="cert-text">
-                        Certificate acknowledging years of service, dedication and contribution to the
-                        executive office in a large engineering and construction company in Saudi Arabia.
-                    </div>
-                    <div class="cert-actions">
-                        <a class="btn-link" href="certificates/alfanar-service-certificate.pdf" target="_blank">
-                            View <span>↗</span>
-                        </a>
-                        <a class="btn-outline-gold" href="certificates/alfanar-service-certificate.pdf" target="_blank">
-                            Download PDF
-                        </a>
-                    </div>
-                    <div class="cert-tagline">
-                        Underlines stability, loyalty and long-term performance.
-                    </div>
-                </article>
-
-                <!-- 5. Training / Courses -->
-                <article class="cert-card">
-                    <span class="cert-chip">Leadership & Training</span>
-                    <div class="cert-title">Professional Development Certificates</div>
-                    <div class="cert-meta">Strategic Planning · Business Administration · CRM</div>
-                    <div class="cert-text">
-                        A bundle of certificates from international programmes and diplomas including
-                        Business Administration, Strategic Planning, CRM and other relevant skills for
-                        modern executive support.
-                    </div>
-                    <div class="cert-actions">
-                        <a class="btn-link" href="certificates/professional-development-bundle.pdf" target="_blank">
-                            View <span>↗</span>
-                        </a>
-                        <a class="btn-outline-gold" href="certificates/professional-development-bundle.pdf" target="_blank">
-                            Download PDF
-                        </a>
-                    </div>
-                    <div class="cert-tagline">
-                        Shows continuous learning and formal upskilling over the years.
-                    </div>
-                </article>
-
-                <!-- 6. Email / Modern References -->
-                <article class="cert-card">
-                    <span class="cert-chip">Recent Feedback</span>
-                    <div class="cert-title">Selected Emails & Recommendations</div>
-                    <div class="cert-meta">Senior Leaders · Colleagues · Partners</div>
-                    <div class="cert-text">
-                        Screenshots or compiled PDFs of recent emails and LinkedIn recommendations from
-                        executives and peers recognising professionalism, attitude and support quality.
-                    </div>
-                    <div class="cert-actions">
-                        <a class="btn-link" href="certificates/recommendations-summary.pdf" target="_blank">
-                            View <span>↗</span>
-                        </a>
-                        <a class="btn-outline-gold" href="certificates/recommendations-summary.pdf" target="_blank">
-                            Download PDF
-                        </a>
-                    </div>
-                    <div class="cert-tagline">
-                        Adds a modern, personal touch to classic appreciation certificates.
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        © <span class="footer-name">Kasem Saied Saied</span> — Senior Executive Assistant · C-Suite Support
-    </footer>
-
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Kasem Saied Saied — Senior Executive Assistant.
+    Portfolio hosted on GitHub Pages.
+  </footer>
 </body>
 </html>
