@@ -1,26 +1,3 @@
-<header>
-  <div class="brand">
-    <span class="brand-badge">KS</span>
-    قاسم سعيد سعيد
-  </div>
-
-  <div style="display:flex; align-items:center; gap:12px;">
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="about.html">نبذة عني</a>
-      <a href="portfolio.html">السيرة المهنية</a>
-      <a href="certificates.html">الشهادات والتقدير</a>
-      <a href="services.html">خدمات الدعم التنفيذي</a>
-      <a href="contact.html">تواصل معي</a>
-
-      <!-- switch to English -->
-      <a href="../index.html" class="lang-switch">
-        English <span>EN</span>
-      </a>
-    </nav>
-  </div>
-</header>
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -28,7 +5,7 @@
   <title>قاسم سعيد سعيد | مساعد تنفيذي أول</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="قاسم سعيد سعيد – مساعد تنفيذي أول لرؤساء مجالس الإدارة، الرؤساء التنفيذيين والقادة الكبار في السعودية وخارجها." />
-<link rel="stylesheet" href="../animations.css" />
+  <link rel="stylesheet" href="../animations.css" />
 
   <style>
     :root {
@@ -47,14 +24,11 @@
       --transition-card: 0.25s ease-out;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Tahoma, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
       background: var(--bg-body);
       color: var(--text-main);
       line-height: 1.6;
@@ -66,7 +40,6 @@
     }
 
     /* HEADER */
-
     header {
       background: var(--bg-header);
       padding: 14px 32px;
@@ -104,14 +77,8 @@
       font-size: 15px;
     }
 
-    nav a {
-      color: #fff;
-      opacity: 0.9;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
+    nav a { color: #fff; opacity: 0.9; }
+    nav a:hover { opacity: 1; }
 
     nav a.active {
       color: var(--gold-soft);
@@ -119,7 +86,6 @@
     }
 
     .lang-switch {
-      margin-right: 22px;
       padding: 4px 18px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(255, 255, 255, 0.7);
@@ -137,18 +103,10 @@
     }
 
     /* LAYOUT */
+    .page { padding: 32px 16px 80px; }
+    .container { max-width: 1080px; margin: 0 auto; }
 
-    .page {
-      padding: 32px 16px 80px;
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    /* HERO SECTION */
-
+    /* HERO */
     .hero {
       background: radial-gradient(circle at top, #fffaf3 0, #f5eadc 55%, #f0e2cf 100%);
       border-radius: 34px;
@@ -170,11 +128,7 @@
       pointer-events: none;
     }
 
-    .hero-main,
-    .hero-profile {
-      position: relative;
-      z-index: 1;
-    }
+    .hero-main, .hero-profile { position: relative; z-index: 1; }
 
     .hero-kicker {
       font-size: 11px;
@@ -212,6 +166,7 @@
       display: flex;
       gap: 12px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
 
     .btn-gold {
@@ -319,7 +274,6 @@
     }
 
     /* SUMMARY CARDS */
-
     .summary-row {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -361,7 +315,6 @@
     }
 
     /* SUPPORT SECTION */
-
     .support-section {
       margin-top: 18px;
       margin-bottom: 40px;
@@ -372,6 +325,7 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 14px;
+      gap: 12px;
     }
 
     .support-title {
@@ -397,8 +351,7 @@
       padding: 12px 13px 12px;
       box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.7);
-      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
-        border-color 0.15s ease-out;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
       position: relative;
     }
 
@@ -415,7 +368,7 @@
       margin-bottom: 6px;
     }
 
-    .support-title {
+    .support-title-card {
       font-size: 13px;
       font-weight: 600;
       color: var(--text-main);
@@ -451,7 +404,6 @@
     }
 
     /* FOOTER */
-
     footer {
       text-align: center;
       font-size: 11px;
@@ -461,16 +413,11 @@
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 900px) {
       header {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-      }
-
-      .lang-switch {
-        margin-right: 0;
       }
 
       nav {
@@ -496,7 +443,6 @@
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="brand">
@@ -504,32 +450,24 @@
       قاسم سعيد سعيد
     </div>
 
-    <div style="display:flex; align-items:center; gap:12px;">
-      <nav>
-  <a href="index.html" class="active">الرئيسية</a>
-  <a href="about.html">نبذة</a>
-  <a href="portfolio.html">السيرة المهنية</a>
-
-  <!-- NEW: Services link with animated class -->
-  <a href="services.html" class="premium-rotate-btn">خدمات الدعم التنفيذي</a>
-
-  <a href="certificates.html">الشهادات والتقدير</a>
-  <a href="contact.html">تواصل معي</a>
-
-  <a href="../index.html" class="lang-switch">
-    English
-    <span>EN</span>
-  </a>
-</nav>
-
-    </div>
+    <nav>
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="about.html">نبذة عني</a>
+      <a href="portfolio.html">السيرة المهنية</a>
+      <a href="certificates.html">الشهادات والتقدير</a>
+      <a href="services.html">خدمات الدعم التنفيذي</a>
+      <a href="contact.html">تواصل معي</a>
+      <a href="../index.html" class="lang-switch">
+        English <span>EN</span>
+      </a>
+    </nav>
   </header>
 
   <div class="page">
     <div class="container">
 
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero fade-section">
         <div class="hero-main">
           <div class="hero-kicker">
             <span>EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</span>
@@ -539,14 +477,10 @@
             والقادة الكبار في السعودية وخارجها
           </h1>
           <p class="hero-subtitle">
-            أكثر من 24 سنة من الخبرة المباشرة في دعم القيادات العليا، C-Level، في شركات الاتصالات،
-            المجموعات الاستثمارية، الشركات المتعددة الجنسيات والمكاتب الخاصة.
+            أكثر من 24 سنة من الخبرة المباشرة في دعم القيادات العليا C-Level في شركات الاتصالات، المجموعات الاستثمارية، الشركات المتعددة الجنسيات والمكاتب الخاصة.
           </p>
           <p class="hero-body">
-            أساعد القيادات التنفيذية على تنظيم مكاتبهم، رسائلهم واجتماعاتهم، وإدارة الأولويات
-            اليومية بطريقة تحفظ التركيز، الوقت والسمعة. خبرتي تمتد من التنسيق اليومي
-            للمهام إلى متابعة المبادرات الاستراتيجية، السفر الدولي، والعلاقات مع الشركاء
-            والجهات الحكومية.
+            أساعد القيادات التنفيذية على تنظيم مكاتبهم، رسائلهم واجتماعاتهم، وإدارة الأولويات اليومية بطريقة تحفظ التركيز، الوقت والسمعة. يمتد عملي من التنسيق اليومي للمهام إلى متابعة المبادرات الاستراتيجية، السفر الدولي، والعلاقات مع الشركاء والجهات الحكومية.
           </p>
 
           <div class="hero-actions">
@@ -559,8 +493,7 @@
           </div>
 
           <p class="hero-note">
-            مقيم في الرياض – متاح للأدوار التنفيذية في السعودية ودعم تنفيذي عن بعد
-            متوافق مع المناطق الزمنية الأمريكية.
+            مقيم في الرياض – متاح للأدوار التنفيذية في السعودية ودعم تنفيذي عن بعد متوافق مع المناطق الزمنية الأمريكية.
           </p>
         </div>
 
@@ -579,17 +512,14 @@
       </section>
 
       <!-- SUMMARY ROW -->
-      <section class="summary-row">
+      <section class="summary-row fade-section fade-delay-1">
         <article class="summary-card">
           <div class="summary-title">ملخص سريع</div>
           <p>
-            الموقع: الرياض، المملكة العربية السعودية – خبرة عملية تتجاوز
-            24 سنة في دعم القيادات التنفيذية في قطاعات الاتصالات، الاستثمار
-            والمجموعات المتعددة.
+            الموقع: الرياض، المملكة العربية السعودية – خبرة عملية تتجاوز 24 سنة في دعم القيادات التنفيذية في قطاعات الاتصالات، الاستثمار والمجموعات المتعددة.
           </p>
           <p class="summary-meta">
-            اللغات: العربية (اللغة الأم) – الإنجليزية (بطلاقة)  
-            متاح: حضورياً في الرياض + دعم عن بعد متوافق مع US time zones.
+            اللغات: العربية (اللغة الأم) – الإنجليزية (بطلاقة). متاح حضورياً في الرياض، وعن بُعد متوافق مع US time zones.
           </p>
         </article>
 
@@ -597,13 +527,10 @@
           <span class="summary-tag">PROFILE SNAPSHOT</span>
           <div class="summary-title">نبذة مهنية سريعة</div>
           <p>
-            إدارة يوميات، بريد واجتماعات القيادات التنفيذية على أعلى مستوى،
-            إعداد المراسلات الرسمية، العروض، محاضر الاجتماعات، ومتابعة التنفيذ
-            مع الفرق المعنية.
+            إدارة يوميات، بريد واجتماعات القيادات التنفيذية على أعلى مستوى، إعداد المراسلات الرسمية، العروض، محاضر الاجتماعات، ومتابعة التنفيذ مع الفرق المعنية.
           </p>
           <p class="summary-meta">
-            أسلوبي يجمع بين الدقة العالية، السرية التامة، والهدوء في التعامل مع
-            المواقف الطارئة والملفات الحساسة.
+            أسلوبي يجمع بين الدقة العالية، السرية التامة، والهدوء في التعامل مع المواقف الطارئة والملفات الحساسة.
           </p>
         </article>
 
@@ -611,19 +538,16 @@
           <span class="summary-tag">KEY FOCUS</span>
           <div class="summary-title">نقاط تركيز رئيسية</div>
           <p>
-            تنظيم المكتب التنفيذي، إدارة الأولويات، إعداد وتجهيز الاجتماعات والزيارات
-            الرسمية، المتابعة اليومية للقرارات، وترتيب السفر والاجتماعات
-            الخارجية.
+            تنظيم المكتب التنفيذي، إدارة الأولويات، إعداد وتجهيز الاجتماعات والزيارات الرسمية، المتابعة اليومية للقرارات، وترتيب السفر والاجتماعات الخارجية.
           </p>
           <p class="summary-meta">
-            أدمج بين الأدوات التقليدية والرقمية (Microsoft 365، Google Workspace،
-            Zoom، Notion وغيرها) لتحقيق مكتب تنفيذي منظم وهادئ.
+            أدمج بين الأدوات التقليدية والرقمية مثل Microsoft 365، Google Workspace، Zoom و Notion لتحقيق مكتب تنفيذي منظم وهادئ.
           </p>
         </article>
       </section>
 
       <!-- SUPPORT SECTION -->
-      <section class="support-section">
+      <section class="support-section fade-section fade-delay-2">
         <div class="support-header">
           <h2 class="support-title">كيف أدعم القيادات التنفيذية</h2>
           <div class="support-sub">
@@ -633,9 +557,9 @@
 
         <div class="support-grid">
           <!-- 1 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">إدارة التقويم والبريد اليومي</div>
+              <div class="support-title-card">إدارة التقويم والبريد اليومي</div>
               <div class="support-icon">📅</div>
             </div>
             <div class="support-body">
@@ -645,9 +569,9 @@
           </article>
 
           <!-- 2 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">الاتصال والمراسلات التنفيذية</div>
+              <div class="support-title-card">الاتصال والمراسلات التنفيذية</div>
               <div class="support-icon">✉️</div>
             </div>
             <div class="support-body">
@@ -657,9 +581,9 @@
           </article>
 
           <!-- 3 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">تنسيق السفر والاجتماعات الخارجية</div>
+              <div class="support-title-card">تنسيق السفر والاجتماعات الخارجية</div>
               <div class="support-icon">🛫</div>
             </div>
             <div class="support-body">
@@ -669,9 +593,9 @@
           </article>
 
           <!-- 4 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">أنظمة المكتب والإجراءات</div>
+              <div class="support-title-card">أنظمة المكتب والإجراءات</div>
               <div class="support-icon">📁</div>
             </div>
             <div class="support-body">
@@ -681,21 +605,21 @@
           </article>
 
           <!-- 5 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">تنسيق أصحاب المصلحة والشركاء</div>
+              <div class="support-title-card">تنسيق أصحاب المصلحة والشركاء</div>
               <div class="support-icon">🤝</div>
             </div>
             <div class="support-body">
-              أن أكون نقطة اتصال موثوقة بين الرئيس التنفيذي، أعضاء المجلس، الفرق التنفيذية والشركاء الخارجيين.
+              نقطة اتصال موثوقة بين الرئيس التنفيذي، أعضاء المجلس، الفرق التنفيذية والشركاء الخارجيين.
             </div>
             <span class="support-tag">Liaison</span>
           </article>
 
           <!-- 6 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">الأدوات التقنية والعمل الذكي</div>
+              <div class="support-title-card">الأدوات التقنية والعمل الذكي</div>
               <div class="support-icon">💻</div>
             </div>
             <div class="support-body">
@@ -705,9 +629,9 @@
           </article>
 
           <!-- 7 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">جدولة استراتيجية الأولويات</div>
+              <div class="support-title-card">جدولة استراتيجية الأولويات</div>
               <div class="support-icon">📊</div>
             </div>
             <div class="support-body">
@@ -717,9 +641,9 @@
           </article>
 
           <!-- 8 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">توثيق اجتماعات المجلس واللجان</div>
+              <div class="support-title-card">توثيق اجتماعات المجلس واللجان</div>
               <div class="support-icon">📜</div>
             </div>
             <div class="support-body">
@@ -729,9 +653,9 @@
           </article>
 
           <!-- 9 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">تحسين سير العمل الداخلي</div>
+              <div class="support-title-card">تحسين سير العمل الداخلي</div>
               <div class="support-icon">⚙️</div>
             </div>
             <div class="support-body">
@@ -741,9 +665,9 @@
           </article>
 
           <!-- 10 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">إدارة الملفات الحساسة والسرية</div>
+              <div class="support-title-card">إدارة الملفات الحساسة والسرية</div>
               <div class="support-icon">🔒</div>
             </div>
             <div class="support-body">
@@ -753,9 +677,9 @@
           </article>
 
           <!-- 11 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">إدارة الموردين والشركاء</div>
+              <div class="support-title-card">إدارة الموردين والشركاء</div>
               <div class="support-icon">🏢</div>
             </div>
             <div class="support-body">
@@ -765,63 +689,15 @@
           </article>
 
           <!-- 12 -->
-          <article class="support-item">
+          <article class="support-item card-hover">
             <div class="support-top">
-              <div class="support-title">متابعة القرارات والأعمال الحرجة</div>
+              <div class="support-title-card">متابعة القرارات والأعمال الحرجة</div>
               <div class="support-icon">📝</div>
             </div>
             <div class="support-body">
               التأكد من تنفيذ ما تم الاتفاق عليه في الاجتماعات، وإبقاء القائد على صورة واضحة بالمستجدات.
             </div>
             <span class="support-tag">Follow-up</span>
-          </article>
-
-          <!-- 13 -->
-          <article class="support-item">
-            <div class="support-top">
-              <div class="support-title">المشاريع والمواعيد النهائية</div>
-              <div class="support-icon">📌</div>
-            </div>
-            <div class="support-body">
-              دعم متابعة المشاريع الرئيسية، مؤشرات الأداء والمواعيد النهائية بحيث يبقى الإيقاع مستمراً.
-            </div>
-            <span class="support-tag">Projects</span>
-          </article>
-
-          <!-- 14 -->
-          <article class="support-item">
-            <div class="support-top">
-              <div class="support-title">الإنتاجية الرقمية وأدوات الذكاء الاصطناعي</div>
-              <div class="support-icon">🤖</div>
-            </div>
-            <div class="support-body">
-              الاستفادة من أدوات الإنتاجية والذكاء الاصطناعي لرفع دقة وجودة المخرجات في أقل وقت ممكن.
-            </div>
-            <span class="support-tag">AI</span>
-          </article>
-
-          <!-- 15 -->
-          <article class="support-item">
-            <div class="support-top">
-              <div class="support-title">إدارة الأزمات والمواقف الحرجة</div>
-              <div class="support-icon">🚨</div>
-            </div>
-            <div class="support-body">
-              دعم القائد في المواقف الطارئة، ترتيب المعلومات، توفير صورة واضحة وتهيئة أرضية هادئة للقرارات.
-            </div>
-            <span class="support-tag">Calm</span>
-          </article>
-
-          <!-- 16 -->
-          <article class="support-item">
-            <div class="support-top">
-              <div class="support-title">الدعم الشخصي والتنظيم المحيط بالقائد</div>
-              <div class="support-icon">🏡</div>
-            </div>
-            <div class="support-body">
-              عند الحاجة، المساعدة في بعض الترتيبات الشخصية واللوجستية المرتبطة بالقيادة مع الحفاظ على الخصوصية.
-            </div>
-            <span class="support-tag">Support</span>
           </article>
         </div>
       </section>
@@ -831,5 +707,7 @@
       </footer>
     </div>
   </div>
+
+  <script src="../animations.js"></script>
 </body>
 </html>
