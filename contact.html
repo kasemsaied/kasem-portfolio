@@ -1,520 +1,174 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact Me | Kasem Saied Saied</title>
+  <title>Contact – Kasem Saied Saied</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Contact Kasem Saied Saied, Senior Executive Assistant and Chief-of-Staff level support for C-Suite leaders. Use this quick contact form to discuss your needs." />
-  <!-- Shared animations -->
-  <link rel="stylesheet" href="animations.css" />
-
   <style>
-    :root {
-      --bg-body: #f4efe4;
-      --bg-card: #fbf1e4;
-      --bg-accent: #fff3cf;
+    :root{
+      --bg-body:#f4efe4;
+      --bg-card:#fbf8f1;
+      --gold:#c79b2b;
+      --gold-dark:#9b7a1b;
+      --text-main:#2f2723;
+      --text-muted:#6e625c;
+      --border-soft:#e0d4c0;
+      --shadow-soft:0 18px 40px rgba(0,0,0,0.08);
+      --radius-lg:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg-body);color:var(--text-main);line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit;}
 
-      --gold: #d0a13c;
-      --gold-dark: #b68a1f;
-      --gold-soft: #f7e1a8;
-
-      --text-main: #2c2a29;
-      --text-soft: #5d5a57;
-
-      --border-soft: #e0d4b8;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-      --radius-card: 26px;
-      --radius-pill: 999px;
-
-      --transition-fast: 0.18s ease-out;
-      --transition-med: 0.35s ease-out;
+    .top-nav{
+      position:sticky;top:0;z-index:50;
+      background:linear-gradient(90deg,#000,#3b2c15,#b68a1f);
+      color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.35);
+    }
+    .top-nav-inner{
+      max-width:1080px;margin:0 auto;
+      padding:12px 20px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{
+      font-weight:700;letter-spacing:0.08em;font-size:15px;
+      text-transform:uppercase;display:flex;align-items:center;gap:10px;
+    }
+    .brand-badge{
+      width:22px;height:22px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%,#f6e6a6,#c79721);
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;font-weight:700;color:#111;
+    }
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;}
+    .nav-links a{position:relative;padding-bottom:2px;opacity:0.9;}
+    .nav-links a:hover{opacity:1;}
+    .nav-links a.active::after,
+    .nav-links a:hover::after{
+      content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;
+      background:linear-gradient(90deg,#f8e7a8,#f1c65a);border-radius:999px;
     }
 
-    * {
-      box-sizing: border-box;
+    .page-wrap{
+      max-width:720px;margin:32px auto 56px;
+      padding:0 20px;
     }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
-      background: var(--bg-body);
-      color: var(--text-main);
+    .page-title{font-size:24px;margin-bottom:6px;}
+    .page-subtitle{
+      font-size:13px;text-transform:uppercase;
+      letter-spacing:0.16em;color:var(--gold-dark);
+      margin-bottom:20px;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .card{
+      background:var(--bg-card);
+      border-radius:22px;
+      padding:22px 24px;
+      border:1px solid var(--border-soft);
+      box-shadow:var(--shadow-soft);
+      margin-bottom:18px;
+    }
+    .muted{color:var(--text-muted);font-size:14px;}
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr 1.2fr;
+      gap:18px;
     }
 
-    .page-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    .contact-list{
+      list-style:none;
+      font-size:14px;
+    }
+    .contact-list li+li{margin-top:6px;}
+    .label{font-weight:600;}
+
+    form{
+      display:flex;flex-direction:column;gap:10px;
+      font-size:14px;
+    }
+    input,textarea{
+      font:inherit;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid #d2c5b2;
+      background:#fffdf7;
+    }
+    textarea{min-height:110px;resize:vertical;}
+    button{
+      align-self:flex-start;
+      padding:9px 20px;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(135deg,#cfa12d,#a77b16);
+      color:#1b1205;font-weight:600;font-size:14px;
+      cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,0.28);
     }
 
-    main {
-      flex: 1;
-      padding: 32px 20px 48px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* ====== TOP NAV BAR (gold + black gradient) ====== */
-
-    .topbar {
-      background: linear-gradient(90deg, #1b130a 0%, #5a4420 45%, #c59832 100%);
-      color: #fff8e5;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
-    }
-
-    .topbar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      gap: 16px;
-    }
-
-    .topbar-left,
-    .topbar-center,
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .topbar-center {
-      flex: 1;
-      justify-content: center;
-    }
-
-    .brand-badge {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fffbe6 0, #f0d48a 42%, #d6a43f 100%);
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 700;
-      color: #3a260a;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
-    }
-
-    .brand-name {
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      font-size: 13px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 14px;
-    }
-
-    .nav-link {
-      position: relative;
-      padding-inline: 2px;
-      color: #fff8e5;
-      opacity: 0.9;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -4px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #fffbdd, #ffe6aa);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform var(--transition-fast);
-    }
-
-    .nav-link:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-
-    .nav-link--active {
-      font-weight: 600;
-    }
-
-    .nav-link--active::after {
-      transform: scaleX(1);
-    }
-
-    .lang-pill {
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      background: rgba(0, 0, 0, 0.2);
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .lang-pill:hover {
-      background: rgba(0, 0, 0, 0.3);
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 720px) {
-      .topbar-inner {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-      }
-      .topbar-left {
-        justify-content: center;
-      }
-      .topbar-center {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .topbar-right {
-        justify-content: center;
-      }
-    }
-
-    /* ====== CONTACT CARD ====== */
-
-    .contact-card {
-      margin-top: 28px;
-      background: var(--bg-card);
-      border-radius: 32px;
-      box-shadow: var(--shadow-soft);
-      padding: 28px 26px 30px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 28px;
-      animation: fadeUp 0.6s var(--transition-med) backwards;
-    }
-
-    .contact-title {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--text-main);
-    }
-
-    .contact-intro {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 18px;
-      line-height: 1.7;
-      text-align: left;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .field-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .field-hint {
-      font-size: 11px;
-      color: #8a7a64;
-    }
-
-    .field-row {
-      display: flex;
-      gap: 10px;
-    }
-
-    .field-row .field-group {
-      flex: 1;
-    }
-
-    .field-input,
-    .field-textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-      background: #fffdf7;
-      font-size: 13px;
-      font-family: inherit;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-    }
-
-    .field-textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    .field-input::placeholder,
-    .field-textarea::placeholder {
-      color: #c0b29b;
-    }
-
-    .field-input:focus,
-    .field-textarea:focus {
-      border-color: #d2a64f;
-      background: #fffaf0;
-      box-shadow: 0 0 0 1px rgba(214, 163, 69, 0.3);
-    }
-
-    .btn-submit {
-      margin-top: 10px;
-      align-self: stretch;
-      border-radius: 18px;
-      border: none;
-      cursor: pointer;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #261708;
-      background: linear-gradient(135deg, #d7a63d, #f3c867);
-      box-shadow: 0 14px 30px rgba(155, 111, 25, 0.35);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 36px rgba(155, 111, 25, 0.48);
-    }
-
-    /* RIGHT COLUMN */
-
-    .contact-right-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 4px 0 12px;
-      text-align: left;
-    }
-
-    .contact-right-text {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.7;
-      margin-bottom: 16px;
-      text-align: left;
-    }
-
-    .contact-details {
-      font-size: 13px;
-      color: var(--text-main);
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
-    .contact-details strong {
-      font-weight: 600;
-      color: #4a3822;
-      display: inline-block;
-      min-width: 76px;
-    }
-
-    .contact-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
-
-    .contact-pill {
-      padding: 6px 10px;
-      font-size: 11px;
-      border-radius: var(--radius-pill);
-      border: 1px solid #e1cfab;
-      background: #fffaf0;
-      color: #634522;
-      white-space: nowrap;
-    }
-
-    /* ====== BOTTOM CARD ====== */
-
-    .bottom-card {
-      margin-top: 26px;
-      background: var(--bg-card);
-      border-radius: 26px;
-      box-shadow: var(--shadow-soft);
-      padding: 20px 22px 22px;
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.8;
-    }
-
-    .bottom-card h2 {
-      margin: 0 0 10px;
-      font-size: 16px;
-      color: var(--text-main);
-    }
-
-    @media (max-width: 860px) {
-      .contact-card {
-        grid-template-columns: 1fr;
-        padding-inline: 20px;
-      }
-      .contact-title {
-        font-size: 18px;
-      }
-      .contact-right-title,
-      .contact-right-text,
-      .contact-details {
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding-top: 24px;
-      }
-      .contact-card {
-        padding-inline: 16px;
-      }
-      .bottom-card {
-        padding-inline: 16px;
-      }
-    }
-
-    /* ====== ANIMATION ====== */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @media(max-width:720px){
+      .contact-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <!-- TOP BAR -->
-    <header class="topbar">
-      <div class="topbar-inner">
-        <div class="topbar-left">
-          <div class="brand-badge">KS</div>
-          <div class="brand-name">Kasem Saied Saied</div>
-        </div>
-        <div class="topbar-center">
-          <nav class="nav">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="certificates.html" class="nav-link">Certificates</a>
-            <a href="contact.html" class="nav-link nav-link--active">Contact</a>
-            <a href="services.html" class="nav-link">Services</a>
-          </nav>
-        </div>
-        <div class="topbar-right">
-          <a class="lang-pill" href="ar/contact.html">العربية</a>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <!-- MAIN CONTACT CARD -->
-        <section class="contact-card">
-          <!-- LEFT: FORM -->
-          <div>
-            <h1 class="contact-title">Quick Contact Form</h1>
-            <p class="contact-intro">
-              You can use this simple form to send a short message. Your default email app
-              will open so you can review and confirm the message before sending.
-            </p>
-
-            <form class="contact-form" action="mailto:kasem.saied@gmail.com" method="post" enctype="text/plain">
-              <div class="field-row">
-                <div class="field-group">
-                  <label class="field-label" for="name">Full Name</label>
-                  <input class="field-input" id="name" name="Name" type="text" placeholder="Write your name here" />
-                </div>
-                <div class="field-group">
-                  <label class="field-label" for="email">Email</label>
-                  <input class="field-input" id="email" name="Email" type="email" placeholder="your@email.com" />
-                </div>
-              </div>
-
-              <div class="field-group">
-                <label class="field-label" for="subject">Subject</label>
-                <div class="field-hint">Example: Executive Assistant role or remote EA support.</div>
-                <input class="field-input" id="subject" name="Subject" type="text" placeholder="What would you like to discuss?" />
-              </div>
-
-              <div class="field-group">
-                <label class="field-label" for="message">Message</label>
-                <div class="field-hint">
-                  Briefly describe the opportunity or support you would like to talk about.
-                </div>
-                <textarea class="field-textarea" id="message" name="Message" placeholder="Write a short note or a summary of what you would like to explore."></textarea>
-              </div>
-
-              <button type="submit" class="btn-submit">Send Message</button>
-            </form>
-          </div>
-
-          <!-- RIGHT: DETAILS -->
-          <div>
-            <h2 class="contact-right-title">Contact Me</h2>
-            <p class="contact-right-text">
-              If you are looking for a calm, reliable Senior Executive Assistant who can run your office
-              with structure and discretion, I would be happy to connect. The best first step is a
-              written email – then we can arrange a call or virtual meeting at a time that works for you.
-            </p>
-
-            <div class="contact-details">
-              <div><strong>Email:</strong> <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a></div>
-              <div><strong>Location:</strong> Riyadh, Saudi Arabia</div>
-              <div><strong>Phone:</strong> +966 55 307 5340 (WhatsApp)</div>
-              <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">linkedin.com/in/kasem-said</a></div>
-            </div>
-
-            <div class="contact-pill-row">
-              <div class="contact-pill">Open to roles aligned with US time zones</div>
-              <div class="contact-pill">Available for Zoom / Teams meetings</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- BOTTOM EXPLANATION CARD -->
-        <section class="bottom-card">
-          <h2>How I handle new requests</h2>
-          <p>
-            Before making any decision, I like to clearly understand the role, the culture of the
-            organization, and your expectations from the Executive Assistant. If there is a genuine
-            match between your needs and my style of work, we can agree on a trial period or a
-            focused pilot project before committing to a longer-term engagement.
-          </p>
-        </section>
-      </div>
-    </main>
+<header class="top-nav">
+  <div class="top-nav-inner">
+    <div class="brand">
+      <div class="brand-badge">KS</div>
+      KASEM SAIED SAIED
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
   </div>
+</header>
+
+<main class="page-wrap">
+  <h1 class="page-title">Contact</h1>
+  <div class="page-subtitle">Let’s connect about executive support opportunities</div>
+
+  <section class="card">
+    <div class="contact-grid">
+      <div>
+        <p class="muted" style="margin-bottom:10px;">
+          I am based in Riyadh, Saudi Arabia and available for on-site roles in the Kingdom and selected
+          remote Executive Assistant / C-suite support roles aligned with US time zones.
+        </p>
+        <ul class="contact-list">
+          <li><span class="label">Email:</span> <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a></li>
+          <li><span class="label">Mobile (KSA):</span> +966 55 307 5340</li>
+          <li><span class="label">LinkedIn:</span> <a href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">linkedin.com/in/kasem-said</a></li>
+          <li><span class="label">Location:</span> Riyadh, Saudi Arabia</li>
+        </ul>
+      </div>
+
+      <div>
+        <form action="mailto:kasem.saied@gmail.com" method="post" enctype="text/plain">
+          <label>
+            Your Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="Briefly describe the role or how I can support you."></textarea>
+          </label>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 </body>
 </html>
