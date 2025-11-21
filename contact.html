@@ -1,474 +1,283 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>تواصل معي | قاسم سعيد سعيد</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="تواصل مع قاسم سعيد سعيد، مساعد تنفيذي أول ورئيس موظفين لدعم الرؤساء التنفيذيين ورؤساء مجالس الإدارة في السعودية وخارجها." />
-  <!-- shared animation styles -->
-  <link rel="stylesheet" href="../animations.css" />
+  <meta charset="UTF-8">
+  <title>Contact Me | Kasem Saied Saied</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Contact Kasem Saied Saied – Senior Executive Assistant supporting CEOs, chairmen and senior leaders. Based in Riyadh, available for remote EA support aligned with US time zones.">
 
   <style>
     :root {
       --bg-body: #f4efe4;
-      --bg-card: #fbf1e4;
-      --bg-accent: #ffe7b0;
-
+      --bg-card: #fbf4e7;
+      --bg-card-soft: #f8ecd8;
       --gold: #d0a13c;
-      --gold-dark: #b68a1f;
-      --gold-soft: #f7e1a8;
-
-      --text-main: #2c2a29;
-      --text-soft: #5d5a57;
-
-      --border-soft: #e0d4b8;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-      --radius-card: 26px;
-      --radius-pill: 999px;
-
-      --transition-fast: 0.2s ease-out;
-      --transition-med: 0.35s ease-out;
-    }
-
-    * {
-      box-sizing: border-box;
+      --gold-soft: #f3d89c;
+      --gold-dark: #7a5a1c;
+      --header-bg: linear-gradient(to right, #000000, #4d3900, #c6a242, #4d3900, #000000);
+      --text-main: #2c2924;
+      --text-soft: #6a6458;
+      --radius-card: 28px;
+      --shadow: 0 14px 34px rgba(0,0,0,0.08);
     }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+      font-family: system-ui, sans-serif;
       background: var(--bg-body);
       color: var(--text-main);
-      direction: rtl;
+      line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
-    .page-shell {
-      min-height: 100vh;
+    /* HEADER */
+    header {
+      background: var(--header-bg);
+      padding: 18px 32px;
       display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1;
-      padding: 32px 20px 48px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* ====== TOP NAV BAR (gold + black gradient) ====== */
-
-    .topbar {
-      background: linear-gradient(90deg, #1a130a 0%, #5a4420 45%, #c59832 100%);
-      color: #fff8e5;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
-    }
-
-    .topbar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
-      gap: 16px;
+      align-items: center;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
-    /* right side: name + tagline */
-    .topbar-right {
+    .brand {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 2px;
-      font-size: 12px;
-    }
-
-    .topbar-name {
+      align-items: center;
+      gap: 10px;
       font-weight: 700;
-      font-size: 13px;
     }
 
-    .topbar-tagline {
-      font-size: 11px;
+    .brand-badge {
+      background: #000;
+      padding: 6px 12px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-soft);
+      color: var(--gold-soft);
+    }
+
+    nav a {
+      margin-left: 22px;
+      color: #fff;
       opacity: 0.9;
+      font-size: 15px;
     }
 
-    /* left side: nav + language pill */
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+    nav a:hover { opacity: 1; }
+
+    nav a.active {
+      color: var(--gold-soft);
+      font-weight: bold;
     }
 
-    .lang-pill {
-      padding: 6px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      background: rgba(0, 0, 0, 0.24);
-      font-size: 12px;
+    .lang-btn {
+      margin-left: 18px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      font-size: 13px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* LAYOUT */
+    .page {
+      max-width: 1050px;
+      margin: auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* CONTACT PANEL */
+
+    .contact-panel {
+      background: var(--bg-card);
+      padding: 32px 40px;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-size: 13px;
       font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      margin-bottom: 6px;
+      display: block;
     }
 
-    .lang-pill:hover {
-      background: rgba(0, 0, 0, 0.32);
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
-      transform: translateY(-1px);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #d8d1c5;
+      background: #fffdf9;
       font-size: 14px;
     }
 
-    .nav-link {
-      position: relative;
-      padding-inline: 2px;
-      color: #fff8e5;
-      opacity: 0.9;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      inset-inline: 0;
-      bottom: -4px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ffe6aa, #fffbdd);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform var(--transition-fast);
-    }
-
-    .nav-link:hover {
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-
-    .nav-link--active {
-      font-weight: 600;
-    }
-
-    .nav-link--active::after {
-      transform: scaleX(1);
-    }
-
-    @media (max-width: 720px) {
-      .topbar-inner {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-      }
-      .topbar-right {
-        align-items: center;
-        text-align: center;
-      }
-      .topbar-left {
-        justify-content: space-between;
-      }
-      .nav {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    }
-
-    /* ====== CONTACT CARD ====== */
-
-    .contact-card {
-      background: var(--bg-card);
-      border-radius: 32px;
-      box-shadow: var(--shadow-soft);
-      padding: 28px 30px 30px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 28px;
-      margin-top: 28px;
-      animation: fadeUp 0.6s var(--transition-med) backwards;
-    }
-
-    @media (max-width: 900px) {
-      .contact-card {
-        grid-template-columns: 1fr;
-        padding: 22px 20px 26px;
-      }
-    }
-
-    .form-title {
-      text-align: right;
-      margin: 0 0 14px;
-      font-size: 20px;
-    }
-
-    .form-helper {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 20px;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .field-label {
-      font-size: 12px;
-      margin-bottom: 4px;
-      color: #847865;
-    }
-
-    .field {
-      width: 100%;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      padding: 10px 18px;
-      font-size: 13px;
-      background: #fef7ec;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
-    }
-
-    .field:focus {
-      outline: none;
-      border-color: #d3aa4b;
-      box-shadow: 0 0 0 2px rgba(211, 170, 75, 0.35);
-      background: #fffaf0;
-    }
-
-    .field-textarea {
-      border-radius: 18px;
-      min-height: 140px;
+    textarea {
+      height: 140px;
       resize: vertical;
     }
 
-    .submit-wrap {
-      margin-top: 6px;
-    }
-
-    .btn-submit {
+    .send-btn {
+      background: linear-gradient(to right, #d3a534, #f3d99c);
+      padding: 12px;
       width: 100%;
-      border-radius: var(--radius-pill);
+      border-radius: 12px;
       border: none;
+      font-weight: bold;
+      font-size: 15px;
       cursor: pointer;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #261708;
-      background: linear-gradient(135deg, #d7a63d, #f3c867);
-      box-shadow: 0 14px 30px rgba(155, 111, 25, 0.35);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: 0 10px 22px rgba(208,161,60,0.35);
+      margin-top: 10px;
     }
 
-    .btn-submit:hover {
+    .send-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 36px rgba(155, 111, 25, 0.48);
+      box-shadow: 0 14px 30px rgba(208,161,60,0.45);
     }
 
-    /* right column */
-
-    .contact-info h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 20px;
+    /* CONTACT INFO */
+    .info-list div {
+      margin-bottom: 8px;
+      font-size: 14px;
     }
 
-    .contact-info p {
-      margin: 0 0 10px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: var(--text-soft);
-    }
-
-    .info-item {
-      margin-bottom: 4px;
-      font-size: 13px;
-    }
-
-    .info-item strong {
-      color: #5d4b2a;
-    }
-
-    .info-links {
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 12px;
-    }
-
-    .pill-link {
+    .info-tags span {
       display: inline-block;
       padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(132, 120, 101, 0.3);
-      background: rgba(255, 255, 255, 0.8);
-      color: #6a5531;
+      border-radius: 999px;
+      background: #f9f0dd;
+      color: var(--gold-dark);
+      font-size: 12px;
+      margin-right: 8px;
+      margin-top: 10px;
     }
 
-    /* ====== SECOND CARD ====== */
-
-    .info-card {
-      margin-top: 24px;
-      background: #fdf3e3;
-      border-radius: 24px;
-      padding: 18px 22px 18px;
-      box-shadow: var(--shadow-soft);
-      font-size: 13px;
+    /* BOTTOM CARD */
+    .details-card {
+      background: var(--bg-card);
+      padding: 26px 30px;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      font-size: 14px;
       color: var(--text-soft);
     }
 
-    .info-card h2 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: var(--text-main);
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 40px;
     }
 
-    .info-card p {
-      margin: 0;
-      line-height: 1.9;
-    }
-
-    /* ====== ANIMATION ====== */
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .contact-panel {
+        grid-template-columns: 1fr;
       }
     }
+
   </style>
 </head>
+
 <body>
-  <div class="page-shell">
-    <!-- TOP BAR -->
-    <header class="topbar">
-      <div class="topbar-inner">
-        <!-- right: name + tagline -->
-        <div class="topbar-right">
-          <div class="topbar-name">قاسم سعيد سعيد</div>
-          <div class="topbar-tagline">
-            مساعد تنفيذي أول • دعم قيادات مجالس الإدارة والرؤساء التنفيذيين
-          </div>
-        </div>
 
-        <!-- left: nav + language -->
-        <div class="topbar-left">
-          <a class="lang-pill" href="../contact.html">English</a>
-
-          <nav class="nav">
-            <a href="index.html" class="nav-link">الرئيسية</a>
-            <a href="about.html" class="nav-link">نبذة عني</a>
-            <a href="portfolio.html" class="nav-link">الأعمال</a>
-            <a href="certificates.html" class="nav-link">الشهادات</a>
-            <a href="contact.html" class="nav-link nav-link--active">تواصل معي</a>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <!-- CONTACT MAIN CARD -->
-        <section class="contact-card">
-          <!-- Left: form -->
-          <div>
-            <h1 class="form-title">نموذج تواصل سريع</h1>
-            <p class="form-helper">
-              يمكنك استخدام النموذج لإرسال رسالة مختصرة. سأتفقد البريد الإلكتروني الافتراضي لديك لتأكيد الإرسال.
-              أفضل طريقة للتواصل هي البريد الإلكتروني أو رسالة مكتوبة أولاً، ثم يمكن ترتيب مكالمة أو اجتماع حسب ما يناسب جدولك.
-            </p>
-
-            <form class="contact-form"
-              onsubmit="window.location='mailto:kasem.saied@gmail.com?subject=' + encodeURIComponent(this.subject.value || 'رسالة جديدة من النموذج') + '&body=' + encodeURIComponent('الاسم: ' + (this.name.value || '') + '\nالبريد الإلكتروني: ' + (this.email.value || '') + '\n\nالرسالة:\n' + (this.message.value || '')); return false;">
-              <div>
-                <div class="field-label">البريد الإلكتروني</div>
-                <input class="field" type="email" name="email" placeholder="your@email.com" required />
-              </div>
-
-              <div>
-                <div class="field-label">الاسم الكامل</div>
-                <input class="field" type="text" name="name" placeholder="اكتب اسمك هنا" />
-              </div>
-
-              <div>
-                <div class="field-label">الموضوع</div>
-                <input class="field" type="text" name="subject" placeholder="مثال: فرصة وظيفة مساعد تنفيذي" />
-              </div>
-
-              <div>
-                <div class="field-label">الرسالة</div>
-                <textarea class="field field-textarea" name="message"
-                  placeholder="اكتب بإيجاز ما تود مناقشته أو نوع الفرصة التي ترغب في الحديث عنها."></textarea>
-              </div>
-
-              <div class="submit-wrap">
-                <button type="submit" class="btn-submit">إرسال الرسالة</button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Right: contact info -->
-          <aside class="contact-info">
-            <h2>تواصل معي</h2>
-            <p>
-              إذا كنت تبحث عن مساعد تنفيذي أول يدير مكتبك بهدوء وفعالية، أو ترغب في مناقشة فرصة عمل أو تعاون،
-              يسعدني أن أتواصل معك. أفضل أسلوب للتواصل هو البريد الإلكتروني أو الرسائل المكتوبة أولاً، ثم يمكن ترتيب مكالمة
-              أو اجتماع خلال وقت منسَّق قدر المستطاع.
-            </p>
-
-            <p class="info-item">
-              <strong>البريد الإلكتروني:</strong>
-              <a href="mailto:kasem.saied@gmail.com">kasem.saied@gmail.com</a>
-            </p>
-            <p class="info-item">
-              <strong>الموقع:</strong> الرياض، المملكة العربية السعودية
-            </p>
-            <p class="info-item">
-              <strong>الهاتف (واتساب):</strong>
-              <a href="https://wa.me/966553075340" target="_blank" rel="noopener">+966 55 307 5340</a>
-            </p>
-            <p class="info-item">
-              <strong>حساب لينكدإن:</strong>
-              <a href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">
-                linkedin.com/in/kasem-said
-              </a>
-            </p>
-
-            <div class="info-links">
-              <span class="pill-link">متاح لدعم قيادات عن بُعد في السعودية ودولياً</span>
-              <span class="pill-link">جاهز لمقابلات عبر Zoom / Teams حسب الترتيب</span>
-            </div>
-          </aside>
-        </section>
-
-        <!-- SECOND CARD -->
-        <section class="info-card">
-          <h2>كيف أتعامل مع الطلبات الجديدة؟</h2>
-          <p>
-            أحرص دائمًا على فهم طبيعة الدور، ثقافة الجهة، وتوقعات القيادة قبل اتخاذ أي قرار.
-            إذا كانت هناك ملاءمة حقيقية بين احتياجك وبين أسلوبي في العمل، يمكننا الاتفاق على خطوة تجريبية
-            أو فترة تعارف محددة قبل أي التزام طويل المدى. الهدف هو بناء شراكة عمل مستقرة، واضحة ومسؤولة،
-            تحترم وقتك ووقتي وتضيف قيمة حقيقية لجدول أعمالك اليومي.
-          </p>
-        </section>
-      </div>
-    </main>
+<header>
+  <div class="brand">
+    <div class="brand-badge">KS</div>
+    Kasem Saied Saied
   </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="certificates.html">Certificates</a>
+    <a class="active" href="contact.html">Contact</a>
+    <a class="lang-btn" href="ar/contact.html">العربية</a>
+  </nav>
+</header>
+
+<div class="page">
+
+  <!-- CONTACT PANEL -->
+  <div class="contact-panel">
+
+    <!-- FORM -->
+    <div>
+      <h2>Quick Contact Form</h2>
+      <p style="font-size:14px; color:var(--text-soft); margin-bottom:18px;">
+        You can use this simple form to send a short message. Your default email app will open so you can review
+        and confirm the message before sending.
+      </p>
+
+      <label>Full Name</label>
+      <input type="text" placeholder="Write your name here">
+
+      <label style="margin-top:12px;">Email</label>
+      <input type="email" placeholder="your@email.com">
+
+      <label style="margin-top:12px;">Subject</label>
+      <input type="text" placeholder="Executive Assistant role / Remote EA support">
+
+      <label style="margin-top:12px;">Message</label>
+      <textarea placeholder="Write a short note or opportunity summary..."></textarea>
+
+      <button class="send-btn">Send Message</button>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <h2>Contact Me</h2>
+      <p style="font-size:14px; color:var(--text-soft); margin-bottom:16px;">
+        If you are looking for a calm, reliable Senior Executive Assistant who can run your office with structure
+        and discretion, I would be happy to connect. The best first step is a written email – then we can arrange
+        a call or virtual meeting at a time that works for you.
+      </p>
+
+      <div class="info-list">
+        <div><b>Email:</b> kasem.saied@gmail.com</div>
+        <div><b>Location:</b> Riyadh, Saudi Arabia</div>
+        <div><b>Phone:</b> +966 55 307 5340 (WhatsApp)</div>
+        <div><b>LinkedIn:</b> linkedin.com/in/kasem-said</div>
+      </div>
+
+      <div class="info-tags">
+        <span>Open to roles aligned with US time zones</span>
+        <span>Available for Zoom / Teams meetings</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM INFO CARD -->
+  <div class="details-card">
+    <h3 style="margin-top:0; font-size:16px; font-weight:700; color:var(--text-main);">How I handle new requests</h3>
+    <p>
+      Before making any decision, I like to clearly understand the role, the culture of the organization, and expectations
+      from the Executive Assistant. If there is a genuine match between your needs and my working style, we can begin
+      with a trial period or a focused pilot project before committing to a longer-term engagement.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 Kasem Saied Saied – All rights reserved.
+  </footer>
+
+</div>
+
 </body>
 </html>
