@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="الملف المهني لقاسم سعيد سعيد – مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين والقادة الكبار." />
 
-  <!-- نفس الهوية الذهبية المستخدمة في بقية الصفحات -->
+  <!-- نفس هوية الموقع (هيدر داكن → ذهبي + كروت بيج) -->
   <style>
     :root {
       --bg-body: #f4efe4;
       --bg-card: #fbf4e7;
       --bg-card-soft: #f7ecdd;
-      --bg-header: linear-gradient(to right, #b88a2c, #e0b24a, #b88a2c);
+      /* نفس التدرج الموجود في النسخة الإنجليزية */
+      --bg-header: linear-gradient(to right, #000000, #21160c, #8c6a2d, #b88a2c);
       --text-main: #3d3121;
       --text-muted: #8b7a5b;
       --accent: #c89b3c;
@@ -35,7 +36,7 @@
       line-height: 1.7;
     }
 
-    /* Top Bar / Navigation */
+    /* HEADER */
     header.topbar {
       background: var(--bg-header);
       color: #fff;
@@ -107,7 +108,7 @@
       font-weight: 600;
     }
 
-    /* Page Layout */
+    /* PAGE LAYOUT */
     main {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -116,6 +117,7 @@
 
     .page-header {
       margin-bottom: 26px;
+      text-align: right;
     }
 
     .page-kicker {
@@ -138,7 +140,7 @@
       font-size: 0.9rem;
     }
 
-    /* Sections */
+    /* SECTIONS */
     section.portfolio-section {
       margin-top: 32px;
     }
@@ -159,7 +161,7 @@
       color: var(--text-muted);
     }
 
-    /* Cards Grid */
+    /* CARDS GRID */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -241,7 +243,7 @@
 
 <body>
 
-  <!-- نفس الهيدر والهوية الذهبية -->
+  <!-- HEADER (نفس بنية الإنجليزية، مع روابط عربية + EN) -->
   <header class="topbar">
     <div class="topbar-inner">
 
@@ -267,33 +269,37 @@
 
   <main>
 
-    <!-- رأس الصفحة -->
+    <!-- PAGE HEADER -->
     <div class="page-header">
-      <div class="page-kicker">EXECUTIVE SUPPORT · OFFICE LEADERSHIP · WRITING &amp; BOOKS</div>
+      <div class="page-kicker">
+        EXECUTIVE SUPPORT · OFFICE LEADERSHIP · WRITING &amp; BOOKS
+      </div>
       <h1>نظرة عامة على الأعمال</h1>
       <p class="page-subtitle">
-        مواد مختارة تُمثل عملي كمساعد تنفيذي أول، مع مشاريع الكتب والمقالات والإنجازات المهنية.
+        مختارات تمثّل عملي كمساعد تنفيذي أول وخبرتي المهنية، مع عرض واضح لمواد الدعم التنفيذي،
+        مشاريع الكتابة والكتب، وأبرز الإنجازات المهنية.
       </p>
     </div>
 
-    <!-- مواد الدعم التنفيذي -->
+    <!-- EXECUTIVE SUPPORT MATERIALS -->
     <section class="portfolio-section">
       <h2 class="section-title">مواد الدعم التنفيذي</h2>
       <p class="section-caption">
-        مواد تعكس عملي مع الرؤساء التنفيذيين، وأسلوب إدارة المكاتب التنفيذية والدعم اليومي للقيادة.
+        مواد مختارة تُمثل عملي مع الرؤساء التنفيذيين، وإدارة المكاتب التنفيذية، ودعم القيادات في البيئات المؤسسية.
       </p>
 
       <div class="cards-grid">
 
         <!-- Executive CV – Corporate -->
         <article class="card">
-          <h3>السيرة الذاتية التنفيذية – النسخة المؤسسية</h3>
+          <h3>Executive CV – Corporate</h3>
           <p>
-            سيرة ذاتية كاملة موجهة لبيئات الشركات وقيادات الـ C-Suite، تتضمن خبرة مفصلة في السعودية،
-            إدارة المكاتب التنفيذية، مجالس الإدارة، والتنسيق الدولي للسفر والاجتماعات عالية المستوى.
+            سيرة ذاتية كاملة لبيئات الشركات وقيادات الـ C-Suite، تتضمن خبرة مفصّلة في السعودية،
+            إدارة المكتب التنفيذي، دعم القيادات العليا، تنسيق اجتماعات مجالس الإدارة،
+            وإدارة السفر الدولي عالي المستوى.
           </p>
           <div class="card-actions">
-            عرض / تحميل (PDF)
+            View / Download (PDF)
           </div>
           <div class="tags">
             <span class="tag">Executive CV</span>
@@ -303,13 +309,13 @@
 
         <!-- Executive Assistant Profile Summary -->
         <article class="card">
-          <h3>الملف المختصر للمساعد التنفيذي</h3>
+          <h3>Executive Assistant Profile Summary</h3>
           <p>
-            ملخص مهني يقدّم صورة سريعة عن دوري كمساعد تنفيذي أول: المسؤوليات اليومية، نطاق الدعم،
-            وأبرز الإنجازات مع الرؤساء التنفيذيين والقادة الكبار.
+            وثيقة موجزة تلخص المسؤوليات الأساسية، الأدوات المستخدمة، والإنجازات الرئيسية
+            كمساعد تنفيذي أول يدعم الرؤساء التنفيذيين ونوابهم والقادة الكبار.
           </p>
           <div class="card-actions">
-            Profile Overview · Summary
+            Concise overview of key responsibilities and achievements.
           </div>
           <div class="tags">
             <span class="tag">Profile</span>
@@ -319,13 +325,13 @@
 
         <!-- Business Card & Digital ID -->
         <article class="card">
-          <h3>بطاقة العمل والهوية الرقمية</h3>
+          <h3>Business Card &amp; Digital ID</h3>
           <p>
-            بطاقة عمل شخصية وهوية رقمية بخطوط متناسقة مع الهوية الذهبية للموقع،
-            للاستخدام في واتساب، البريد الإلكتروني، والتوقيعات الرسمية.
+            بطاقة عمل وهوية رقمية بالعلامة الذهبية، مصممة باحتراف ومتوافقة مع ألوان الأسود والذهبي
+            للاستخدام في واتساب، البريد الإلكتروني، التوقيعات، وملف LinkedIn.
           </p>
           <div class="card-actions">
-            Print &amp; Digital ID
+            Gold-branded personal identity for print &amp; digital use.
           </div>
           <div class="tags">
             <span class="tag">Branding</span>
@@ -335,13 +341,13 @@
 
         <!-- Brand Pack & Presentations -->
         <article class="card">
-          <h3>حزمة العلامة والعروض التقديمية</h3>
+          <h3>Brand Pack &amp; Presentations</h3>
           <p>
-            قوالب عروض تقديمية وشرائح وتقارير بتصميم بسيط وأنيق،
-            تحافظ على اتساق العلامة الشخصية والسيرة الذاتية في جميع الملفات المشاركة مع القيادات.
+            حزمة بسيطة وأنيقة من القوالب والشرائح التي تحافظ على اتساق السيرة الذاتية،
+            البورتفوليو، والعروض التقديمية مع الهوية الذهبية للموقع والملفات المهنية.
           </p>
           <div class="card-actions">
-            Slides · Visual Identity
+            Slide and brand templates for a unified visual style.
           </div>
           <div class="tags">
             <span class="tag">Slides</span>
@@ -352,22 +358,25 @@
       </div>
     </section>
 
-    <!-- مشاريع الكتابة والكتب -->
+    <!-- WRITING & BOOK PROJECTS -->
     <section class="portfolio-section">
       <h2 class="section-title">مشاريع الكتابة والكتب</h2>
       <p class="section-caption">
-        كتب ومشاريع جارية تعكس خبرتي في المكاتب، الدعم التنفيذي، والكتابة التأملية عن العمل والحياة.
+        كتب ومشاريع كتابية حالية ومخطط لها تعكس خبرتي في المكاتب، الدعم التنفيذي، والمقالات الإنسانية.
       </p>
 
       <div class="cards-grid">
 
         <!-- Thirty Years in Offices -->
         <article class="card">
-          <h3>«Thirty Years in Offices»</h3>
+          <h3>“Thirty Years in Offices”</h3>
           <p>
-            كتاب غير روائي / مذكرات، يقدّم رحلة عبر ثلاثة عقود في المكاتب، وما تعلمته عن الناس
-            والقيادة وثقافة العمل من داخل غرف الاجتماعات والمكاتب التنفيذية.
+            كتاب غير روائي / مذكرات يقدّم قراءة تأملية في ثلاثة عقود من حياة المكاتب،
+            القرب من صُنّاع القرار، والدروس التي تعلمتها من الأشخاص وثقافات العمل والبيئات التنفيذية المختلفة.
           </p>
+          <div class="card-actions">
+            Non-fiction / Memoir.
+          </div>
           <div class="tags">
             <span class="tag">Office Life</span>
             <span class="tag">Memoir</span>
@@ -376,11 +385,14 @@
 
         <!-- The Smart Assistant -->
         <article class="card">
-          <h3>«The Smart Assistant»</h3>
+          <h3>“The Smart Assistant”</h3>
           <p>
-            دليل عملي للمساعدين التنفيذيين العصريين، يركّز على التواصل، تنظيم الأولويات،
-            وإدارة أدوات الإنتاجية وخ mindset الدعم الاحترافي لبيئات C-Suite.
+            دليل عملي للمساعدين التنفيذيين العصريين، يركّز على مهارات التواصل، تنظيم الأولويات،
+            الأدوات الرقمية، وبناء mindset مناسب لدعم بيئات C-Suite بكفاءة واحترافية.
           </p>
+          <div class="card-actions">
+            Practical guidebook for modern Executive Assistants.
+          </div>
           <div class="tags">
             <span class="tag">Executive Assistants</span>
             <span class="tag">Guidebook</span>
@@ -389,11 +401,14 @@
 
         <!-- Coffee, Love & Freedom – Essays -->
         <article class="card">
-          <h3>«Coffee, Love &amp; Freedom» – Essays</h3>
+          <h3>“Coffee, Love &amp; Freedom” – Essays</h3>
           <p>
-            مجموعة مقالات شخصية بالعربية والإنجليزية عن الحنين والهوية والحرية، وتمتزج فيها
-            ذكريات العائلة بالعمل والحياة في الغربة.
+            مجموعة مقالات شخصية بالعربية والإنجليزية تمزج بين الحنين للوطن، العائلة، العمل،
+            الهوية والحرية الشخصية، وتقدّم مزيجاً من الذكريات والتأملات الإنسانية.
           </p>
+          <div class="card-actions">
+            Personal essays in Arabic &amp; English.
+          </div>
           <div class="tags">
             <span class="tag">Essays</span>
             <span class="tag">Arabic &amp; English</span>
@@ -404,9 +419,12 @@
         <article class="card">
           <h3>Novel Project – Damascus in the 1980s–1990s</h3>
           <p>
-            مشروع رواية عن قصة حب في دمشق في زمن الأشرطة والكاسيت قبل عصر الإنترنت،
-            بلغة تجمع بين الشاعرية والتفاصيل الواقعية للحياة اليومية.
+            مشروع رواية عن الشباب والحب والحياة اليومية في دمشق قبل عصر الهاتف المحمول والإنترنت،
+            تجمع بين اللغة الشعرية والتفاصيل الواقعية لعالم الثمانينيات والتسعينيات.
           </p>
+          <div class="card-actions">
+            Novel in development about youth, love and daily life in Damascus.
+          </div>
           <div class="tags">
             <span class="tag">Novel</span>
             <span class="tag">Damascus</span>
@@ -416,35 +434,42 @@
       </div>
     </section>
 
-    <!-- أبرز الإنجازات المهنية -->
+    <!-- CAREER HIGHLIGHTS -->
     <section class="portfolio-section">
       <h2 class="section-title">أبرز الإنجازات المهنية</h2>
       <p class="section-caption">
-        نقاط مختصرة عن بعض الإنجازات الرئيسية خلال مسيرتي مع القيادات التنفيذية.
+        نقاط مختارة تبرز الاستمرارية، الثقة، ودعم متخذي القرار خلال مسيرتي المهنية.
       </p>
 
       <div class="cards-grid">
 
         <!-- Long-Term Executive Partnerships -->
         <article class="card">
-          <h3>شراكات تنفيذية طويلة الأمد</h3>
+          <h3>Long-Term Executive Partnerships</h3>
           <p>
-            أكثر من عشر سنوات من الشراكة التنفيذية المستمرة مع القيادة العليا في STC وشركات أخرى،
-            بما يعكس الاستقرار والثقة والأداء المتواصل في دعم متخذي القرار.
+            أكثر من عشر سنوات متواصلة من العمل مع القيادات العليا في STC،
+            إلى جانب فترات خدمة طويلة في الفنار، هنكل وسمو،
+            مما يعكس الاستقرار، الثقة، والأداء المستمر في بيئات عالية المسؤولية.
           </p>
+          <div class="card-actions">
+            More than 10 continuous years working with senior executives.
+          </div>
           <div class="tags">
-            <span class="tag">Trust</span>
             <span class="tag">Long Service</span>
+            <span class="tag">Trust</span>
           </div>
         </article>
 
         <!-- Board & Committee Support -->
         <article class="card">
-          <h3>دعم المجالس واللجان</h3>
+          <h3>Board &amp; Committee Support</h3>
           <p>
-            دعم اجتماعات مجالس الإدارة واللجان من خلال إعداد الجداول، تنظيم الملفات،
-            صياغة المحاضر، والمتابعة وفق أطر الحوكمة وإدارة القرارات.
+            دعم اجتماعات مجالس الإدارة واللجان من خلال إعداد الجداول والوثائق،
+            تنظيم حزم الاجتماعات، تدوين المحاضر، وتنسيق المتابعة المنظّمة لقرارات القيادة.
           </p>
+          <div class="card-actions">
+            Structured support for high-level meetings and decision follow-up.
+          </div>
           <div class="tags">
             <span class="tag">Board Work</span>
             <span class="tag">Governance</span>
