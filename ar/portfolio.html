@@ -1,84 +1,312 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>الملف المهني – قاسم سعيد سعيد</title>
-  <!-- نفس ملف CSS المستخدم في النسخة الإنجليزية مع مسار صحيح من مجلد ar -->
-  <link rel="stylesheet" href="../assets/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="الملف المهني لقاسم سعيد سعيد – مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين في السعودية وخارجها." />
+
+  <style>
+    :root {
+      --bg-body: #f4efe4;
+      --bg-card: #fbf4e7;
+      --bg-card-soft: #f7ecdd;
+      --bg-header: linear-gradient(to right, #b88a2c, #e0b24a, #b88a2c);
+      --text-main: #3d3121;
+      --text-muted: #8b7a5b;
+      --accent: #c89b3c;
+      --accent-soft: rgba(200, 155, 60, 0.12);
+      --border-soft: #e4d5bc;
+      --radius-lg: 18px;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Tahoma", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Top Bar / Navigation */
+    header.topbar {
+      background: var(--bg-header);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .brand-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    nav a.active {
+      border-color: #fff;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Page Layout */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    .page-header {
+      margin-bottom: 26px;
+    }
+
+    .page-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .page-subtitle {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Sections */
+    section.portfolio-section {
+      margin-top: 32px;
+    }
+
+    section.portfolio-section:first-of-type {
+      margin-top: 10px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+
+    .section-caption {
+      margin: 0 0 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 12px;
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      width: 40%;
+      height: 3px;
+      background: linear-gradient(to left, rgba(200, 155, 60, 0.7), transparent);
+      opacity: 0.8;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .card-subtype {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      font-size: 0.85rem;
+      color: #4b3b25;
+    }
+
+    .card-actions {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #7a5a20;
+      border: 1px solid rgba(200, 155, 60, 0.24);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 800px) {
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .topbar-inner {
+        flex-wrap: wrap;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        row-gap: 8px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-  <!-- نفس الهيدر والهوية -->
   <header class="topbar">
     <div class="topbar-inner">
-
       <div class="brand">
         <div class="brand-badge">KS</div>
         <span>KASEM SAIED SAIED</span>
       </div>
-
       <nav>
         <ul>
           <li><a href="index.html">الرئيسية</a></li>
           <li><a href="about.html">نبذة عني</a></li>
-          <li><a href="portfolio.html" class="active">الملف المهني</a></li>
+          <li><a href="portfolio-ar.html" class="active">الملف المهني</a></li>
           <li><a href="certificates.html">الشهادات</a></li>
           <li><a href="contact.html">تواصل</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <main class="page-container">
-
-    <!-- العنوان الرئيسي للصفحة -->
+  <main>
+    <!-- Page Header -->
     <div class="page-header">
-      <div class="page-kicker">
-        الدعم التنفيذي · قيادة المكاتب · الكتابة والكتب
-      </div>
-      <h1 class="page-title">نظرة عامة على الأعمال</h1>
+      <div class="page-kicker">الدعم التنفيذي • قيادة المكاتب • الكتابة والكتب</div>
+      <h1>نظرة عامة على الأعمال</h1>
       <p class="page-subtitle">
-        مختارات من المواد التي تُمثل عملي كمساعد تنفيذي أول، مع مشاريع الكتابة والكتب والإنجازات المهنية.
+        مختارات من أعمالي كمساعد تنفيذي أول، مع أبرز المشاريع الكتابية والإنجازات المهنية.
       </p>
     </div>
 
-    <!-- مواد الدعم التنفيذي Executive Support Materials -->
+    <!-- Executive Support Materials -->
     <section class="portfolio-section">
       <h2 class="section-title">مواد الدعم التنفيذي</h2>
       <p class="section-caption">
-        مواد مختارة تُظهر عملي كمساعد تنفيذي أول وخبرتي في دعم الرؤساء التنفيذيين والقادة الكبار.
+        مواد مختارة تُمثل عملي كمساعد تنفيذي أول وخبرتي في دعم القيادات العليا.
       </p>
 
       <div class="cards-grid">
-
-        <!-- Executive CV – Corporate -->
+        <!-- Card 1 -->
         <article class="card">
           <h3>السيرة الذاتية التنفيذية – النسخة المؤسسية</h3>
+          <div class="card-subtype">سيرة ذاتية كاملة لـ C-Suite</div>
           <p>
-            سيرة ذاتية كاملة للعمل المؤسسي وبيئات الـ C-Suite. تتضمن خبرة مفصلة في السعودية،
-            إدارة المكاتب التنفيذية، إدارة السفر، تنسيق مجالس الإدارة، والتعامل مع الفرق الدولية.
+            سيرة ذاتية شاملة للبيئات المؤسسية وقيادات الصف الأول. تتضمن خبرة مفصّلة في السعودية،
+            إدارة المكاتب التنفيذية، التنسيق مع مجالس الإدارة، وإدارة السفر الدولي عالي المستوى.
           </p>
           <div class="card-actions">
             عرض / تحميل (PDF)
           </div>
           <div class="tags">
-            <span class="tag">سيرة ذاتية تنفيذية</span>
+            <span class="tag">المساعد التنفيذي</span>
+            <span class="tag">السيرة الذاتية</span>
             <span class="tag">مؤسسي</span>
           </div>
         </article>
 
-        <!-- Executive Assistant Profile Summary -->
+        <!-- Card 2 -->
         <article class="card">
-          <h3>الملف المختصر للمساعد التنفيذي</h3>
+          <h3>الملف التنفيذي المختصر</h3>
+          <div class="card-subtype">نظرة عامة سريعة على الملف المهني</div>
           <p>
-            ملخص موجز للمهام والمسؤوليات والمهارات والإنجازات الرئيسية
-            كمساعد تنفيذي أول يدعم الرؤساء التنفيذيين ونوابهم وقيادات الصف الأول.
+            ملخص مهني يقدّم صورة مركزة عن المسؤوليات، نطاق العمل، وأبرز الإنجازات
+            كمساعد تنفيذي أول يدعم الرؤساء التنفيذيين ونوابهم في بيئات متعددة.
           </p>
           <div class="card-actions">
-            نظرة عامة / ملخص مهني
+            ملخص / عرض سريع
           </div>
           <div class="tags">
             <span class="tag">ملف مهني</span>
@@ -86,39 +314,39 @@
           </div>
         </article>
 
-        <!-- Business Card & Digital ID -->
+        <!-- Card 3 -->
         <article class="card">
           <h3>بطاقة العمل والهوية الرقمية</h3>
+          <div class="card-subtype">هوية شخصية بعلامة ذهبية</div>
           <p>
-            بطاقة عمل شخصية بالعلامة الذهبية، بإصدار للطباعة وإصدار رقمي
-            متناسق مع هوية الموقع لاستخدامه في واتساب، البريد الإلكتروني والتوقيعات.
+            بطاقة عمل مصممة باحتراف، بإصدار للطباعة وآخر رقمي، متوافقة مع العلامة
+            الشخصية السوداء والذهبية للاستخدام في واتساب، البريد الإلكتروني والتوقيعات.
           </p>
           <div class="card-actions">
-            نسخة للطباعة + نسخة رقمية
+            إصدار للطباعة + إصدار رقمي
           </div>
           <div class="tags">
-            <span class="tag">علامة شخصية</span>
-            <span class="tag">هوية</span>
+            <span class="tag">الهوية</span>
+            <span class="tag">العلامة الشخصية</span>
           </div>
         </article>
 
-        <!-- Brand Pack & Presentations -->
+        <!-- Card 4 -->
         <article class="card">
           <h3>حزمة العلامة والعروض التقديمية</h3>
+          <div class="card-subtype">قوالب شرائح وتقارير جاهزة</div>
           <p>
-            حزمة بسيطة وأنيقة من القوالب البصرية (شرائح وعروض وتقارير)
-            تحافظ على اتساق السيرة الذاتية، والعلامة الشخصية، والملفات المهنية
-            بنفس الهوية الذهبية المستخدمة في الموقع.
+            حزمة بسيطة وأنيقة من الشرائح والقوالب البصرية التي تحافظ على اتساق السيرة الذاتية،
+            العروض التقديمية، والملفات المهنية وفق هوية واحدة باللون الذهبي.
           </p>
           <div class="card-actions">
-            قوالب عروض تقديمية / تقارير
+            قوالب باوربوينت / PDF
           </div>
           <div class="tags">
-            <span class="tag">هوية بصرية</span>
             <span class="tag">تصميم</span>
+            <span class="tag">هوية بصرية</span>
           </div>
         </article>
-
       </div>
     </section>
 
@@ -126,43 +354,45 @@
     <section class="portfolio-section">
       <h2 class="section-title">مشاريع الكتابة والكتب</h2>
       <p class="section-caption">
-        كتب ومشاريع كتابية تعكس خبرتي في المكاتب والدعم التنفيذي والمقالات الإنسانية.
+        كتب ومشاريع كتابية قائمة ومخطط لها، تعكس الخبرة في المكاتب والدعم التنفيذي والمقالات الإنسانية.
       </p>
 
       <div class="cards-grid">
-
-        <!-- Thirty Years in Offices -->
+        <!-- Card 1 -->
         <article class="card">
           <h3>«ثلاثون عامًا في المكاتب»</h3>
+          <div class="card-subtype">سيرة ذاتية / مذكرات</div>
           <p>
-            كتاب غير روائي / مذكرات، يقدّم قراءة تأملية في عقود من حياة المكاتب،
-            والقيادة، والعلاقات الإنسانية، والدروس المستفادة من الأشخاص وبيئات العمل المختلفة.
+            كتاب تأملي يوثّق ثلاثة عقود من العمل المكتبي، العلاقات الإنسانية في بيئات الأعمال،
+            والدروس التي تعلّمتها من التعامل مع شخصيات وبيئات مهنية متعددة.
           </p>
           <div class="tags">
-            <span class="tag">مذكرات</span>
             <span class="tag">حياة المكاتب</span>
+            <span class="tag">مذكرات</span>
           </div>
         </article>
 
-        <!-- The Smart Assistant -->
+        <!-- Card 2 -->
         <article class="card">
           <h3>«المساعد الذكي»</h3>
+          <div class="card-subtype">دليل عملي للمساعدين التنفيذيين</div>
           <p>
-            دليل عملي موجه للمساعدين التنفيذيين، يركّز على التواصل الفعّال،
-            تنظيم العمل، أدوات الإنتاجية الحديثة، وعقلية الدعم الاحترافي لبيئات الـ C-Suite.
+            دليل مهني يركّز على مهارات التواصل، التنظيم، إدارة الأولويات، واستخدام الأدوات الرقمية
+            الحديثة لدعم القيادات التنفيذية في بيئات العمل العصرية.
           </p>
           <div class="tags">
+            <span class="tag">المساعد التنفيذي</span>
             <span class="tag">دليل مهني</span>
-            <span class="tag">مساعد تنفيذي</span>
           </div>
         </article>
 
-        <!-- Coffee, Love & Freedom – Essays -->
+        <!-- Card 3 -->
         <article class="card">
-          <h3>«قهوة، حب وحرية» – مقالات</h3>
+          <h3>«قهوة، حب وحرية» — مقالات</h3>
+          <div class="card-subtype">مقالات شخصية وإنسانية</div>
           <p>
-            مجموعة مقالات شخصية تمزج بين الحنين والذكريات العائلية،
-            والعمل والهوية والحرية، مكتوبة بالعربية والإنجليزية.
+            مجموعة مقالات تجمع بين الحنين والذكريات العائلية والهوية الشخصية،
+            وتأملات حول الحرية والعمل والحياة. تصدر بالعربية والإنجليزية.
           </p>
           <div class="tags">
             <span class="tag">مقالات</span>
@@ -170,61 +400,59 @@
           </div>
         </article>
 
-        <!-- Novel Project – Damascus in the 1980s–1990s -->
+        <!-- Card 4 -->
         <article class="card">
-          <h3>مشروع رواية – دمشق في الثمانينيات والتسعينيات</h3>
+          <h3>الرواية – دمشق في الثمانينيات والتسعينيات</h3>
+          <div class="card-subtype">مشروع روائي قيد التطوير</div>
           <p>
-            رواية قيد التطوير عن شاب وفتاة في دمشق، تعكس أحلام الشباب،
-            والحياة اليومية قبل الإنترنت والكاسيت القديم،
-            بمزيج من اللغة الشعرية والتفاصيل الواقعية.
+            رواية عن شاب وفتاة في دمشق، بين النوافذ المفتوحة والأشرطة القديمة،
+            تعكس أحلام الشباب وتحديات الحياة اليومية قبل عصر الإنترنت.
           </p>
           <div class="tags">
             <span class="tag">رواية</span>
             <span class="tag">دمشق</span>
           </div>
         </article>
-
       </div>
     </section>
 
     <!-- Career Highlights -->
     <section class="portfolio-section">
       <h2 class="section-title">أبرز الإنجازات المهنية</h2>
+      <p class="section-caption">
+        إنجازات مختارة من عملي الطويل مع القيادات التنفيذية والمنظمات الكبرى.
+      </p>
 
       <div class="cards-grid">
-
-        <!-- Long-Term Executive Partnerships -->
+        <!-- Card 1 -->
         <article class="card">
           <h3>شراكات تنفيذية طويلة الأمد</h3>
+          <div class="card-subtype">أكثر من 10 سنوات من التعاون المستمر</div>
           <p>
-            أكثر من عشر سنوات من الشراكة التنفيذية المستمرة مع قيادات STC،
-            بالإضافة إلى خدمة طويلة في الفنار، هنكل وسمو، بما يعكس الاستقرار
-            والثقة والأداء العالي في خدمة القادة والتنظيمات الكبرى.
+            تعاون طويل مع قيادات STC التنفيذية، إضافة إلى خدمة مستقرة في الفنار، هنكل وسمو،
+            مما يعكس الثقة العالية، الاستقرار، وجودة الأداء على مدى سنوات.
           </p>
           <div class="tags">
-            <span class="tag">خدمة طويلة</span>
             <span class="tag">ثقة</span>
+            <span class="tag">خدمة طويلة</span>
           </div>
         </article>
 
-        <!-- Board & Committee Support -->
+        <!-- Card 2 -->
         <article class="card">
           <h3>دعم المجالس واللجان</h3>
+          <div class="card-subtype">حوكمة واجتماعات عليا</div>
           <p>
-            دعم اجتماعات مجالس الإدارة واللجان من خلال إعداد الجداول والوثائق،
-            تنظيم ملفات الاجتماعات، صياغة المحاضر، والمتابعة تحت أطر الحوكمة
-            والإجراءات الرسمية.
+            دعم اجتماعات مجالس الإدارة واللجان من خلال إعداد الجداول، تجهيز الملفات،
+            صياغة المحاضر، وضمان التنفيذ المنظم لقرارات القيادة.
           </p>
           <div class="tags">
-            <span class="tag">مجالس إدارة</span>
+            <span class="tag">مجالس الإدارة</span>
             <span class="tag">حوكمة</span>
           </div>
         </article>
-
       </div>
     </section>
-
   </main>
-
 </body>
 </html>
