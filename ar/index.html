@@ -326,6 +326,20 @@
       font-size: 0.8rem;
     }
 
+    /* السطر العلوي: أيقونة + تاغ */
+    .support-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-size: 0.72rem;
+    }
+
+    .support-icon {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
     .support-title {
       margin: 0 0 4px;
       font-weight: 600;
@@ -333,7 +347,7 @@
     }
 
     .support-text {
-      margin: 0 0 6px;
+      margin: 0 0 2px;
       color: #4b3b25;
     }
 
@@ -345,6 +359,7 @@
       border: 1px solid rgba(200,155,60,.24);
       color: #7a5a20;
       display: inline-block;
+      white-space: nowrap;
     }
 
     @media (max-width:1000px) {
@@ -512,131 +527,179 @@
     <div class="support-grid">
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">📅</span>
+          <span class="support-tag">التخطيط</span>
+        </div>
         <h3 class="support-title">إدارة التقويم والبريد التنفيذي</h3>
         <p class="support-text">
           تنظيم تقويم مزدحم وصندوق بريد مليء بالرسائل مع الحفاظ على رؤية واضحة للأولويات.
         </p>
-        <span class="support-tag">التخطيط</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">✉️</span>
+          <span class="support-tag">التواصل</span>
+        </div>
         <h3 class="support-title">التواصل التنفيذي</h3>
         <p class="support-text">
           صياغة رسائل وتقارير وعروض موجزة تعكس صوت القائد وتُحافظ على مستوى احتراف عالٍ.
         </p>
-        <span class="support-tag">التواصل</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🧭</span>
+          <span class="support-tag">اللوجستيات</span>
+        </div>
         <h3 class="support-title">تنسيق السفر والاجتماعات</h3>
         <p class="support-text">
           تنظيم السفر والاجتماعات عبر المناطق الزمنية مع جداول واضحة ومعلومات مكتملة.
         </p>
-        <span class="support-tag">اللوجستيات</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🗂️</span>
+          <span class="support-tag">الأنظمة</span>
+        </div>
         <h3 class="support-title">أنظمة وإجراءات المكتب</h3>
         <p class="support-text">
           تحسين أنظمة المكتب، الملفات، وقنوات العمل اليومية لتقليل الفوضى وزيادة الوضوح.
         </p>
-        <span class="support-tag">الأنظمة</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🤝</span>
+          <span class="support-tag">العلاقات</span>
+        </div>
         <h3 class="support-title">تنسيق أصحاب المصلحة</h3>
         <p class="support-text">
           التنسيق مع المدراء، الفِرق، الموردين، والشركاء لضمان انسيابية التواصل والمتابعة.
         </p>
-        <span class="support-tag">العلاقات</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">💻</span>
+          <span class="support-tag">الأدوات</span>
+        </div>
         <h3 class="support-title">الأدوات والتقنيات</h3>
         <p class="support-text">
           استخدام أدوات Microsoft 365 وأدوات التعاون مثل Notion وSlack وAsana لمتابعة العمل بكفاءة.
         </p>
-        <span class="support-tag">الأدوات</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🎯</span>
+          <span class="support-tag">الاستراتيجية</span>
+        </div>
         <h3 class="support-title">الجدولة الاستراتيجية</h3>
         <p class="support-text">
           تصميم جدول القائد بما يعكس الأولويات الإستراتيجية ويقلّل من التشتّت والاجتماعات غير الضرورية.
         </p>
-        <span class="support-tag">الاستراتيجية</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">📋</span>
+          <span class="support-tag">المجالس</span>
+        </div>
         <h3 class="support-title">ملفات القيادة ومجالس الإدارة</h3>
         <p class="support-text">
           إعداد ملفات الاجتماعات، محاضر الجلسات، والمذكرات التنفيذية لمجالس الإدارة واللجان العليا.
         </p>
-        <span class="support-tag">المجالس</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🔁</span>
+          <span class="support-tag">الإجراءات</span>
+        </div>
         <h3 class="support-title">تحسين سير العمل</h3>
         <p class="support-text">
           تبسيط تدفّق العمل بين القائد وفريقه لضمان وضوح المسؤوليات ونقاط التسليم.
         </p>
-        <span class="support-tag">الإجراءات</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🔐</span>
+          <span class="support-tag">الخصوصية</span>
+        </div>
         <h3 class="support-title">التعامل مع الملفات الحساسة</h3>
         <p class="support-text">
           إدارة الملفات الحساسة والشخصية بسرية تامة واحترام كامل للثقة الممنوحة.
         </p>
-        <span class="support-tag">الخصوصية</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🤝</span>
+          <span class="support-tag">الشركاء</span>
+        </div>
         <h3 class="support-title">تنسيق الشركاء والمورّدين</h3>
         <p class="support-text">
           تنظيم العمل مع الموردين والشركاء والسفارات والدعم اللوجستي لضمان تلبية احتياجات القائد.
         </p>
-        <span class="support-tag">الشركاء</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">📝</span>
+          <span class="support-tag">الاجتماعات</span>
+        </div>
         <h3 class="support-title">ذكاء الاجتماعات والمتابعة</h3>
         <p class="support-text">
           تحضير الموجزات قبل الاجتماعات، وتدوين نقاط العمل بعدها مع متابعة منظمة للقرارات.
         </p>
-        <span class="support-tag">الاجتماعات</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">📊</span>
+          <span class="support-tag">المشاريع</span>
+        </div>
         <h3 class="support-title">متابعة المشاريع والمواعيد النهائية</h3>
         <p class="support-text">
           متابعة المشاريع الرئيسية والمواعيد النهائية والتنبيه المسبق بنقاط الخطر قبل حدوثها.
         </p>
-        <span class="support-tag">المشاريع</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">⚙️</span>
+          <span class="support-tag">الإنتاجية</span>
+        </div>
         <h3 class="support-title">الإنتاجية الرقمية وأدوات الذكاء الاصطناعي</h3>
         <p class="support-text">
           استخدام الأدوات الرقمية والذكاء الاصطناعي لرفع كفاءة العمل وتوفير وقت القائد.
         </p>
-        <span class="support-tag">الإنتاجية</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🚨</span>
+          <span class="support-tag">الأزمات</span>
+        </div>
         <h3 class="support-title">إدارة الأزمات والمواقف الطارئة</h3>
         <p class="support-text">
           التعامل المنظم مع المواقف الحسّاسة، وضوح الأولويات، وطمأنة القائد بمعلومات دقيقة.
         </p>
-        <span class="support-tag">الأزمات</span>
       </article>
 
       <article class="support-card">
+        <div class="support-meta">
+          <span class="support-icon">🏠</span>
+          <span class="support-tag">الدعم</span>
+        </div>
         <h3 class="support-title">الدعم الشخصي ولوجستيات الأسرة</h3>
         <p class="support-text">
           دعم بعض الاحتياجات الشخصية ولوجستيات الأسرة المختارة بما يخفّف الضغط عن القائد.
         </p>
-        <span class="support-tag">الدعم</span>
       </article>
 
     </div>
