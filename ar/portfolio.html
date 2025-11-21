@@ -243,29 +243,32 @@
 
   <!-- نفس الهيدر والهوية الذهبية -->
   <header class="topbar">
-    <div class="topbar-inner">
+  <div class="topbar-inner">
 
-      <div class="brand">
-        <div class="brand-badge">KS</div>
-        <span>KASEM SAIED SAIED</span>
-      </div>
-
-      <nav>
-        <ul>
-          <!-- داخل مجلد ar/ نفترض أن لديك index.html, about.html... بالعربية -->
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">نبذة عني</a></li>
-          <li><a href="portfolio.html" class="active">الملف المهني</a></li>
-          <li><a href="certificates.html">الشهادات</a></li>
-          <li><a href="contact.html">تواصل</a></li>
-          <li><a href="services.html">الخدمات</a></li>
-          <!-- زر التحويل إلى النسخة الإنجليزية من صفحة البورتفوليو -->
-          <li><a href="../portfolio.html">EN</a></li>
-        </ul>
-      </nav>
-
+    <!-- BRAND (same as English, but placed on the right in RTL) -->
+    <div class="brand">
+      <div class="brand-badge">KS</div>
+      <span>KASEM SAIED SAIED</span>
     </div>
-  </header>
+
+    <!-- NAVIGATION (mirrored but identical classes, same spacing) -->
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">نبذة عني</a></li>
+        <li><a href="portfolio.html" class="active">الملف المهني</a></li>
+        <li><a href="certificates.html">الشهادات</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+
+        <!-- Language Switcher (use exact class and spacing as English repo) -->
+        <li><a href="../portfolio.html">EN</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
 
   <main>
 
