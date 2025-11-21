@@ -1,89 +1,53 @@
-<header>
-  <div class="brand">
-    <span class="brand-badge">KS</span>
-    قاسم سعيد سعيد
-  </div>
-
-  <div style="display:flex; align-items:center; gap:12px;">
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="about.html">نبذة عني</a>
-      <a href="portfolio.html">السيرة المهنية</a>
-      <a href="certificates.html">الشهادات والتقدير</a>
-      <a href="services.html">خدمات الدعم التنفيذي</a>
-      <a href="contact.html">تواصل معي</a>
-
-      <!-- switch to English -->
-      <a href="../index.html" class="lang-switch">
-        English <span>EN</span>
-      </a>
-    </nav>
-  </div>
-</header>
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>الأعمال – قاسم سعيد سعيد | دعم تنفيذي وكتابة</title>
-  <meta name="description" content="لمحة عن المواد المهنية والأعمال الكتابية والمشاريع الخاصة بقاسم سعيد سعيد، مساعد تنفيذي أول مقيم في الرياض." />
+  <title>الملف المهني – قاسم سعيد سعيد</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Kasem Saied Saied" />
-
-  <link rel="icon" type="image/png" href="../favicon.png" />
-  <link rel="stylesheet" href="../animations.css" />
+  <meta name="description" content="الملف المهني لقاسم سعيد سعيد – مساعد تنفيذي أول لرؤساء مجالس الإدارة والرؤساء التنفيذيين في السعودية وخارجها." />
 
   <style>
     :root {
       --bg-body: #f4efe4;
-      --bg-card: #fbf8f1;
-      --bg-accent: #ffdf8d;
-      --gold: #d0a13c;
-      --gold-dark: #8b6a1e;
-      --text-main: #2c2a29;
-      --text-soft: #5d5a57;
-      --border-soft: #e0d4b8;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-      --radius-card: 18px;
-      --radius-pill: 999px;
-      --transition-fast: 0.2s ease-out;
-      --transition-med: 0.35s ease-out;
+      --bg-card: #fbf4e7;
+      --bg-card-soft: #f7ecdd;
+      --bg-header: linear-gradient(to right, #b88a2c, #e0b24a, #b88a2c);
+      --text-main: #3d3121;
+      --text-muted: #8b7a5b;
+      --accent: #c89b3c;
+      --accent-soft: rgba(200, 155, 60, 0.12);
+      --border-soft: #e4d5bc;
+      --radius-lg: 18px;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+      --max-width: 1080px;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      font-family: "Tahoma", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg-body);
       color: var(--text-main);
       line-height: 1.7;
-      direction: rtl;
-      text-align: right;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Top Nav RTL */
-    .top-nav {
+    /* Top Bar / Navigation */
+    header.topbar {
+      background: var(--bg-header);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: linear-gradient(90deg, #b88a2c, #1d1810);
-      color: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      z-index: 10;
     }
 
-    .top-nav-inner {
-      max-width: 1120px;
+    .topbar-inner {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -93,502 +57,402 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      gap: 8px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 0.9rem;
     }
 
     .brand-badge {
       width: 26px;
       height: 26px;
-      border-radius: 999px;
-      background: #000;
-      display: flex;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 0.78rem;
       font-weight: 700;
-      border: 2px solid #f6d37a;
+      background: rgba(0, 0, 0, 0.12);
     }
 
-    .nav-links {
+    nav ul {
+      list-style: none;
       display: flex;
-      align-items: center;
       gap: 18px;
-      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
     }
 
-    .nav-links a {
-      opacity: 0.9;
-      padding-bottom: 2px;
+    nav a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      padding-bottom: 4px;
       border-bottom: 2px solid transparent;
-      transition: opacity var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-      white-space: nowrap;
+      transition: border-color 0.2s, color 0.2s;
     }
 
-    .nav-links a:hover {
-      opacity: 1;
-      transform: translateY(-1px);
+    nav a:hover {
+      color: #ffffff;
       border-color: rgba(255, 255, 255, 0.7);
     }
 
-    .nav-links a.active {
+    nav a.active {
+      border-color: #fff;
+      color: #fff;
       font-weight: 600;
-      border-color: #ffe09a;
-      opacity: 1;
     }
 
-    .lang-pill {
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .lang-pill:hover {
-      background: rgba(0, 0, 0, 0.12);
-      opacity: 1;
-    }
-
+    /* Page Layout */
     main {
-      max-width: 1120px;
-      margin: 28px auto 60px;
-      padding: 0 20px 40px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 16px 48px;
     }
 
-    .page-hero {
-      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.8), transparent 55%),
-                  radial-gradient(circle at bottom left, rgba(255, 226, 160, 0.5), transparent 55%),
-                  var(--bg-card);
-      box-shadow: var(--shadow-soft);
-      border-radius: 26px;
-      padding: 26px 30px 22px;
+    .page-header {
       margin-bottom: 26px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
-    .page-hero-kicker {
-      letter-spacing: 0.16em;
+    .page-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #fdf2c4;
-      font-size: 11px;
-      margin-bottom: 6px;
-      background: #2f2618;
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-    }
-
-    .page-title {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .page-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 760px;
-    }
-
-    .section {
-      margin-top: 20px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
+      color: var(--accent);
       margin-bottom: 10px;
     }
 
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .page-subtitle {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Sections */
+    section.portfolio-section {
+      margin-top: 32px;
+    }
+
+    section.portfolio-section:first-of-type {
+      margin-top: 10px;
+    }
+
     .section-title {
-      font-size: 18px;
-      font-weight: 650;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 4px;
     }
 
-    .section-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--gold-dark);
-      background: rgba(255, 236, 186, 0.9);
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      white-space: nowrap;
+    .section-caption {
+      margin: 0 0 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
+    /* Cards Grid */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 20px;
     }
 
     .card {
       background: var(--bg-card);
-      border-radius: 18px;
-      padding: 18px 16px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 150px;
-      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
-      font-size: 14px;
+      padding: 16px 16px 12px;
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 42px rgba(0, 0, 0, 0.12);
-      border-color: rgba(208, 161, 60, 0.5);
-      background: #fffaf2;
+    .card::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      width: 40%;
+      height: 3px;
+      background: linear-gradient(to left, rgba(200, 155, 60, 0.7), transparent);
+      opacity: 0.8;
     }
 
-    .card-title {
-      font-size: 15px;
-      font-weight: 650;
-      margin-bottom: 4px;
-      color: #2f2618;
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
-    .card-text {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 10px;
+    .card-subtype {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 6px;
     }
 
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-top: 4px;
-      font-size: 12px;
+    .card p {
+      margin: 0 0 10px;
+      font-size: 0.85rem;
+      color: #4b3b25;
     }
 
-    .badge-row {
+    .card-actions {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
     }
 
-    .badge {
-      font-size: 11px;
+    .tag {
+      font-size: 0.72rem;
       padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid var(--border-soft);
-      color: var(--text-soft);
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #7a5a20;
+      border: 1px solid rgba(200, 155, 60, 0.24);
       white-space: nowrap;
     }
 
-    .btn-link {
-      font-size: 12px;
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--gold-dark);
-      background: #2f2618;
-      color: #ffe9b3;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-    }
-
-    .btn-link:hover {
-      background: #443420;
-      border-color: #f3cd72;
-      transform: translateY(-1px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.26);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.45);
-      margin-top: 26px;
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-    }
-
-    @media (max-width: 900px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      main {
-        margin-top: 20px;
-      }
-
-      .page-title {
-        font-size: 23px;
-      }
-
+    @media (max-width: 800px) {
       .cards-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .top-nav-inner {
-        padding-inline: 14px;
+      .topbar-inner {
+        flex-wrap: wrap;
       }
 
-      .nav-links {
-        font-size: 13px;
-        gap: 12px;
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        row-gap: 8px;
       }
     }
   </style>
 </head>
 <body>
-  <header style="
-  background: linear-gradient(to right, #000000, #2e1f00, #6d5300, #c8a849, #6d5300, #2e1f00, #000000);
-  padding: 16px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  position: relative;
-  z-index: 100;">
-  
-  <!-- LEFT BADGE -->
-  <div style="display:flex; align-items:center; gap:10px; color:white; font-weight:700; font-size:16px;">
-    <span style="
-      background:#000;
-      color:#f5d997;
-      padding:6px 12px;
-      border-radius:50%;
-      border:2px solid #c9a745;
-      font-weight:700;
-    ">KS</span>
-    KASEM SAIED SAIED
-  </div>
-
-  <!-- NAVIGATION -->
-  <nav style="display:flex; gap:22px; font-size:15px;">
-    <a href="index.html" style="color:#f7d98f; font-weight:700; text-decoration:none;">Home</a>
-    <a href="about.html" style="color:white; text-decoration:none;">About</a>
-    <a href="portfolio.html" style="color:white; text-decoration:none;">Portfolio</a>
-    <a href="certificates.html" style="color:white; text-decoration:none;">Certificates</a>
-    <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
-    <a href="services.html" style="color:white; text-decoration:none;">Services</a>
-  </nav>
-
-</header>
-
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">KS</div>
+        <span>KASEM SAIED SAIED</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">نبذة عني</a></li>
+          <li><a href="portfolio-ar.html" class="active">الملف المهني</a></li>
+          <li><a href="certificates.html">الشهادات</a></li>
+          <li><a href="contact.html">تواصل</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <!-- Hero -->
-    <section class="page-hero fade-section fade-slow">
-      <div class="page-hero-kicker">EXECUTIVE SUPPORT · BRAND · WRITING</div>
-      <h1 class="page-title">لمحة عن الأعمال والمواد المهنية</h1>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="page-kicker">الدعم التنفيذي • قيادة المكاتب • الكتابة والكتب</div>
+      <h1>نظرة عامة على الأعمال</h1>
       <p class="page-subtitle">
-        هذه الصفحة تعرض أهم المواد التنفيذية، المستندات المهنية والمشاريع الكتابية التي أستخدمها في
-        التواصل مع الرؤساء التنفيذيين، القيادات العليا، شركات التوظيف والجهات المهتمة بالتعاون.
+        مختارات من أعمالي كمساعد تنفيذي أول، مع أبرز المشاريع الكتابية والإنجازات المهنية.
       </p>
-    </section>
+    </div>
 
-    <!-- Executive support materials -->
-    <section class="section fade-section fade-delay-1">
-      <div class="section-header">
-        <h2 class="section-title">مواد الدعم التنفيذي</h2>
-        <div class="section-tag">وثائق أساسية</div>
-      </div>
-
-      <div class="cards-grid">
-        <article class="card">
-          <div>
-            <h3 class="card-title">السيرة الذاتية التنفيذية – الإنجليزية</h3>
-            <p class="card-text">
-              سيرة ذاتية تفصيلية موجهة للبيئات المؤسسية والقيادات التنفيذية، تبرز الخبرة الطويلة في
-              إدارة المكاتب التنفيذية، دعم القيادات وقيادة سير العمل اليومي في السعودية.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">سيرة ذاتية</span>
-              <span class="badge">مستوى تنفيذي</span>
-            </div>
-            <a class="btn-link" href="../Kasem%20Saied-Resume%202025-En.pdf" target="_blank" rel="noopener">
-              عرض السيرة (PDF)
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div>
-            <h3 class="card-title">ملخص مهني للمساعد التنفيذي</h3>
-            <p class="card-text">
-              صفحة واحدة تلخص المسؤوليات الأساسية، الأدوات المستخدمة وأبرز النتائج التي تحققت
-              في دوري كمساعد تنفيذي أول للقيادات، تُستخدم للتقديم السريع أو التعريف الأولي.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">ملخص مهني</span>
-              <span class="badge">مساعد تنفيذي</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">متوفر عند الطلب</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div>
-            <h3 class="card-title">بطاقة العمل والهوية الرقمية</h3>
-            <p class="card-text">
-              تصميم احترافي لبطاقة العمل والهوية الرقمية المتوافقة مع الهوية الذهبية للموقع، جاهزة للاستخدام
-              في الواتساب، توقيع البريد الإلكتروني، ولينكدإن.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">هوية بصرية</span>
-              <span class="badge">بطاقة عمل</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">العينات محفوظة في الأرشيف الشخصي</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="cards-grid" style="margin-top:16px;">
-        <article class="card">
-          <div>
-            <h3 class="card-title">ملف الهوية البصرية والعروض التقديمية</h3>
-            <p class="card-text">
-              حزمة كاملة للهوية الذهبية، قوالب عروض PowerPoint، وصورة الغلاف في لينكدإن، لضمان حضور
-              مهني متناسق على جميع المنصات.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">هوية مرئية</span>
-              <span class="badge">قوالب عروض</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">نماذج متاحة عند الطلب</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div>
-            <h3 class="card-title">ملف لينكدإن والحضور الرقمي</h3>
-            <p class="card-text">
-              ملف لينكدإن محدث يركّز على أدوار المساعد التنفيذي الأول، الدعم عن بُعد، ودعم مكاتب C-Suite،
-              ومتوافق مع هذا الموقع الشخصي.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">ملف إلكتروني</span>
-              <span class="badge">شبكات مهنية</span>
-            </div>
-            <a class="btn-link" href="https://www.linkedin.com/in/kasem-said" target="_blank" rel="noopener">
-              عرض ملف لينكدإن
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div>
-            <h3 class="card-title">نماذج مراسلات ومسودات رسمية</h3>
-            <p class="card-text">
-              مكتبة من الرسائل الرسمية، الصيغ العربية والإنجليزية، محاضر الاجتماعات وخلاصات تنفيذية
-              تُستخدم في التواصل مع القيادات ومجالس الإدارة.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">عربي &amp; إنجليزي</span>
-              <span class="badge">أسلوب رسمي</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">مكتبة داخلية خاصة</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Writing & book projects -->
-    <section class="section fade-section fade-delay-2">
-      <div class="section-header">
-        <h2 class="section-title">مشاريع الكتابة والكتب</h2>
-        <div class="section-tag">أعمال تأليفية</div>
-      </div>
+    <!-- Executive Support Materials -->
+    <section class="portfolio-section">
+      <h2 class="section-title">مواد الدعم التنفيذي</h2>
+      <p class="section-caption">
+        مواد مختارة تُمثل عملي كمساعد تنفيذي أول وخبرتي في دعم القيادات العليا.
+      </p>
 
       <div class="cards-grid">
+        <!-- Card 1 -->
         <article class="card">
-          <div>
-            <h3 class="card-title">كتاب: ثلاثون عاماً في المكاتب</h3>
-            <p class="card-text">
-              مشروع كتاب تأملي حول ثلاثة عقود من العمل المكتبي، القرب من القيادات، وتجارب الإنسان
-              داخل بيئة العمل الحديثة، وما تحمله من دروس وعِبر.
-            </p>
+          <h3>السيرة الذاتية التنفيذية – النسخة المؤسسية</h3>
+          <div class="card-subtype">سيرة ذاتية كاملة لـ C-Suite</div>
+          <p>
+            سيرة ذاتية شاملة للبيئات المؤسسية وقيادات الصف الأول. تتضمن خبرة مفصّلة في السعودية،
+            إدارة المكاتب التنفيذية، التنسيق مع مجالس الإدارة، وإدارة السفر الدولي عالي المستوى.
+          </p>
+          <div class="card-actions">
+            عرض / تحميل (PDF)
           </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">سيرة مهنية</span>
-              <span class="badge">حياة مكتبية</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">المخطوط قيد الإكمال</span>
+          <div class="tags">
+            <span class="tag">المساعد التنفيذي</span>
+            <span class="tag">السيرة الذاتية</span>
+            <span class="tag">مؤسسي</span>
           </div>
         </article>
 
+        <!-- Card 2 -->
         <article class="card">
-          <div>
-            <h3 class="card-title">كتاب: المساعد الذكي</h3>
-            <p class="card-text">
-              فكرة كتاب عملي موجه للمساعدين التنفيذيين المعاصرين، يركز على المواقف اليومية، إدارة
-              التواصل والتعاون الفعّال مع القيادات العليا.
-            </p>
+          <h3>الملف التنفيذي المختصر</h3>
+          <div class="card-subtype">نظرة عامة سريعة على الملف المهني</div>
+          <p>
+            ملخص مهني يقدّم صورة مركزة عن المسؤوليات، نطاق العمل، وأبرز الإنجازات
+            كمساعد تنفيذي أول يدعم الرؤساء التنفيذيين ونوابهم في بيئات متعددة.
+          </p>
+          <div class="card-actions">
+            ملخص / عرض سريع
           </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">دليل عملي</span>
-              <span class="badge">مساعدون تنفيذيون</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">خطة الكتاب وفصوله قيد التطوير</span>
+          <div class="tags">
+            <span class="tag">ملف مهني</span>
+            <span class="tag">ملخص</span>
           </div>
         </article>
 
+        <!-- Card 3 -->
         <article class="card">
-          <div>
-            <h3 class="card-title">كتاب مقالات: قهوة، حب وحرية</h3>
-            <p class="card-text">
-              مجموعة مقالات وخواطر تجمع بين الحنين، العائلة، دمشق، وتجارب العمل والاغتراب،
-              مكتوبة بالعربية مع ترجمات أو نسخ إنجليزية لبعض النصوص.
-            </p>
+          <h3>بطاقة العمل والهوية الرقمية</h3>
+          <div class="card-subtype">هوية شخصية بعلامة ذهبية</div>
+          <p>
+            بطاقة عمل مصممة باحتراف، بإصدار للطباعة وآخر رقمي، متوافقة مع العلامة
+            الشخصية السوداء والذهبية للاستخدام في واتساب، البريد الإلكتروني والتوقيعات.
+          </p>
+          <div class="card-actions">
+            إصدار للطباعة + إصدار رقمي
           </div>
-          <div class="card-footer">
-            <div class="badge-row">
-              <span class="badge">مقالات</span>
-              <span class="badge">عربي &amp; إنجليزي</span>
-            </div>
-            <span style="font-size:12px;color:var(--text-soft);">مختارات جاهزة للنشر عبر KDP</span>
+          <div class="tags">
+            <span class="tag">الهوية</span>
+            <span class="tag">العلامة الشخصية</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <h3>حزمة العلامة والعروض التقديمية</h3>
+          <div class="card-subtype">قوالب شرائح وتقارير جاهزة</div>
+          <p>
+            حزمة بسيطة وأنيقة من الشرائح والقوالب البصرية التي تحافظ على اتساق السيرة الذاتية،
+            العروض التقديمية، والملفات المهنية وفق هوية واحدة باللون الذهبي.
+          </p>
+          <div class="card-actions">
+            قوالب باوربوينت / PDF
+          </div>
+          <div class="tags">
+            <span class="tag">تصميم</span>
+            <span class="tag">هوية بصرية</span>
           </div>
         </article>
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> قاسم سعيد سعيد.  
-      العربية · <a href="../portfolio.html">English</a>
-    </footer>
+    <!-- Writing & Book Projects -->
+    <section class="portfolio-section">
+      <h2 class="section-title">مشاريع الكتابة والكتب</h2>
+      <p class="section-caption">
+        كتب ومشاريع كتابية قائمة ومخطط لها، تعكس الخبرة في المكاتب والدعم التنفيذي والمقالات الإنسانية.
+      </p>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <h3>«ثلاثون عامًا في المكاتب»</h3>
+          <div class="card-subtype">سيرة ذاتية / مذكرات</div>
+          <p>
+            كتاب تأملي يوثّق ثلاثة عقود من العمل المكتبي، العلاقات الإنسانية في بيئات الأعمال،
+            والدروس التي تعلّمتها من التعامل مع شخصيات وبيئات مهنية متعددة.
+          </p>
+          <div class="tags">
+            <span class="tag">حياة المكاتب</span>
+            <span class="tag">مذكرات</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <h3>«المساعد الذكي»</h3>
+          <div class="card-subtype">دليل عملي للمساعدين التنفيذيين</div>
+          <p>
+            دليل مهني يركّز على مهارات التواصل، التنظيم، إدارة الأولويات، واستخدام الأدوات الرقمية
+            الحديثة لدعم القيادات التنفيذية في بيئات العمل العصرية.
+          </p>
+          <div class="tags">
+            <span class="tag">المساعد التنفيذي</span>
+            <span class="tag">دليل مهني</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <h3>«قهوة، حب وحرية» — مقالات</h3>
+          <div class="card-subtype">مقالات شخصية وإنسانية</div>
+          <p>
+            مجموعة مقالات تجمع بين الحنين والذكريات العائلية والهوية الشخصية،
+            وتأملات حول الحرية والعمل والحياة. تصدر بالعربية والإنجليزية.
+          </p>
+          <div class="tags">
+            <span class="tag">مقالات</span>
+            <span class="tag">عربي &amp; إنجليزي</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <h3>الرواية – دمشق في الثمانينيات والتسعينيات</h3>
+          <div class="card-subtype">مشروع روائي قيد التطوير</div>
+          <p>
+            رواية عن شاب وفتاة في دمشق، بين النوافذ المفتوحة والأشرطة القديمة،
+            تعكس أحلام الشباب وتحديات الحياة اليومية قبل عصر الإنترنت.
+          </p>
+          <div class="tags">
+            <span class="tag">رواية</span>
+            <span class="tag">دمشق</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Career Highlights -->
+    <section class="portfolio-section">
+      <h2 class="section-title">أبرز الإنجازات المهنية</h2>
+      <p class="section-caption">
+        إنجازات مختارة من عملي الطويل مع القيادات التنفيذية والمنظمات الكبرى.
+      </p>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <h3>شراكات تنفيذية طويلة الأمد</h3>
+          <div class="card-subtype">أكثر من 10 سنوات من التعاون المستمر</div>
+          <p>
+            تعاون طويل مع قيادات STC التنفيذية، إضافة إلى خدمة مستقرة في الفنار، هنكل وسمو،
+            مما يعكس الثقة العالية، الاستقرار، وجودة الأداء على مدى سنوات.
+          </p>
+          <div class="tags">
+            <span class="tag">ثقة</span>
+            <span class="tag">خدمة طويلة</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <h3>دعم المجالس واللجان</h3>
+          <div class="card-subtype">حوكمة واجتماعات عليا</div>
+          <p>
+            دعم اجتماعات مجالس الإدارة واللجان من خلال إعداد الجداول، تجهيز الملفات،
+            صياغة المحاضر، وضمان التنفيذ المنظم لقرارات القيادة.
+          </p>
+          <div class="tags">
+            <span class="tag">مجالس الإدارة</span>
+            <span class="tag">حوكمة</span>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
-
-  <script src="../animations.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
