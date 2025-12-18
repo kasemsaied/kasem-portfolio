@@ -17,8 +17,8 @@
       --accent:#c89b3c;
       --accent-soft:rgba(200,155,60,.14);
       --border-soft:#e4d5bc;
-      --shadow:0 10px 30px rgba(0,0,0,.10);
-      --shadow-soft:0 8px 22px rgba(0,0,0,.08);
+      --shadow:0 14px 34px rgba(0,0,0,.14);
+      --shadow-soft:0 10px 26px rgba(0,0,0,.09);
       --radius-lg:18px;
       --radius-md:14px;
       --max:1040px;
@@ -29,14 +29,14 @@
     html,body{height:100%}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Helvetica Neue",sans-serif;
       background:var(--bg-body);
       color:var(--text-main);
     }
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    /* Header */
+    /* ===== Header (same simple top bar) ===== */
     header{
       background:var(--bg-header);
       color:#fff;
@@ -58,11 +58,12 @@
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.6px;
       text-transform:uppercase;
       font-size:12px;
       opacity:.95;
+      white-space:nowrap;
     }
     .brand-badge{
       width:18px;height:18px;border-radius:999px;
@@ -93,79 +94,69 @@
       transform:translateY(-1px);
     }
 
-    /* Layout */
     main{
       max-width:var(--max);
       margin:0 auto;
       padding:18px 16px 44px;
     }
 
-    .top-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .top-grid{grid-template-columns:1fr}
-    }
-
-    /* “Card” base */
+    /* ===== Card base (keep old shape) ===== */
     .card{
       background:var(--bg-card);
       border:1px solid var(--border-soft);
       border-radius:var(--radius-lg);
       box-shadow:var(--shadow-soft);
+      position:relative;
+      overflow:hidden;
+    }
+    .card-pad{padding:14px}
+
+    /* ===== Motion (hover + click) ===== */
+    .card{
       transition:
         transform .22s var(--ease),
         box-shadow .22s var(--ease),
         border-color .22s var(--ease),
         background .22s var(--ease);
-      position:relative;
-      overflow:hidden;
-      will-change: transform;
+      will-change:transform;
+      cursor:pointer;
     }
-
-    /* HOVER move */
-    .card.hover-move:hover{
-      transform: translateY(-4px);
+    .card:hover{
+      transform:translateY(-5px);
       box-shadow:var(--shadow);
-      border-color: rgba(200,155,60,.55);
+      border-color:rgba(200,155,60,.55);
     }
-
-    /* CLICK move (tap/press) */
-    .card.click-move:active{
-      transform: translateY(-2px) scale(.985);
-      box-shadow:0 12px 28px rgba(0,0,0,.14);
+    .card:active{
+      transform:translateY(-2px) scale(.99);
     }
-
-    /* CLICK toggle “active” (stays briefly for nice feedback) */
     .card.is-clicked{
-      transform: translateY(-8px) scale(1.01);
-      box-shadow:0 16px 38px rgba(0,0,0,.18);
-      border-color: rgba(200,155,60,.70);
-      background:linear-gradient(180deg, #fff7ea, var(--bg-card));
+      transform:translateY(-8px) scale(1.01);
+      box-shadow:0 18px 42px rgba(0,0,0,.18);
+      border-color:rgba(200,155,60,.75);
+      background:linear-gradient(180deg,#fff7ea,var(--bg-card));
     }
 
-    .card:focus-within{
-      outline:3px solid rgba(200,155,60,.35);
-      outline-offset:2px;
-    }
-
-    /* Hero */
-    .hero{
+    /* ===== TOP main card layout (same as your screenshot) ===== */
+    .top-main{
       padding:18px;
       display:grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 140px 1fr;
       gap:16px;
       align-items:center;
     }
-    @media (max-width:560px){
-      .hero{grid-template-columns:1fr; text-align:center}
-      .hero .avatar{margin:0 auto}
-      .hero .cta{justify-content:center}
+    @media (max-width: 640px){
+      .top-main{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
     }
 
+    .profile-left{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
     .avatar{
       width:110px;height:110px;border-radius:999px;
       border:3px solid var(--accent);
@@ -174,17 +165,20 @@
       overflow:hidden;
     }
     .avatar img{width:100%;height:100%;object-fit:cover}
-    .kname{
-      font-weight:800;
+    .name{
+      font-weight:900;
       margin:0;
-      font-size:18px;
-      letter-spacing:.2px;
+      font-size:13px;
+      line-height:1.1;
+      text-align:center;
     }
-    .ktitle{
-      margin:2px 0 10px;
+    .role{
+      margin:0;
+      font-size:11px;
       color:var(--text-muted);
-      font-size:12.5px;
+      text-align:center;
     }
+
     .pill{
       display:inline-flex;
       gap:8px;
@@ -193,27 +187,36 @@
       border-radius:999px;
       border:1px solid var(--border-soft);
       background:var(--bg-card-soft);
-      font-size:11px;
+      font-size:10.5px;
       color:var(--text-muted);
-      margin-bottom:10px;
+      margin-bottom:8px;
       max-width:fit-content;
     }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:20px;
-      line-height:1.25;
+    @media (max-width: 640px){
+      .pill{margin:0 auto 8px}
     }
-    .hero p{
-      margin:0 0 12px;
+
+    .headline{
+      margin:0 0 8px;
+      font-size:18px;
+      line-height:1.25;
+      font-weight:900;
+    }
+    .summary{
+      margin:0 0 10px;
       color:var(--text-muted);
-      font-size:13px;
+      font-size:12.5px;
       line-height:1.6;
     }
+
     .cta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
+    }
+    @media (max-width:640px){
+      .cta{justify-content:center}
     }
     .btn{
       display:inline-flex;
@@ -221,44 +224,42 @@
       justify-content:center;
       gap:8px;
       border-radius:999px;
-      padding:10px 12px;
+      padding:9px 12px;
       font-size:12px;
-      font-weight:700;
+      font-weight:800;
       border:1px solid var(--border-soft);
       background:transparent;
       cursor:pointer;
-      transition:transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
       user-select:none;
+      transition:transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
     }
     .btn.primary{
-      background:linear-gradient(180deg, #d6ad4d, #b8892c);
-      border-color: rgba(0,0,0,.10);
+      background:linear-gradient(180deg,#d6ad4d,#b8892c);
+      border-color:rgba(0,0,0,.10);
       color:#1a140b;
       box-shadow:0 10px 22px rgba(0,0,0,.12);
     }
+    .btn.ghost{background:rgba(255,255,255,.35)}
     .btn:hover{transform:translateY(-1px)}
     .btn:active{transform:translateY(0) scale(.99)}
-    .btn.ghost{
-      background:rgba(255,255,255,.35);
-    }
 
-    /* Small cards row */
+    /* ===== 2 cards under the main top card ===== */
     .mini-grid{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:16px;
       margin-top:16px;
     }
     @media (max-width: 920px){
       .mini-grid{grid-template-columns:1fr}
     }
-    .card-pad{padding:14px}
-
     .card-title{
-      font-weight:800;
+      font-weight:900;
       margin:0 0 10px;
       font-size:13px;
     }
+
+    /* Quick facts */
     .facts{
       display:grid;
       grid-template-columns: 120px 1fr;
@@ -280,24 +281,23 @@
       border:1px solid var(--border-soft);
       background:var(--bg-card-soft);
       color:var(--text-muted);
-      transition:transform .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
     }
 
-    /* Skills highlight */
+    /* Skills highlights */
     .skill-cols{
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns:1fr 1fr 1fr;
       gap:10px;
     }
-    @media (max-width:560px){
+    @media (max-width: 640px){
       .skill-cols{grid-template-columns:1fr}
     }
     .skill{
       padding:12px;
       border-radius:var(--radius-md);
       border:1px solid var(--border-soft);
-      background:linear-gradient(180deg, #fff7ea, var(--bg-card));
-      min-height:120px;
+      background:linear-gradient(180deg,#fff7ea,var(--bg-card));
+      min-height:115px;
     }
     .skill .tag{
       display:inline-flex;
@@ -307,22 +307,14 @@
       border:1px solid rgba(200,155,60,.35);
       background:rgba(200,155,60,.10);
       color:#7a5b21;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.2px;
       margin-bottom:8px;
     }
-    .skill h3{
-      margin:0 0 6px;
-      font-size:12.5px;
-    }
-    .skill p{
-      margin:0;
-      font-size:11.5px;
-      color:var(--text-muted);
-      line-height:1.5;
-    }
+    .skill h3{margin:0 0 6px;font-size:12.5px}
+    .skill p{margin:0;font-size:11.5px;color:var(--text-muted);line-height:1.5}
 
-    /* Support cards */
+    /* ===== Bottom section: professional 3-column grid ===== */
     .section-title{
       margin:18px 2px 10px;
       font-size:13px;
@@ -331,22 +323,25 @@
     }
     .support-grid{
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:14px;
     }
-    @media (max-width:980px){
-      .support-grid{grid-template-columns:1fr 1fr}
+    @media (max-width: 980px){
+      .support-grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
     }
-    @media (max-width:620px){
-      .support-grid{grid-template-columns:1fr}
+    @media (max-width: 620px){
+      .support-grid{grid-template-columns: 1fr;}
     }
+
     .support{
       padding:12px;
       display:flex;
       flex-direction:column;
       gap:8px;
-      min-height:110px;
+      min-height:112px;
+      cursor:pointer;
     }
+    /* make support cards same motion (already .card) */
     .support .top{
       display:flex;
       align-items:flex-start;
@@ -372,7 +367,7 @@
       border:1px solid rgba(200,155,60,.35);
       background:rgba(200,155,60,.12);
       color:#7a5b21;
-      font-weight:800;
+      font-weight:900;
       white-space:nowrap;
     }
 
@@ -408,19 +403,24 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="card hover-move click-move js-click-card" aria-label="Hero section">
-      <div class="hero">
-        <div class="avatar" aria-hidden="true">
-          <!-- Replace with your own photo path if you want -->
-          <img src="images/kasem.jpg" alt="Kasem Saied Saied" onerror="this.style.display='none';" />
+    <!-- TOP MAIN CARD (keeps old shape / photo area) -->
+    <section class="card js-click-card" aria-label="Hero section">
+      <div class="top-main">
+        <div class="profile-left">
+          <div class="avatar" aria-hidden="true">
+            <!-- Keep your same photo path here -->
+            <img src="images/kasem.jpg" alt="Kasem Saied Saied" onerror="this.style.display='none';" />
+          </div>
+          <p class="name">Kasem Saied Saied</p>
+          <p class="role">Senior Executive Assistant</p>
         </div>
 
         <div>
           <div class="pill">EXECUTIVE SUPPORT • DISCRETION • RELIABILITY</div>
 
-          <h1>Senior Executive Assistant to chairmen, CEOs &amp; Senior Leaders</h1>
-          <p>
+          <h1 class="headline">Senior Executive Assistant to chairmen, CEOs &amp; Senior Leaders</h1>
+
+          <p class="summary">
             With 24+ years of experience directly supporting C-suite and senior executives in Saudi Arabia,
             I specialize in executive operations, communication and workflow excellence across
             telecommunications, multinational environments and private business groups.
@@ -431,17 +431,16 @@
             <a class="btn ghost" href="contact.html">Contact Me</a>
           </div>
 
-          <p style="margin-top:10px; font-size:11.5px; color:var(--text-muted);">
+          <p class="summary" style="margin-top:10px;font-size:11.5px;">
             Based in Riyadh • Open to onsite roles in Saudi Arabia and remote Executive Assistant / C-suite support aligned with US time zones.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- MINI GRID -->
+    <!-- QUICK FACTS + SKILLS (same old card style, just refined) -->
     <section class="mini-grid" aria-label="Quick facts and skills">
-      <!-- Quick Facts -->
-      <div class="card card-pad hover-move click-move js-click-card">
+      <div class="card card-pad js-click-card">
         <h2 class="card-title">Quick Facts</h2>
 
         <div class="facts">
@@ -460,8 +459,7 @@
         </div>
       </div>
 
-      <!-- Skills Highlights -->
-      <div class="card card-pad hover-move click-move js-click-card">
+      <div class="card card-pad js-click-card">
         <h2 class="card-title">Skills Highlights</h2>
 
         <div class="skill-cols">
@@ -480,18 +478,17 @@
           <div class="skill">
             <div class="tag">TECHNOLOGY</div>
             <h3>Productivity &amp; Tools</h3>
-            <p>MS Office, Google Workspace and emerging tools like Notion, Slack and modern AI tools.</p>
+            <p>MS Office, Google Workspace and modern tools like Notion, Slack and modern AI tools.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SUPPORT SECTION -->
+    <!-- BOTTOM CARDS (3 columns, professional) -->
     <h3 class="section-title">How I Support Executives</h3>
 
     <section class="support-grid" aria-label="Support cards">
-      <!-- Card 1 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Calendar &amp; Inbox Mastery</h4>
           <span class="badge">Time</span>
@@ -499,8 +496,7 @@
         <p>Managing complex calendars, priorities and shifting schedules so leaders focus on what matters.</p>
       </article>
 
-      <!-- Card 2 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Executive Communication</h4>
           <span class="badge">Clarity</span>
@@ -508,17 +504,15 @@
         <p>Drafting and polishing emails, memos, reports and presentations in a clear, professional voice.</p>
       </article>
 
-      <!-- Card 3 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Travel &amp; Meetings</h4>
           <span class="badge">Logistics</span>
         </div>
-        <p>Itineraries, visas, agendas and coordination with VIPs—ensuring smooth end-to-end execution.</p>
+        <p>Itineraries, agendas and coordination with VIPs—ensuring smooth end-to-end execution.</p>
       </article>
 
-      <!-- Card 4 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Office Systems &amp; Procedures</h4>
           <span class="badge">Systems</span>
@@ -526,17 +520,15 @@
         <p>Structured workflows, filing systems and process improvements that keep the executive office consistent.</p>
       </article>
 
-      <!-- Card 5 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Stakeholder Coordination</h4>
           <span class="badge">Liaison</span>
         </div>
-        <p>Acting as a reliable point of contact between executives, leadership teams, departments and partners.</p>
+        <p>Reliable point of contact between executives, departments and external partners.</p>
       </article>
 
-      <!-- Card 6 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Tools &amp; Technology</h4>
           <span class="badge">Digital</span>
@@ -544,8 +536,7 @@
         <p>Confident with Microsoft Office, Google Workspace and modern tools to optimize productivity.</p>
       </article>
 
-      <!-- Card 7 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Workflow Optimization</h4>
           <span class="badge">Process</span>
@@ -553,26 +544,15 @@
         <p>Identifying bottlenecks, improving handoffs and building repeatable routines for efficiency.</p>
       </article>
 
-      <!-- Card 8 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Confidential Matter Handling</h4>
           <span class="badge">Trust</span>
         </div>
-        <p>Managing sensitive information and contracts with full discretion and professional standards.</p>
+        <p>Managing sensitive information with full discretion and professional standards.</p>
       </article>
 
-      <!-- Card 9 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
-        <div class="top">
-          <h4>Strategic Scheduling</h4>
-          <span class="badge">Strategy</span>
-        </div>
-        <p>Aligning priorities, time blocks and agenda planning to support executive goals and outcomes.</p>
-      </article>
-
-      <!-- Card 10 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
           <h4>Board &amp; Leadership Documentation</h4>
           <span class="badge">Docs</span>
@@ -580,22 +560,28 @@
         <p>Preparing briefs, decks and supporting documents for board packs and committee reporting.</p>
       </article>
 
-      <!-- Card 11 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
-          <h4>Vendor &amp; Partnership Management</h4>
-          <span class="badge">Partners</span>
+          <h4>Project &amp; Deadline Tracking</h4>
+          <span class="badge">Track</span>
         </div>
-        <p>Coordinating procurement and service providers to support office operations and executive needs.</p>
+        <p>Following deliverables, reminders and actions to keep commitments on time and visible.</p>
       </article>
 
-      <!-- Card 12 -->
-      <article class="card support hover-move click-move js-click-card" tabindex="0">
+      <article class="card support js-click-card" tabindex="0">
         <div class="top">
-          <h4>Crisis &amp; Issue Management</h4>
-          <span class="badge">Calm</span>
+          <h4>Meeting Intelligence &amp; Follow-up</h4>
+          <span class="badge">Align</span>
         </div>
-        <p>Remaining composed under pressure—keeping leadership informed and actions documented and tracked.</p>
+        <p>Agenda shaping, structured minutes and action follow-up to drive decisions and accountability.</p>
+      </article>
+
+      <article class="card support js-click-card" tabindex="0">
+        <div class="top">
+          <h4>Personal &amp; Family Logistics</h4>
+          <span class="badge">Support</span>
+        </div>
+        <p>Managing private office needs, appointments and arrangements with discretion and calm execution.</p>
       </article>
     </section>
   </main>
@@ -605,33 +591,23 @@
   </footer>
 
   <script>
-    // CLICK "move" effect: add a short active class on click / Enter / Space
+    // Click “pop” animation (keeps same design)
     (function () {
       const cards = document.querySelectorAll('.js-click-card');
 
-      function clickAnimate(card){
-        card.classList.remove('is-clicked'); // reset if already on
-        // force reflow so animation re-triggers
-        void card.offsetWidth;
-        card.classList.add('is-clicked');
-        window.setTimeout(() => card.classList.remove('is-clicked'), 260);
+      function pop(el){
+        el.classList.remove('is-clicked');
+        void el.offsetWidth; // restart animation
+        el.classList.add('is-clicked');
+        setTimeout(() => el.classList.remove('is-clicked'), 260);
       }
 
-      cards.forEach(card => {
-        // make non-focusable cards focusable only if needed (most already are)
-        if (!card.hasAttribute('tabindex') && card.tagName.toLowerCase() !== 'a' && card.tagName.toLowerCase() !== 'button') {
-          card.setAttribute('tabindex', '0');
-        }
-
-        card.addEventListener('click', (e) => {
-          // don't animate if clicking a real button/link inside (it will still animate parent if you want)
-          clickAnimate(card);
-        });
-
-        card.addEventListener('keydown', (e) => {
+      cards.forEach(el => {
+        el.addEventListener('click', () => pop(el));
+        el.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            clickAnimate(card);
+            pop(el);
           }
         });
       });
