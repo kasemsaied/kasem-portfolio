@@ -6,11 +6,13 @@
   <title>Home — Kasem Saied Saied</title>
   <meta name="description" content="Kasem Saied Saied — Senior Executive Assistant to chairmen, CEOs & Senior Leaders." />
 
+  <!-- Executive font stack (professional + premium) -->
   <style>
     :root{
+      /* Identity: gold + black + warm cream */
       --bg: #f3efe6;
       --panel: #ffffff;
-      --ink: #1a1a1a;
+      --ink: #121212;
       --muted: #6a6257;
 
       --gold: #b08a2a;
@@ -26,17 +28,22 @@
       --radius-sm: 12px;
 
       --max: 980px;
+
+      /* Typography */
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      font-family: var(--font);
       color:var(--ink);
       background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ===== UNITED IDENTITY TOP BAR (matches your screenshot) ===== */
+    /* ===== Top Bar (unified identity) ===== */
     .topbar{
       position:sticky; top:0; z-index:50;
       background: linear-gradient(90deg, #0f0f0f 0%, #1b1b1b 45%, #b08a2a 100%);
@@ -57,7 +64,7 @@
       gap:10px;
       color:#fff;
       font-weight:800;
-      letter-spacing:.45px;
+      letter-spacing:.55px;
       text-transform:uppercase;
       font-size: 13px;
       user-select:none;
@@ -85,10 +92,11 @@
       color:#efe6d2;
       text-decoration:none;
       font-size: 13px;
+      font-weight:600;
       padding: 6px 2px;
       position:relative;
       user-select:none;
-      opacity:.95;
+      opacity:.96;
     }
     nav a:hover{ opacity:1; }
     nav a.active::after{
@@ -101,14 +109,14 @@
       border-radius: 2px;
     }
 
-    /* ===== PAGE WRAP ===== */
+    /* ===== Page Wrap ===== */
     .wrap{
       max-width: var(--max);
       margin: 18px auto 44px;
       padding: 0 14px;
     }
 
-    /* ===== HERO ===== */
+    /* ===== Hero ===== */
     .hero{
       background: var(--panel);
       border: 1px solid var(--stroke);
@@ -127,10 +135,8 @@
       align-items:center;
       gap: 14px;
     }
-
-    /* PHOTO: now fixed to your repo root file */
     .avatar{
-      width:78px; height:78px;
+      width:82px; height:82px;
       border-radius: 999px;
       border: 3px solid var(--gold);
       box-shadow: 0 10px 20px rgba(176,138,42,.18);
@@ -143,38 +149,44 @@
       object-fit:cover;
       display:block;
     }
-
     .profile h2{
       margin:0;
       font-size: 13px;
       line-height:1.25;
+      font-weight:800;
+      letter-spacing:.2px;
     }
     .profile p{
       margin:2px 0 0;
       font-size: 11px;
       color: var(--muted);
+      font-weight:600;
     }
 
     .hero-main small{
       display:block;
       text-align:center;
       font-size: 10px;
-      letter-spacing: .6px;
+      letter-spacing: .75px;
       color: #6b5f49;
       text-transform:uppercase;
       margin-bottom: 6px;
+      font-weight:800;
     }
     .hero-main h1{
       margin: 0;
-      font-size: 18px;
+      font-size: 18.5px;
       line-height: 1.25;
+      letter-spacing:.1px;
+      font-weight:900;
     }
     .hero-main .sub{
       margin: 8px 0 12px;
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-      max-width: 640px;
+      font-size: 12.3px;
+      line-height: 1.55;
+      max-width: 680px;
+      font-weight:500;
     }
     .cta{
       display:flex;
@@ -185,10 +197,10 @@
     .btn{
       border: 1px solid var(--gold);
       background: linear-gradient(180deg, #f7e8bd 0%, #e6c978 100%);
-      color:#1a1a1a;
+      color:#111;
       padding: 9px 12px;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 12px;
       cursor:pointer;
       text-decoration:none;
@@ -203,14 +215,16 @@
       background: transparent;
       color: var(--ink);
       border-color: #d9c9aa;
+      font-weight:800;
     }
     .note{
       margin-top: 10px;
-      font-size: 10.5px;
+      font-size: 10.8px;
       color: #6d645a;
+      font-weight:600;
     }
 
-    /* ===== UPPER PANELS ===== */
+    /* ===== Upper Panels ===== */
     .upper{
       margin-top: 14px;
       display:grid;
@@ -227,7 +241,9 @@
     .panel h3{
       margin: 0 0 10px;
       font-size: 12px;
-      letter-spacing:.2px;
+      font-weight:900;
+      letter-spacing:.3px;
+      color:#2a241b;
     }
     .facts{
       display:grid;
@@ -241,7 +257,7 @@
       border-bottom: 1px dashed #eee2cd;
     }
     .fact-row:last-child{ border-bottom:0; padding-bottom:0; }
-    .fact-row b{ font-size: 11px; color: #5f564b; font-weight:800;}
+    .fact-row b{ font-size: 11px; color: #5f564b; font-weight:900;}
     .fact-row span{ font-size: 11px; color: #1e1e1e; font-weight:700;}
 
     .chips{
@@ -261,6 +277,7 @@
       align-items:center;
       gap: 8px;
       user-select:none;
+      font-weight:700;
     }
     .chip .dot{
       width: 7px; height:7px; border-radius: 999px;
@@ -268,7 +285,7 @@
       box-shadow: 0 0 0 3px rgba(176,138,42,.12);
     }
 
-    /* ===== CLICK-MOVE EFFECT (shared by skills + bottom boxes) ===== */
+    /* ===== Move on click (shared) ===== */
     .move-card{
       position:relative;
       background: #fffdf6;
@@ -295,7 +312,7 @@
       transform: translateY(-10px) rotate(-0.6deg);
       box-shadow: var(--shadow-2);
       border-color: rgba(176,138,42,.75);
-      filter: saturate(1.03);
+      filter: saturate(1.02);
     }
     .move-card.is-active::after{
       content:"";
@@ -314,7 +331,7 @@
       100%{ transform: translateY(-10px) rotate(-0.6deg) scale(1); }
     }
 
-    /* ===== SKILLS HIGHLIGHTS (now move-card) ===== */
+    /* ===== Skills Highlights ===== */
     .skills{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -323,7 +340,7 @@
     .skill .tag{
       font-size: 9px;
       font-weight:900;
-      letter-spacing:.4px;
+      letter-spacing:.45px;
       color:#6a5a3a;
       text-transform:uppercase;
       border: 1px solid rgba(176,138,42,.35);
@@ -335,26 +352,28 @@
     }
     .skill h4{
       margin: 0 0 6px;
-      font-size: 12px;
+      font-size: 12.2px;
       line-height:1.2;
       font-weight:900;
+      letter-spacing:.1px;
     }
     .skill p{
       margin:0;
-      font-size: 10.5px;
+      font-size: 10.7px;
       color: var(--muted);
       line-height: 1.5;
+      font-weight:600;
     }
 
     .section-title{
       margin: 18px 0 10px;
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 950;
       color:#2b2722;
-      letter-spacing: .2px;
+      letter-spacing: .25px;
     }
 
-    /* ===== BOTTOM CARDS ===== */
+    /* ===== Task Boxes (ALL 16 like old) ===== */
     .cards{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -397,15 +416,17 @@
     }
     .card h5{
       margin: 0 0 4px;
-      font-size: 11.5px;
+      font-size: 11.7px;
       line-height: 1.25;
-      font-weight: 900;
+      font-weight:950;
+      letter-spacing:.1px;
     }
     .card p{
       margin:0;
-      font-size: 10.5px;
+      font-size: 10.6px;
       line-height: 1.45;
       color: var(--muted);
+      font-weight:600;
     }
 
     .footer{
@@ -413,6 +434,7 @@
       text-align:center;
       color:#6d645a;
       font-size: 11px;
+      font-weight:700;
     }
 
     /* Responsive */
@@ -422,12 +444,12 @@
       .skills{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: repeat(2, 1fr); }
       .topbar-inner{ flex-direction:column; gap:10px; }
+      nav{ gap: 14px; }
     }
     @media (max-width: 520px){
       .cards{ grid-template-columns: 1fr; }
       .profile{ justify-content:center; }
-      .hero-main h1{ font-size: 16px; }
-      nav{ gap: 14px; }
+      .hero-main h1{ font-size: 16.5px; }
     }
   </style>
 </head>
@@ -455,7 +477,6 @@
       <div class="hero-grid">
         <div class="profile">
           <div class="avatar" title="Kasem Saied Saied">
-            <!-- ✅ FIXED: your repo root photo -->
             <img src="profile.jpg" alt="Kasem Saied Saied" />
           </div>
           <div>
@@ -466,7 +487,7 @@
 
         <div class="hero-main">
           <small>Executive Support • Discretion • Reliability</small>
-          <h1>Senior Executive Assistant to chairmen, CEOs & Senior Leaders</h1>
+          <h1>Senior Executive Assistant to chairmen, CEOs &amp; Senior Leaders</h1>
           <p class="sub">
             With 24+ years of experience directly supporting C-suite and senior executives in Saudi Arabia,
             I specialize in executive operations, communication and workflow excellence across telecommunications,
@@ -498,9 +519,9 @@
         </div>
 
         <div class="chips" aria-label="Highlights">
-          <span class="chip"><span class="dot"></span>Calendar & inbox control</span>
-          <span class="chip"><span class="dot"></span>Board & committee support</span>
-          <span class="chip"><span class="dot"></span>Travel & logistics</span>
+          <span class="chip"><span class="dot"></span>Calendar &amp; inbox control</span>
+          <span class="chip"><span class="dot"></span>Board &amp; committee support</span>
+          <span class="chip"><span class="dot"></span>Travel &amp; logistics</span>
           <span class="chip"><span class="dot"></span>Confidential documents</span>
         </div>
       </div>
@@ -508,11 +529,10 @@
       <div class="panel">
         <h3>Skills Highlights</h3>
 
-        <!-- ✅ Now these 3 boxes MOVE like the down boxes -->
         <div class="skills" id="skillsBoxes">
           <div class="skill move-card" tabindex="0" role="button" aria-pressed="false">
             <span class="tag">Executive Operations</span>
-            <h4>Office & Leadership Support</h4>
+            <h4>Office &amp; Leadership Support</h4>
             <p>High-trust day-to-day operations, executive coordination and senior leader support.</p>
           </div>
 
@@ -524,7 +544,7 @@
 
           <div class="skill move-card" tabindex="0" role="button" aria-pressed="false">
             <span class="tag">Technology</span>
-            <h4>Productivity & Tools</h4>
+            <h4>Productivity &amp; Tools</h4>
             <p>Microsoft 365, Google Workspace and intelligent tools for productivity and research.</p>
           </div>
         </div>
@@ -533,11 +553,11 @@
 
     <div class="section-title">How I Support Executives</div>
 
+    <!-- ✅ ALL 16 boxes (same count as your old page) -->
     <section class="cards" id="supportCards">
-      <!-- Bottom boxes: keep same look + move-card behavior -->
       <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
         <div class="top"><span class="icon">🗓️</span><span class="pill">Time</span></div>
-        <h5>Calendar & Inbox Mastery</h5>
+        <h5>Calendar &amp; Inbox Mastery</h5>
         <p>Managing complex calendars, inbox triage and shifting priorities so leaders focus on what truly matters.</p>
       </div>
 
@@ -549,13 +569,13 @@
 
       <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
         <div class="top"><span class="icon">✈️</span><span class="pill">Logistics</span></div>
-        <h5>Travel & Meetings</h5>
+        <h5>Travel &amp; Meetings</h5>
         <p>Coordinating itineraries, travel, agendas and logistics with full trust and attention to detail.</p>
       </div>
 
       <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
         <div class="top"><span class="icon">🧾</span><span class="pill">Systems</span></div>
-        <h5>Office Systems & Procedures</h5>
+        <h5>Office Systems &amp; Procedures</h5>
         <p>Structured workflows, filing systems and process improvement that keep the executive office running smoothly.</p>
       </div>
 
@@ -567,7 +587,7 @@
 
       <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
         <div class="top"><span class="icon">🧰</span><span class="pill">Tools</span></div>
-        <h5>Tools & Technology</h5>
+        <h5>Tools &amp; Technology</h5>
         <p>Confident with Microsoft Office, Google Workspace and planning tools like Notion, Slack and Asana.</p>
       </div>
 
@@ -579,8 +599,56 @@
 
       <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
         <div class="top"><span class="icon">📚</span><span class="pill">Boards</span></div>
-        <h5>Board & Leadership Documentation</h5>
+        <h5>Board &amp; Leadership Documentation</h5>
         <p>Preparing minutes, decks and confidential reports for boards and senior committees.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">⚙️</span><span class="pill">Process</span></div>
+        <h5>Workflow Optimization</h5>
+        <p>Identifying bottlenecks, improving processes and supporting efficient information flow and approvals.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">🔒</span><span class="pill">Trust</span></div>
+        <h5>Confidential Matter Handling</h5>
+        <p>Managing sensitive topics, ensuring discretion, information security and controlled access.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">🏢</span><span class="pill">Partners</span></div>
+        <h5>Vendor &amp; Partnership Management</h5>
+        <p>Coordinating vendors, contracts and service partners, and keeping executive operations aligned.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">🧠</span><span class="pill">Follow-up</span></div>
+        <h5>Meeting Intelligence &amp; Alignment</h5>
+        <p>Designing agendas, capturing decisions and ensuring structured follow-up on action items.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">📌</span><span class="pill">Deadlines</span></div>
+        <h5>Project &amp; Deadline Tracking</h5>
+        <p>Helping track executive commitments, OKRs and key initiatives with reminders and structure.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">✨</span><span class="pill">AI</span></div>
+        <h5>Digital Productivity &amp; AI Tools</h5>
+        <p>Using modern tools and AI assistants to improve speed, accuracy and daily executive support.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">🚨</span><span class="pill">Calm</span></div>
+        <h5>Crisis &amp; Issue Management</h5>
+        <p>Supporting urgent escalations, ensuring clear information flow, and staying composed under pressure.</p>
+      </div>
+
+      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
+        <div class="top"><span class="icon">🏠</span><span class="pill">Support</span></div>
+        <h5>Personal &amp; Family Logistics</h5>
+        <p>Where appropriate, assisting with travel, arrangements and personal logistics to protect executive time.</p>
       </div>
     </section>
 
@@ -588,7 +656,7 @@
   </main>
 
   <script>
-    // Make ALL move-card elements behave the same (skills + lower cards)
+    // Click-to-move: applies to skill highlight boxes + all 16 task boxes
     (function () {
       const cards = Array.from(document.querySelectorAll(".move-card"));
 
