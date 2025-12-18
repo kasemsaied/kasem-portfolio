@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Support Details — Kasem Saied Saied</title>
+  <meta name="description" content="Detailed executive support capabilities — Kasem Saied Saied." />
+
+  <!-- PREMIUM CORPORATE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f3efe6;
+      --panel: #ffffff;
+      --ink: #121212;
+      --muted: #6a6257;
+
+      --gold: #b08a2a;
+      --gold-2: #8a6a18;
+
+      --stroke: #e6dccb;
+      --stroke-2:#eadfcb;
+
+      --shadow: 0 10px 30px rgba(0,0,0,.07);
+      --shadow-2: 0 18px 55px rgba(0,0,0,.16);
+
+      --radius: 14px;
+      --radius-sm: 12px;
+
+      --max: 980px;
+
+      --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: var(--font);
+      color:var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== UNITED IDENTITY TOP BAR ===== */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: linear-gradient(90deg, #0f0f0f 0%, #1b1b1b 45%, #b08a2a 100%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 14px;
+      gap: 10px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+      font-weight:800;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size: 13px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .brand-badge{
+      width:18px; height:18px;
+      border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, #fff6d6 0%, #f3d58b 35%, var(--gold) 70%, var(--gold-2) 100%);
+      box-shadow: 0 4px 10px rgba(176,138,42,.35);
+      display:grid; place-items:center;
+      color:#111;
+      font-size: 10px;
+      font-weight:900;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap: 22px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    nav a{
+      color:#efe6d2;
+      text-decoration:none;
+      font-size: 13px;
+      font-weight:600;
+      padding: 6px 2px;
+      position:relative;
+      user-select:none;
+      opacity:.96;
+    }
+    nav a:hover{ opacity:1; }
+    nav a.active::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      bottom:-4px;
+      height:2px;
+      background: #e6c978;
+      border-radius: 2px;
+    }
+
+    /* ===== PAGE WRAP ===== */
+    .wrap{
+      max-width: var(--max);
+      margin: 18px auto 50px;
+      padding: 0 14px;
+    }
+
+    .hero{
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .hero-top{
+      display:flex;
+      gap: 14px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .title{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .title .badge{
+      width: 34px; height:34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, #fff6d6 0%, #f3d58b 35%, var(--gold) 70%, var(--gold-2) 100%);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      color:#111;
+    }
+    .title h1{
+      margin:0;
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing:.1px;
+    }
+    .hero p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+      font-weight: 600;
+      max-width: 820px;
+    }
+    .back{
+      border: 1px solid #d9c9aa;
+      background: transparent;
+      color:#111;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .back:hover{ box-shadow: 0 10px 24px rgba(176,138,42,.12); transform: translateY(-1px); }
+
+    /* TOC */
+    .toc{
+      margin-top: 14px;
+      background: #fffdf6;
+      border: 1px solid var(--stroke-2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+    .toc h2{
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 950;
+      color:#2a241b;
+      letter-spacing:.25px;
+    }
+    .toc-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .toc a{
+      text-decoration:none;
+      color:#1b1b1b;
+      border: 1px solid var(--stroke);
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 9px 10px;
+      font-weight: 800;
+      font-size: 11px;
+      line-height: 1.25;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .toc a:hover{
+      transform: translateY(-2px);
+      border-color: rgba(176,138,42,.55);
+      box-shadow: 0 14px 35px rgba(0,0,0,.10);
+    }
+    .toc .ico{
+      width: 20px; height:20px;
+      border-radius: 8px;
+      background: #fff7e0;
+      border: 1px solid rgba(176,138,42,.35);
+      display:grid;
+      place-items:center;
+      font-size: 12px;
+      flex: 0 0 auto;
+    }
+
+    /* SECTIONS */
+    .section{
+      margin-top: 14px;
+      background: var(--panel);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      scroll-margin-top: 88px;
+    }
+    .sec-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      border-bottom: 1px dashed #eee2cd;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .sec-title{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .sec-title .ico{
+      width: 30px; height:30px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, #fff6d6 0%, #f3d58b 35%, var(--gold) 70%, var(--gold-2) 100%);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      color:#111;
+      flex: 0 0 auto;
+    }
+    .sec-title h3{
+      margin:0;
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing:.1px;
+    }
+    .sec-title p{
+      margin:4px 0 0;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.6;
+      font-weight:600;
+      max-width: 720px;
+    }
+    .pill{
+      font-size: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(176,138,42,.35);
+      background:#fffdf6;
+      color:#6a5a3a;
+      font-weight:900;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .section h4{
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: 950;
+      color:#2a241b;
+      letter-spacing:.2px;
+    }
+    ul{
+      margin: 0;
+      padding-left: 18px;
+      color:#3e372e;
+      font-size: 11.6px;
+      line-height: 1.7;
+      font-weight:600;
+    }
+    .mini{
+      margin-top: 10px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .mini .box{
+      border: 1px solid var(--stroke-2);
+      border-radius: 12px;
+      background: #fffdf6;
+      padding: 10px;
+    }
+    .mini .box b{
+      display:block;
+      font-size: 11px;
+      font-weight: 950;
+      margin-bottom: 4px;
+    }
+    .mini .box span{
+      display:block;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .footer{
+      margin-top: 18px;
+      text-align:center;
+      color:#6d645a;
+      font-size: 11px;
+      font-weight:700;
+    }
+
+    @media (max-width: 980px){
+      .toc-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .toc-grid{ grid-template-columns: 1fr; }
+      .mini{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-badge">KS</span>
+        <span>KASEM SAIED SAIED</span>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="title">
+          <div class="badge">KS</div>
+          <h1>Executive Support — Detailed Capabilities</h1>
+        </div>
+        <a class="back" href="index.html">← Back to Home</a>
+      </div>
+      <p>
+        Below is a deeper view of how I support senior leaders. Each section expands the related “How I Support Executives” card from the Home page,
+        including what I deliver, what you can expect, and the outcomes it creates.
+      </p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <section class="toc" aria-label="Table of contents">
+      <h2>Quick Navigation</h2>
+      <div class="toc-grid">
+        <a href="#calendar"><span class="ico">🗓️</span> Calendar & Inbox</a>
+        <a href="#comms"><span class="ico">✉️</span> Executive Communication</a>
+        <a href="#travel"><span class="ico">✈️</span> Travel & Meetings</a>
+        <a href="#systems"><span class="ico">🧾</span> Office Systems</a>
+
+        <a href="#stakeholders"><span class="ico">🤝</span> Stakeholders</a>
+        <a href="#tools"><span class="ico">🧰</span> Tools & Technology</a>
+        <a href="#strategy"><span class="ico">🎯</span> Strategic Scheduling</a>
+        <a href="#board"><span class="ico">📚</span> Board Documentation</a>
+
+        <a href="#workflow"><span class="ico">⚙️</span> Workflow Optimization</a>
+        <a href="#confidential"><span class="ico">🔒</span> Confidential Matters</a>
+        <a href="#vendors"><span class="ico">🏢</span> Vendors & Partners</a>
+        <a href="#followup"><span class="ico">🧠</span> Meeting Follow-Up</a>
+
+        <a href="#projects"><span class="ico">📌</span> Project Tracking</a>
+        <a href="#ai"><span class="ico">✨</span> AI Productivity</a>
+        <a href="#crisis"><span class="ico">🚨</span> Crisis Support</a>
+        <a href="#personal"><span class="ico">🏠</span> Personal Logistics</a>
+      </div>
+    </section>
+
+    <!-- 16 DETAIL SECTIONS -->
+
+    <section class="section" id="calendar">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🗓️</div>
+          <div>
+            <h3>Calendar & Inbox Mastery</h3>
+            <p>Protecting executive time through priority management, structured inbox handling, and calendar intelligence.</p>
+          </div>
+        </div>
+        <span class="pill">Time</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Daily inbox triage: prioritize, draft replies, and escalate appropriately.</li>
+        <li>Calendar optimization: protect focus blocks, preparation time, and buffers.</li>
+        <li>Meeting hygiene: objective-first scheduling and the right attendees only.</li>
+        <li>Follow-up reminders and tracking so nothing drops.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>More executive focus time, fewer interruptions, and better decision pace.</span></div>
+        <div class="box"><b>Standard</b><span>Fast response, clear priorities, and professional stakeholder handling.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="comms">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">✉️</div>
+          <div>
+            <h3>Executive Communication</h3>
+            <p>Clear, concise, professional communications that reflect leadership presence and reduce back-and-forth.</p>
+          </div>
+        </div>
+        <span class="pill">Clarity</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Drafting emails, memos, letters, announcements, and stakeholder updates.</li>
+        <li>Bilingual correspondence support (Arabic/English) when needed.</li>
+        <li>Tone control: diplomatic, direct, or formal depending on audience and context.</li>
+        <li>Presentation polishing and executive-ready formatting.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Sharper messaging, faster alignment, and stronger executive presence.</span></div>
+        <div class="box"><b>Standard</b><span>Accuracy, confidentiality, and brand-consistent communication.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="travel">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">✈️</div>
+          <div>
+            <h3>Travel & Meetings</h3>
+            <p>End-to-end travel planning and meeting coordination with contingency planning and precision.</p>
+          </div>
+        </div>
+        <span class="pill">Logistics</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Itineraries, flights, hotels, ground transport, and calendar synchronization.</li>
+        <li>Meeting confirmations, prep materials, and stakeholder coordination.</li>
+        <li>Backup plans for delays and last-minute changes.</li>
+        <li>Expense documentation support and trip summaries (if required).</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Smooth travel execution and stress-free meetings.</span></div>
+        <div class="box"><b>Standard</b><span>Detail accuracy and professional coordination across time zones.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="systems">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🧾</div>
+          <div>
+            <h3>Office Systems & Procedures</h3>
+            <p>Reliable executive office operations with systems that scale and remain audit-ready.</p>
+          </div>
+        </div>
+        <span class="pill">Systems</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Document control, filing standards, and version management.</li>
+        <li>Templates for agendas, minutes, trackers, and correspondence.</li>
+        <li>Process mapping to simplify workflows and reduce cycle time.</li>
+        <li>Confidential document handling and permissions discipline.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Consistency, speed, and fewer operational errors.</span></div>
+        <div class="box"><b>Standard</b><span>Clear structure that leadership can rely on daily.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="stakeholders">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🤝</div>
+          <div>
+            <h3>Stakeholder Coordination</h3>
+            <p>Trusted liaison across internal and external stakeholders to keep alignment and reduce friction.</p>
+          </div>
+        </div>
+        <span class="pill">Liaison</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Executive point-of-contact for leadership teams and key partners.</li>
+        <li>Coordination between departments for approvals and deliverables.</li>
+        <li>Discreet handling of escalations and sensitive communications.</li>
+        <li>Relationship management with professionalism and respect.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Faster decisions and cleaner execution across teams.</span></div>
+        <div class="box"><b>Standard</b><span>Diplomacy, responsiveness, and reliability.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🧰</div>
+          <div>
+            <h3>Tools & Technology</h3>
+            <p>Efficient daily operations using modern productivity tools and structured tracking.</p>
+          </div>
+        </div>
+        <span class="pill">Tools</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Microsoft 365 (Outlook, Teams, Word, Excel, PowerPoint).</li>
+        <li>Google Workspace (Docs, Sheets, Drive) if used by the organization.</li>
+        <li>Task/project tracking: Notion / Asana / Trello (based on company preference).</li>
+        <li>Clean documentation and executive dashboards.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Higher throughput, better tracking, and fewer missed actions.</span></div>
+        <div class="box"><b>Standard</b><span>Tool discipline and clean documentation.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="strategy">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🎯</div>
+          <div>
+            <h3>Strategic Scheduling</h3>
+            <p>Connecting calendar time to priorities, deadlines, and leadership outcomes.</p>
+          </div>
+        </div>
+        <span class="pill">Strategy</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Weekly planning and priority reviews.</li>
+        <li>Strategic meeting cadence and stakeholder rhythm.</li>
+        <li>Time-blocking for deep work and key initiatives.</li>
+        <li>Preparation pipeline for high-stakes engagements.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Better executive focus and consistent progress on priorities.</span></div>
+        <div class="box"><b>Standard</b><span>Proactive planning and calm control of time.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="board">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">📚</div>
+          <div>
+            <h3>Board & Leadership Documentation</h3>
+            <p>Board-level governance support with precision, confidentiality, and documentation standards.</p>
+          </div>
+        </div>
+        <span class="pill">Boards</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Board packs: agendas, briefs, presentations, and supporting materials.</li>
+        <li>Minutes drafting and decision/action tracking.</li>
+        <li>Committee coordination and secure distribution.</li>
+        <li>Document accuracy checks and version control.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Governance quality, clarity, and trusted records.</span></div>
+        <div class="box"><b>Standard</b><span>Confidentiality and precision in every detail.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">⚙️</div>
+          <div>
+            <h3>Workflow Optimization</h3>
+            <p>Improving executive office efficiency by reducing bottlenecks and creating smart systems.</p>
+          </div>
+        </div>
+        <span class="pill">Process</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Identify gaps, delays, and recurring inefficiencies.</li>
+        <li>Standardize trackers, decision logs, and operating rhythms.</li>
+        <li>Simplify approvals and routing processes.</li>
+        <li>Build repeatable weekly execution routines.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Faster execution and clearer accountability.</span></div>
+        <div class="box"><b>Standard</b><span>Consistency and operational excellence.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="confidential">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🔒</div>
+          <div>
+            <h3>Confidential Matter Handling</h3>
+            <p>High-trust handling of sensitive matters with discretion and professional ethics.</p>
+          </div>
+        </div>
+        <span class="pill">Trust</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Secure documents and controlled sharing.</li>
+        <li>Sensitive communications and executive priorities.</li>
+        <li>Discreet coordination with key stakeholders.</li>
+        <li>Need-to-know information discipline.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Protected confidentiality and leadership trust.</span></div>
+        <div class="box"><b>Standard</b><span>Ethics, discretion, and reliability.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="vendors">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🏢</div>
+          <div>
+            <h3>Vendor & Partnership Management</h3>
+            <p>Coordinating vendors and partners smoothly to maintain standards and timelines.</p>
+          </div>
+        </div>
+        <span class="pill">Partners</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Vendor coordination, scheduling, and service follow-up.</li>
+        <li>Basic contract/logistics tracking (as assigned).</li>
+        <li>Quality control and issue escalation support.</li>
+        <li>Keeping executive office aligned with vendor commitments.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Better service quality and fewer operational interruptions.</span></div>
+        <div class="box"><b>Standard</b><span>Professional coordination and timely follow-through.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="followup">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🧠</div>
+          <div>
+            <h3>Meeting Intelligence & Alignment</h3>
+            <p>Turning meetings into outcomes: decisions captured, actions owned, and follow-ups completed.</p>
+          </div>
+        </div>
+        <span class="pill">Follow-up</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Agenda structure and pre-reads coordination.</li>
+        <li>Decision logging and action owner tracking.</li>
+        <li>Follow-up reminders and escalation support.</li>
+        <li>Outcome summaries and status updates.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>More accountability and fewer repeated discussions.</span></div>
+        <div class="box"><b>Standard</b><span>Clean tracking and executive-ready summaries.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">📌</div>
+          <div>
+            <h3>Project & Deadline Tracking</h3>
+            <p>Tracking executive commitments and ensuring deadlines are visible, owned, and achieved.</p>
+          </div>
+        </div>
+        <span class="pill">Deadlines</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Executive trackers for projects and commitments.</li>
+        <li>Deadline visibility and weekly status updates.</li>
+        <li>Risk flags and early escalation.</li>
+        <li>Stakeholder check-ins to maintain momentum.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>On-time delivery and clearer progress visibility.</span></div>
+        <div class="box"><b>Standard</b><span>Discipline, reminders, and consistent follow-through.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">✨</div>
+          <div>
+            <h3>Digital Productivity & AI Tools</h3>
+            <p>Using intelligent tools responsibly to improve speed, accuracy, and quality of executive support.</p>
+          </div>
+        </div>
+        <span class="pill">AI</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Drafting assistance and structured summaries (with discretion).</li>
+        <li>Meeting notes formatting and action extraction.</li>
+        <li>Document refinement and consistency checks.</li>
+        <li>Research support and quick first drafts.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Faster cycles and improved document consistency.</span></div>
+        <div class="box"><b>Standard</b><span>Responsible use aligned with confidentiality requirements.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="crisis">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🚨</div>
+          <div>
+            <h3>Crisis & Issue Management</h3>
+            <p>Calm under pressure: keep information clear, decisions supported, and communication controlled.</p>
+          </div>
+        </div>
+        <span class="pill">Calm</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Rapid coordination and accurate information routing.</li>
+        <li>Urgent scheduling and stakeholder alignment.</li>
+        <li>Documenting actions and decisions for clarity.</li>
+        <li>Maintaining composure and executive focus.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>Faster stabilization and fewer miscommunications.</span></div>
+        <div class="box"><b>Standard</b><span>Composure, speed, and structured communication.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="personal">
+      <div class="sec-head">
+        <div class="sec-title">
+          <div class="ico">🏠</div>
+          <div>
+            <h3>Personal & Family Logistics</h3>
+            <p>Where appropriate and assigned, supporting personal logistics to protect executive time.</p>
+          </div>
+        </div>
+        <span class="pill">Support</span>
+      </div>
+      <h4>What I deliver</h4>
+      <ul>
+        <li>Personal travel support and key arrangements.</li>
+        <li>Scheduling coordination and reminders.</li>
+        <li>Respecting privacy, discretion, and boundaries.</li>
+        <li>Fast response and organized execution.</li>
+      </ul>
+      <div class="mini">
+        <div class="box"><b>Outcome</b><span>More executive time protected for strategic priorities.</span></div>
+        <div class="box"><b>Standard</b><span>Discretion, accuracy, and professional boundaries.</span></div>
+      </div>
+    </section>
+
+    <div class="footer">© 2025 Kasem Saied Saied — Senior Executive Assistant</div>
+  </main>
+</body>
+</html>
