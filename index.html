@@ -32,7 +32,6 @@
 
       --max: 980px;
 
-      /* Premium font */
       --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
     }
 
@@ -47,7 +46,7 @@
       letter-spacing: .1px;
     }
 
-    /* ===== Top Bar ===== */
+    /* ===== Top Bar (unified identity) ===== */
     .topbar{
       position:sticky; top:0; z-index:50;
       background: linear-gradient(90deg, #0f0f0f 0%, #1b1b1b 45%, #b08a2a 100%);
@@ -288,7 +287,7 @@
       box-shadow: 0 0 0 3px rgba(176,138,42,.12);
     }
 
-    /* ===== Move on click (shared) ===== */
+    /* ===== Move + Link Card ===== */
     .move-card{
       position:relative;
       background: #fffdf6;
@@ -301,6 +300,9 @@
       transform: translate3d(0,0,0);
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, filter .22s ease;
       outline:none;
+      color: inherit;
+      text-decoration: none;
+      display:block;
     }
     .move-card:hover{
       transform: translateY(-3px);
@@ -447,122 +449,6 @@
       font-weight:700;
     }
 
-    /* ===== MODAL (details popup) ===== */
-    .overlay{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,.55);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding: 18px;
-      z-index: 1000;
-    }
-    .overlay.show{ display:flex; }
-
-    .modal{
-      width: min(760px, 100%);
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(176,138,42,.25);
-      box-shadow: 0 30px 80px rgba(0,0,0,.25);
-      overflow:hidden;
-    }
-    .modal-head{
-      padding: 14px 16px;
-      background: linear-gradient(90deg, #111 0%, #1b1b1b 55%, rgba(176,138,42,.92) 100%);
-      color:#fff;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .modal-title{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-    }
-    .modal-title .micon{
-      width: 28px; height: 28px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 30% 30%, #fff6d6 0%, #f3d58b 35%, var(--gold) 70%, var(--gold-2) 100%);
-      display:grid;
-      place-items:center;
-      color:#111;
-      font-weight:900;
-    }
-    .modal-title h3{
-      margin:0;
-      font-size: 14px;
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .modal-title p{
-      margin:4px 0 0;
-      font-size: 11px;
-      color: rgba(255,255,255,.85);
-      line-height:1.5;
-      font-weight:600;
-      max-width: 520px;
-    }
-    .close{
-      border: 1px solid rgba(255,255,255,.25);
-      background: rgba(255,255,255,.08);
-      color:#fff;
-      border-radius: 10px;
-      padding: 8px 10px;
-      font-size: 12px;
-      font-weight:800;
-      cursor:pointer;
-      user-select:none;
-    }
-    .close:hover{ background: rgba(255,255,255,.14); }
-
-    .modal-body{
-      padding: 14px 16px 16px;
-    }
-    .modal-body h4{
-      margin: 0 0 8px;
-      font-size: 12px;
-      font-weight: 950;
-      color:#2a241b;
-    }
-    .modal-body ul{
-      margin: 0;
-      padding-left: 18px;
-      color:#3e372e;
-      font-size: 11.5px;
-      line-height: 1.65;
-      font-weight:600;
-    }
-    .modal-actions{
-      margin-top: 12px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-end;
-    }
-    .linkbtn{
-      border: 1px solid #d9c9aa;
-      background: transparent;
-      color:#111;
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-weight: 900;
-      font-size: 12px;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      cursor:pointer;
-    }
-    .linkbtn.primary{
-      border-color: var(--gold);
-      background: linear-gradient(180deg, #f7e8bd 0%, #e6c978 100%);
-    }
-
-    /* Responsive */
     @media (max-width: 980px){
       .hero-grid{ grid-template-columns: 1fr; }
       .upper{ grid-template-columns: 1fr; }
@@ -681,434 +567,144 @@
       <span class="hint">Click any box for details</span>
     </div>
 
-    <!-- 16 boxes, with details popup on click -->
+    <!-- ✅ Option B: boxes are LINKS to support-details.html#... -->
     <section class="cards" id="supportCards">
-      <!-- Each box has data-id, used to load its detailed content in the modal -->
-      <div class="card move-card support" data-id="calendar" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#calendar">
         <div class="top"><span class="icon">🗓️</span><span class="pill">Time</span></div>
         <h5>Calendar &amp; Inbox Mastery</h5>
         <p>Managing complex calendars, inbox triage and shifting priorities so leaders focus on what matters.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="comms" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#comms">
         <div class="top"><span class="icon">✉️</span><span class="pill">Clarity</span></div>
         <h5>Executive Communication</h5>
         <p>Drafting and polishing emails, memos, reports and presentations in professional language.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="travel" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#travel">
         <div class="top"><span class="icon">✈️</span><span class="pill">Logistics</span></div>
         <h5>Travel &amp; Meetings</h5>
         <p>Coordinating itineraries, travel, agendas and logistics with accuracy and discretion.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="systems" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#systems">
         <div class="top"><span class="icon">🧾</span><span class="pill">Systems</span></div>
         <h5>Office Systems &amp; Procedures</h5>
         <p>Structured workflows, filing systems and process improvement for the executive office.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="stakeholders" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#stakeholders">
         <div class="top"><span class="icon">🤝</span><span class="pill">Liaison</span></div>
         <h5>Stakeholder Coordination</h5>
         <p>Reliable interface between leadership teams, departments and external partners.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="tools" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#tools">
         <div class="top"><span class="icon">🧰</span><span class="pill">Tools</span></div>
         <h5>Tools &amp; Technology</h5>
         <p>Microsoft 365, Google Workspace and planning tools to keep execution consistent.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="strategy" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#strategy">
         <div class="top"><span class="icon">🎯</span><span class="pill">Strategy</span></div>
         <h5>Strategic Scheduling</h5>
         <p>Aligning the executive’s time with priorities, goals, board agendas and deliverables.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="board" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#board">
         <div class="top"><span class="icon">📚</span><span class="pill">Boards</span></div>
         <h5>Board &amp; Leadership Documentation</h5>
         <p>Minutes, decks and confidential reports for boards and senior committees.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="workflow" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#workflow">
         <div class="top"><span class="icon">⚙️</span><span class="pill">Process</span></div>
         <h5>Workflow Optimization</h5>
         <p>Removing friction, improving processes and supporting efficient approvals and flow.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="confidential" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#confidential">
         <div class="top"><span class="icon">🔒</span><span class="pill">Trust</span></div>
         <h5>Confidential Matter Handling</h5>
         <p>Managing sensitive topics with discretion, information security and controlled access.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="vendors" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#vendors">
         <div class="top"><span class="icon">🏢</span><span class="pill">Partners</span></div>
         <h5>Vendor &amp; Partnership Management</h5>
         <p>Coordinating vendors, contracts and service partners while maintaining standards.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="followup" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#followup">
         <div class="top"><span class="icon">🧠</span><span class="pill">Follow-up</span></div>
         <h5>Meeting Intelligence &amp; Alignment</h5>
         <p>Agendas, decisions, action items and structured follow-up for accountability.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="projects" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#projects">
         <div class="top"><span class="icon">📌</span><span class="pill">Deadlines</span></div>
         <h5>Project &amp; Deadline Tracking</h5>
         <p>Tracking executive commitments, OKRs and key initiatives with reminders and structure.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="ai" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#ai">
         <div class="top"><span class="icon">✨</span><span class="pill">AI</span></div>
         <h5>Digital Productivity &amp; AI Tools</h5>
         <p>Using modern tools to improve speed, accuracy and daily executive support quality.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="crisis" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#crisis">
         <div class="top"><span class="icon">🚨</span><span class="pill">Calm</span></div>
         <h5>Crisis &amp; Issue Management</h5>
         <p>Supporting escalations, ensuring clear information flow, staying composed under pressure.</p>
-      </div>
+      </a>
 
-      <div class="card move-card support" data-id="personal" tabindex="0" role="button" aria-pressed="false">
+      <a class="card move-card support" href="support-details.html#personal">
         <div class="top"><span class="icon">🏠</span><span class="pill">Support</span></div>
         <h5>Personal &amp; Family Logistics</h5>
         <p>Where appropriate, assisting with travel, arrangements and personal logistics to protect time.</p>
-      </div>
+      </a>
     </section>
 
     <div class="footer">© 2025 Kasem Saied Saied — Senior Executive Assistant</div>
   </main>
 
-  <!-- DETAILS MODAL -->
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-head">
-        <div class="modal-title">
-          <div class="micon" id="mIcon">KS</div>
-          <div>
-            <h3 id="modalTitle">Title</h3>
-            <p id="modalSub">Short explanation</p>
-          </div>
-        </div>
-        <button class="close" id="closeBtn" type="button">Close ✕</button>
-      </div>
-      <div class="modal-body">
-        <h4>What I deliver</h4>
-        <ul id="modalList"></ul>
-
-        <div class="modal-actions">
-          <!-- Optional details page -->
-          <a class="linkbtn" id="readMore" href="support-details.html" style="display:none;">Read more</a>
-          <button class="linkbtn primary" id="okBtn" type="button">Got it</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // 1) Click-to-move: applies to skill highlight boxes + support boxes
+    // Keep click-to-move effect for Skills + the linked support cards.
+    // Note: navigation will happen; the move animation is still visible on hover/focus.
     (function () {
       const cards = Array.from(document.querySelectorAll(".move-card"));
 
       function setActive(card) {
         cards.forEach(c => {
-          if (c !== card) {
-            c.classList.remove("is-active", "is-bouncing");
-            c.setAttribute("aria-pressed", "false");
-          }
+          if (c !== card) c.classList.remove("is-active", "is-bouncing");
         });
 
-        const willActivate = !card.classList.contains("is-active");
-        card.classList.toggle("is-active", willActivate);
-        card.setAttribute("aria-pressed", willActivate ? "true" : "false");
-
-        if (willActivate) {
-          card.classList.remove("is-bouncing");
-          void card.offsetWidth;
-          card.classList.add("is-bouncing");
-          setTimeout(() => card.classList.remove("is-bouncing"), 360);
-        }
+        card.classList.add("is-active");
+        card.classList.remove("is-bouncing");
+        void card.offsetWidth;
+        card.classList.add("is-bouncing");
+        setTimeout(() => card.classList.remove("is-bouncing"), 360);
       }
 
+      // Apply only to non-link skill boxes OR to link cards on keyboard activation
       cards.forEach(card => {
-        card.addEventListener("click", () => setActive(card));
-        card.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setActive(card);
-          }
-        });
-      });
-    })();
-
-    // 2) DETAILS POPUP for "How I Support Executives"
-    (function () {
-      const overlay = document.getElementById("overlay");
-      const closeBtn = document.getElementById("closeBtn");
-      const okBtn = document.getElementById("okBtn");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalSub = document.getElementById("modalSub");
-      const modalList = document.getElementById("modalList");
-      const mIcon = document.getElementById("mIcon");
-      const readMore = document.getElementById("readMore");
-
-      // You can edit/expand these details anytime
-      const DETAILS = {
-        calendar: {
-          icon: "🗓️",
-          title: "Calendar & Inbox Mastery",
-          sub: "Protecting executive time through priority management, structured inbox handling, and calendar intelligence.",
-          bullets: [
-            "Daily inbox triage: prioritize, draft replies, and escalate appropriately",
-            "Calendar optimization: protect focus blocks, prep time, and buffer time",
-            "Meeting hygiene: clear objectives, required attendees only, agenda-first approach",
-            "Follow-ups and reminders to ensure nothing drops"
-          ],
-          link: "support-details.html#calendar"
-        },
-        comms: {
-          icon: "✉️",
-          title: "Executive Communication",
-          sub: "Clear, concise, professional communications that reflect leadership presence and reduce back-and-forth.",
-          bullets: [
-            "Drafting emails, memos, letters, and announcements",
-            "Bilingual correspondence (Arabic/English) when needed",
-            "Message clarity, tone control, and stakeholder alignment",
-            "Presentation polishing and executive-ready formatting"
-          ],
-          link: "support-details.html#comms"
-        },
-        travel: {
-          icon: "✈️",
-          title: "Travel & Meetings",
-          sub: "End-to-end travel planning and meeting coordination with strong attention to detail and contingency planning.",
-          bullets: [
-            "Itineraries, flights, hotels, visas (when applicable), and ground transport",
-            "Meeting confirmations, locations, and materials prepared in advance",
-            "Backup plans and risk management for delays and changes",
-            "Expense documentation support and trip summaries (if required)"
-          ],
-          link: "support-details.html#travel"
-        },
-        systems: {
-          icon: "🧾",
-          title: "Office Systems & Procedures",
-          sub: "Reliable executive office operations with structured systems that scale and remain audit-ready.",
-          bullets: [
-            "Document control, filing standards, and version management",
-            "Templates for agendas, minutes, correspondence, and trackers",
-            "Process mapping: simplify workflows and reduce cycle time",
-            "Confidential document handling and permissions"
-          ],
-          link: "support-details.html#systems"
-        },
-        stakeholders: {
-          icon: "🤝",
-          title: "Stakeholder Coordination",
-          sub: "Trusted liaison across internal and external stakeholders to keep alignment and reduce friction.",
-          bullets: [
-            "Executive point-of-contact for leadership teams and key partners",
-            "Coordination between departments for approvals and deliverables",
-            "Discreet handling of escalations and sensitive communications",
-            "Relationship management with professionalism and respect"
-          ],
-          link: "support-details.html#stakeholders"
-        },
-        tools: {
-          icon: "🧰",
-          title: "Tools & Technology",
-          sub: "Efficient daily operations using modern productivity tools and structured tracking.",
-          bullets: [
-            "Microsoft 365 (Outlook, Teams, Word, Excel, PowerPoint)",
-            "Google Workspace (Docs, Sheets, Drive) if used by the organization",
-            "Task/project tracking: Notion / Asana / Trello (based on company preference)",
-            "Clean documentation and executive dashboards"
-          ],
-          link: "support-details.html#tools"
-        },
-        strategy: {
-          icon: "🎯",
-          title: "Strategic Scheduling",
-          sub: "Connecting calendar time to priorities, deadlines, and leadership outcomes.",
-          bullets: [
-            "Weekly planning and priority reviews",
-            "Strategic meeting cadence and stakeholder rhythm",
-            "Time-blocking for deep work and key initiatives",
-            "Preparation pipeline for high-stakes engagements"
-          ],
-          link: "support-details.html#strategy"
-        },
-        board: {
-          icon: "📚",
-          title: "Board & Leadership Documentation",
-          sub: "Board-level governance support with precision, confidentiality, and strong documentation standards.",
-          bullets: [
-            "Board packs: agendas, briefs, presentations, and supporting materials",
-            "Minutes drafting and decision/action tracking",
-            "Committee coordination and secure distribution",
-            "Document accuracy checks and version control"
-          ],
-          link: "support-details.html#board"
-        },
-        workflow: {
-          icon: "⚙️",
-          title: "Workflow Optimization",
-          sub: "Improving executive office efficiency by reducing bottlenecks and creating smart systems.",
-          bullets: [
-            "Identify gaps, delays, and recurring inefficiencies",
-            "Standardize trackers and decision logs",
-            "Simplify approvals and routing processes",
-            "Build repeatable weekly operating rhythms"
-          ],
-          link: "support-details.html#workflow"
-        },
-        confidential: {
-          icon: "🔒",
-          title: "Confidential Matter Handling",
-          sub: "High-trust handling of sensitive matters with discretion and professional ethics.",
-          bullets: [
-            "Secure documents and controlled sharing",
-            "Sensitive communications and executive priorities",
-            "Discreet coordination with key stakeholders",
-            "Information discipline: need-to-know principle"
-          ],
-          link: "support-details.html#confidential"
-        },
-        vendors: {
-          icon: "🏢",
-          title: "Vendor & Partnership Management",
-          sub: "Coordinating vendors and partners smoothly to maintain standards and timelines.",
-          bullets: [
-            "Vendor coordination, scheduling, and service follow-up",
-            "Basic contract/logistics tracking (as assigned)",
-            "Quality control and issue resolution escalation",
-            "Keeping executive office aligned with vendor commitments"
-          ],
-          link: "support-details.html#vendors"
-        },
-        followup: {
-          icon: "🧠",
-          title: "Meeting Intelligence & Alignment",
-          sub: "Turning meetings into outcomes: decisions captured, actions owned, and follow-ups completed.",
-          bullets: [
-            "Agenda structure and pre-reads coordination",
-            "Decision logging and action owner tracking",
-            "Follow-up reminders and escalation support",
-            "Outcome summaries and status updates"
-          ],
-          link: "support-details.html#followup"
-        },
-        projects: {
-          icon: "📌",
-          title: "Project & Deadline Tracking",
-          sub: "Tracking executive commitments and ensuring deadlines are visible, owned, and achieved.",
-          bullets: [
-            "Executive trackers for projects and commitments",
-            "Deadline visibility and weekly status updates",
-            "Risk flags and early escalation",
-            "Stakeholder check-ins to maintain momentum"
-          ],
-          link: "support-details.html#projects"
-        },
-        ai: {
-          icon: "✨",
-          title: "Digital Productivity & AI Tools",
-          sub: "Using intelligent tools responsibly to improve speed, accuracy, and quality of executive support.",
-          bullets: [
-            "Drafting assistance and structured summaries (with discretion)",
-            "Meeting notes formatting and action extraction",
-            "Document refinement and consistency checks",
-            "Research support and quick first drafts"
-          ],
-          link: "support-details.html#ai"
-        },
-        crisis: {
-          icon: "🚨",
-          title: "Crisis & Issue Management",
-          sub: "Calm under pressure: keep information clear, decisions supported, and communication controlled.",
-          bullets: [
-            "Rapid coordination and accurate information routing",
-            "Stakeholder alignment and urgent scheduling",
-            "Documenting actions and decisions for clarity",
-            "Maintaining composure and executive focus"
-          ],
-          link: "support-details.html#crisis"
-        },
-        personal: {
-          icon: "🏠",
-          title: "Personal & Family Logistics",
-          sub: "Where appropriate and assigned, supporting personal logistics to protect executive time.",
-          bullets: [
-            "Personal travel support and key arrangements",
-            "Scheduling coordination and reminders",
-            "Respecting privacy, discretion, and boundaries",
-            "Fast response and organized execution"
-          ],
-          link: "support-details.html#personal"
-        }
-      };
-
-      function openModal(id) {
-        const d = DETAILS[id];
-        if (!d) return;
-
-        mIcon.textContent = d.icon || "KS";
-        modalTitle.textContent = d.title;
-        modalSub.textContent = d.sub;
-
-        modalList.innerHTML = "";
-        (d.bullets || []).forEach(t => {
-          const li = document.createElement("li");
-          li.textContent = t;
-          modalList.appendChild(li);
-        });
-
-        // optional "Read more" link
-        if (d.link) {
-          readMore.href = d.link;
-          readMore.style.display = "inline-flex";
+        // Skills highlights (divs) still toggle on click
+        if (card.tagName !== "A") {
+          card.addEventListener("click", () => setActive(card));
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setActive(card);
+            }
+          });
         } else {
-          readMore.style.display = "none";
+          // For link cards: add a quick active effect on mouse down / keyboard
+          card.addEventListener("mousedown", () => setActive(card));
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") setActive(card);
+          });
         }
-
-        overlay.classList.add("show");
-        overlay.setAttribute("aria-hidden", "false");
-      }
-
-      function closeModal() {
-        overlay.classList.remove("show");
-        overlay.setAttribute("aria-hidden", "true");
-      }
-
-      // Attach to support cards only
-      const supportCards = Array.from(document.querySelectorAll(".support"));
-      supportCards.forEach(card => {
-        const id = card.getAttribute("data-id");
-
-        card.addEventListener("click", () => openModal(id));
-        card.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            openModal(id);
-          }
-        });
-      });
-
-      // Close actions
-      closeBtn.addEventListener("click", closeModal);
-      okBtn.addEventListener("click", closeModal);
-
-      overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) closeModal();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && overlay.classList.contains("show")) closeModal();
       });
     })();
   </script>
