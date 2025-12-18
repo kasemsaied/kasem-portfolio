@@ -4,13 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Home — Kasem Saied Saied</title>
-  <meta name="description" content="Kasem Saied Saied — Senior Executive Assistant to Chairmen, CEOs & Senior Leaders." />
+  <meta name="description" content="Kasem Saied Saied — Senior Executive Assistant to chairmen, CEOs & Senior Leaders." />
 
   <style>
     :root{
-      /* Keep the same golden/cream identity */
-      --bg: #f3efe6;          /* warm cream */
-      --panel: #ffffff;       /* clean white cards */
+      --bg: #f3efe6;
+      --panel: #ffffff;
       --ink: #1a1a1a;
       --muted: #6a6257;
 
@@ -37,11 +36,11 @@
       background: var(--bg);
     }
 
-    /* TOP BAR — black + gold line (same identity) */
+    /* ===== UNITED IDENTITY TOP BAR (matches your screenshot) ===== */
     .topbar{
       position:sticky; top:0; z-index:50;
-      background: linear-gradient(90deg, #0f0f0f 0%, #1b1b1b 40%, #1b1b1b 60%, #0f0f0f 100%);
-      border-bottom: 3px solid var(--gold);
+      background: linear-gradient(90deg, #0f0f0f 0%, #1b1b1b 45%, #b08a2a 100%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .topbar-inner{
       max-width: var(--max);
@@ -49,7 +48,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding: 10px 14px;
+      padding: 12px 14px;
       gap: 10px;
     }
     .brand{
@@ -58,10 +57,11 @@
       gap:10px;
       color:#fff;
       font-weight:800;
-      letter-spacing:.4px;
+      letter-spacing:.45px;
       text-transform:uppercase;
-      font-size: 12px;
+      font-size: 13px;
       user-select:none;
+      white-space:nowrap;
     }
     .brand-badge{
       width:18px; height:18px;
@@ -73,37 +73,42 @@
       font-size: 10px;
       font-weight:900;
     }
+
     nav{
       display:flex;
       align-items:center;
-      gap: 12px;
+      gap: 22px;
+      justify-content:center;
       flex-wrap:wrap;
-      justify-content:flex-end;
     }
     nav a{
       color:#efe6d2;
       text-decoration:none;
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(176,138,42,.25);
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      font-size: 13px;
+      padding: 6px 2px;
+      position:relative;
       user-select:none;
+      opacity:.95;
     }
-    nav a:hover{
-      background: rgba(176,138,42,.12);
-      border-color: rgba(176,138,42,.45);
-      transform: translateY(-1px);
+    nav a:hover{ opacity:1; }
+    nav a.active::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      bottom:-4px;
+      height:2px;
+      background: #e6c978;
+      border-radius: 2px;
     }
 
-    /* PAGE WRAP */
+    /* ===== PAGE WRAP ===== */
     .wrap{
       max-width: var(--max);
       margin: 18px auto 44px;
       padding: 0 14px;
     }
 
-    /* HERO */
+    /* ===== HERO ===== */
     .hero{
       background: var(--panel);
       border: 1px solid var(--stroke);
@@ -123,7 +128,7 @@
       gap: 14px;
     }
 
-    /* PHOTO FIX + FALLBACK */
+    /* PHOTO: now fixed to your repo root file */
     .avatar{
       width:78px; height:78px;
       border-radius: 999px;
@@ -132,30 +137,12 @@
       overflow:hidden;
       background:#d9d0c1;
       flex: 0 0 auto;
-      position:relative;
-      display:grid;
-      place-items:center;
     }
     .avatar img{
       width:100%; height:100%;
       object-fit:cover;
       display:block;
     }
-    .avatar .fallback{
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      color:#2a241b;
-      letter-spacing:.5px;
-      font-size: 18px;
-      background: radial-gradient(circle at 30% 30%, #fff6d6 0%, #f3d58b 40%, #d9c39a 100%);
-      opacity:0;
-      pointer-events:none;
-    }
-    .avatar.is-fallback .fallback{ opacity:1; }
-    .avatar.is-fallback img{ display:none; }
 
     .profile h2{
       margin:0;
@@ -208,7 +195,7 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
       user-select:none;
     }
     .btn:hover{ transform: translateY(-1px); box-shadow: 0 12px 24px rgba(176,138,42,.2); }
@@ -223,7 +210,7 @@
       color: #6d645a;
     }
 
-    /* UPPER PANELS */
+    /* ===== UPPER PANELS ===== */
     .upper{
       margin-top: 14px;
       display:grid;
@@ -244,9 +231,7 @@
     }
     .facts{
       display:grid;
-      grid-template-columns: 1fr;
       gap: 8px;
-      font-size: 12px;
     }
     .fact-row{
       display:flex;
@@ -283,14 +268,7 @@
       box-shadow: 0 0 0 3px rgba(176,138,42,.12);
     }
 
-    /* Skills highlight boxes (NOW clickable/moving like cards) */
-    .skills{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    /* Unified interactive card behavior (used by BOTH top skills + bottom cards) */
+    /* ===== CLICK-MOVE EFFECT (shared by skills + bottom boxes) ===== */
     .move-card{
       position:relative;
       background: #fffdf6;
@@ -301,11 +279,7 @@
       cursor:pointer;
       user-select:none;
       transform: translate3d(0,0,0);
-      transition:
-        transform .22s ease,
-        box-shadow .22s ease,
-        border-color .22s ease,
-        filter .22s ease;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, filter .22s ease;
       outline:none;
     }
     .move-card:hover{
@@ -317,7 +291,6 @@
       box-shadow: 0 0 0 4px rgba(176,138,42,.18), 0 16px 40px rgba(0,0,0,.12);
       border-color: rgba(176,138,42,.65);
     }
-
     .move-card.is-active{
       transform: translateY(-10px) rotate(-0.6deg);
       box-shadow: var(--shadow-2);
@@ -341,6 +314,12 @@
       100%{ transform: translateY(-10px) rotate(-0.6deg) scale(1); }
     }
 
+    /* ===== SKILLS HIGHLIGHTS (now move-card) ===== */
+    .skills{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
     .skill .tag{
       font-size: 9px;
       font-weight:900;
@@ -367,7 +346,6 @@
       line-height: 1.5;
     }
 
-    /* Section title */
     .section-title{
       margin: 18px 0 10px;
       font-size: 12px;
@@ -376,20 +354,18 @@
       letter-spacing: .2px;
     }
 
-    /* Bottom support cards grid */
+    /* ===== BOTTOM CARDS ===== */
     .cards{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
     }
-
     .card{
       background: var(--panel);
       border: 1px solid var(--stroke);
       border-radius: var(--radius-sm);
       padding: 10px;
     }
-
     .card .top{
       display:flex;
       align-items:flex-start;
@@ -445,13 +421,13 @@
       .upper{ grid-template-columns: 1fr; }
       .skills{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: repeat(2, 1fr); }
-      nav{ justify-content:center; }
-      .topbar-inner{ flex-direction:column; gap:8px; }
+      .topbar-inner{ flex-direction:column; gap:10px; }
     }
     @media (max-width: 520px){
       .cards{ grid-template-columns: 1fr; }
       .profile{ justify-content:center; }
       .hero-main h1{ font-size: 16px; }
+      nav{ gap: 14px; }
     }
   </style>
 </head>
@@ -465,7 +441,7 @@
       </div>
 
       <nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
+        <a class="active" href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="certificates.html">Certificates</a>
@@ -478,12 +454,10 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="profile">
-          <div class="avatar" id="avatarBox" title="Kasem Saied Saied">
-            <!-- We will auto-load the first existing image path via JS -->
-            <img id="avatarImg" alt="Kasem Saied Saied" />
-            <div class="fallback" aria-hidden="true">KS</div>
+          <div class="avatar" title="Kasem Saied Saied">
+            <!-- ✅ FIXED: your repo root photo -->
+            <img src="profile.jpg" alt="Kasem Saied Saied" />
           </div>
-
           <div>
             <h2>Kasem Saied Saied</h2>
             <p>Senior Executive Assistant</p>
@@ -500,7 +474,7 @@
           </p>
 
           <div class="cta">
-            <a class="btn" href="assets/Kasem-Saied-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn" href="Kasem Saied Resume 2025.pdf" target="_blank" rel="noopener">Download CV</a>
             <a class="btn secondary" href="contact.html">Contact Me</a>
           </div>
 
@@ -534,8 +508,8 @@
       <div class="panel">
         <h3>Skills Highlights</h3>
 
+        <!-- ✅ Now these 3 boxes MOVE like the down boxes -->
         <div class="skills" id="skillsBoxes">
-          <!-- These 3 boxes now move on click like the lower cards -->
           <div class="skill move-card" tabindex="0" role="button" aria-pressed="false">
             <span class="tag">Executive Operations</span>
             <h4>Office & Leadership Support</h4>
@@ -560,7 +534,7 @@
     <div class="section-title">How I Support Executives</div>
 
     <section class="cards" id="supportCards">
-      <!-- Note: bottom boxes already have your style; now they also use move-card behavior -->
+      <!-- Bottom boxes: keep same look + move-card behavior -->
       <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
         <div class="top"><span class="icon">🗓️</span><span class="pill">Time</span></div>
         <h5>Calendar & Inbox Mastery</h5>
@@ -608,96 +582,17 @@
         <h5>Board & Leadership Documentation</h5>
         <p>Preparing minutes, decks and confidential reports for boards and senior committees.</p>
       </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">⚙️</span><span class="pill">Process</span></div>
-        <h5>Workflow Optimization</h5>
-        <p>Identifying bottlenecks, improving processes and supporting efficient information flow and approvals.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">🔒</span><span class="pill">Trust</span></div>
-        <h5>Confidential Matter Handling</h5>
-        <p>Managing sensitive topics, ensuring discretion, information security and controlled access.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">🏢</span><span class="pill">Partners</span></div>
-        <h5>Vendor & Partnership Management</h5>
-        <p>Coordinating vendors, contracts and service partners, and keeping executive operations aligned.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">🧠</span><span class="pill">Follow-up</span></div>
-        <h5>Meeting Intelligence & Alignment</h5>
-        <p>Designing agendas, capturing decisions and ensuring structured follow-up on action items.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">📌</span><span class="pill">Deadlines</span></div>
-        <h5>Project & Deadline Tracking</h5>
-        <p>Helping track executive commitments, OKRs and key initiatives with reminders and structure.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">✨</span><span class="pill">AI</span></div>
-        <h5>Digital Productivity & AI Tools</h5>
-        <p>Using modern tools and AI assistants to improve speed, accuracy and daily executive support.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">🚨</span><span class="pill">Calm</span></div>
-        <h5>Crisis & Issue Management</h5>
-        <p>Supporting urgent escalations, ensuring clear information flow, and staying composed under pressure.</p>
-      </div>
-
-      <div class="card move-card" tabindex="0" role="button" aria-pressed="false">
-        <div class="top"><span class="icon">🏠</span><span class="pill">Support</span></div>
-        <h5>Personal & Family Logistics</h5>
-        <p>Where appropriate, assisting with travel, arrangements and personal logistics to protect executive time.</p>
-      </div>
     </section>
 
     <div class="footer">© 2025 Kasem Saied Saied — Senior Executive Assistant</div>
   </main>
 
   <script>
-    // 1) PHOTO AUTO-LOADER (fix "my photo not shown")
-    (function () {
-      const avatarBox = document.getElementById("avatarBox");
-      const img = document.getElementById("avatarImg");
-
-      const candidates = [
-        "images/kasem.jpg",
-        "images/profile.jpg",
-        "assets/kasem.jpg",
-        "assets/profile.jpg",
-        "images/kasem.png",
-        "assets/kasem.png"
-      ];
-
-      function tryNext(i) {
-        if (i >= candidates.length) {
-          avatarBox.classList.add("is-fallback");
-          return;
-        }
-        img.src = candidates[i];
-
-        img.onload = () => {
-          avatarBox.classList.remove("is-fallback");
-        };
-        img.onerror = () => tryNext(i + 1);
-      }
-
-      tryNext(0);
-    })();
-
-    // 2) MAKE ALL CLICKABLE BOXES MOVE (skills + down cards)
+    // Make ALL move-card elements behave the same (skills + lower cards)
     (function () {
       const cards = Array.from(document.querySelectorAll(".move-card"));
 
       function setActive(card) {
-        // Only one active at a time (clean)
         cards.forEach(c => {
           if (c !== card) {
             c.classList.remove("is-active", "is-bouncing");
@@ -711,7 +606,7 @@
 
         if (willActivate) {
           card.classList.remove("is-bouncing");
-          void card.offsetWidth; // restart animation
+          void card.offsetWidth;
           card.classList.add("is-bouncing");
           setTimeout(() => card.classList.remove("is-bouncing"), 360);
         }
