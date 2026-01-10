@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Executive Office Advisory (Retainer) | Kasem Saied Saied</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discreet executive office advisory on a monthly retainer — continuity, structure, and trusted coordination for executives and family offices." />
+
+  <!-- keep same animation file if you use it across pages -->
+  <link rel="stylesheet" href="animations.css" />
+
+  <style>
+    :root {
+      --bg-body: #f4efe4;
+      --bg-card: #fbf1e4;
+      --bg-accent: #ffe7b0;
+
+      --gold: #d0a13c;
+      --gold-dark: #b68a1f;
+      --gold-soft: #f7e1a8;
+
+      --text-main: #2c2a29;
+      --text-soft: #5d5a57;
+
+      --border-soft: #e0d4b8;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+      --radius-card: 26px;
+      --radius-pill: 999px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg-body);
+      color:var(--text-main);
+      line-height:1.6;
+    }
+    .page-shell{max-width:1100px;margin:0 auto;padding:18px 16px 42px;}
+    .topbar{
+      background:linear-gradient(180deg, #fff7e6, var(--bg-body));
+      border:1px solid var(--border-soft);
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-soft);
+      padding:14px 14px;
+      margin-bottom:14px;
+    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .topbar-left{display:flex;align-items:center;gap:10px;}
+    .brand-badge{
+      width:42px;height:42px;border-radius:14px;
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      color:#fff;display:flex;align-items:center;justify-content:center;
+      font-weight:800;letter-spacing:.5px;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+    }
+    .brand-name{font-weight:900;letter-spacing:.6px}
+    .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+    .nav-link{
+      text-decoration:none;
+      color:var(--text-main);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      font-size:14px;
+    }
+    .nav-link:hover{border-color:var(--border-soft);background:#fff;}
+    .nav-link--active{
+      background:#fff;
+      border-color:var(--border-soft);
+      box-shadow:0 10px 18px rgba(0,0,0,.06);
+    }
+    .lang-pill{
+      text-decoration:none;
+      color:var(--text-main);
+      background:#fff;
+      border:1px solid var(--border-soft);
+      padding:8px 12px;
+      border-radius:var(--radius-pill);
+      font-weight:800;
+      font-size:13px;
+    }
+
+    .container{max-width:980px;margin:0 auto;}
+    .hero-card{
+      background:var(--bg-card);
+      border:1px solid var(--border-soft);
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-soft);
+      padding:22px 18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .kicker-strip{
+      display:inline-block;
+      background:linear-gradient(90deg,var(--gold-soft), #fff3cf);
+      border:1px solid var(--border-soft);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:900;
+      letter-spacing:.4px;
+      font-size:12px;
+      margin-bottom:12px;
+    }
+    .hero-title{font-size:30px;line-height:1.15;font-weight:950;margin-bottom:10px;}
+    .hero-subtitle{color:var(--text-soft);font-weight:650;margin-bottom:10px;}
+    .hero-meta{color:var(--text-soft);font-size:14px;margin-bottom:14px;}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(max-width:860px){ .grid{grid-template-columns:1fr;} .hero-title{font-size:26px;} }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border-soft);
+      border-radius:22px;
+      box-shadow:0 14px 28px rgba(0,0,0,.06);
+      padding:16px;
+    }
+    .card h2{font-size:16px;font-weight:950;margin-bottom:10px;}
+    .list{padding-left:18px;color:var(--text-soft);font-weight:650;}
+    .list li{margin:8px 0;}
+    .note{
+      margin-top:12px;
+      color:var(--text-soft);
+      font-weight:700;
+      font-size:14px;
+    }
+    .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;}
+    .btn-primary{
+      display:inline-block;
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      color:#fff;text-decoration:none;
+      padding:11px 14px;border-radius:14px;
+      font-weight:900;
+      box-shadow:0 16px 28px rgba(0,0,0,.15);
+    }
+    .btn-ghost{
+      display:inline-block;
+      background:#fff;
+      color:var(--text-main);
+      text-decoration:none;
+      padding:11px 14px;border-radius:14px;
+      font-weight:900;
+      border:1px solid var(--border-soft);
+    }
+    .footer{
+      margin-top:14px;
+      color:var(--text-soft);
+      font-size:13px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <div class="brand-badge">KS</div>
+          <div class="brand-name">KASEM SAIED SAIED</div>
+        </div>
+
+        <div class="topbar-right">
+          <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="certificates.html" class="nav-link">Certificates</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="advisory.html" class="nav-link nav-link--active">Advisory</a>
+          </nav>
+          <a class="lang-pill" href="ar/advisory.html">العربية</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <section class="hero-card">
+          <div class="kicker-strip">EXECUTIVE OFFICE • DISCRETION • CONTINUITY</div>
+          <h1 class="hero-title">Executive Office Advisory (Retainer)</h1>
+          <p class="hero-subtitle">
+            A discreet monthly retainer designed for executives and family offices who require calm structure, trusted coordination,
+            and decision-to-execution continuity — without visibility-seeking consulting.
+          </p>
+          <p class="hero-meta">
+            Selective engagements • Remote-first • Based in Riyadh • English / Arabic communication
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h2>Who This Is For</h2>
+              <ul class="list">
+                <li>Family Offices and Private Principals</li>
+                <li>CEOs and founders in transition or rapid growth</li>
+                <li>Board-level executives needing trusted coordination</li>
+                <li>Leaders who value discretion over visibility</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h2>Core Focus</h2>
+              <ul class="list">
+                <li>Executive office structure, priorities, and rhythm</li>
+                <li>Sensitive matter coordination and information control</li>
+                <li>Alignment between decisions, stakeholders, and execution</li>
+                <li>Quiet follow-up before issues escalate</li>
+              </ul>
+              <div class="note">
+                This is not task execution. It is executive continuity.
+              </div>
+            </div>
+
+            <div class="card">
+              <h2>Engagement Model</h2>
+              <ul class="list">
+                <li>Monthly retainer (confidential by design)</li>
+                <li>Limited concurrent engagements</li>
+                <li>Remote-first, with on-demand availability when required</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h2>Why This Works</h2>
+              <ul class="list">
+                <li>24+ years inside executive offices</li>
+                <li>Executive judgment, calm under pressure, high discretion</li>
+                <li>Clear structure — no overpromising, no noise</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn-primary" href="mailto:kasem.saied@gmail.com?subject=Executive%20Office%20Advisory%20(Retainer)%20—%20Confidential%20Conversation">
+              Request a Confidential Conversation
+            </a>
+            <a class="btn-ghost" href="contact.html">
+              Contact form
+            </a>
+          </div>
+        </section>
+
+        <div class="footer">© 2025 Kasem Saied Saied — Executive Office Advisory (Retainer)</div>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
