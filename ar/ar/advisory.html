@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>استشارات المكتب التنفيذي (ريتينر) | قاسم سعيد سعيد</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="استشارات المكتب التنفيذي بنظام الريتينر — استمرارية، سرية، وتنظيم هادئ للقيادات التنفيذية والمكاتب العائلية." />
+
+  <link rel="stylesheet" href="../animations.css" />
+
+  <style>
+    :root {
+      --bg-body: #f4efe4;
+      --bg-card: #fbf1e4;
+      --bg-accent: #ffe7b0;
+
+      --gold: #d0a13c;
+      --gold-dark: #b68a1f;
+      --gold-soft: #f7e1a8;
+
+      --text-main: #2c2a29;
+      --text-soft: #5d5a57;
+
+      --border-soft: #e0d4b8;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+      --radius-card: 26px;
+      --radius-pill: 999px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg-body);
+      color:var(--text-main);
+      line-height:1.85;
+    }
+    .page-shell{max-width:1100px;margin:0 auto;padding:18px 16px 42px;}
+    .topbar{
+      background:linear-gradient(180deg, #fff7e6, var(--bg-body));
+      border:1px solid var(--border-soft);
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-soft);
+      padding:14px 14px;
+      margin-bottom:14px;
+    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .topbar-left{display:flex;align-items:center;gap:10px;}
+    .brand-badge{
+      width:42px;height:42px;border-radius:14px;
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      color:#fff;display:flex;align-items:center;justify-content:center;
+      font-weight:800;letter-spacing:.5px;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+    }
+    .brand-name{font-weight:900;letter-spacing:.4px}
+    .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+    .nav-link{
+      text-decoration:none;
+      color:var(--text-main);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:800;
+      font-size:14px;
+    }
+    .nav-link:hover{border-color:var(--border-soft);background:#fff;}
+    .nav-link--active{
+      background:#fff;
+      border-color:var(--border-soft);
+      box-shadow:0 10px 18px rgba(0,0,0,.06);
+    }
+    .lang-pill{
+      text-decoration:none;
+      color:var(--text-main);
+      background:#fff;
+      border:1px solid var(--border-soft);
+      padding:8px 12px;
+      border-radius:var(--radius-pill);
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .container{max-width:980px;margin:0 auto;}
+    .hero-card{
+      background:var(--bg-card);
+      border:1px solid var(--border-soft);
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-soft);
+      padding:22px 18px;
+    }
+    .kicker-strip{
+      display:inline-block;
+      background:linear-gradient(90deg,var(--gold-soft), #fff3cf);
+      border:1px solid var(--border-soft);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:12px;
+      margin-bottom:12px;
+    }
+    .hero-title{font-size:30px;line-height:1.2;font-weight:950;margin-bottom:10px;}
+    .hero-subtitle{color:var(--text-soft);font-weight:750;margin-bottom:10px;}
+    .hero-meta{color:var(--text-soft);font-size:14px;margin-bottom:14px;}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media(max-width:860px){ .grid{grid-template-columns:1fr;} .hero-title{font-size:26px;} }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border-soft);
+      border-radius:22px;
+      box-shadow:0 14px 28px rgba(0,0,0,.06);
+      padding:16px;
+    }
+    .card h2{font-size:16px;font-weight:950;margin-bottom:10px;}
+    .list{padding-right:18px;color:var(--text-soft);font-weight:750;}
+    .list li{margin:8px 0;}
+    .note{
+      margin-top:12px;
+      color:var(--text-soft);
+      font-weight:900;
+      font-size:14px;
+    }
+    .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;}
+    .btn-primary{
+      display:inline-block;
+      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+      color:#fff;text-decoration:none;
+      padding:11px 14px;border-radius:14px;
+      font-weight:950;
+      box-shadow:0 16px 28px rgba(0,0,0,.15);
+    }
+    .btn-ghost{
+      display:inline-block;
+      background:#fff;
+      color:var(--text-main);
+      text-decoration:none;
+      padding:11px 14px;border-radius:14px;
+      font-weight:950;
+      border:1px solid var(--border-soft);
+    }
+    .footer{
+      margin-top:14px;
+      color:var(--text-soft);
+      font-size:13px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <div class="brand-badge">KS</div>
+          <div class="brand-name">قاسم سعيد سعيد</div>
+        </div>
+
+        <div class="topbar-right">
+          <nav class="nav">
+            <a href="../index.html" class="nav-link">الرئيسية</a>
+            <a href="../about.html" class="nav-link">نبذة</a>
+            <a href="../portfolio.html" class="nav-link">الأعمال</a>
+            <a href="../certificates.html" class="nav-link">الشهادات</a>
+            <a href="contact.html" class="nav-link">تواصل</a>
+            <a href="services.html" class="nav-link">الخدمات</a>
+            <a href="advisory.html" class="nav-link nav-link--active">الريتينر</a>
+          </nav>
+          <a class="lang-pill" href="../advisory.html">EN English</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <section class="hero-card">
+          <div class="kicker-strip">المكتب التنفيذي • سرية • استمرارية</div>
+          <h1 class="hero-title">استشارات المكتب التنفيذي (بنظام الريتينر)</h1>
+          <p class="hero-subtitle">
+            ارتباط شهري “هادئ ومغلق” للقيادات التنفيذية والمكاتب العائلية التي تحتاج إلى تنظيم ثابت،
+            وتنسيق موثوق للملفات الحساسة، واستمرارية بين القرار والتنفيذ — دون ضجيج أو استعراض.
+          </p>
+          <p class="hero-meta">
+            ارتباطات محدودة • عمل عن بُعد بالدرجة الأولى • مقيم في الرياض • تواصل عربي/إنجليزي
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h2>لمن هذه الخدمة</h2>
+              <ul class="list">
+                <li>المكاتب العائلية وأصحاب القرار</li>
+                <li>الرؤساء التنفيذيون والمؤسسون في مراحل انتقال أو توسع</li>
+                <li>قيادات مجالس الإدارة التي تحتاج تنسيقًا موثوقًا</li>
+                <li>قادة يقدّرون الخصوصية أكثر من الظهور</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h2>جوهر الدور</h2>
+              <ul class="list">
+                <li>هيكلة الأولويات وإيقاع المكتب التنفيذي</li>
+                <li>ضبط تدفق المعلومات وتنسيق الملفات الحساسة</li>
+                <li>مواءمة القرار مع أصحاب العلاقة والتنفيذ</li>
+                <li>متابعة هادئة قبل أن تتضخم الإشكالات</li>
+              </ul>
+              <div class="note">هذه ليست خدمة “مهام”. إنها استمرارية تنفيذية.</div>
+            </div>
+
+            <div class="card">
+              <h2>نموذج الارتباط</h2>
+              <ul class="list">
+                <li>تعاقد شهري بنظام الريتينر (بسريّة تامة)</li>
+                <li>عدد محدود من الارتباطات للحفاظ على الجودة</li>
+                <li>عن بُعد أولاً، مع جاهزية عند الحاجة</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h2>لماذا ينجح هذا النموذج</h2>
+              <ul class="list">
+                <li>أكثر من 24 عامًا داخل المكاتب التنفيذية</li>
+                <li>حكم تنفيذي، هدوء تحت الضغط، وسريّة عالية</li>
+                <li>هيكلة واضحة — بلا وعود مبالغ فيها</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn-primary" href="mailto:kasem.saied@gmail.com?subject=استشارات%20المكتب%20التنفيذي%20(ريتينر)%20—%20محادثة%20سرية">
+              طلب محادثة سرية
+            </a>
+            <a class="btn-ghost" href="contact.html">
+              نموذج التواصل
+            </a>
+          </div>
+        </section>
+
+        <div class="footer">© 2025 قاسم سعيد سعيد — استشارات المكتب التنفيذي (ريتينر)</div>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
